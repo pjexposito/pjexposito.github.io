@@ -20,6 +20,7 @@ mes = fecha.getMonth()+1,
 ano = fecha.getFullYear(),
 con_numeros = 1,
 base_datos;
+posicion = 0;
 
 
 function pintaCalendario() {
@@ -32,7 +33,7 @@ function pintaCalendario() {
     cabecera.style.visibility = "visible";   
     calendar.textContent="";
     date = today.getDate();
-    mes_actual = today.getMonth()+1;
+    mes_actual = today.getMonth();
     ano_actual = today.getFullYear();
     document.getElementById('month').textContent = MESES[mes];
     today.setYear(ano);
@@ -146,6 +147,27 @@ function cierra(){
 	
 }
 
+function siguiente(){
+	mes = mes+1;
+	if (mes > 12) {
+		mes = 1;
+		ano = ano+1;
+	}
+    pintaCalendario();
+	
+}
+
+function anterior(){
+    mes = mes-1;
+	if (mes < 1) {
+		mes = 12;
+		ano = ano-1;
+	} 
+    pintaCalendario();
+	
+}
+
+
 
 function descarga_datos() { 
 	console.log("Descargando...");
@@ -202,24 +224,7 @@ function descarga_datos() {
 	
 // También se puede usar tizen.preference.exists('key1') para ver si un valor existe.
 
-	document.addEventListener("tizenhwkey", keyEventHandler);
-    document.addEventListener('rotarydetent', function(ev) {
-        var direction = ev.detail.direction;
-        if (direction === 'CW') {
-        	mes = mes+1;
-        	if (mes > 12) {
-        		mes = 1;
-        		ano = ano+1;
-        	}
-        } else if (direction === 'CCW') {
-            mes = mes-1;
-        	if (mes < 1) {
-        		mes = 12;
-        		ano = ano-1;
-        	}
-        }
-        pintaCalendario();
-    });
+
     
     
     
