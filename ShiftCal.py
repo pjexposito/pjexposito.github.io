@@ -1,12 +1,16 @@
 import sqlite3
-from calendar import monthrange 
+from calendar import monthrange
+import datetime 
+x = datetime.datetime.now()
+hora = x.strftime("%X")
+dia = x.strftime("%x")
 con = sqlite3.connect('/data/data/com.termux/files/home/storage/shared/ShiftCal/ShiftCal.db')
 
 cursorObj = con.cursor()
 cursorObj.execute('SELECT * FROM calendar,shifts WHERE calendar.cal_shift_id1 = shifts.shift_rowid ORDER BY calendar.cal_date')
 rows = cursorObj.fetchall()
 mes_anterior = 0
-datos = "{\"actualizado\":[\"12/12/12\"],\"main\":["
+datos = "{\"actualizado\":[\""+dia+"\"],\"main\":["
 
 for row in rows:
         mes = row[1][4:6]
