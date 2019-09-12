@@ -18,9 +18,25 @@ body {
     color: #ffffff;
 }
 
+#pie {
+    height: 39px;
+    margin-top: 40px;
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
+#actualizado {
+    height: 39px;
+    margin-top: 10px;
+    font-size: 14px;
+    color: rgb(255, 255, 255);
+	text-decoration: none;
+}
+
 #month {
     height: 39px;
-    margin-top: 25px;
+    margin-top: 15px;
     font-size: 30px;
     color: rgb(56, 224, 0);
 }
