@@ -22,6 +22,14 @@ con_numeros = 1,
 base_datos;
 posicion = 0;
 
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+
+
+
 
 function pintaCalendario() {
 	console.log(base_datos);
@@ -169,6 +177,48 @@ function anterior(){
 
 
 
+function getTouches(evt) {
+  return evt.touches ||             // browser API
+         evt.originalEvent.touches; // jQuery
+}                                                     
+
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            siguiente();
+        } else {
+            anterior();
+        }                       
+    } else {
+        if ( yDiff > 0 ) {
+            /* up swipe */ 
+        } else { 
+            /* down swipe */
+        }                                                                 
+    }
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+
+
+
 function descarga_datos() { 
 	console.log("Descargando...");
 	var xmlhttp = new XMLHttpRequest(),
@@ -186,7 +236,7 @@ function descarga_datos() {
       		//	 window.localStorage.setItem(base_datos.main[t].substring(2, 8),base_datos.main[t].substring(8));      	  			
       		//}
       		console.log("Descargado");
-
+			console.log(base_datos.actualizado[0]);
       		cierra();
             xmlhttp = null;
         } 
