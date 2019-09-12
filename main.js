@@ -32,7 +32,8 @@ var yDown = null;
 
 
 function pintaCalendario() {
-	console.log(base_datos);
+    console.log(base_datos);
+
     var today = new Date(),
         calendar = document.getElementById('calendar'),
         date, day, firstDay, lastDate, el, count, i, turnos, mes_str, turno_dia, ano_actual, mes_actual,
@@ -54,6 +55,8 @@ function pintaCalendario() {
 	
 	//turnos =  tizen.preference.getValue(ano+""+mes_str);
 	if (base_datos != null) {
+		var cabecera = document.getElementById('actualizado');
+    		cabecera.innerHTML=base_datos.actualizado[0]+" a las "+base_datos.actualizado[1];
 		for (var t in base_datos.main){
 			if ((ano+""+mes_str)==base_datos.main[t].substring(2, 8))
 			{
