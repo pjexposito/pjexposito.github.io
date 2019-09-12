@@ -1,0 +1,9 @@
+#!/bin/bash
+rm ./pjexposito.github.io/index.html
+python3 ShiftCal.py
+cd pjexposito.github.io
+git add --all
+git commit -m "Actualizado"
+git push -u origin master
+
+
