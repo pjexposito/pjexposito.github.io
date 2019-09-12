@@ -32,7 +32,9 @@ var yDown = null;
 
 
 function pintaCalendario() {
-	console.log(base_datos);
+    console.log(base_datos);
+    var cabecera = document.getElementById('actualizado');
+    cabecera.innerHTML=base_datos.actualizado[0]+" a las "+base_datos.actualizado[1];
     var today = new Date(),
         calendar = document.getElementById('calendar'),
         date, day, firstDay, lastDate, el, count, i, turnos, mes_str, turno_dia, ano_actual, mes_actual,
