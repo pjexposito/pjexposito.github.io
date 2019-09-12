@@ -1,4 +1,5 @@
 #!/bin/bash
+cd $HOME/pjexposito.github.io
 rm index.html
 python ShiftCal.py
 git add --all
