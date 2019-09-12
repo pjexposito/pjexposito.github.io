@@ -6,7 +6,7 @@ cursorObj = con.cursor()
 cursorObj.execute('SELECT * FROM calendar,shifts WHERE calendar.cal_shift_id1 = shifts.shift_rowid ORDER BY calendar.cal_date')
 rows = cursorObj.fetchall()
 mes_anterior = 0
-datos = "{\"main\":["
+datos = "{\"actualizado\":[\"12/12/12\"],\"main\":["
 
 for row in rows:
         mes = row[1][4:6]
