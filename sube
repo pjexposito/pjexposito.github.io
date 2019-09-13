@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/bash
 cd $HOME/pjexposito.github.io
 rm index.html
 python ShiftCal.py
