@@ -1,0 +1,66 @@
+#!/bin/bash
+
+# Menu Item
+URL=$1
+function main_menu
+{
+
+while :
+do
+	clear
+	echo " "
+	echo "-------------------------------------"
+	echo "            Menú principal           "
+	echo "-------------------------------------"
+	echo "[1] Descargar MP3"
+	echo "[2] Descargar video (mejor versión)"
+	echo "[3] Descargar video (max 480p)"
+	echo "[4] Mostrar formatos"
+	echo "[5] Salir"
+	echo "====================================="
+	echo "Selecciona una opción [1-5]: "
+	read m_menu
+	clear
+	case "$m_menu" in
+
+		1) option_1;;
+		2) option_2;;
+		3) option_3;;
+		4) option_4;;
+		5) exit 0;;
+		"") option_1;;
+	
+		*)  ;;
+	esac
+done
+}
+
+function option_1
+{
+    youtube-dl --no-mtime --extract-audio --audio-format mp3 --audio-quality 0 --add-metadata $URL
+    exit 0
+}
+
+function option_2
+{
+	youtube-dl --no-mtime -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' --add-metadata $URL
+	exit 0
+}
+
+function option_3
+{
+    youtube-dl --no-mtime -f "best[height<=720]" --add-metadata $URL
+    exit 0
+}
+
+function option_4
+{
+    youtube-dl -F $URL
+    echo Introduce el formato. Puede ser XXX+YYY:
+    read varname
+    youtube-dl --no-mtime -f $varname --add-metadata $URL
+    exit 0
+}
+
+main_menu
+
