@@ -1,0 +1,54 @@
+#!/data/data/com.termux/files/usr/bin/sh
+
+tipo_semanal()
+{
+	fecha=$(termux-dialog date -d "yyyy-MM-dd" -t "Selecciona una semana"|jq -r .text)
+	if [ "$fecha" = "" ]; then
+	    	
+		break
+	else
+		echo "Generando calendario ..."
+		python pdf.py $fecha semana
+		termux-open destination.pdf
+		break
+	fi
+
+}
+
+tipo_mensual()
+{
+	fecha=$(termux-dialog date -t "Selecciona un mes" -d "yyyy-MM-dd" |jq -r .text)
+	if [ "$fecha" = "" ]; then
+	    break
+	else
+		echo "Generando calendario ..."
+		python pdf.py $fecha mes
+		termux-open destination.pdf
+		break
+		
+	fi
+}
+
+tipo_anual()
+{
+	fecha=$(termux-dialog spinner -v "2017,2018,2019,2020,2021" -t "Selecciona un año"|jq -r .text)
+	if [ "$fecha" = "" ]; then
+	    break
+	else
+		echo "Generando calendario ..."
+		python pdf.py $fecha-1-1 ano
+		termux-open destination.pdf
+		break
+	fi
+}
+tipo=$(termux-dialog radio -v "Semanal, Mensual, Anual" -t "Selecciona el tipo de calendario" | jq -r .index)
+if [ "$tipo" = 0 ]; then
+    tipo_semanal
+elif [ "$tipo" = 1 ]; then
+    tipo_mensual
+elif [ "$tipo" = 2 ]; then
+    tipo_anual
+else
+        tipo_semanal
+fi
+
