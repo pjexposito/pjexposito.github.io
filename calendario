@@ -1,4 +1,6 @@
-#!/data/data/com.termux/files/usr/bin/sh
+#!/data/data/com.termux/files/usr/bin/bash
+
+cd $HOME/pjexposito.github.io
 
 tipo_semanal()
 {
@@ -49,6 +51,6 @@ elif [ "$tipo" = 1 ]; then
 elif [ "$tipo" = 2 ]; then
     tipo_anual
 else
-        tipo_semanal
+    tipo_semanal
 fi
 
