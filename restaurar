@@ -1,6 +1,6 @@
-echo Acepta el aviso para continuar...
+echo Acepta el aviso y pulsa Intro...
 termux-setup-storage 
-
+read
 #Descomenta las lineas para volcar copia de seguridad antigua
 #cd /data/data/com.termux/files
 #rm -rf home
@@ -42,7 +42,7 @@ L2hvbWUvc3RvcmFnZS9zaGFyZWQvWW91dHViZS8lKHRpdGxlKXMuJShleHQpcwo=' |  base64 --de
 
 cd
 #Esto es para el archivo backup
-echo 'IyEvZGF0YS9kYXRhL2NvbS50ZXJtdXgvZmlsZXMvdXNyL2Jpbi9zaApjZCAvZGF0YS9kYXRhL2NvbS50ZXJtdXgvZmlsZXMKdGFyIC16Y3ZmIC9zZGNhcmQvdGVybXV4LWJhY2t1cC50YXIuZ3ogaG9tZSB1c3IKZWNobyBDb3BpYSBjcmVhZGEgZW4gbGEgcmFpeiBkZWwgdGVsw6lmb25vCg==' | base64 --decode backup
+echo 'IyEvZGF0YS9kYXRhL2NvbS50ZXJtdXgvZmlsZXMvdXNyL2Jpbi9zaApjZCAvZGF0YS9kYXRhL2NvbS50ZXJtdXgvZmlsZXMKdGFyIC16Y3ZmIC9zZGNhcmQvdGVybXV4LWJhY2t1cC50YXIuZ3ogaG9tZSB1c3IKZWNobyBDb3BpYSBjcmVhZGEgZW4gbGEgcmFpeiBkZWwgdGVsw6lmb25vCg==' | base64 --decode > backup
 chmod +x backup
 echo
 echo Inicio completado
