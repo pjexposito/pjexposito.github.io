@@ -1,0 +1,1999 @@
+[
+    [
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Procesador de la maquina\n\nsysctl -n machdep.cpu.brand_string\nPor",
+            "systemTags": [],
+            "modificationDate": 1583330622,
+            "creationDate": 1519992620.820287,
+            "key": "99637a9a5b5d4b4fa3f878beb2921aec",
+            "version": 4,
+            "modifydate": 1583330622,
+            "createdate": 1519992620.820287,
+            "systemtags": []
+        },
+        {
+            "tags": [],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Welcome to Simplenote Mac!\n\nTo add a note, click the new note button with the plus symbol.\n\nTo remove a note, click the trash button.\n\nYou can search all your notes by typing in the search field above the note list.\n\nClick the tags button at the top-left to open the sidebar. You can add tags to a note at the bottom of the note editor, and then use the sidebar to help you stay organized.\n\nThere are more note options if you need them. You can add email addresses as tags to collaborate with people, or publish a note as a web page.\n\nUse Simplenote on your iPhone, iPad, Android device, or in your web browser at https://simplenote.com. Your notes will stay updated everywhere automatically.",
+            "systemTags": [],
+            "modificationDate": 1581501785.125373,
+            "creationDate": 1581501785.125375,
+            "key": "welcomeNote-Mac",
+            "version": 15,
+            "modifydate": 1581501785.125373,
+            "createdate": 1581501785.125375,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Arques\n\n59075861\nARQUES06",
+            "systemTags": [],
+            "modificationDate": 1582728881,
+            "creationDate": 1548147296,
+            "key": "d2e0c1d66f084b889c080917fdeae331",
+            "version": 7,
+            "modifydate": 1582728881,
+            "createdate": 1548147296,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Correo\n\nArea35: KMS10766 A1234567\n\nSPV21: KMS07449  1234567B\n\nArea34: KMS10732 A1234567\n\njefedivision21@elcorteingles.es\nDivison21.\n\n",
+            "systemTags": [],
+            "modificationDate": 1581689851,
+            "creationDate": 1520506308,
+            "key": "3232658261244a79a3d722a24ff8afa0",
+            "version": 40,
+            "modifydate": 1581689851,
+            "createdate": 1520506308,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Brave\n\n~/Library/Application Support/BraveSoftware",
+            "systemTags": [],
+            "modificationDate": 1581492771.4940329,
+            "creationDate": 1581492763.388039,
+            "key": "e18d16d3304540f8b7680451ea8cce17",
+            "version": 2,
+            "modifydate": 1581492771.4940329,
+            "createdate": 1581492763.388039,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Activar la opci\u00f3n de guardar DHCP router\n\nCuando te de el error, abre las herramientas de desarrollador del navegador (F12), ve a la pesta\u00f1a consola y pega estos comandos:\n\n$('#dhcpForm').scope().dhcpForm.$valid=true\n$('#dhcpForm').scope().dhcpForm.$invalid=false\nLuego te dejar\u00e1 guardar.",
+            "publishURL": "",
+            "modificationDate": 1581492763.387059,
+            "creationDate": 1576330995.18,
+            "key": "bbf4307f-121e-47a3-9663-f188256fa89b",
+            "version": 3,
+            "modifydate": 1581492763.387059,
+            "createdate": 1576330995.18,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Edenred\n\n6055",
+            "systemTags": [],
+            "modificationDate": 1576833149,
+            "creationDate": 1576833135,
+            "key": "5627978230e74e7c9d8b7742c922217d",
+            "version": 3,
+            "modifydate": 1576833149,
+            "createdate": 1576833135,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "FBI\n\nsudo fbi -a  --nocomments --noverbose -d /dev/fb0 -T 1 S29_0000.jpg\n\ncec-client | grep \" key \"\n\nsudo sh -c \"echo uinput >> /etc/modules\"\n\ncec-client | grep -o --line-buffered -P \" key\\s+\\K\\w+\" | while read line ; do echo Pulsado: \"$line\" ; done\n\ncec-client | grep -o --line-buffered -P \" key\\s+\\K\\w+\" | while read line ; do sudo python3 b.py  \"$line\" ; done\n\nfind /Users/pedro -type d -name '*amsu*'",
+            "systemTags": [],
+            "modificationDate": 1574534877.179157,
+            "creationDate": 1574369039.177623,
+            "key": "cd2f2d7e693f49848c413f117b6084ee",
+            "version": 7,
+            "modifydate": 1574534877.179157,
+            "createdate": 1574369039.177623,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash",
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Para configurar el programa de calendarios en Termux\n\nEs necesario descargar la carpeta desde Github\nA\u00f1adir a .bashrc un export PATH=$PATH:$HOME\nDejar los archivos sube y ShiftCal.py en la carpeta principal\nTambi\u00e9n hay que configurar las claves SSH tal y como aparece aqu\u00ed:\n\nhttps://help.github.com/en/articles/connecting-to-github-with-ssh",
+            "systemTags": [],
+            "modificationDate": 1574369039.175994,
+            "creationDate": 1568019890,
+            "key": "a4f0cabf4a454539b3490acb222745a1",
+            "version": 16,
+            "modifydate": 1574369039.175994,
+            "createdate": 1568019890,
+            "systemtags": []
+        },
+        {
+            "tags": [],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "C\u00e1mara Samsung \n\nPara usar VLC\n\nrtsp://admin:<password>@192.168.1.38/profile5/media.smp\n\nO as\u00ed\n\nrtsp://admin:12345678@192.168.1.218/profile5/media.smp\n\n\n\n\nO para usar el navegador web:\n\nhttp://192.168.1.218/cgi-bin/video.cgi?msubmenu=mjpg\n\n\n\nPara desbloquear:\n\ncurl 'http://<IP-OF-CAMERA>/classes/class_admin_privatekey.php' --data 'data=NEW%3B<NEW-PASSWORD>' \n\nPara lo anterior a mi me sirvi\u00f3 12345678\n\nPrimero puse \n\ncurl 'http://192.168.1.218/classes/class_admin_privatekey.php' --data 'data=aaaa'\n\nY luego, lo otro 12345678 como pass",
+            "systemTags": [],
+            "modificationDate": 1573936460.328014,
+            "creationDate": 1573936233.3196669,
+            "key": "717feeffecb249acb91762e5a385e83f",
+            "version": 10,
+            "modifydate": 1573936460.328014,
+            "createdate": 1573936233.3196669,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Descargar MacOS El Capitan\n\nhttp://updates-http.cdn-apple.com/2019/cert/061-41424-20191024-218af9ec-cf50-4516-9011-228c78eda3d2/InstallMacOSX.dmg",
+            "systemTags": [],
+            "modificationDate": 1573936233.317797,
+            "creationDate": 1573287526.411408,
+            "key": "f3cb708cf4ce4139b9ad57d19e328001",
+            "version": 3,
+            "modifydate": 1573936233.317797,
+            "createdate": 1573287526.411408,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Borja\n66219148\n7100",
+            "systemTags": [],
+            "modificationDate": 1572856273,
+            "creationDate": 1572856223,
+            "key": "f8782d4e419046e7a7ac4a77a2f45cb3",
+            "version": 6,
+            "modifydate": 1572856273,
+            "createdate": 1572856223,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Desbloquear un Word\n\n\nimport shutil, zipfile,os,random\n\n\ndef desbloquea(archivo):\n    temp_dir = \"./temp\"+str(random.randrange(1000))\n    filename, file_extension = os.path.splitext(archivo)\n    with zipfile.ZipFile(archivo,\"r\") as zip_ref:\n        zip_ref.extractall(temp_dir)\n    with open(temp_dir+'/word/settings.xml','r') as file:\n        filedata = file.read() \n        filedata = filedata.replace('enforcement=\\\"1\\\"','enforcement=\\\"0\\\"') \n    with open(temp_dir+'/word/settings.xml','w') as file:\n        file.write(filedata)\n    with open(temp_dir+'/word/document.xml','r') as file:\n        filedata = file.read()\n        filedata = filedata.replace('DIFUNDE LA PALABRA-','')\n        filedata = filedata.replace('Suscr\u00edbete a DeepL Pro para poder editar este documento.','')\n        filedata = filedata.replace('Entra en www.DeepL.com/pro para m\u00e1s informaci\u00f3n.','')\n    with open(temp_dir+'/word/document.xml','w') as file:\n        file.write(filedata)\n    shutil.make_archive(filename, 'zip', temp_dir)\n    os.rename(filename+\".zip\",filename+\"_unlock.docx\")\n    shutil.rmtree(temp_dir, ignore_errors=True)\n\n\ndef ls(ruta = os.getcwd()):\n    return [arch.name for arch in os.scandir(ruta) if arch.is_file()]\n\ndef main():\n    for item in ls():\n        filename, file_extension = os.path.splitext(item)\n        if file_extension == \".docx\":\n            print (\"Procesando archivo \"+item)\n            desbloquea (item)\n\nif __name__ == \"__main__\":\n\tmain()\n\n\n\n\n\n---------------- OTRO ----------\n\n\n#! python3 \nimport docx \nfrom os import path, scandir, getcwd\n\ndef getText(filename):\n     doc = docx.Document(filename)\n     fullText = []\n     for para in doc.paragraphs:\n         fullText.append(para.text)\n     return '\\n'.join(fullText) \n\ndef ls(ruta = getcwd()):\n     return [arch.name for arch in scandir(ruta) if arch.is_file()]\n\ndef desbloquea(archivo):\n    filename, file_extension = path.splitext(archivo)\n    doc = docx.Document()\n    doc.add_paragraph(getText(archivo))\n    doc.save(filename+\"_desbloqueado.docx\")\n\nfor item in ls():\n    filename, file_extension = path.splitext(item)\n    if file_extension == \".docx\":\n       desbloquea (item)\n\n\n----------- SEGUNDA VERSI\u00d3N ------------\n\n#! python3 \nimport docx \nfrom os import path, scandir, getcwd\n\ndef getText(filename):\n     doc = docx.Document(filename)\n     fullText = []\n     for para in doc.paragraphs:\n         fullText.append(para.text)\n     return '\\n'.join(fullText) \n\ndef ls(ruta = getcwd()):\n     return [arch.name for arch in scandir(ruta) if arch.is_file()]\n\ndef get_para_data(output_doc_name, paragraph):\n    \"\"\"\n    Write the run to the new file and then set its font, bold, alignment, color etc. data.\n    \"\"\"\n\n    output_para = output_doc_name.add_paragraph()\n    for run in paragraph.runs:\n        output_run = output_para.add_run(run.text)\n        # Run's bold data\n        output_run.bold = run.bold\n        # Run's italic data\n        output_run.italic = run.italic\n        # Run's underline data\n        output_run.underline = run.underline\n        # Run's color data\n        output_run.font.color.rgb = run.font.color.rgb\n        # Run's font data\n        output_run.style.name = run.style.name\n    # Paragraph's alignment data\n    output_para.paragraph_format.alignment = paragraph.paragraph_format.alignment\n\ndef desbloquea(archivo):\n    filename, file_extension = path.splitext(archivo)\n    input_doc = docx.Document(archivo)\n    output_doc = docx.Document()\n    for para in input_doc.paragraphs:\n        get_para_data(output_doc, para)    \n    output_doc.save(filename+\"_desbloqueado.docx\")\n\nfor item in ls():\n    filename, file_extension = path.splitext(item)\n    if file_extension == \".docx\":\n       desbloquea (item)\n\n",
+            "systemTags": [],
+            "modificationDate": 1571090690.286094,
+            "creationDate": 1571053615,
+            "key": "cb4feefe810d41b28f784ff6d0053e04",
+            "version": 5,
+            "modifydate": 1571090690.286094,
+            "createdate": 1571053615,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Saber qu\u00e9 carpetas ocupan m\u00e1s espacio\n\ndu -ha | sort -k1hr | head -n 10\n",
+            "systemTags": [],
+            "modificationDate": 1570953735.338882,
+            "creationDate": 1570953720.8197808,
+            "key": "c131b45481634100bf08d20b44374abb",
+            "version": 2,
+            "modifydate": 1570953735.338882,
+            "createdate": 1570953720.8197808,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash",
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Temperatura Raspberry Pi\n\n/opt/vc/bin/vcgencmd measure_temp\n",
+            "systemTags": [],
+            "modificationDate": 1570953720.8174791,
+            "creationDate": 1519992474.11546,
+            "key": "0cdde0f156f74629be20903fa0d57ccd",
+            "version": 15,
+            "modifydate": 1570953720.8174791,
+            "createdate": 1519992474.11546,
+            "systemtags": []
+        },
+        {
+            "tags": [],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Semanas en un mes\n\nlen(calendar.monthcalendar(2019,11))",
+            "systemTags": [],
+            "modificationDate": 1570642828.557088,
+            "creationDate": 1569932469,
+            "key": "6fa1b28df13f43f884bfa353cd758502",
+            "version": 3,
+            "modifydate": 1570642828.557088,
+            "createdate": 1569932469,
+            "systemtags": []
+        },
+        {
+            "tags": [],
+            "deleted": true,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "outputStream.close()\n\nExample for Python 3.x:\n\nfrom PyPDF2 import PdfFileWriter, PdfFileReader import io from reportlab.pdfgen import canvas from reportlab.lib.pagesizes import letter packet = io.BytesIO() # create a new PDF with Reportlab can = canvas.Canvas(packet, pagesize=letter) can.drawString(10, 100, \"Hello world\") can.save() #move to the beginning of the StringIO buffer packet.seek(0) new_pdf = PdfFileReader(packet) # read your existing PDF existing_pdf = PdfFileReader(open(\"original.pdf\", \"rb\")) output = PdfFileWriter() # add the \"watermark\" (which is the new pdf) on the existing page page = existing_pdf.getPage(0) page.mergePage(new_pdf.getPage(0)) output.addPage(page) # finally, write \"output\" to a real file outputStream = open(\"destination.pdf\", \"wb\") output.write(outputStream) outputStream.close()",
+            "systemTags": [],
+            "modificationDate": 1570454561,
+            "creationDate": 1570454551,
+            "key": "b73ff9bcfd63475291a649d68e52738a",
+            "version": 3,
+            "modifydate": 1570454561,
+            "createdate": 1570454551,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "MPX=$(termux-dialog radio -v \"MP3,MP4\" -t \"Download as...\" | jq -r .index)\n\nif [ \"$MPX\" = 0 ]; then\n    youtube-dl -x --audio-format \"mp3\" $(termux-clipboard-get)\nelif [ \"$MPX\" = 1 ]; then\n    youtube-dl -f \"mp4\" $(termux-clipboard-get)\nelse\n    echo \"The script failed?\"\nfi\n\n\n| sed -n '/format code/,$p'| sed -n '/webm/!p' | awk '{print $1,\"\\011\",$2,\"\\011\",$3}'",
+            "systemTags": [],
+            "modificationDate": 1569967439.913332,
+            "creationDate": 1569868362.312665,
+            "key": "310ab012afea449ba382792e11bbda34",
+            "version": 3,
+            "modifydate": 1569967439.913332,
+            "createdate": 1569868362.312665,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Crear men\u00fa de Youtube-dl en Bash\n\n#!/bin/bash\n\n# Menu Item\nURL=$1\nfunction main_menu\n{\n\nwhile :\ndo\n\tclear\n\techo \" \"\n\techo \"-------------------------------------\"\n\techo \"            Men\u00fa principal           \"\n\techo \"-------------------------------------\"\n\techo \"[1] Descargar MP3\"\n\techo \"[2] Descargar video (mejor versi\u00f3n)\"\n\techo \"[3] Descargar video (max 480p)\"\n\techo \"[4] Mostrar formatos\"\n\techo \"[5] Exit\"\n\techo \"=====================================\"\n\techo \"Selecciona una opci\u00f3n [1-5]: \"\n\tread m_menu\n\tclear\n\tcase \"$m_menu\" in\n\n\t\t1) option_1;;\n\t\t2) option_2;;\n\t\t3) option_3;;\n\t\t4) option_4;;\n\t\t5) exit 0;;\n\t\t\"\") option_1;;\n\t\n\t\t*)  ;;\n\tesac\ndone\n}\n\nfunction option_1\n{\n    youtube-dl --no-mtime -o '%(title)s.%(ext)s' --extract-audio --audio-format mp3 --audio-quality 0 --add-metadata $URL\n\tbreak\n}\n\nfunction option_2\n{\n\tyoutube-dl --no-mtime -f 'bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best' --add-metadata $URL\n\tbreak\n}\n\nfunction option_3\n{\n    youtube-dl --no-mtime -o '%(title)s.%(ext)s' -f \"best[height<=720]\" --add-metadata $URL\n\tbreak\n}\n\nfunction option_4\n{\n    youtube-dl -F $URL | sed -n '/format code/,$p'| sed -n '/webm/!p' | awk '{print $1,\"\\011\",$2,\"\\011\",$3}'\n    echo Introduce el formato. Puede ser XXX+YYY:\n    read varname\n    youtube-dl --no-mtime -f $varname --add-metadata $URL\n    break\n}\n\nmain_menu\n",
+            "systemTags": [],
+            "modificationDate": 1569967395.095113,
+            "creationDate": 1569005086.803331,
+            "key": "64e709884c1945dd871656471fe36e41",
+            "version": 49,
+            "modifydate": 1569967395.095113,
+            "createdate": 1569005086.803331,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": 1,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Foro\n\nhttps://forum.odroid.com/viewtopic.php?p=269282#p269282\nVersi\u00f3n con screenshot y con XML multi emulador\n\nhttps://github.com/ducalex/odroid-go-firmware-multi\nMulti firmware\n\nhttps://forum.odroid.com/viewtopic.php?f=158&t=36293\nUpdate de pantalla\n\nhttps://forum.odroid.com/viewtopic.php?f=158&t=35874\nScript para ART\n\n\n\nHola a todos.\n\nNo se si habr\u00e1 aun mucha gente que use la Go, pero hay unas cuantas novedades que merecen la pena:\n\n- En primer lugar, y aunque la noticia es algo antigua, existe un firmware que permite iniciar distintas aplicaciones sin tener que borrar la flash y volver a grabarla. S\u00f3lo modifica la tabla de particiones, por lo que el proceso para cargar distintos emuladores y programas es casi instant\u00e1neo.\nSe puede descargar desde aqu\u00ed: https://github.com/ducalex/odroid-go-firmware-multi\n\n- Por otro lado, se ha lanzado hace nada (de hecho, aun est\u00e1 en desarrollo) un frontend para varios emuladores basado en el trabajo de pelle7. Se trata de [url=https://forum.odroid.com/viewtopic.php?p=269282#p269282]Go Emulauncher[/url]. Es un archivo de casi 11 megas que incluye emuladores de NES, GB, GBC, GG, SMS, C64, Coleco, Lynx, Atari, ZX Spectrum y PCEngine. Permite mostrar el artwork de la rom directamente en la pantalla de selecci\u00f3n y muestra un men\u00fa ingame para varias cosas como la escala, el sonido, la paleta e incluso grabar y cargar partida de forma visual. \nPara a\u00f1adir nuevo artwork cre\u00e9 un par de scripts que colgu\u00e9 [url=https://forum.odroid.com/viewtopic.php?f=158&t=35874]aqu\u00ed[/url]. Son muy cutres pero permiten transformar artwork de distintos sistemas al formato ART que usa el frontend.\n\n- Y por \u00faltimo, la raz\u00f3n por la que he reflotado el post. Por fin tenemos \"60 fps\" en la Go. Lo pongo entre comillas por que como sab\u00e9is la pantalla s\u00f3lo es capaz de refrescar a 30 fps. Pero han conseguido mediante actualizaciones parciales de pantalla lograr este efecto de refresco. Funciona realmente bien y los scroll no se notan tan bruscos como en versiones anteriores. Todo el trabajo se puede ver [url=https://forum.odroid.com/viewtopic.php?f=158&t=36293]en este post[/url]. Por cierto, si los juegos van lentos, es necesario reiniciar la GO y subir el brillo al m\u00e1ximo para que desaparezca el lag (el brillo se sube con Start+UP). Para m\u00ed el \u00fanico problema es que se pierde el formato 1:1 y la pantalla esta algo estirada, pero se puede jugar perfectamente.\n\nY creo eso es todo por ahora. Aun hay algunas personas trabajando en la m\u00e1quina y se han conseguido cosas increibles en el ESP32. Si hay novedades, seguir\u00e9 informando.\n\n",
+            "systemTags": [],
+            "modificationDate": 1569847137.240062,
+            "creationDate": 1569838737,
+            "key": "fd779864df1c4affbd06fb8517e63243",
+            "version": 13,
+            "modifydate": 1569847137.240062,
+            "createdate": 1569838737,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Barra de progreso en Bash\n\nCrear un script llamado contador con este contenido:\n\n#!/bin/bash\nfor (( c=0; c<=100; c=c+5 ))\ndo\n   echo \"$c\"\n   sleep .5\n\ndone\n\nLuego, se usa la siguiente orden:\n\n./contador | dialog --gauge \"Please wait\" 10 70 0\n\nOtras notas:\n\nawk '{print int($2)}'\n\ngrep '[0-9]*%'\n\n./contador | grep --line-buffered '[0-9]*%' | awk  -F\" \"  '{print int($2)}' | dialog --gauge \"Please wait\" 10 70 0\n\nEste funciona\n./contador | awk  -F\" \"  '{print int($2);system(\"\")}' | dialog --gauge \"Please wait\" 10 70 0\n\n\nyoutube-dl --no-mtime -o '%(title)s.%(ext)s' --extract-audio --audio-format mp3 --audio-quality 0 --add-metadata  --newline https://www.youtube.com/watch?v=BDd9dejw2HY | grep --line-buffered '[0-9]*%' | awk  -F\" \"  '{print int($2);system(\"\")}' | dialog --gauge \"Please wait\" 10 70 0",
+            "systemTags": [],
+            "modificationDate": 1569422880.8773808,
+            "creationDate": 1569390342.289912,
+            "key": "b25c61d1122f49b084c9d83bc3e03419",
+            "version": 11,
+            "modifydate": 1569422880.8773808,
+            "createdate": 1569390342.289912,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Sacar Picking\n\nEn Nexo, entrar con 53106431.\nSeleccionar la opci\u00f3n Picking y volver a logearse con 53106431.\nSeleccionar los departamentos y en el listado imprimir s\u00f3lo los de **color verde** y que lleven el icono del **carro y la flecha**.\nNo imprimir los que lleven carro y n\u00famero.\n",
+            "systemTags": [],
+            "modificationDate": 1567596398,
+            "creationDate": 1567596143,
+            "key": "8f08bea9210d408c84bfc43786b72b83",
+            "version": 13,
+            "modifydate": 1567596398,
+            "createdate": 1567596143,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Problemas con Linux on Dex\n\nIn a terminal:\n\ndpkg -l linux-generic\nnote down the 'Version' number of the latest installed kernel package.\n\nCreate a file called /etc/apt/preferences:\n\nsudo vi /etc/apt/preferences\ninsert the following into the file:\n\nPackage: linux-generic linux-headers-generic linux-image-generic linux-restricted-modules-generic\nPin: version <kernel version number from above>\nPin-Priority: 1001\nRun an apt update:\n\nsudo apt-get update\nMake sure the kernel package is pinned.\n\nsudo apt-cache policy\nThen run an apt update and upgrade:\n\nsudo apt update && sudo apt upgrade\nYou will see some errors potentially, just hit enter to work through the error.\n\nAfter it is finished, run apt update and upgrade again and it should be clean.\n\nI would also run:\n\nsudo purge-old-kernels\nand then\n\nsudo apt autoremove",
+            "systemTags": [],
+            "modificationDate": 1567188518.259121,
+            "creationDate": 1567188508.339456,
+            "key": "1a758b71ab8f4905abffb3fbcc287c55",
+            "version": 2,
+            "modifydate": 1567188518.259121,
+            "createdate": 1567188508.339456,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Hacer que Linux parezca MacOS\n\nhttps://geekland.eu/usar-menu-global-debian-xfce/",
+            "publishURL": "",
+            "modificationDate": 1567188508.338395,
+            "creationDate": 1565375402.001,
+            "key": "56108600c1fd12435426a8b3f908716e",
+            "version": 3,
+            "modifydate": 1567188508.338395,
+            "createdate": 1565375402.001,
+            "systemtags": []
+        },
+        {
+            "tags": [],
+            "deleted": true,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Te damos la bienvenida a Simplenote para Android\nAbre este documento para leer las instrucciones.\n\nPara crear una nota nueva, toca el bot\u00f3n azul \"A\u00f1adir nota\".\n\nPara buscar en tus notas, toca el bot\u00f3n de buscar que hay en la barra de acciones y especifica el texto que quieras. Simplenote te mostrar\u00e1 los resultados encontrados al instante.\n\n\u00bfTienes una nota muy importante? Toca el bot\u00f3n de fijar mientras la visualizas para fijarla en la parte superior de lista.\n\nUsa las etiquetas para organizar las notas f\u00e1cilmente. Tambi\u00e9n puedes a\u00f1adir una direcci\u00f3n de correo electr\u00f3nico como etiqueta para compartir una nota con otro usuario.\n\nComparte las notas con otras aplicaciones para Android solo con tocar el bot\u00f3n de compartir de la barra de herramientas.\n\nLas notas que se eliminan se env\u00edan a la papelera. Si quieres puedes restaurar la nota o vaciar la papelera para deshacerte de ella de forma permanente.\n\nPuedes acceder a tus notas en la web y en los dispositivos que tengas. Visita http://simplenote.com para empezar a usarla.\n\nEsperamos que disfrutes de Simplenote.",
+            "systemTags": [],
+            "modificationDate": 1567063413,
+            "creationDate": 1566943296,
+            "key": "welcome-android",
+            "version": 9,
+            "modifydate": 1567063413,
+            "createdate": 1566943296,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Cajas\n\n1067\n",
+            "publishURL": "",
+            "modificationDate": 1562686310,
+            "creationDate": 1509983700.0,
+            "key": "001abeaec30b11e7b8a8c9cea5908169",
+            "version": 7,
+            "modifydate": 1562686310,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Juegos de PSX:\n\n-Battle Arena Toshinden\n-Cool Boarders 2 \n-Destruction Derby\n-Final Fantasy VII (la versi\u00f3n PAL/Espa\u00f1a, que es la que tengo)\n-Kula World\n-Klonoa\n-Tombi!\n-Metal Gear Solid (tambi\u00e9n en espa\u00f1ol)\n-Mr. Driller \n-Oddworld: Abe's Oddysee (en espa\u00f1ol, tambi\u00e9n)\n-Rayman \n-Resident Evil\u2122 Director's Cut\n-Vib Ribbon\n-R4 Ridge Racer Type 4\n-Super Puzzle Fighter II Turbo\n-Crash Team Racing\n-Tekken 3 (de este he usado la versi\u00f3n japonesa; fue mi primer juego no PAL de PSX y le tengo especial cari\u00f1o)\n-Gran Turismo 2 - The Real Driving Simulator (s\u00f3lo disco Arcade)\n-Pandemonium\n-Micro Machines V3 (este juego soporta 4 jugadores con 2 mandos)\n-Pocket Fighter\n-Gunner's Heaven\n-Crash Bandicoot 3 - Warped",
+            "systemTags": [],
+            "modificationDate": 1560452678.360529,
+            "creationDate": 1560452670.6963692,
+            "key": "534b4cf084c147948cea379a73d93cc3",
+            "version": 2,
+            "modifydate": 1560452678.360529,
+            "createdate": 1560452670.6963692,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas",
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Comandos de voz para Google Now\n\nTiempo: \u00bfQu\u00e9 tiempo va a hacer ma\u00f1ana por la ma\u00f1ana?\nSitios: \u00bfD\u00f3nde est\u00e1 la gasolinera m\u00e1s cercana?\nEstado del vuelo: \u00bfCu\u00e1ndo sale el vuelo 900 de United Airlinest?\nHora: \u00bfQu\u00e9 hora es en Par\u00eds?\nEventos: \u00bfA qu\u00e9 hora se pone el sol?\nMatem\u00e1ticas: \u00bfCu\u00e1l es la ra\u00edz cuadrada de 1547?\nTraducci\u00f3n: \u00bfC\u00f3mo se dice hola en ingl\u00e9s?\nDeportes: \u00bfCuando juega el Sevilla?\nFinanzas: \u00bfCu\u00e1l es la situaci\u00f3n del S&P 500 hoy?\nCuriosidades: \u00bfCu\u00e1l es la altura del edificio m\u00e1s alto del mundo?\nConversiones: \u00bfCu\u00e1ntos d\u00f3lares son 1000 euros?\nIm\u00e1genes: Ver im\u00e1genes del Parque Alamillo\nAbrir: Abrir Gmail\nCrear un evento de calendario: Crear un evento de calendario: ir de compras, ma\u00f1ana a las 4 p.m.\nMapa de: Mapa del Parque Alamillo, Sevilla\nC\u00f3mo llegar a: C\u00f3mo llegar a Avenida Andaluc\u00eda 8, Sevilla\nPublicar en Google+: Publicar en Google+ Me voy de viaje.\n\u00bfCu\u00e1l es esta canci\u00f3n?: Cuando oigas una canci\u00f3n, di \u00bfCu\u00e1l es esta canci\u00f3n?.\nEscanear un c\u00f3digo de barras: Decir \u201cEscanear un c\u00f3digo de barras\u201d y mantener el c\u00f3digo de barras frente a la c\u00e1mara del dispositivo.\nIr a: Ir a Google.com\nEnviar correo: Enviar email a Josu\u00e9, asunto, reuni\u00f3n, mensaje, esta noche tenemos una reuni\u00f3n.\nRecordatorio: Recordatorio: no olvidar comprar pan.\nEstablecer alarma: Establecer alarma a las 7:45, etiqueta, sacar ropa de la lavadora.\nEscuchar: Escuchar: Here comes the sun",
+            "publishURL": "",
+            "modificationDate": 1560452670.694624,
+            "creationDate": 1391366772.45,
+            "key": "a77a1287e091ab1f1c832ea994fce47f",
+            "version": 18,
+            "modifydate": 1560452670.694624,
+            "createdate": 1391366772.45,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Plan comercial\n\nEst\u00e1 en comunicados",
+            "systemTags": [],
+            "modificationDate": 1555750819,
+            "creationDate": 1555750802,
+            "key": "745b21c8bea6487a8ab5efddd4f187cd",
+            "version": 3,
+            "modifydate": 1555750819,
+            "createdate": 1555750802,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Crear pedidos SAP\n\nDesde la aplicaci\u00f3n SAP nos vamos a Gesti\u00f3n de pedidos.\n\nDeben rellenarse los campos de centro y departamento, as\u00ed como el proveedor. Hay que tener en cuenta que el centro siempre ser\u00e1 813e y que el proveedor debe empezar con 1 y no con 0.\n\nCuando se a\u00f1ade la l\u00ednea del producto que se pide deben a\u00f1adirse en realidad dos l\u00edneas. En la primera se pone en la columna \"Posici\u00f3n\" se debe poner \"10\" (sin comillas).\nEn esa fila se rellenan los campos normalmente (b\u00e1sicamente se pone el material y las unidades).\nA continuaci\u00f3n se crea una nueva fila y se pone como posici\u00f3n \"11\". Se rellenan los mismos campos que en la fila anterior y se rellenan dos campos nuevos. En la columna posici\u00f3n se pone \"10\" y en la siguiente columna, \"z\" (siempre sin comillas).\n\nLuego, en \"Detalles de posici\u00f3n\" de la segunda fila se debe poner como centro e813e (con dos e).\n\nPara terminar, en Cabecera, dentro de datos de cliente se debe pulsar el bot\u00f3n \"Coste tarifa PVP\" y ya darle a \"Grabar\" para finalizar.",
+            "publishURL": "",
+            "modificationDate": 1555747507.485,
+            "creationDate": 1555746669.689,
+            "key": "9dccd36aabacef8a6ac51fb88016ba45",
+            "version": 22,
+            "modifydate": 1555747507.485,
+            "createdate": 1555746669.689,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "r0010referencia",
+            "systemTags": [],
+            "modificationDate": 1555583589,
+            "creationDate": 1555583573,
+            "key": "b259508ec81f44bea4c2e73f663fe10f",
+            "version": 3,
+            "modifydate": 1555583589,
+            "createdate": 1555583573,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Tel\u00e9fono de emergencias graves\n\n8989\n\nSolo para incendios o cosas muy graves\n",
+            "systemTags": [],
+            "modificationDate": 1553788161,
+            "creationDate": 1553788043,
+            "key": "8cc9b8ab76244b52a41620aa16693e88",
+            "version": 14,
+            "modifydate": 1553788161,
+            "createdate": 1553788043,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Evitar tener que meter contrase\u00f1a en sesi\u00f3n SSH\n\nEn el mac teclear \"ssh-keygen\"\n\nLuego, ssh-copy-id pi@192.168.1.100\n\n",
+            "systemTags": [],
+            "modificationDate": 1549790231.839257,
+            "creationDate": 1549790168.3159719,
+            "key": "7de53a8804c64eee8eb140428cfe609d",
+            "version": 6,
+            "modifydate": 1549790231.839257,
+            "createdate": 1549790168.3159719,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Pantalla TFT\n\nThis setting in /boot/config.txt\ndtoverlay=tft35a:rotate=270\n\nand\n\n/etc/X11/xorg.conf.d/99-calibration.conf\nOption \"InvertY\" \"true\"\nOption \"InvertX\" \"true\"\n\nhttps://github.com/Elecrow-keen/Elecrow-LCD5/wiki/How-to-Install-Soft-Keyboard\n\n\ncmake -DILI9486=ON -DGPIO_TFT_DATA_CONTROL=24 -DGPIO_TFT_RESET_PIN=25 -DUSE_DMA_TRANSFERS=OFF -DSPI_BUS_CLOCK_DIVISOR=14 -DDISPLAY_ROTATE_180_DEGREES=ON ..\n",
+            "systemTags": [],
+            "modificationDate": 1549790168.314914,
+            "creationDate": 1534060690.076558,
+            "key": "7e407e4c2a8540909690d2affc000026",
+            "version": 6,
+            "modifydate": 1549790168.314914,
+            "createdate": 1534060690.076558,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Cierre gen\u00e9rico\n\n3939",
+            "systemTags": [],
+            "modificationDate": 1547585903,
+            "creationDate": 1547585892,
+            "key": "5b00e9701da14d76ad5b8ed82217dcb1",
+            "version": 2,
+            "modifydate": 1547585903,
+            "createdate": 1547585892,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Carteleria ECI\n\n0008 Primera planta  \n0007  \n0009\n0030 Segunda  \n0001 Despacho  \n0047 Ortega\n0022 Planta baja\n\nhttp://portalgrupo.elcorteingles.int/jcarteleria/carteleria/ControlCarteleria?\n\nA4 LEF",
+            "publishURL": "",
+            "modificationDate": 1543319646,
+            "creationDate": 1509983700.0,
+            "key": "f7bbe71cc30a11e7bad401ff0373eac8",
+            "version": 26,
+            "modifydate": 1543319646,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Pass SyS\nSYSECI813",
+            "systemTags": [],
+            "modificationDate": 1537442093,
+            "creationDate": 1537442027,
+            "key": "49b81e4897474b49abb263ea93d3875c",
+            "version": 6,
+            "modifydate": 1537442093,
+            "createdate": 1537442027,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Coger tel\u00e9fono que est\u00e1 sonando\n754",
+            "systemTags": [],
+            "modificationDate": 1533020751,
+            "creationDate": 1533020722,
+            "key": "bdf222e75e544f41af132555f0ddd15d",
+            "version": 4,
+            "modifydate": 1533020751,
+            "createdate": 1533020722,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Reiniciar SMC, NVRAM\n\nSMC: Shift + Control + Opci\u00f3n (ALT) (de la izquierda)\n\nNVRAM: Cmd+Alt+P+R\n\nArranque seguro: Shift durante el arranque.",
+            "publishURL": "",
+            "modificationDate": 1531385498,
+            "creationDate": 1391366561.559,
+            "key": "4c7aac04ccfe46d5306ee3c344533585",
+            "version": 14,
+            "modifydate": 1531385498,
+            "createdate": 1391366561.559,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Desinstalar aplicaciones desde l\u00ednea de comandos\n\nEjecutar el comando WMIC\n\nEscribir \"product get name\" para que aparezca una lista con todas las aplicaciones instaladas\n\nEjecutar product where name=\"\" call uninstall para desinstalarlo la aplicaci\u00f3n. \n\nPor ejemplo:\n\nproduct where name=\"Adobe Reader 9\" call uninstall\n",
+            "publishURL": "",
+            "modificationDate": 1527188557.255,
+            "creationDate": 1527188467.1,
+            "key": "a84abef9749358aa4d1d3fd7228a6bfa",
+            "version": 7,
+            "modifydate": 1527188557.255,
+            "createdate": 1527188467.1,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Desinstalar aplicaciones de Android\n\nadb shell\npm list packages | grep \"nombre del OEM/Operador/Aplicaci\u00f3n\"\npm uninstall -k --user 0 \"nombre paquete de la aplicaci\u00f3n\"",
+            "systemTags": [],
+            "modificationDate": 1526933374,
+            "creationDate": 1526933332,
+            "key": "8eecf73517184ca0beac01f16b173b6b",
+            "version": 7,
+            "modifydate": 1526933374,
+            "createdate": 1526933332,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Procesador del Mac al 100%\n\nyes > /dev/null",
+            "systemTags": [],
+            "modificationDate": 1526927378,
+            "creationDate": 1526927359,
+            "key": "0930e5128a484b378b2c5611717554c3",
+            "version": 4,
+            "modifydate": 1526927378,
+            "createdate": 1526927359,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Reiniciar iPhone\n\niPhone X/8/8 Plus:\u00a0Presiona y suelta el bot\u00f3n de Subir Volumen. Luego, presiona y suelta el bot\u00f3n de Bajar Volumen. Enseguida, mant\u00e9n presionado el bot\u00f3n de Suspender/Despertar hasta que el iPhone se reinicie.\n\niPhone 7/ 7 Plus:\u00a0Manten presionado el bot\u00f3n de Suspender/Despertar al tiempo del bot\u00f3n de Bajar Volumen.\n\niPhone 4/5/6:\u00a0Manten presionado el bot\u00f3n de Suspender/Despertar al tiempo del bot\u00f3n de Inicio.",
+            "systemTags": [],
+            "modificationDate": 1526287881,
+            "creationDate": 1526287861,
+            "key": "d9144fa976eb49c0a9edf6d9399d1866",
+            "version": 4,
+            "modifydate": 1526287881,
+            "createdate": 1526287861,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "HTTP f\u00e1cil   \n\nhttps://github.com/requests/requests",
+            "publishURL": "",
+            "modificationDate": 1525941361.59,
+            "creationDate": 1525941353.107,
+            "key": "c7f6ce82360c8c8fbeaf005baa2b6d25",
+            "version": 2,
+            "modifydate": 1525941361.59,
+            "createdate": 1525941353.107,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Avisos mantenimiento\n\nt0440mx3\n\nELECTRONICA. JUANJO. PROBLEMA",
+            "systemTags": [],
+            "modificationDate": 1525898740.4160519,
+            "creationDate": 1520405676.0015612,
+            "key": "6cebda360fbc430b8130ea8c40b69fd4",
+            "version": 8,
+            "modifydate": 1525898740.4160519,
+            "createdate": 1520405676.0015612,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Archivos ocultos Mac\n\nCMD+Shift+.\n\no\n\n\u2318\u21e7.",
+            "systemTags": [],
+            "modificationDate": 1525332493,
+            "creationDate": 1525332425,
+            "key": "146a8e2123234f5b994b50904bbe107a",
+            "version": 8,
+            "modifydate": 1525332493,
+            "createdate": 1525332425,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Jos\u00e9 Rivera\n\nanrila1@telefonica.net\n37372246",
+            "systemTags": [],
+            "modificationDate": 1525255338,
+            "creationDate": 1525255309,
+            "key": "b560cbc488be4768a778c3e469ff626f",
+            "version": 2,
+            "modifydate": 1525255338,
+            "createdate": 1525255309,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Compatibilidad de Wacom\n\nhttps://wacom.com/comp",
+            "systemTags": [],
+            "modificationDate": 1523026555,
+            "creationDate": 1523026498,
+            "key": "2915bfbbb6df46b0a8a91333fe301264",
+            "version": 3,
+            "modifydate": 1523026555,
+            "createdate": 1523026498,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Impresi\u00f3n3D"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Rueda dentada Lego\n\nhttps://www.thingiverse.com/thing:146289,",
+            "systemTags": [],
+            "modificationDate": 1521823195,
+            "creationDate": 1521738493.412928,
+            "key": "d79f2b1cc0ee4a2897020856b1ca7962",
+            "version": 9,
+            "modifydate": 1521823195,
+            "createdate": 1521738493.412928,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "No escribir .DS_Store en USB y red\n\nRed:\n\ndefaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true\n\n\nUSB:\n\ndefaults write com.apple.desktopservices DSDontWriteUSBStores -bool true\n\n",
+            "systemTags": [],
+            "modificationDate": 1521787908.8745852,
+            "creationDate": 1521787883.297789,
+            "key": "856350ef38c54193b04c778d4a72921a",
+            "version": 3,
+            "modifydate": 1521787908.8745852,
+            "createdate": 1521787883.297789,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Impresi\u00f3n3D"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Rack Technic largo\n\nhttps://www.thingiverse.com/thing:1816048",
+            "systemTags": [],
+            "modificationDate": 1521738849.7247581,
+            "creationDate": 1521738841.3200321,
+            "key": "8d93401171984c3f8cc1d5edecefe11f",
+            "version": 3,
+            "modifydate": 1521738849.7247581,
+            "createdate": 1521738841.3200321,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Impresi\u00f3n3D"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Junta Technic\n\nhttps://www.thingiverse.com/thing:2739261",
+            "systemTags": [],
+            "modificationDate": 1521738841.3195338,
+            "creationDate": 1521738820.947945,
+            "key": "437a5d6676be44239030a40deae07bb8",
+            "version": 4,
+            "modifydate": 1521738841.3195338,
+            "createdate": 1521738820.947945,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Impresi\u00f3n3D"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Rack Technic\n\nhttps://www.thingiverse.com/thing:1816044",
+            "systemTags": [],
+            "modificationDate": 1521738820.9474502,
+            "creationDate": 1521738804.711551,
+            "key": "2038789ecbdc46df8d0a4b81551329f2",
+            "version": 4,
+            "modifydate": 1521738820.9474502,
+            "createdate": 1521738804.711551,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Impresi\u00f3n3D"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Muchas piezas Technic\n\nhttps://www.thingiverse.com/thing:2765212/#files",
+            "systemTags": [],
+            "modificationDate": 1521738804.711036,
+            "creationDate": 1521738774.666119,
+            "key": "b077db7796e04e938b09e345089eebc2",
+            "version": 7,
+            "modifydate": 1521738804.711036,
+            "createdate": 1521738774.666119,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Desinstalar plugins Octoprint\n\n/home/pi/oprint/bin/python -m pip uninstall --yes TouchUI\n",
+            "systemTags": [],
+            "modificationDate": 1521738599.557641,
+            "creationDate": 1519993000.237595,
+            "key": "bce04a2caa1c4571820cd09c0ca987b6",
+            "version": 7,
+            "modifydate": 1521738599.557641,
+            "createdate": 1519993000.237595,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas",
+                "Bash",
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Seleccionar m\u00fasica en Codi\n\nhttp://192.168.0.100:8080/jsonrpc?request={\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"Music/AmbienteOficina/a.mp3\"}}}\n\nPara Kodi\n\nUsando Curl\n\ncurl -H \"Content-Type: application/json\" -X POST -d '{\"jsonrpc\":\"2.0\",\"id\":\"1\",\"method\":\"Player.Open\",\"params\":{\"item\":{\"file\":\"Music/AmbienteOficina/a.mp3\"}}}' http://toctopulus:pitagoras5@192.168.0.100:8080/jsonrpc",
+            "systemTags": [],
+            "modificationDate": 1521738564.375059,
+            "creationDate": 1521738564.375059,
+            "key": "f004c9258a274af7991f76d4f4590607",
+            "version": 38,
+            "modifydate": 1521738564.375059,
+            "createdate": 1521738564.375059,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "A\u00f1adir interruptor a Raspberry Pi\n\nhttp://www.raspberry-pi-geek.com/Archive/2013/01/Adding-an-On-Off-switch-to-your-Raspberry-Pi/(offset)/2",
+            "systemTags": [],
+            "modificationDate": 1521738556.869084,
+            "creationDate": 1521147574,
+            "key": "a77024d860fc42ed875018bd6b566c0a",
+            "version": 7,
+            "modifydate": 1521738556.869084,
+            "createdate": 1521147574,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash",
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Usar carpetas en RAM para minimizar impacto en SD\n\nEditar /etc/fstab \n\ntmpfs /tmp tmpfs defaults,noatime,nosuid,size=100m 0 0\ntmpfs /var/tmp tmpfs defaults,noatime,nosuid,size=30m 0 0\ntmpfs /var/log tmpfs defaults,noatime,nosuid,mode=0755,size=100m 0 0\n",
+            "systemTags": [],
+            "modificationDate": 1521738605.30198,
+            "creationDate": 1519992560.2058902,
+            "key": "3a76c3ddd879411b9a800565d0c2dfd0",
+            "version": 10,
+            "modifydate": 1521738605.30198,
+            "createdate": 1519992560.2058902,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Usar Raspberry en modo read only\n\nhttps://learn.adafruit.com/read-only-raspberry-pi/#\n",
+            "systemTags": [],
+            "modificationDate": 1521738576.516852,
+            "creationDate": 1519992970.416218,
+            "key": "0b4c6d76166a485a9cfb2d4faf713d28",
+            "version": 12,
+            "modifydate": 1521738576.516852,
+            "createdate": 1519992970.416218,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Permisos a carpeta en Raspberri\n\nsudo chown -R www-data:www-data /var/www\nsudo chmod -R 775 /var/www\nsudo usermod -a -G www-data pi",
+            "systemTags": [],
+            "modificationDate": 1521738590.709,
+            "creationDate": 1511019760.557668,
+            "key": "585748fdf50b4dc3aa47f0087abf1fe7",
+            "version": 18,
+            "modifydate": 1521738590.709,
+            "createdate": 1511019760.557668,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Usar thermistor en Rpi\n\nhttp://raspberrypi.powersbrewery.com/project-8-temperature-sensing-thermistor/amp/\n",
+            "systemTags": [],
+            "modificationDate": 1521738587.525171,
+            "creationDate": 1519994093.498781,
+            "key": "440392b477ba4ae88557ca93b93acb9c",
+            "version": 10,
+            "modifydate": 1521738587.525171,
+            "createdate": 1519994093.498781,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Usar Raspberry como punto de acceso\n\nhttps://github.com/sabhiram/raspberry-wifi-conf\n",
+            "systemTags": [],
+            "modificationDate": 1521738572.951405,
+            "creationDate": 1519992939.050545,
+            "key": "91a803ae52b9482b9d184ca6dac0bab7",
+            "version": 10,
+            "modifydate": 1521738572.951405,
+            "createdate": 1519992939.050545,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Reiniciar Raspberry si se pierde el wifi\n\nhttp://weworkweplay.com/play/rebooting-the-raspberry-pi-when-it-loses-wireless-connection-wifi/",
+            "systemTags": [],
+            "modificationDate": 1521738568.919464,
+            "creationDate": 1519992288.129915,
+            "key": "264c7773db2b47088ad94d04edc9c63b",
+            "version": 10,
+            "modifydate": 1521738568.919464,
+            "createdate": 1519992288.129915,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Raspberry Pi Zero Internet Connected Information Display\n\nhttp://frederickvandenbosch.be/?p=1365\n",
+            "systemTags": [],
+            "modificationDate": 1521738583.1332421,
+            "creationDate": 1519994062.592874,
+            "key": "3207be5e1e234420b318a993e8acb00b",
+            "version": 11,
+            "modifydate": 1521738583.1332421,
+            "createdate": 1519994062.592874,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Ejecutar script en el arranque\n\nEjecutar un script al arranque:\n\ncrontab -e\nPoner al final del archivo\n\n@reboot sleep 45; /usr/bin/python /home/pi/bot/bot.py \n\nHay un sleep de 45 segundos para que el script arranque cuando haya wifi\n",
+            "systemTags": [],
+            "modificationDate": 1521738594.459597,
+            "creationDate": 1521738594.459597,
+            "key": "97aaa37a66b14728bcb6d177b9a4b3cd",
+            "version": 14,
+            "modifydate": 1521738594.459597,
+            "createdate": 1521738594.459597,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Rpi"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "GPIO Octoprint\t\n\nhttps://www.spainlabs.com/foros/tema-TUTORIAL-Apagar-impresora-con-Octoprint-Rele\n",
+            "systemTags": [],
+            "modificationDate": 1521738580.013986,
+            "creationDate": 1519994023.8878589,
+            "key": "63e8a73939fc46689428a2f46c7236d0",
+            "version": 10,
+            "modifydate": 1521738580.013986,
+            "createdate": 1519994023.8878589,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Datos de Elena\n\nSIP: 12147107",
+            "systemTags": [],
+            "modificationDate": 1521112263.5514688,
+            "creationDate": 1521104415.978622,
+            "key": "6c54686b116d4638b4fd6ca7d844dc15",
+            "version": 4,
+            "modifydate": 1521112263.5514688,
+            "createdate": 1521104415.978622,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Datos de \u00c1lvaro\n\nSIP  \n4910447336  \nDNI  \n78011279-V\n",
+            "publishURL": "",
+            "modificationDate": 1521104415.975589,
+            "creationDate": 1509983700.0,
+            "key": "f9e087eec30a11e795e16dbbea699aef",
+            "version": 6,
+            "modifydate": 1521104415.975589,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [
+                "published"
+            ],
+            "content": "Dump de tablets Suntech\n\nHow to set up ADB\nImportant: This is needed for almost everything posted here.\n1. Turn USB debugging on, then connect the tablet to your PC.\n2. Download ADB and the ADB drivers.\n3. The ADB driver program should automatically install the needed drivers for your tablet.\n4. Extract ADB.zip to C:/. That's it, you've set up ADB.\n\nInstalling ClockWorkMod (CWM) Recovery\n1. Download NovoTools and install it to your tablet. Download CWM as well.\n2. Place the recovery.img to your tablet's internal memory. It should be under /mnt/sdcard.\n3. Open NovoTools and touch \"Flash recovery\".\n4. NovoTools should display a confirmation. To check, click \"Enter recovery mode\".\n\nHow to install or restore a firmware dump\n1. Extract your dump files at the root of your microSD card. You should see bootloader.img, boot.img, data.tgz, recovery.img and system.tgz. Insert the card into the tablet.\n2. Install CWM using NovoTools and boot into recovery mode.\n3. Navigate to mounts and storage.\n4. Using a command prompt, type adb shell.\n5. Format everything except /sdcard and /sd-ext.\n6. Mount everything except /sd-ext.\n7. Enter the following commands on the command prompt.\nCode:\ncat /sdcard/bootloader.img > /dev/block/nanda\ncat /sdcard/boot.img > /dev/block/nandc\nbusybox tar -C /system/ -zxvf /sdcard/system.tgz\nbusybox tar -C /data/ -zxvf /sdcard/data.tgz\nreboot\n8. After the tablet restarts, do a factory reset to restore root access.\n\nHow to create a firmware dump for backup\n1. Install and download Uberizer.\n2. Launch Uberizer, then connect your tablet. Make sure USB debugging is enabled.\n3. After your tablet is detected, select i. A1x firmware menu.\n4. Select 3. Dump A1x firmware to /rom_dumps.\n5. Follow the instructions given to you by Uberizer.\n6. Your firmware dump is located inside Uberizer's rom_dumps folder. Back it up and place it somewhere safe.\n\nHow to use ImageSuite\n1. Download and unzip Imagesuite somewhere accessible.\n2. Place the *.img file in the same folder.\n3. Drag the *.img file into extract img.bat\n4. The *.img file will be decompiled into a image.img.dump folder. This will take a while.\n5. Do what editing you want, then drag the image.img.dump folder to repack_ics.bat. repack_ics.bat will also work for Jelly Bean firmwares. The image.img.dump folder will be recompiled into image.img, which is flashabe via Livesuit.\n\nHow to pull your script.bin using Uberizer. \n1. Connect your tablet to your PC with USB debugging enabled.\n2. Download and install Uberizer.\n3. Select i. A1X Firmware Menu, then select 8.Dump script.bin (to uberizer root dir).\n4. Your tablet's script.bin is located at C:/Program Files/TechKnow/Uberizer.\n\nHow to create an lsmod output\n1. Set up ADB, connect your tablet and turn on USB debugging.\n2. Open a command prompt, and type adb shell lsmod.\n",
+            "publishURL": "lzDT9M",
+            "modificationDate": 1519994405.284979,
+            "creationDate": 1519994405.284979,
+            "key": "ed9936236f7ac77f50df442ffe99539a",
+            "version": 18,
+            "modifydate": 1519994405.284979,
+            "createdate": 1519994405.284979,
+            "systemtags": [
+                "published"
+            ]
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Scripts para iniciar y terminar proceso en Python\n\nAnother solution is to write two bash functions that do the job:\n\nmynohup () {\n[[ \"$1\" = \"\" ]] && echo \"usage: mynohup python_script\" && return 0\nnohup python -u \"$1\" > \"${1%.*}.log\" 2>&1 < /dev/null &\n}\n\nmykill() {\nps -ef | grep \"$1\" | grep -v grep | awk '{print $2}' | xargs kill\necho \"process \"$1\" killed\"\n}\nJust put the above functions in your ~/.bashrc or ~/.bash_profile and use them as normal bash commands.\n\nNow you can do exactly what you told:\n\nmynohup myscript.py # will automatically continue running in\n# background even if I log out\n\n# two days later, even if I logged out / logged in again the meantime\nmykill myscript.py",
+            "systemTags": [],
+            "modificationDate": 1520514694.0,
+            "creationDate": 1520514694.0,
+            "key": "6445fc30511549d9979832cf0f771cff",
+            "version": 8,
+            "modifydate": 1520514694.0,
+            "createdate": 1520514694.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas",
+                "pjexposito@gmail.com"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Tel\u00e9fonos\n\nAlmu: 686275597  \nMam\u00e1: 615579061  \nMiguel: 615570859  \nJos\u00e9: 656766702  \nJosefa: 685248994  \nGema: 676383581  \nJorge: 647427935  \nLuc\u00eda: 676281656\n",
+            "publishURL": "",
+            "modificationDate": 1520514799,
+            "creationDate": 1509983700.0,
+            "key": "fa9018dcc30a11e794d18d295d8aa3ed",
+            "version": 6,
+            "modifydate": 1520514799,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Corporativos\n\nMiguel Garber\u00ed: 84864\nEnrique Galindo: 83975\nCristian Cutillas: 88760\nPaco Avil\u00e9s: 74106\nCarlos Meseguer: 77058\nToni Arques: 74100\nNatalia Rodes: 82645\n\u00c1ngel Ortu\u00f1o: 74101\nPl\u00e1cido: 72869\nAntonio SAC: 74108\nPablo SAC: 74090\nPaco POS: 81805\nMarrupe: 72870\nAna Castellano: 74115\nEva PPV: 74666\nCristina: 74291\nServicio m\u00e9dico: 74290\nPaco seguridad: 74110\nBombero: 74112\nJusto: 85758\nLimpieza: 74098 y 74668\nRicardo Llorca: 83430\nEladio: 78956",
+            "systemTags": [],
+            "modificationDate": 1520405651.8379102,
+            "creationDate": 1520405642.0531812,
+            "key": "fd51b1342c0940df8ba37caa27f9bfc7",
+            "version": 3,
+            "modifydate": 1520405651.8379102,
+            "createdate": 1520405642.0531812,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Pantalla OLED en Python\n\nhttp://frederickvandenbosch.be/?p=1365",
+            "systemTags": [],
+            "modificationDate": 1520405585.0168672,
+            "creationDate": 1519992680.692871,
+            "key": "81c649061c214d4ba8218bb8984bd6b6",
+            "version": 8,
+            "modifydate": 1520405585.0168672,
+            "createdate": 1519992680.692871,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Bot de Telegram para Python\t\n\nhttps://github.com/eternnoir/pyTelegramBotAPI#",
+            "systemTags": [],
+            "modificationDate": 1520405584.641945,
+            "creationDate": 1519992721.241282,
+            "key": "91bdde01a72d40808a6e6653862562b8",
+            "version": 4,
+            "modifydate": 1520405584.641945,
+            "createdate": 1519992721.241282,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Snippets para Telegram\n\nhttps://github.com/python-telegram-bot/python-telegram-bot/wiki/Code-snippets\n\n",
+            "systemTags": [],
+            "modificationDate": 1520405583.522538,
+            "creationDate": 1519992753.890115,
+            "key": "7d886d5fba644d9aa9d4160686f6e259",
+            "version": 5,
+            "modifydate": 1520405583.522538,
+            "createdate": 1519992753.890115,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Arduino"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "OTA update ESP8266\n\nhttps://github.com/esp8266/Arduino/tree/master/doc/ota_updates\n",
+            "systemTags": [],
+            "modificationDate": 1520405578.4742808,
+            "creationDate": 1519994116.808922,
+            "key": "3b1340467a0c4a97bc04d0334df4dc21",
+            "version": 8,
+            "modifydate": 1520405578.4742808,
+            "createdate": 1519994116.808922,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Arduino"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Sonoff\n\nBecause this device use standard ESP8266 and if you use esptool.py you can read_flash or write_flash.\n\nAnd you can\u2019t protect it from dumping. On this forum link I find that:\nhttps://forum.wemos.cc/topic/181/backup-original-firmware-with-esptool some guy made backup of initial Wemos firmware with this command:\n\nesptool.py \u2013port /dev/tty.wchusbserial1410 \u2013baud 115200 read_flash 0x00000 0x400000 wemos-original.bin\n\nAlos find that someone alredy dumped Sonoff initial firmware on this site:\nhttps://github.com/arendst/Sonoff-MQTT-OTA\n\nThe initial firmware from api/sonoff/user1.bin can be flashed using the SDK 1.4 provided bin files with the following esptool.py command line: esptool.py \u2013port /dev/ttyUSB0 write_flash -fs 8m 0x00000 boot_v1.4\\(b1\\).bin 0x01000 user1.bin 0xFC000 esp_init_data_default.bin 0xFE000 blank.bin\n\nYou know those stuff much better than I.\n\nI stiil waiting my sonoff device to arrive, so can\u2019t test on my own.\n",
+            "systemTags": [],
+            "modificationDate": 1520405578.0252,
+            "creationDate": 1519994150.207065,
+            "key": "821ba74f07e84ab590f4df05f3c712a4",
+            "version": 5,
+            "modifydate": 1520405578.0252,
+            "createdate": 1519994150.207065,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python",
+                "pjexposito@gmail.com"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Comandos desde Python\n\nimport os\n\ndef ip_externa():\n\u00a0 ip = os.popen('curl -s http://icanhazip.com').read()\n\u00a0 return ip\n",
+            "systemTags": [],
+            "modificationDate": 1520405525.5303621,
+            "creationDate": 1519992791.345587,
+            "key": "e3fd188ce8454476820a21abab16cd59",
+            "version": 6,
+            "modifydate": 1520405525.5303621,
+            "createdate": 1519992791.345587,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI",
+                "pjexposito@gmail.com"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Nombre de centro mediante n\u00famero de centro:\n\n/for mod2811a\nPf1, Pf2, Pf4 y se pone n\u00famero de centro",
+            "systemTags": [],
+            "modificationDate": 1519994275.218711,
+            "creationDate": 1512063404.733422,
+            "key": "1d95b0b9e2be44a991b727738ee8958b",
+            "version": 5,
+            "modifydate": 1519994275.218711,
+            "createdate": 1512063404.733422,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores",
+                "pjexposito@gmail.com"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Reparar pantalla negra\n\nctrl-alt-del - Task Manager - File - Run New Task - check the admin privileges box - enter commands below):\n\nsc stop \"AppReadiness\" \nsc config \"AppReadiness\" start= disabled \n",
+            "systemTags": [],
+            "modificationDate": 1519994352.090763,
+            "creationDate": 1519994330.41801,
+            "key": "d827267bcb7446389917f2b570376fe2",
+            "version": 3,
+            "modifydate": 1519994352.090763,
+            "createdate": 1519994330.41801,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash",
+                "pjexposito@gmail.com"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Usar pipes con par\u00e1metros\n\npi@zero:~ $ ./texto.py \"$(AQUI VA EL COMANDO DE BASH)\"\n\nes decir, para mostrar la temperatura, quedar\u00eda as\u00ed:\n\npi@zero:~ $ ./texto.py \"$(/opt/vc/bin/vcgencmd measure_temp)\"",
+            "systemTags": [],
+            "modificationDate": 1519997057.635324,
+            "creationDate": 1519992637.621221,
+            "key": "3b513323314a4a248e9229731005257d",
+            "version": 7,
+            "modifydate": 1519997057.635324,
+            "createdate": 1519992637.621221,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Recetas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Crepes para cuatro personas\n\nIngredientes:\n100 g harina\n30 g az\u00facar\nUn pellizco de sal\n2 huevos\n200 ml de leche\n30 g de mantequilla\n\nPreparaci\u00f3n:\nTamizar harina\nBatir huevo\nA\u00f1adir huevo batido a harina\nBatir bien\nA\u00f1adir leche\nA\u00f1adir mantequilla derretida\nPreparar crepes\n",
+            "publishURL": "",
+            "modificationDate": 1519994426.0385342,
+            "creationDate": 1391366748.016,
+            "key": "e093917578d20625832f45b487572644",
+            "version": 5,
+            "modifydate": 1519994426.0385342,
+            "createdate": 1391366748.016,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "For mods\n\nBorrar -\u00bb /RCL\nTraspasos  -\u00bb /for mod29700\nDevoluciones  -\u00bb /for mod24500\nStock por centros -\u00bb /for mod281m5\nStock en tienda -\u00bb /for mod28206\nPol\u00edtica de protecci\u00f3n de datos -\u00bb /for mod169dx\nSurtido tipo y pedidos-\u00bb /for mod2811a. Luego PF3 y PF9. Por \u00faltimo, PF2.\nD\u00edas reparto-\u00bb /for mod17415\nConsulta de surtidos (para sacar c\u00f3digo de proveedor)  -\u00bb /for mod290ce\nGesti\u00f3n de mercanc\u00edas  -\u00bb /for mod29tce\nSeguimiento abonos -\u00bb /for mod44650\nVenta divisi\u00f3n -\u00bb /for mod44400\nEnvio de mensajes -\u00bb \"mensajes \"\nExistencia sin venta -\u00bb /for mod297R0. Luego PF5. Y luego opci\u00f3n 15\nPedidos online -\u00bb 24000. Luego 25201\nIMEI  -\u00bb /for mod2T0GT, PF7, PF3\nMensajes Sms a m\u00f3viles -\u00bb /for modt0s01\nPalets -\u00bb (for modsig) /for mod297aa\nDiferencias en inventario -\u00bb (for modsig) /for mod290in \nVenta a plazos -\u00bb /for mod19200\nCat\u00e1logo -\u00bb 2811a, pf2, pf2, pf6",
+            "publishURL": "",
+            "modificationDate": 1519994420.780819,
+            "creationDate": 1509987398.547065,
+            "key": "a0883297cde8ab05132f4e2398b399b2",
+            "version": 16,
+            "modifydate": 1519994420.780819,
+            "createdate": 1509987398.547065,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Argumentos desde l\u00ednea de comandos\n\n#!/usr/bin/python\nimport sys\nprint 'Number of arguments:', len(sys.argv), 'arguments.'\rprint 'Argument List:', str(sys.argv)\n",
+            "systemTags": [],
+            "modificationDate": 1519992791.3447242,
+            "creationDate": 1519992763.9638839,
+            "key": "95934f73f03c4c5cb6553351a07e3894",
+            "version": 4,
+            "modifydate": 1519992791.3447242,
+            "createdate": 1519992763.9638839,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Python"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Base de datos SQL para Python\t\n\n#!/usr/bin/env python\n# -*- coding: utf-8 -*-\n\ndato = \"coser\"\nimport sqlite3 as lite\ncon = lite.connect('sinonimos.db')\nwith con:\n\u00a0 \u00a0 cur = con.cursor()\n\u00a0 \u00a0 cur.execute(\"SELECT * FROM sinonimos\")\n\u00a0 \u00a0 rows = cur.fetchall()\n\u00a0 \u00a0 for row in rows:\n\u00a0 \u00a0 \u00a0 \u00a0 if dato == row[1]:\n\u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 \u00a0 print row[1]+\": \"+row[2]",
+            "systemTags": [],
+            "modificationDate": 1519992753.889384,
+            "creationDate": 1519992738.939331,
+            "key": "2265e5ca9d994054a482cf6f40c9c8ef",
+            "version": 3,
+            "modifydate": 1519992753.889384,
+            "createdate": 1519992738.939331,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "IP privada\t\n\nhostname -I\n",
+            "systemTags": [],
+            "modificationDate": 1519992666.930412,
+            "creationDate": 1519992660.514155,
+            "key": "ca75c937a9184a0ab8b2ca83bef75cd1",
+            "version": 2,
+            "modifydate": 1519992666.930412,
+            "createdate": 1519992660.514155,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Bash"
+            ],
+            "deleted": 0,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Matar proceso\n\nYou will have to find the process id (pid). one command to do this would be\n\n$> ps -ef\nto limit results to python processes you can grep the result\n\n$> ps -ef | grep python\nwhich will give results like :\n\nuser 2430 1 0 Jul03 ? 00:00:01 /usr/bin/python -tt /usr/sbin/yum-updatesd\nthe second column is the pid. then use the kill command as such :\n\n$> kill -9 2430 (i.e. the pid returned)",
+            "systemTags": [],
+            "modificationDate": 1519992474.114902,
+            "creationDate": 1519992444.254331,
+            "key": "87f7c31c1125482da83f8b4201e6baa9",
+            "version": 6,
+            "modifydate": 1519992474.114902,
+            "createdate": 1519992444.254331,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Recuento -> Devoluci\u00f3n\n\nRecuento -> Devoluci\u00f3n\n",
+            "publishURL": "",
+            "modificationDate": 1512063404.731558,
+            "creationDate": 1509983700.0,
+            "key": "fdbcbf23c30a11e7a6518d295d8aa3ed",
+            "version": 6,
+            "modifydate": 1512063404.731558,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Contrase\u00f1a candado\n\n4114\n",
+            "publishURL": "",
+            "modificationDate": 1510869911.419785,
+            "creationDate": 1509983700.0,
+            "key": "fd1bf185c30a11e792311d19a6e9e6f9",
+            "version": 7,
+            "modifydate": 1510869911.419785,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Men\u00fa Android\n\n*#*#4636#*#*\n",
+            "publishURL": "",
+            "modificationDate": 1509987440.179408,
+            "creationDate": 1509983700.0,
+            "key": "fb0fb4d4c30a11e79c778d295d8aa3ed",
+            "version": 7,
+            "modifydate": 1509987440.179408,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "publishURL": "",
+            "content": "Obtener n\u00famero de serie Windows\n\nWmic bios get serialnumber\nWmic csproduct get name  ",
+            "systemTags": [],
+            "modificationDate": 1509987410.392981,
+            "creationDate": 1509987273.967789,
+            "key": "a5b2ed1ee8b9431fb9421817bceafc29",
+            "version": 13,
+            "modifydate": 1509987410.392981,
+            "createdate": 1509987273.967789,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Crear incidencia POS\n\nUsuario: 08370021 \nPass: 08370021",
+            "publishURL": "",
+            "modificationDate": 1509987405.436261,
+            "creationDate": 1391366260.723,
+            "key": "32bc114bc7f63131d1bba8be38c9adee",
+            "version": 10,
+            "modifydate": 1509987405.436261,
+            "createdate": 1391366260.723,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Devoluciones\n\n/for mod24500. Luego, PF11 y opci\u00f3n 01.\n\nEl motivo es 05.\n\nEl almac\u00e9n, 071 (Atalayas).\n\nEn autorizaci\u00f3n se pone \"s\" (que s\u00ed se necesita autorizaci\u00f3n).\n\nObtener autorizaci\u00f3n y luego, listar 3 copias. \n",
+            "publishURL": "",
+            "modificationDate": 1509987401.789196,
+            "creationDate": 1391366472.708,
+            "key": "b49e15e2312a4d05d0db5f5459652e17",
+            "version": 6,
+            "modifydate": 1509987401.789196,
+            "createdate": 1391366472.708,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Modo test Apple\n\nlniciar pulsando D o Fn+F2 ",
+            "publishURL": "",
+            "modificationDate": 1509987395.268795,
+            "creationDate": 1391366574.691,
+            "key": "1f34a8aaf684d2731ba6a110a58ee1bc",
+            "version": 4,
+            "modifydate": 1509987395.268795,
+            "createdate": 1391366574.691,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Zwipit\n\nECI-0813\n123456\n\nCrear tarjeta con funci\u00f3n 70\n",
+            "publishURL": "",
+            "modificationDate": 1509987386.7092829,
+            "creationDate": 1391366402.978,
+            "key": "c53282e84fac163950d1df7aa43ca33b",
+            "version": 6,
+            "modifydate": 1509987386.7092829,
+            "createdate": 1391366402.978,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Venta a plazos\n\n/for mod16960\n\nPF15 para anular.\nPF5 para modificar.\nPF17 para consultar.\n\nPara numero de VP:\n\n/for mod16751 (tarjeta ECI)\n/for mod16752 (sin tarjeta ECI)\n\nPara sacar VP:\n\n/for mod19200 (opci\u00f3n 0)\n",
+            "publishURL": "",
+            "modificationDate": 1509987380.587235,
+            "creationDate": 1391366429.258,
+            "key": "59cba5569bb8bd017249cee91dc5eecf",
+            "version": 6,
+            "modifydate": 1509987380.587235,
+            "createdate": 1391366429.258,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Telecor central\n\n053152000\n",
+            "publishURL": "",
+            "modificationDate": 1509987376.48681,
+            "creationDate": 1509983700.0,
+            "key": "f631fe19c30a11e78d62fd6a16d3172a",
+            "version": 6,
+            "modifydate": 1509987376.48681,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Samsung\n\n5444  \nM729Q16K8546\n",
+            "publishURL": "",
+            "modificationDate": 1509987362.685358,
+            "creationDate": 1509983700.0,
+            "key": "f8e0b291c30a11e7a1c78d295d8aa3ed",
+            "version": 6,
+            "modifydate": 1509987362.685358,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Referencias gen\u00e9ricas\n\n285 000 00006: Accesorios  \n286 000 00005: Videojuegos  \n594 212 00011: Piezas  \n594 211 00013: Mano de obra  \n594 211 00019: Desplazamiento  \n  \nMonitores: 161  \nMultifunci\u00f3n: 260  \nImpresora: 159\n",
+            "publishURL": "",
+            "modificationDate": 1509987357.796999,
+            "creationDate": 1509983700.0,
+            "key": "f7584928c30a11e7bdd055562803bb06",
+            "version": 6,
+            "modifydate": 1509987357.796999,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Ref. fotos\n\n25800300565\n",
+            "publishURL": "",
+            "modificationDate": 1509987346.290994,
+            "creationDate": 1509983700.0,
+            "key": "ffe1b9cfc30a11e7bff8c9cea5908169",
+            "version": 5,
+            "modifydate": 1509987346.290994,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Recuperar HP Vista\n\nD:\\MiniNT\\system32\\Mbrinst.exe /ini D:\\MiniNT\\system32\\MBR.ini /r /q\n",
+            "publishURL": "",
+            "modificationDate": 1509987343.209548,
+            "creationDate": 1509983700.0,
+            "key": "fbc0efebc30a11e79de5c9cea5908169",
+            "version": 5,
+            "modifydate": 1509987343.209548,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Procesador Mac\n\nsysctl -n machdep.cpu.brand_string\n",
+            "publishURL": "",
+            "modificationDate": 1509987337.637663,
+            "creationDate": 1509983700.0,
+            "key": "f9533cd9c30a11e7bbd16dbbea699aef",
+            "version": 6,
+            "modifydate": 1509987337.637663,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Mantenimiento de surtido tipo\n\nMotivos:  \n  \n1: Indefinida.  \n2: Temporal (desde, hasta).  \n9: Petici\u00f3n \u00fanica. S\u00f3lo se modifica para un \u00fanico pedido.  \n  \nTipo de gesti\u00f3n:  \n  \n00: No tiene. No se puede variar.   \n07: Pedidos online (pedir por for mod 2400).   \n14: Normal. Se surte por surtido tipo.  \n16: Centro venta. Se hace por mantenimiento de ST.\n",
+            "publishURL": "",
+            "modificationDate": 1509987328.311747,
+            "creationDate": 1509983700.0,
+            "key": "f5f9e71cc30a11e7b8d9c9cea5908169",
+            "version": 5,
+            "modifydate": 1509987328.311747,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Habilitar administrador en Vista\n\nnet user administrador /active:yes\n",
+            "publishURL": "",
+            "modificationDate": 1509987324.752092,
+            "creationDate": 1509983700.0,
+            "key": "ff27fc97c30a11e78f4c21370a36c76e",
+            "version": 5,
+            "modifydate": 1509987324.752092,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Contrase\u00f1a Microsoft\n\ntrs80  \ntrs10\n",
+            "publishURL": "",
+            "modificationDate": 1509987319.485664,
+            "creationDate": 1509983700.0,
+            "key": "fa13ea3ac30a11e79912af7026cceb16",
+            "version": 8,
+            "modifydate": 1509987319.485664,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Devoluciones Atalayas\n\n051204014\n",
+            "publishURL": "",
+            "modificationDate": 1509987233.171692,
+            "creationDate": 1509983700.0,
+            "key": "ff695e7dc30a11e7b1ad8d295d8aa3ed",
+            "version": 6,
+            "modifydate": 1509987233.171692,
+            "createdate": 1509983700.0,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Reparar inicio Windows\n\nBootrec /rebuildbcd\n\nDiskpart / lis vol / exi",
+            "publishURL": "",
+            "modificationDate": 1393445185,
+            "creationDate": 1392721117,
+            "key": "d3f48c0bfa124707ad307e5ca84c5a52",
+            "version": 13,
+            "modifydate": 1393445185,
+            "createdate": 1392721117,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "PS2 en Windows 8\n\nEditar la clave HKEY_LOCAL_MACHINES\\SYSTEM\\CurrentControlSet\\Services\\i8042prt.\n\nModificar el valor Start a 1\n",
+            "publishURL": "",
+            "modificationDate": 1392895102.643,
+            "creationDate": 1392895038.033,
+            "key": "597eeddcf42fd68afb626f66128cdbc7",
+            "version": 12,
+            "modifydate": 1392895102.643,
+            "createdate": 1392895038.033,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Administraci\u00f3nECI"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Surtido tipo\n\nMotivos:\n\n1: Indefinida.\n2: Temporal (desde, hasta).\n9: Petici\u00f3n \u00fanica. S\u00f3lo se modifica para un \u00fanico pedido.\n\nTipo de gesti\u00f3n:\n\n00: No tiene. No se puede variar.\n07: Pedidos online (pedir por for mod 2400).\n14: Normal. Se surte por surtido tipo.\n\n16: Centro venta. Se hace por mantenimiento de ST.",
+            "publishURL": "",
+            "modificationDate": 1391366361.565,
+            "creationDate": 1391366354.283,
+            "key": "0f76579cabad8277a30b1f5294014382",
+            "version": 5,
+            "modifydate": 1391366361.565,
+            "createdate": 1391366354.283,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Activar Administrador en Windows\n\nnet user administrador /active:yes \n\nutilman.exe\n\n\n",
+            "publishURL": "",
+            "modificationDate": 1391880811,
+            "creationDate": 1391366581.552,
+            "key": "356c5d34b576ce51e0c2d06fd6a8323d",
+            "version": 5,
+            "modifydate": 1391880811,
+            "createdate": 1391366581.552,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ideas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Juegos XBox para hack\n\nEl juego 007 Agent Under Fire, MechAssault o Splinter Cell en Original (no Platinum).\n",
+            "publishURL": "",
+            "modificationDate": 1391366797.452,
+            "creationDate": 1391366791.967,
+            "key": "560178742b08adcc59b4aa4f45a839b2",
+            "version": 2,
+            "modifydate": 1391366797.452,
+            "createdate": 1391366791.967,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Recetas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Espagueti con nueces\n\nIngredientes:\nEspaguetis \nUna cuantas nueces partidas\nDos dientes de ajo partidos\nAcierte de oliva\nSal\nPimienta blanca o negra\nQueso parmesano en polvo\nPerejil picado\n\n\nPreparaci\u00f3n:\nSe cuecen los espaguettis, y se escurren bien.\nSe ponen los ajos con el aceite de oliva y se rehogan un poco. Cuando los ajos tengan color se a\u00f1aden las nueces y se dejan hacer un poco.\nCuando las nueces y los ajos est\u00e1n en su punto se les a\u00f1aden los espaguettis y se mueve.\nDespu\u00e9s se a\u00f1ade el perejil picado, la pimienta y el queso parmesano y se deja que el queso se funda. Cuando este al gusto se sirve bien caliente.\n",
+            "publishURL": "",
+            "modificationDate": 1391366735.991,
+            "creationDate": 1391366730.562,
+            "key": "917f32ca496b05561ded9660ed2e1c34",
+            "version": 2,
+            "modifydate": 1391366735.991,
+            "createdate": 1391366730.562,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Recetas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Tarta de queso\n\nIngredientes:\nUna tarrina de queso philadelfia.\nUn paquete de galletas Maria\nMermelada de fresa o de ar\u00e1ndanos.\nUn yogur natural.\nCinco hojas de gelatina neutra.\nMedio litro de nata para montar.\nDos cucharadas de az\u00facar para el queso.\nCuatro cucharadas de az\u00facar para la nata.\n200 gramos de mantequilla.\nUn vaso peque\u00f1o de leche entera.\n\nPreparaci\u00f3n:\nMoler las galletas y ponerlas en el fondo del molde. Derretir la mantequilla y mezclar con las galletas hasta que se forme una pasta. Montar la nata con el az\u00facar y reservar.\nMezclar el queso, el yogur, el az\u00facar.\nPoner las hojas de gelatina en agua fr\u00eda.\nCalentar la leche y cuando este a punto de hervir a\u00f1adir las hojas de gelatina escurridas.\nA\u00f1adir la leche al queso y mezclar todo bien.\nEchar la mezcla en el molde.\nDejar enfriar en el frigor\u00edfico durante al menos cuatro horas.\nAntes de servir batir la mermelada con la batidora y ponerla por encima de la tarta.\n",
+            "publishURL": "",
+            "modificationDate": 1391366722.141,
+            "creationDate": 1391366718.33,
+            "key": "55bfe1f61e46da2968ff2539e331565a",
+            "version": 2,
+            "modifydate": 1391366722.141,
+            "createdate": 1391366718.33,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Recetas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Crepes\n\n100 g harina\n30 g az\u00facar\nUn pellizco de sal\n2 huevos\n200 ml de leche\n30 g de mantequilla\n\nTamizar harina\nBatir huevo\nA\u00f1adir huevo batido a harina\nBatir bien\nA\u00f1adir leche\nA\u00f1adir mantequilla derretida\n\nPreparar crepes",
+            "publishURL": "",
+            "modificationDate": 1391366707.541,
+            "creationDate": 1391366705.09,
+            "key": "6f15c50239838071a9e1811735ca3251",
+            "version": 2,
+            "modifydate": 1391366707.541,
+            "createdate": 1391366705.09,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Recetas"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Arroz que no se pasa\n\n2,5 de agua por una taza de arroz\n",
+            "publishURL": "",
+            "modificationDate": 1391366694.741,
+            "creationDate": 1391366690.844,
+            "key": "b888c823da0876b34263a14eb27605b1",
+            "version": 2,
+            "modifydate": 1391366694.741,
+            "createdate": 1391366690.844,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Autorizar usuarios por SSH\n\n#!/bin/bash \nclear \necho \"Programa para autorizar usuarios\" \necho \necho -n \"Introduce el usuario: \" \nread usuario \necho -n \"Introduce la IP: \" \nread IP \nclear \necho -n \"Se va a autorizar como $usuario en $IP. Correcto (s/n)? \" \nread respuesta \nif [ \"$respuesta\" == \"s\" ]; then \n  rm /var/mobile/.ssh/* \n  echo \"Creando la clave...\" \n  ssh-keygen -t dsa \n  echo \"Copiando clave en destino\u2026\" \n  scp ~/.ssh/id_dsa.pub $usuario@$IP:.ssh/authorized_keys2 \n  echo \"Esperando 5 segundos...\" \n  sleep 5 \n  echo \"Agregando clave\u2026\" \n  ssh $usuario@$IP ssh-agent sh -c 'ssh-add < /dev/null && bash' \nelse \necho \"No se han hecho cambios\" \n\nfi ",
+            "publishURL": "",
+            "modificationDate": 1391366602.354,
+            "creationDate": 1391366595.532,
+            "key": "e552e09e14983a653adce4bca2be1018",
+            "version": 2,
+            "modifydate": 1391366602.354,
+            "createdate": 1391366595.532,
+            "systemtags": []
+        },
+        {
+            "tags": [
+                "Ordenadores"
+            ],
+            "deleted": false,
+            "shareURL": "",
+            "systemTags": [],
+            "content": "Comprobar licencia de Office\n\nLlamar al 917547010 y pulsar 2 cuatro veces\n",
+            "publishURL": "",
+            "modificationDate": 1391366615.967,
+            "creationDate": 1391366610.143,
+            "key": "dcf6ecd605f0b8c29eba742a4ec99d3f",
+            "version": 2,
+            "modifydate": 1391366615.967,
+            "createdate": 1391366610.143,
+            "systemtags": []
+        }
+    ],
+    0
+]
