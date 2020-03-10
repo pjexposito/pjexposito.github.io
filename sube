@@ -2,6 +2,7 @@
 cd $HOME/pjexposito.github.io
 rm index.html
 python ShiftCal.py
+python simple.py
 git add --all
 git commit -m "Actualizado"
 git push -u origin master
