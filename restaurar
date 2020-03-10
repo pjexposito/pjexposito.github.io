@@ -18,6 +18,7 @@ echo Instalando otras librerías de Python
 pip install pypdf2
 pip install youtube-dl
 pip install reportlab
+pip install simplenote
 echo Creando archivos de configuración...
 mkdir .termux
 cd .termux
