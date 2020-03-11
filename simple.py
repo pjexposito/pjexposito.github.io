@@ -5,7 +5,7 @@ from itertools import cycle
 key = 'simplenote'
     
         
-passwd=input("Contraseña Simplenote")    
+passwd=input("Contraseña Simplenote: ")    
 print ("Cargando datos...")
 sn = simplenote.Simplenote("pjexposito@gmail.com",passwd)
 todo=sn.get_note_list(data=True, tags=[])
