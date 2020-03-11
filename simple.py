@@ -5,9 +5,9 @@ from itertools import cycle
 key = 'simplenote'
     
         
-    
+passwd=input("Contraseña Simplenote")    
 print ("Cargando datos...")
-sn = simplenote.Simplenote("pjexposito@gmail.com","E13n1+4s")
+sn = simplenote.Simplenote("pjexposito@gmail.com",passwd)
 todo=sn.get_note_list(data=True, tags=[])
 en_json = json.dumps(todo, indent=4)
 #print (en_json)
