@@ -17,7 +17,7 @@ en_json = json.dumps(todo, indent=4)
 mensaje = ''.join(chr(ord(c)^ord(k)) for c,k in zip(en_json, cycle(key)))
 mensaje = base64.b64encode(mensaje.encode("utf-8"))
 mensaje = str(mensaje,'utf-8')
-print('%s' % (mensaje))
+#print('%s' % (mensaje))
 
 file1 = open("/data/data/com.termux/files/home/pjexposito.github.io/datos.json","w") 
 file1.write(mensaje) 
