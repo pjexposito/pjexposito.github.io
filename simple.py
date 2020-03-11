@@ -3,8 +3,9 @@ import json
 import base64
     
         
-pw = input("Contraseña Simplenote: ")    
-sn = simplenote.Simplenote("pjexposito@gmail.com",pw)
+    
+print ("Cargando datos...")
+sn = simplenote.Simplenote("pjexposito@gmail.com","E13n1+4s")
 todo=sn.get_note_list(data=True, tags=[])
 en_json = json.dumps(todo, indent=4)
 #print (en_json)
