@@ -1,6 +1,5 @@
-echo Acepta el aviso y pulsa Intro...
 termux-setup-storage 
-read
+read -rsp $'Acepta el aviso y pulsa Intro...\n' -n1 key
 #Descomenta las lineas para volcar copia de seguridad antigua
 #cd /data/data/com.termux/files
 #rm -rf home
@@ -12,6 +11,7 @@ echo Instalando paquetes adicionales...
 pkg install jq nano termux-api python clang libjpeg-turbo ffmpeg git openssh atomicparsley mc screenfetch -y
 echo Actualizando PIP...
 pip install --upgrade pip
+pip install wheel
 echo Instalando Pillow
 LDFLAGS="-L/system/lib/" CFLAGS="-I/data/data/com.termux/files/usr/include/" pip install Pillow
 echo Instalando otras librerías de Python
