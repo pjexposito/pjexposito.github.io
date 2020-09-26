@@ -1,9 +1,11 @@
 termux-setup-storage 
 read -rsp $'Acepta el aviso y pulsa Intro...\n' -n1 key
-#Descomenta las lineas para volcar copia de seguridad antigua
-#cd /data/data/com.termux/files
-#rm -rf home
-#tar -zxvf /sdcard/termux-backup.tar.gz home
+
+## Descomenta las lineas para volcar copia de seguridad antigua
+## cd /data/data/com.termux/files
+## rm -rf home
+## tar -zxvf /sdcard/termux-backup.tar.gz home
+
 cd
 echo Actualizando paquetes...
 pkg upgrade -y
