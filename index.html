@@ -186,8 +186,8 @@
   			}
 
   			function calcula_gastos(importe) {
-  				gastos = 3;
-  		    	if ((importe >= 0) && (importe <= 90)) gastos = 1;
+  			gastos = 0;
+  		    	if ((importe > 0) && (importe <= 90)) gastos = 1;
   		    	if ((importe > 90) && (importe <= 125)) gastos = 2;
   		    	if ((importe > 125) && (importe <= 250)) gastos = 3;
   		    	if ((importe > 250) && (importe <= 350)) gastos = 5;
