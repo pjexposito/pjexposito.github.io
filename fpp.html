@@ -288,7 +288,7 @@
 				if ((edit_meses.value.length > 0) & (edit_precio.value.length > 0)) 
 				{
 					if (edit_precio.value < 1) edit_precio.value=1;
-					if (edit_meses.value < 3) edit_meses.value=3;
+					if (edit_meses.value < 1) edit_meses.value=1;
 					if (edit_meses.value > 36) edit_meses.value=36;
 					
 					localStorage.setItem("meses", edit_meses.value);
