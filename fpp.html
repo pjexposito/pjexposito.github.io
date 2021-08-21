@@ -287,7 +287,7 @@
        
             function inicia_script()
             {
-                if (!esta_en_local) {
+                if (!ie11) {
                   edit_meses.value = localStorage.getItem("meses");
                   edit_precio.value = localStorage.getItem("precio");
                 }
@@ -304,7 +304,7 @@
                     if (edit_precio.value < 1) edit_precio.value=1;
                     if (edit_meses.value < 1) edit_meses.value=1;
                     if (edit_meses.value > 36) edit_meses.value=36;
-                    if (!esta_en_local) {
+                    if (!ie11) {
                         localStorage.setItem("meses", edit_meses.value);
                         localStorage.setItem("precio", edit_precio.value);
                     }
