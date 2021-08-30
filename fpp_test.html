@@ -107,6 +107,20 @@
                 padding: 5px;
                 text-align: center;
             }
+            
+            @media only screen and (max-width: 600px) {
+  body {
+    background-color: red;
+   font: 2em Helvetica, arial, sans-serif;
+  }
+            .encabezado {
+                list-style: none;
+                margin: 2em;
+                display: grid;
+                grid-gap: 100px;
+                grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            }
+} 
         </STYLE>
         <TITLE>FPP</TITLE>     
         <META name="GENERATOR" content="MSHTML 11.00.10570.1001">
