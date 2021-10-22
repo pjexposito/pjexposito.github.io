@@ -300,7 +300,12 @@ overflow:hidden;
                     valor_cuota = calcula_cuota(precio.value,item);
                     intereses = (valor_cuota*item) - precio.value;
                     cuota_array.innerHTML = "Cuota: "+ redondea(valor_cuota) + " €/m";
-                    interes_array.innerHTML = "Intereses: " + redondea(intereses) + " €";
+		    if (item == "3"){
+                        interes_array.innerHTML = "Intereses: " + redondea(intereses) + " €";
+		    } else {
+			interes_array.innerHTML = "Gastos: " + redondea(intereses) + " €";
+
+		    }
                 });
             }
        
