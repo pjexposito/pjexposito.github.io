@@ -1,0 +1,11 @@
+{
+  "background_color": "#ffffff",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "pjexposito.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "pjexposito.github",
+  "start_url": "/",
+  "theme_color": "#ffffff"
+}
