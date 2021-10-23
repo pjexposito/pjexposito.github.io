@@ -30,7 +30,7 @@
       "src": "iconos/maskable512.png",
       "sizes": "512x512",
       "purpose:" "maskable"
-    },
+    }
   ],
   "start_url": "fpp.html",
   "display": "standalone",
