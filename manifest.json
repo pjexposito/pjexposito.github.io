@@ -455,7 +455,7 @@
   ],
   "start_url": "fpp.html",
   "display": "standalone",
-  "orientation": "portrait",
+  "orientation": "any",
   "background_color": "#FFFFFF",
   "theme_color": "#949494"
 }
