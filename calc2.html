@@ -2,20 +2,14 @@
 <html>
 <head>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-  <title>CSS Grid Calculator Starter Fiddle</title>
+  <title>FPP HTML</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="robots" content="noindex, nofollow">
   <meta name="googlebot" content="noindex, nofollow">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <script
-    type="text/javascript"
-    src="/js/lib/dummy.js"
-    
-  ></script>
-
-    <link rel="stylesheet" type="text/css" href="/css/result-light.css">
+ 
 
 
   <style id="compiled-css" type="text/css">
@@ -32,9 +26,9 @@
 
 .calculator {
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 1px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -42,8 +36,8 @@
 
 .calculator-screen {
   width: 100%;
-  font-size: 5rem;
-  height: 80px;
+  font-size: 3rem;
+  height: 30px;
   border: none;
   background-color: #252525;
   color: #fff;
@@ -98,164 +92,303 @@ button:hover {
 .calculator-keys {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-gap: 20px;
-  padding: 20px;
+  grid-gap: 1px;
+  padding: 30px;
 }
-    /* EOS */
+
+.slidecontainer {
+  width: 100%;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04AA6D;
+  cursor: pointer;
+}
+
   </style>
 
-  <script id="insert"></script>
 
 
-    <script src="/js/stringify.js?1a68cd514422e53b9042e8f684313fd553b9fd74" charset="utf-8"></script>
-    <script>
-      const customConsole = (w) => {
-        const pushToConsole = (payload, type) => {
-          w.parent.postMessage({
-            console: {
-              payload: stringify(payload),
-              type:    type
-            }
-          }, "*")
-        }
 
-        w.onerror = (message, url, line, column) => {
-          // the line needs to correspond with the editor panel
-          // unfortunately this number needs to be altered every time this view is changed
-          line = line - 70
-          if (line < 0){
-            pushToConsole(message, "error")
-          } else {
-            pushToConsole(`[${line}:${column}] ${message}`, "error")
-          }
-        }
-
-        let console = (function(systemConsole){
-          return {
-            log: function(){
-              let args = Array.from(arguments)
-              pushToConsole(args, "log")
-              systemConsole.log.apply(this, args)
-            },
-            info: function(){
-              let args = Array.from(arguments)
-              pushToConsole(args, "info")
-              systemConsole.info.apply(this, args)
-            },
-            warn: function(){
-              let args = Array.from(arguments)
-              pushToConsole(args, "warn")
-              systemConsole.warn.apply(this, args)
-            },
-            error: function(){
-              let args = Array.from(arguments)
-              pushToConsole(args, "error")
-              systemConsole.error.apply(this, args)
-            },
-            system: function(arg){
-              pushToConsole(arg, "system")
-            },
-            clear: function(){
-              systemConsole.clear.apply(this, {})
-            },
-            time: function(){
-              let args = Array.from(arguments)
-              systemConsole.time.apply(this, args)
-            },
-            assert: function(assertion, label){
-              if (!assertion){
-                pushToConsole(label, "log")
-              }
-
-              let args = Array.from(arguments)
-              systemConsole.assert.apply(this, args)
-            }
-          }
-        }(window.console))
-
-        window.console = { ...window.console, ...console }
-
-        console.system("Running fiddle")
-      }
-
-      if (window.parent){
-        customConsole(window)
-      }
-    </script>
 </head>
 <body>
     <div class="calculator">
 
-  <input type="text" class="calculator-screen" value="0" disabled />
+  <input id="precio" type="text" class="calculator-screen" value="precio" disabled />
+  <input id="cuota" type="text" class="calculator-screen" value="cuota" disabled />
+  <input id="interes" type="text" class="calculator-screen" value="interes" disabled />
   
+  <div class="slidecontainer">
+      <input type="range" min="3" max="36" value="12" class="slider" id="myRange">  
+	  <p>Value: <span id="demo"></span></p>
+  </div> 
   <div class="calculator-keys">
     
-    <button type="button" class="operator" value="+">+</button>
-    <button type="button" class="operator" value="-">-</button>
-    <button type="button" class="operator" value="*">&times;</button>
-    <button type="button" class="operator" value="/">&divide;</button>
+    <button type="button" class="operator" value="+"  onClick="BotonSumar()">+</button>
+    <button type="button" class="operator" value="-" onClick="BotonRestar()">-</button>
+    <button type="button" class="operator" value="personal"  onClick="BotonPersonal()">Quitar 15%</button>
+    <button type="button" class="operator" value="IVA" onClick="BotonIVA()">Sin IVA</button>
 
-    <button type="button" value="7">7</button>
-    <button type="button" value="8">8</button>
-    <button type="button" value="9">9</button>
-
-
-    <button type="button" value="4">4</button>
-    <button type="button" value="5">5</button>
-    <button type="button" value="6">6</button>
+    <button type="button" value="7" onClick="boton_pulsado(this.value)">7</button>
+    <button type="button" value="8" onClick="boton_pulsado(this.value)">8</button>
+    <button type="button" value="9" onClick="boton_pulsado(this.value)">9</button>
 
 
-    <button type="button" value="1">1</button>
-    <button type="button" value="2">2</button>
-    <button type="button" value="3">3</button>
+    <button type="button" value="4" onClick="boton_pulsado(this.value)">4</button>
+    <button type="button" value="5" onClick="boton_pulsado(this.value)">5</button>
+    <button type="button" value="6" onClick="boton_pulsado(this.value)">6</button>
 
 
-    <button type="button" value="0">0</button>
+    <button type="button" value="1" onClick="boton_pulsado(this.value)">1</button>
+    <button type="button" value="2" onClick="boton_pulsado(this.value)">2</button>
+    <button type="button" value="3" onClick="boton_pulsado(this.value)">3</button>
+
+
+    <button type="button" value="0" onClick="boton_pulsado(this.value)">0</button>
     <button type="button" class="decimal" value=".">.</button>
-    <button type="button" class="all-clear" value="all-clear">AC</button>
+    <button type="button" class="all-clear" value="limpiar" onClick="BotonBorrar()">AC</button>
 
-    <button type="button" class="equal-sign" value="=">=</button>
+    <button type="button" class="equal-sign" value="="  onClick="BotonIgual()">=</button>
 
   </div>
 </div>
 
-    <script type="text/javascript">//<![CDATA[
+<script>
+var Vaciar = false;
+var Dinero = 0;
+var Coma = 0;
+var Cuota = 0;
+var Interes = 0;
+var Calculando = 0;
+var Meses = 12;
+var TieneIntereses = true;
+var TIN = 16;
+ImporteMinimo = 90;
+DoceMasDoce = false;
+var slider = document.getElementById("myRange");
+var txtDinero = document.getElementById("precio");
+var txtCuota = document.getElementById("cuota");
+var txtIntereses = document.getElementById("interes");
+txtDinero.value = "0 €";
+txtCuota.value = "0.00 €/m";
+txtIntereses.value = "Intereses: 0.00 €";
+
+var output = document.getElementById("demo");
+output.innerHTML = slider.value;
+
+slider.oninput = function() {
+
+  Meses = this.value;
+  Opera();
+}
+
+function redondea(num){
+    let power = 10**2
+    return Math.round(num*power)/power
+}
+
+function Resetea() {
+    if (Dinero == 0) {Dinero = Anterior}
+    Anterior = 0;
+    Calculando = 0;
+    Coma = 0;
+}
+
+function BotonBorrar() {
+    Resetea();
+    Dinero = 0;
+    Intereses = 0;
+    Cuota = 0;
+	txtDinero.value = "0 €";
+    txtCuota.value = "0.00 €/m";
+    txtIntereses.value = "Intereses: 0.00 €";
+
+}
+
+function BotonIVA() {
+
+    Dinero = parseFloat(Dinero) / 1.21;
+    Opera();
+}
+
+function BotonPersonal(){
+    Dinero = Dinero - ((15 * Dinero) / 100);
+    Opera();
+	
+}
 
 
+function boton_coma(){
+	Coma = 1;
+}
 
+function CalculaCuota() {
+    var CalculoTemporal;
+    var IndiceIntereses;
+    var CalculoArriba;
+    var CalculoAbajo;
 
+    IndiceIntereses = parseFloat(TIN) / parseFloat(1200);
+    CalculoArriba = IndiceIntereses * (Math.pow((IndiceIntereses + 1), Meses));
+    CalculoAbajo = Math.pow((IndiceIntereses + 1), Meses) - 1;
+    CalculoTemporal = (CalculoArriba / CalculoAbajo) * Dinero;
 
-  //]]></script>
+    return parseFloat(CalculoTemporal);
 
-  <script>
-    // tell the embed parent frame the height of the content
-    if (window.parent && window.parent.parent){
-      window.parent.parent.postMessage(["resultsFrame", {
-        height: document.body.getBoundingClientRect().height,
-        slug: "c8b9zsaq"
-      }], "*")
+}
+
+function Opera() {
+    var TempCuota1;
+    var TempCuota2;
+    NoCalcular = false;
+
+	
+    if ((Meses >= 4) && (Meses >= 13)) {
+        Cuota = CalculaCuota();
+        Intereses = (Cuota * Meses) - Dinero;
+    }
+    if ((Meses >= 4) && (Meses < 13)) {
+        if (TieneIntereses) {
+            Cuota = CalculaCuota();
+            Intereses = (Cuota * Meses) - Dinero;
+        } else {
+            Intereses = 9;
+            Cuota = (Dinero + Intereses) / Meses;
+        }
+    }
+    if (Meses <= 3) {
+        Intereses = CalculaGastos();
+        TempCuota1 = Dinero + Intereses;
+        TempCuota2 = TempCuota1 / parseFloat(Meses);
+        Cuota = TempCuota2;
+    }
+    if ((Dinero < ImporteMinimo) && (TieneIntereses == false))
+        NoCalcular = true;
+
+    if ((Meses == 24) && (DoceMasDoce)) {
+        Cuota = ((Dinero + 12) / 2) / 12;
+        Cuota2 = ((Dinero + 12) / 2) * (parseFloat(0.09168));
+        Intereses = ((Cuota * 12) + (Cuota2 * 12)) - Dinero;
     }
 
-    // always overwrite window.name, in case users try to set it manually
-    window.name = "result"
-  </script>
 
-    <script>
-      let allLines = []
+    if (NoCalcular) {
+        txtCuota.value= "...";
+        txtIntereses.value = "...";
 
-      window.addEventListener("message", (message) => {
-        if (message.data.console){
-          let insert = document.querySelector("#insert")
-          allLines.push(message.data.console.payload)
-          insert.innerHTML = allLines.join(";\r")
-
-          let result = eval.call(null, message.data.console.payload)
-          if (result !== undefined){
-            console.log(result)
-          }
+    } else {
+        txtCuota.value = redondea(Cuota) + " €/m";
+        if ((Meses == 24) && (DoceMasDoce)) {
+            txtCuota.value = "1-12: " + redondea(Cuota) + "€/m"  + "13-24: " + redondea(Cuota2) + " €/m";
         }
-      })
-    </script>
+
+        if (TieneIntereses == false && Meses < 13) {
+
+            txtIntereses.value = "Gestión: " + redondea(Intereses) + " €";
+        } else {
+
+            txtIntereses.value = "Intereses: " +redondea(Intereses) + " €";
+        }
+
+
+
+
+    }
+
+    //Pinta el resto de etiquetas
+    txtDinero.value = redondea(Dinero) + " €";
+    //txtMeses.value("Meses: " + Integer.toString(Meses));
+
+
+}
+
+
+function BotonSumar() {
+    if (Calculando == 1) Dinero = Dinero + Anterior;
+    if (Calculando == 2) Dinero = Anterior - Dinero;
+    Opera();
+    Calculando = 1;
+    Anterior = Dinero;
+    Dinero = 0;
+}
+
+function BotonRestar() {
+    if (Calculando == 2) Dinero = Anterior - Dinero;
+    if (Calculando == 1) Dinero = Dinero + Anterior;
+    Opera();
+    Calculando = 2;
+    Anterior = Dinero;
+    Dinero = 0;
+}
+
+function BotonIgual() {
+    if (Calculando == 1) Dinero = Dinero + Anterior;
+    if (Calculando == 2) Dinero = Anterior - Dinero;
+    Opera();
+    Calculando = 0;
+    Vaciar = true;
+}
+
+function boton_pulsado(cantidad) {
+        var tempDecimales;
+        if (Vaciar) {
+            Dinero = 0;
+            Vaciar = false;
+        }
+        switch (Coma) {
+            case 0:
+                if (((Dinero) / 1000) < 1) {
+                    tempDecimales = Dinero - parseInt(Dinero);
+                    Dinero = (parseInt(Dinero) * 10 + parseInt(cantidad)) + tempDecimales;
+                }
+                break;
+            case 1:
+                Dinero = Dinero + (parseFloat(cantidad) / 10);
+                Coma = 2;
+                break;
+            case 2:
+                Dinero = Dinero + (parseFloat(cantidad) / 100);
+                Coma = 3;
+                break;
+        }
+        Opera();
+        if (Coma == 3) {
+            Vaciar = true;
+            Coma = 0;
+        }
+    }
+
+
+	    //pantalla.value = pantalla.value+clicked_id;
+
+
+</script>
 
 </body>
 </html>
