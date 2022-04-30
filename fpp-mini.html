@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>FPP</title>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style id="compiled-css" type="text/css">
+      html {
+  touch-action: manipulation;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden
+}
+
+
+
+.calculator {
+  padding: 10px;
+}
+
+.pantalla-precio {
+	
+  width: 100%;
+  font-size:4vmax;
+  height: 50px;
+  border: none;
+  background-color: #FFFFFF;
+  color: #4D5656;
+  text-align: left;
+
+}
+
+.pantalla-cuota {
+  width: 100%;
+  font-size:5vmax;
+  height: 60px;
+  border: none;
+  background-color: #FFFFFF;
+  color: #4D5656;
+  text-align: left;
+
+}
+
+.pantalla-interes {
+  width: 100%;
+  font-size: 2vmax;
+  height: 60px;
+  border: none;
+  background-color: #FFFFFF;
+  color: #4D5656;
+  text-align: left;
+
+}
+
+.pantalla-meses {
+  width: 100%;
+  font-size: 2vmax;
+  height: 60px;
+  border: none;
+  background-color: #FFFFFF;
+  color: #4D5656;
+  text-align: right;
+
+}
+
+.pantalla-abajo {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  
+}
+
+
+
+button {
+  height: 70px;
+  border-radius: 3px;
+  border: 1px transparent;
+  background-color: transparent;
+  font-size: 5vmax;
+  color: #4D5656;
+}
+
+
+.operator {
+  color: #337cac;
+}
+
+.IVA {
+    color: #337cac;
+  font-size: 2vmax;
+  
+}
+
+.personal {
+    color: #337cac;
+  font-size: 2vmax;
+  
+}
+
+
+.equal-sign {
+  height: 100%;
+  grid-area: 2 / 4 / 6 / 5;
+}
+
+.calculator-keys {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1px;
+  padding: 10px;
+}
+
+
+
+.slidecontainer {
+	
+  height: 50px;
+  width: 100%; /* Width of the outside container */
+
+  
+
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 5px; /* Specified height */
+  border-radius: 5px;  
+  background: #d3d3d3; /* Grey background */
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%; 
+  
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 25px; /* Slider handle height */
+  border-radius: 50%; 
+  
+  background: #04AA6D; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+  </style>
+
+
+
+
+</head>
+<body>
+  <div class="calculator">
+
+     <div id="precio" class="pantalla-precio"></div>
+     <div id="cuota" class="pantalla-cuota"></div>
+     <div class="pantalla-abajo">
+     <div id="interes" class="pantalla-interes"></div>
+     <div id="meses" class="pantalla-meses"></div>
+   </div>
+     
+	 
+  <div class="slidecontainer">
+      <input type="range" min="3" max="36" value="12" class="slider" id="barraMeses">  
+  </div> 
+  <div class="calculator-keys">
+    
+    <button type="funcion" class="operator" id="sumar">+</button>
+    <button type="funcion" class="operator" id="restar">-</button>
+    <button type="funcion" class="personal" id="personal">Quitar 15%</button>
+    <button type="funcion" class="IVA" id="IVA">Sin IVA</button>
+
+    <button type="numero" id="7">7</button>
+    <button type="numero" id="8">8</button>
+    <button type="numero" id="9">9</button>
+
+
+    <button type="numero" id="4">4</button>
+    <button type="numero" id="5">5</button>
+    <button type="numero" id="6">6</button>
+
+
+    <button type="numero" id="1">1</button>
+    <button type="numero" id="2">2</button>
+    <button type="numero" id="3">3</button>
+
+
+    <button type="numero" id="0">0</button>
+    <button type="funcion" class="decimal" id="coma">,</button>
+    <button type="funcion" class="all-clear" id="borrar">C</button>
+    <button type="funcion" class="equal-sign" id="igual">=</button>
+
+  </div>
+</div>
+
+<script>
+var Vaciar = false;
+var Dinero = 0;
+var Coma = 0;
+var Cuota = 0;
+var Interes = 0;
+var Calculando = 0;
+var Meses = 12;
+var TieneIntereses = true;
+var TIN = 16;
+ImporteMinimo = 90;
+DoceMasDoce = false;
+var txtDinero = document.getElementById("precio");
+var txtCuota = document.getElementById("cuota");
+var txtIntereses = document.getElementById("interes");
+var txtMeses = document.getElementById("meses");
+
+txtDinero.innerHTML = "Precio: 0 €";
+txtCuota.innerHTML = "Cuota: 0.00 €/m";
+txtIntereses.innerHTML = "Intereses: 0.00 €";
+txtMeses.innerHTML = Meses + " meses";
+
+const botones = document.querySelectorAll(`[type^="numero"]`);
+for (i = 0; i < botones.length; i++) {
+    botones[i].onclick = function(e){boton_pulsado(this.id);}
+}
+
+
+/*
+document.getElementById('0').onclick = function(e){boton_pulsado(this.id);}
+document.getElementById('1').onclick = function(e){boton_pulsado(this.id);}
+document.getElementById('2').onclick = function(e){boton_pulsado(this.id);}
+document.getElementById('3').onclick = function(e){boton_pulsado('3');}
+document.getElementById('4').onclick = function(e){boton_pulsado('4');}
+document.getElementById('5').onclick = function(e){boton_pulsado('5');}
+document.getElementById('6').onclick = function(e){boton_pulsado('6');}
+document.getElementById('7').onclick = function(e){boton_pulsado('7');}
+document.getElementById('8').onclick = function(e){boton_pulsado('8');}
+document.getElementById('9').onclick = function(e){boton_pulsado('9');}
+*/
+
+document.getElementById('coma').onclick = function(e){BotonComa();}
+document.getElementById('borrar').onclick = function(e){BotonBorrar();}
+document.getElementById('igual').onclick = function(e){BotonIgual();}
+document.getElementById('borrar').onclick = function(e){BotonBorrar();}
+document.getElementById('sumar').onclick = function(e){BotonSumar();}
+document.getElementById('restar').onclick = function(e){BotonRestar();}
+document.getElementById('personal').onclick = function(e){BotonPersonal();}
+document.getElementById('IVA').onclick = function(e){BotonIVA();}
+
+document.getElementById('barraMeses').oninput = function(e){
+    Meses = this.value;
+    Opera();
+}
+
+
+function redondea(num){
+    let power = 10**2
+    return Math.round(num*power)/power
+}
+
+function Resetea() {
+    if (Dinero == 0) {Dinero = Anterior}
+    Anterior = 0;
+    Calculando = 0;
+    Coma = 0;
+}
+
+function BotonBorrar() {
+    Resetea();
+    Dinero = 0;
+    Intereses = 0;
+    Cuota = 0;
+	txtDinero.innerHTML = "Precio: 0 €";
+    txtCuota.innerHTML = "Cuota: 0.00 €/m";
+    txtIntereses.innerHTML = "Intereses: 0.00 €";
+
+}
+
+function BotonIVA() {
+
+    Dinero = parseFloat(Dinero) / 1.21;
+    Opera();
+}
+
+function BotonPersonal(){
+    Dinero = Dinero - ((15 * Dinero) / 100);
+    Opera();
+	
+}
+
+
+function boton_coma(){
+	Coma = 1;
+}
+
+function CalculaGastos() {
+    var gastos;
+    gastos = 3;
+    if ((Dinero >= 0) && (Dinero <= 200)) gastos = 3;
+    if ((Dinero > 200) && (Dinero <= 400)) gastos = 5;
+    if ((Dinero > 400) && (Dinero <= 600)) gastos = 7;
+    if ((Dinero > 600) && (Dinero <= 1000)) gastos = 9;
+    if (Dinero > 1000) gastos = 12;
+    return gastos;
+}
+
+function CalculaCuota() {
+    var CalculoTemporal;
+    var IndiceIntereses;
+    var CalculoArriba;
+    var CalculoAbajo;
+
+    IndiceIntereses = parseFloat(TIN) / parseFloat(1200);
+    CalculoArriba = IndiceIntereses * (Math.pow((IndiceIntereses + 1), Meses));
+    CalculoAbajo = Math.pow((IndiceIntereses + 1), Meses) - 1;
+    CalculoTemporal = (CalculoArriba / CalculoAbajo) * Dinero;
+
+    return parseFloat(CalculoTemporal);
+
+}
+
+function Opera() {
+    var TempCuota1;
+    var TempCuota2;
+    NoCalcular = false;
+
+	
+    if ((Meses >= 4) && (Meses >= 13)) {
+        Cuota = CalculaCuota();
+        Intereses = (Cuota * Meses) - Dinero;
+    }
+    if ((Meses >= 4) && (Meses < 13)) {
+        if (TieneIntereses) {
+            Cuota = CalculaCuota();
+            Intereses = (Cuota * Meses) - Dinero;
+        } else {
+            Intereses = 9;
+            Cuota = (Dinero + Intereses) / Meses;
+        }
+    }
+    if (Meses <= 3) {
+        Intereses = CalculaGastos();
+        TempCuota1 = Dinero + Intereses;
+        TempCuota2 = TempCuota1 / parseFloat(Meses);
+        Cuota = TempCuota2;
+    }
+    if ((Dinero < ImporteMinimo) && (TieneIntereses == false))
+        NoCalcular = true;
+
+    if ((Meses == 24) && (DoceMasDoce)) {
+        Cuota = ((Dinero + 12) / 2) / 12;
+        Cuota2 = ((Dinero + 12) / 2) * (parseFloat(0.09168));
+        Intereses = ((Cuota * 12) + (Cuota2 * 12)) - Dinero;
+    }
+
+
+    if (NoCalcular) {
+        txtCuota.innerHTML= "...";
+        txtIntereses.innerHTML = "...";
+
+    } else {
+        txtCuota.innerHTML = "Cuota: "+redondea(Cuota) + " €/m";
+        if ((Meses == 24) && (DoceMasDoce)) {
+            txtCuota.innerHTML = "1-12: " + redondea(Cuota) + "€/m"  + "13-24: " + redondea(Cuota2) + " €/m";
+        }
+
+        if (TieneIntereses == false && Meses < 13) {
+
+            txtIntereses.innerHTML = "Gestión: " + redondea(Intereses) + " €";
+        } else {
+
+            txtIntereses.innerHTML = "Intereses: " +redondea(Intereses) + " €";
+        }
+
+
+
+
+    }
+
+    txtDinero.innerHTML = "Precio: "+redondea(Dinero) + " €";
+    txtMeses.innerHTML = Meses + " meses";
+	
+
+}
+function BotonComa() {
+    Coma = 1;
+}
+
+function BotonSumar() {
+    if (Calculando == 1) Dinero = Dinero + Anterior;
+    if (Calculando == 2) Dinero = Anterior - Dinero;
+    Opera();
+    Calculando = 1;
+    Anterior = Dinero;
+    Dinero = 0;
+	Coma = 0;
+}
+
+function BotonRestar() {
+    if (Calculando == 2) Dinero = Anterior - Dinero;
+    if (Calculando == 1) Dinero = Dinero + Anterior;
+    Opera();
+    Calculando = 2;
+    Anterior = Dinero;
+    Dinero = 0;
+	Coma = 0;
+}
+
+function BotonIgual() {
+    if (Calculando == 1) Dinero = Dinero + Anterior;
+    if (Calculando == 2) Dinero = Anterior - Dinero;
+    Opera();
+    Calculando = 0;
+    Vaciar = true;
+}
+
+function boton_pulsado(cantidad) {
+        var tempDecimales;
+        if (Vaciar) {
+            Dinero = 0;
+            Vaciar = false;
+        }
+        switch (Coma) {
+            case 0:
+                if (((Dinero) / 1000) < 1) {
+                    tempDecimales = Dinero - parseInt(Dinero);
+                    Dinero = (parseInt(Dinero) * 10 + parseInt(cantidad)) + tempDecimales;
+                }
+                break;
+            case 1:
+                Dinero = Dinero + (parseFloat(cantidad) / 10);
+                Coma = 2;
+                break;
+            case 2:
+                Dinero = Dinero + (parseFloat(cantidad) / 100);
+                Coma = 3;
+                break;
+        }
+        Opera();
+        if (Coma == 3) {
+            Vaciar = true;
+            Coma = 0;
+        }
+    }
+
+
+
+
+</script>
+
+</body>
+</html>
