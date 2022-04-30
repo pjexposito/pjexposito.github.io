@@ -1,90 +1,68 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FPP HTML</title>
+  <title>FPP</title>
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <style id="compiled-css" type="text/css">
       html {
   touch-action: manipulation;
-		  
-  font-size: 62.5%;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0; 
+  height: 100%; 
+  overflow: hidden
 }
 
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+
 
 .calculator {
-  border: 1px solid #ccc;
-  border-radius: 1px;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  padding-right: 1px;
-  padding-left: 1px;
-  padding-top: 1px;
-  
+  padding: 10px;
 }
 
 .pantalla-precio {
 	
   width: 100%;
-  font-size: 2.7rem;
+  font-size:4vmax;
   height: 50px;
   border: none;
   background-color: #FFFFFF;
   color: #4D5656;
   text-align: left;
-  padding-right: 20px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-down: 20px;
+
 }
 
 .pantalla-cuota {
   width: 100%;
-  font-size: 3.3rem;
+  font-size:5vmax;
   height: 60px;
   border: none;
   background-color: #FFFFFF;
   color: #4D5656;
   text-align: left;
-  padding-right: 20px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-down: 10px;
+
 }
 
 .pantalla-interes {
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2vmax;
   height: 60px;
   border: none;
   background-color: #FFFFFF;
   color: #4D5656;
   text-align: left;
-  padding-right: 20px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-down: 50px;
+
 }
 
 .pantalla-meses {
   width: 100%;
-  font-size: 1.6rem;
+  font-size: 2vmax;
   height: 60px;
   border: none;
   background-color: #FFFFFF;
   color: #4D5656;
   text-align: right;
-  padding-right: 20px;
-  padding-left: 10px;
-  padding-top: 10px;
-  padding-down: 50px;
+
 }
 
 .pantalla-abajo {
@@ -97,11 +75,10 @@
 
 button {
   height: 70px;
-  background-color: #fff;
   border-radius: 3px;
   border: 1px transparent;
   background-color: transparent;
-  font-size: 3rem;
+  font-size: 5vmax;
   color: #4D5656;
 }
 
@@ -112,13 +89,13 @@ button {
 
 .IVA {
     color: #337cac;
-  font-size: 1.5rem;
+  font-size: 2vmax;
   
 }
 
 .personal {
     color: #337cac;
-  font-size: 1.5rem;
+  font-size: 2vmax;
   
 }
 
@@ -141,10 +118,7 @@ button {
 	
   height: 50px;
   width: 100%; /* Width of the outside container */
-  padding-right: 10px;
-  padding-left: 10px;  
-  padding-top: 10px;
-  padding-down: 10px;
+
   
 
 }
@@ -196,14 +170,16 @@ button {
 
 </head>
 <body>
-    <div class="calculator">
+  <div class="calculator">
 
-  <input id="precio" type="text" class="pantalla-precio" value="precio" disabled />
-  <input id="cuota" type="text" class="pantalla-cuota" value="cuota" disabled />
-  <div class="pantalla-abajo">
-  <input id="interes" type="text" class="pantalla-interes" value="interes" disabled />
-  <input id="meses" type="text" class="pantalla-meses" value="meses" disabled />
-  </div>
+     <div id="precio" class="pantalla-precio"></div>
+     <div id="cuota" class="pantalla-cuota"></div>
+     <div class="pantalla-abajo">
+     <div id="interes" class="pantalla-interes"></div>
+     <div id="meses" class="pantalla-meses"></div>
+   </div>
+     
+	 
   <div class="slidecontainer">
       <input type="range" min="3" max="36" value="12" class="slider" id="barraMeses">  
   </div> 
@@ -254,10 +230,10 @@ var txtCuota = document.getElementById("cuota");
 var txtIntereses = document.getElementById("interes");
 var txtMeses = document.getElementById("meses");
 
-txtDinero.value = "Precio: 0 €";
-txtCuota.value = "Cuota: 0.00 €/m";
-txtIntereses.value = "Intereses: 0.00 €";
-txtMeses.value = Meses + " meses";
+txtDinero.innerHTML = "Precio: 0 €";
+txtCuota.innerHTML = "Cuota: 0.00 €/m";
+txtIntereses.innerHTML = "Intereses: 0.00 €";
+txtMeses.innerHTML = Meses + " meses";
 
 const botones = document.querySelectorAll(`[type^="numero"]`);
 for (i = 0; i < botones.length; i++) {
@@ -310,9 +286,9 @@ function BotonBorrar() {
     Dinero = 0;
     Intereses = 0;
     Cuota = 0;
-	txtDinero.value = "Precio: 0 €";
-    txtCuota.value = "Cuota: 0.00 €/m";
-    txtIntereses.value = "Intereses: 0.00 €";
+	txtDinero.innerHTML = "Precio: 0 €";
+    txtCuota.innerHTML = "Cuota: 0.00 €/m";
+    txtIntereses.innerHTML = "Intereses: 0.00 €";
 
 }
 
@@ -395,21 +371,21 @@ function Opera() {
 
 
     if (NoCalcular) {
-        txtCuota.value= "...";
-        txtIntereses.value = "...";
+        txtCuota.innerHTML= "...";
+        txtIntereses.innerHTML = "...";
 
     } else {
-        txtCuota.value = "Cuota: "+redondea(Cuota) + " €/m";
+        txtCuota.innerHTML = "Cuota: "+redondea(Cuota) + " €/m";
         if ((Meses == 24) && (DoceMasDoce)) {
-            txtCuota.value = "1-12: " + redondea(Cuota) + "€/m"  + "13-24: " + redondea(Cuota2) + " €/m";
+            txtCuota.innerHTML = "1-12: " + redondea(Cuota) + "€/m"  + "13-24: " + redondea(Cuota2) + " €/m";
         }
 
         if (TieneIntereses == false && Meses < 13) {
 
-            txtIntereses.value = "Gestión: " + redondea(Intereses) + " €";
+            txtIntereses.innerHTML = "Gestión: " + redondea(Intereses) + " €";
         } else {
 
-            txtIntereses.value = "Intereses: " +redondea(Intereses) + " €";
+            txtIntereses.innerHTML = "Intereses: " +redondea(Intereses) + " €";
         }
 
 
@@ -417,12 +393,9 @@ function Opera() {
 
     }
 
-    //Pinta el resto de etiquetas
-    txtDinero.value = "Precio: "+redondea(Dinero) + " €";
-    txtMeses.value = Meses + " meses";
+    txtDinero.innerHTML = "Precio: "+redondea(Dinero) + " €";
+    txtMeses.innerHTML = Meses + " meses";
 	
-    //txtMeses.value("Meses: " + Integer.toString(Meses));
-
 
 }
 function BotonComa() {
