@@ -394,7 +394,7 @@
           <button class="especiales" id="restar_calculadora">-</button>
         </div>
         <div class="row">
-          <button class="normal" id="coma_calculadora">.</button>
+          <button class="normal" id="coma_calculadora">,</button>
           <button type="numero_calculadora" class="normal" id="0">0</button>
           <button class="normal" id="borrar_calculadora">C</button>
           <button class="especiales" id="igual_calculadora">=</button>
@@ -563,8 +563,8 @@
 	      Intereses = 0;
 	      Cuota = 0;
 	  	  txtDinero_calculadora.innerHTML = "Precio: 0 €";
-	      txtCuota_calculadora.innerHTML = "Cuota: 0.00 €/m";
-	      txtIntereses_calculadora.innerHTML = "Intereses: 0.00 €";
+	      txtCuota_calculadora.innerHTML = "Cuota: 0,00 €/m";
+	      txtIntereses_calculadora.innerHTML = "Intereses: 0,00 €";
 		  Opera();
 		  
 	  }
@@ -604,15 +604,15 @@
 	          Cuota = (Dinero + Intereses) / parseFloat(Meses);
 	      }
 	      if (Meses < 4) {
-	          txtIntereses_calculadora.innerHTML = "Gastos de gestión: " + redondea(Intereses) + " €";
+	          txtIntereses_calculadora.innerHTML = "Gastos de gestión: " + redondea(Intereses).toLocaleString() + " €";
 	      } else {
-	          txtIntereses_calculadora.innerHTML = "Intereses: " +redondea(Intereses) + " €";
+	          txtIntereses_calculadora.innerHTML = "Intereses: " +redondea(Intereses).toLocaleString() + " €";
 	      }
-	      txtCuota_calculadora.innerHTML = "Cuota: "+redondea(Cuota) + " €/m";
-	      txtDinero_calculadora.innerHTML = "Precio: "+redondea(Dinero) + " €";
+	      txtCuota_calculadora.innerHTML = "Cuota: "+redondea(Cuota).toLocaleString() + " €/m";
+	      txtDinero_calculadora.innerHTML = "Precio: "+redondea(Dinero).toLocaleString() + " €";
 	      txtMeses_calculadora.innerHTML = Meses + " meses";
 		  barraMeses.value = Meses;
-		  precio.value = Dinero;
+		  precio.value = redondea(Dinero);
 		  meses.value = Meses;
           pinta_todos_datos();
 		  
@@ -696,8 +696,8 @@
       function pinta_datos(valor_meses){
           valor_cuota = CalculaCuota(precio.value,valor_meses);
           intereses = (valor_cuota*valor_meses) - precio.value;
-          txt_cuota.innerHTML = "Cuota: "+ redondea(valor_cuota) + " €/m";
-          txt_interes.innerHTML = "Intereses: " + redondea(intereses) + " €";
+          txt_cuota.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString() + " €/m";
+          txt_interes.innerHTML = "Intereses: " + redondea(intereses).toLocaleString() + " €";
           txt_meses.innerHTML = valor_meses + " meses"
       }
 
@@ -726,8 +726,8 @@
           {
               valor_cuota = CalculaCuota(precio.value,mes_perfecto);
               intereses = (valor_cuota*mes_perfecto) - precio.value;
-              txt_cuota_ideal.innerHTML = "Cuota: "+ redondea(valor_cuota) + " €/m";
-              txt_interes_ideal.innerHTML = "Intereses: " + redondea(intereses) + " €";
+              txt_cuota_ideal.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString() + " €/m";
+              txt_interes_ideal.innerHTML = "Intereses: " + redondea(intereses).toLocaleString() + " €";
               txt_meses_ideal.innerHTML = mes_perfecto + " meses";                    
           }
           else
@@ -748,11 +748,11 @@
               var interes_array = document.getElementById("interes_"+item);
               valor_cuota = CalculaCuota(precio.value,item);
               intereses = (valor_cuota*item) - precio.value;
-              cuota_array.innerHTML = "Cuota: "+ redondea(valor_cuota) + " €/m";
+              cuota_array.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString() + " €/m";
     		  if (item == "3"){
-				  interes_array.innerHTML = "Gastos: " + redondea(intereses) + " €";
+				  interes_array.innerHTML = "Gastos: " + redondea(intereses).toLocaleString() + " €";
     		  } else {
-				  interes_array.innerHTML = "Intereses: " + redondea(intereses) + " €";
+				  interes_array.innerHTML = "Intereses: " + redondea(intereses).toLocaleString() + " €";
 			  }
 		  });
       }
