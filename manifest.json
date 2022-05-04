@@ -1,36 +1,35 @@
 {
   "name": "FPP",
   "short_name": "FPP",
+  "lang": "es-ES",
+  "start_url": "./fpp-mini.html",
+  "display": "standalone",
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
   "icons": [
     {
-      "src": "iconos/48x48.png",
-      "sizes": "48x48"
-    },
-    {
-      "src": "iconos/72x72.png",
-      "sizes": "72x72"
-    },
-    {
-      "src": "iconos/96x96.png",
-      "sizes": "96x96"
-    },
-    {
-      "src": "iconos/144x144.png",
-      "sizes": "144x144"
-    },
-    {
-      "src": "iconos/192x192.png",
+      "src": "./iconos/192x192.png",
       "sizes": "192x192",
-      "purpose": "any maskable"
+      "type": "image/png",
+      "density": 1
     },
     {
-      "src": "iconos/512x512.png",
-      "sizes": "512x512"
+      "src": "./iconos/144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "density": "1"
+    },
+    {
+      "src": "./iconos/512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": "1"
+    },
+    {
+      "src": "./iconos/96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "density": "1"
     }
-  ],
-  "start_url": "fpp.html",
-  "display": "standalone",
-  "orientation": "any",
-  "background_color": "#FFFFFF",
-  "theme_color": "#FFFFFF"
+  ]
 }
