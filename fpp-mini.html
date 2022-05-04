@@ -2,12 +2,33 @@
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-
-
     <title>FPP</title>
+    <meta name="description" content="Programa para calcular financiaciones">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- manifesty things -->
+    <link rel="manifest" href="manifest.json">
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="FPP">
+    <meta name="apple-mobile-web-app-title" content="FPP">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="msapplication-navbutton-color" content="#ffffff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="msapplication-starturl" content="/fpp-mini.html">
+    <link rel="icon" type="image/png" sizes="192x192" density="1" href="./iconos/192x192.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" density="1" href="./iconos/192x192.png">
+    <link rel="icon" type="image/png" sizes="144x144" density="1" href="./iconos/144x144.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" density="1" href="./iconos/144x144.png">
+    <link rel="icon" type="image/png" sizes="512x512" density="1" href="./iconos/512x512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" density="1" href="./iconos/512x512.png">
+    <link rel="icon" type="image/png" sizes="96x96" density="1" href="./iconos/96x96.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" density="1" href="./iconos/96x96.png">
+	
     <STYLE type="text/css" media="print">
         body {visibility: hidden; display: none;}
     </STYLE>
@@ -476,7 +497,14 @@
 	
 	
   </body>
+  
+  <script>if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('service-worker.js');
+  }
+  </script>
   <script>
+	  var formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
+	  console.log(formatter.format(2500.2223));
 	  var Vaciar = false;
 	  var Dinero = 0;
 	  var Coma = 0;
