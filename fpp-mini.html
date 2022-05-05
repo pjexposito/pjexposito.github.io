@@ -70,7 +70,10 @@
   				width:100vw;
 
 			}
-
+			.barra_superior {
+			  	height: 3vh;
+				
+			}
 			.screen {
 			  	width: 100%;
 			  	height: 10vh;
@@ -88,7 +91,7 @@
 
 			.pantalla-precio {
 			  	width: 100%;
-			  	height: 40px;
+			  	/* height: 40px; */
 			  	border: none;
 			  	background: transparent;
 			  	text-align: left;
@@ -100,7 +103,7 @@
 
 			.pantalla-cuota {
 			  	width: 100%;
-			  	height: 40px;
+			  	/* height: 40px; */
 			  	border: none;
 			  	background: transparent;
 			  	text-align: left;
@@ -112,7 +115,7 @@
 
 			.pantalla-interes {
 			  	width: 100%;
-			  	height: 30px;
+			  	/* height: 30px; */
 			  	border: none;
 			  	background: transparent;
 			  	text-align: left;
@@ -124,7 +127,7 @@
 
 			.pantalla-meses {
 			  	width: 100%;
-			  	height: 40px;
+			  	/* height: 40px; */
 			  	border: none;
 			  	background: transparent;
 			  	text-align: right;
@@ -135,6 +138,8 @@
 			}
 
 			.pantalla-abajo {
+			  	height: 7vh;
+			    align-items: center;
 	  		  	padding: 15px 5px;
 			  	display: grid;
 			  	grid-template-columns: 60% 40%;
@@ -215,15 +220,19 @@
 			}
 			
 			.slidecontainer {
-			  	height: 15px;
+			  	height: 15vh;
 			  	width: 100%; 
+				display: flex;
+				align-items: center; 
 			}
 
 			.slider {
+
+				
 			  	-webkit-appearance: none; 
 			  	appearance: none;
 			  	width: 100%;
-			  	height: 7px; 
+			  	height: 10px; 
 			  	border-radius: 5px;  
 			  	background: #d3d3d3; 
 			  	outline: none;
@@ -384,6 +393,8 @@
   <body>
 
     <div class="calculator">
+	  <div class="barra_superior"></div>
+		
       <div class="screen" id="mainscreen_calculadora">
          <div id="txtprecio_calculadora" class="pantalla-precio"></div>
 	  </div>
@@ -391,10 +402,10 @@
          <div id="txtcuota_calculadora" class="pantalla-cuota"></div>
 	  </div>
 	  
-         <div class="pantalla-abajo">
-             <div id="txtinteres_calculadora" class="pantalla-interes"></div>
-             <div id="txtmeses_calculadora" class="pantalla-meses"></div>
-	     </div>
+      <div class="pantalla-abajo">
+         <div id="txtinteres_calculadora" class="pantalla-interes"></div>
+         <div id="txtmeses_calculadora" class="pantalla-meses"></div>
+	  </div>
 	  <div class="slidecontainer">
 	      <input type="range" min="3" max="36" value="12" class="slider" id="barraMeses_calculadora">  
 	  </div>
