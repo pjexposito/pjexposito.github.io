@@ -69,9 +69,10 @@
 			  	transition: all 0.3s;
 				position: fixed;
   				width:100vw;
-			    min-height: 100vh;
+			    height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+			    height: calc(var(--vh, 1vh) * 100);
+				
 
-			    min-height: -webkit-fill-available;
 				
 				
 				
@@ -80,7 +81,7 @@
 
 			.screen {
 			  	width: 100%;
-			  	height: 10vh;
+			    height: 10%;
 			  	background-color: #FFFFFF;
 			  	display: -webkit-box;
 			  	display: -ms-flexbox;
@@ -142,7 +143,7 @@
 			}
 
 			.pantalla-abajo {
-			  	height: 8vh;
+			    height: 5%;
 			    align-items: center;
 	  		  	padding: 15px 5px;
 			  	display: grid;
@@ -151,7 +152,7 @@
 		
 			.calc {
 			  	width: 100%;
-			  	height: 50vh;
+			    height: 60%;
 			  	background: #FFFFFF;
 			  	border-radius: 8px;
 			}
@@ -174,7 +175,7 @@
 
 			.row {
 			  	width: 100%;
-			  	height: 10vh;
+			  	height: 20%;
 			  	padding: none;
 			  	display: -webkit-box;
 			  	display: -ms-flexbox;
@@ -221,7 +222,7 @@
 			}
 			
 			.slidecontainer {
-			  	height: 10vh;
+			    height: 15%;
 			  	width: 100%; 
 				display: flex;
 				align-items: center; 
@@ -518,6 +519,18 @@
   }
   </script>
   <script>
+	  
+	  let vh = window.innerHeight * 0.01;
+	  // Then we set the value in the --vh custom property to the root of the document
+	  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+	  // We listen to the resize event
+	  window.addEventListener('resize', () => {
+	    // We execute the same script as before
+	    let vh = window.innerHeight * 0.01;
+	    document.documentElement.style.setProperty('--vh', `${vh}px`);
+	  });
+	  
 	  var formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
 	  console.log(formatter.format(2500.2223));
 	  var Vaciar = false;
