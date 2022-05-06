@@ -8,25 +8,25 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "./iconos/192x192.png",
+      "src": "./nuevoicono/192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "density": 1
     },
     {
-      "src": "./iconos/144x144.png",
+      "src": "./nuevoicono/144x144.png",
       "sizes": "144x144",
       "type": "image/png",
       "density": "1"
     },
     {
-      "src": "./iconos/512x512.png",
+      "src": "./nuevoicono/512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "density": "1"
     },
     {
-      "src": "./iconos/96x96.png",
+      "src": "./nuevoicono/96x96.png",
       "sizes": "96x96",
       "type": "image/png",
       "density": "1"
