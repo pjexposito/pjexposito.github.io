@@ -6,10 +6,7 @@
     <meta charset="UTF-8" />
     <title>FPP</title>
     <meta name="description" content="Programa para calcular financiaciones">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <!-- manifesty things -->
-    <link rel="manifest" href="manifest.json">
 	
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,14 +19,23 @@
     <meta name="msapplication-navbutton-color" content="#ffffff">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="msapplication-starturl" content="/fpp-mini.html">
-    <link rel="icon" type="image/png" sizes="192x192" density="1" href="./nuevoicono/512.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="192x192" density="1" href="./nuevoicono/192.png">
-    <link rel="icon" type="image/png" sizes="144x144" density="1" href="./nuevoicono/512.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="144x144" density="1" href="./nuevoicono/144.png">
-    <link rel="icon" type="image/png" sizes="512x512" density="1" href="./nuevoicono/512.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="512x512" density="1" href="./nuevoicono/512.png">
-    <link rel="icon" type="image/png" sizes="96x96" density="1" href="./nuevoicono/96.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="96x96" density="1" href="./nuevoicono/96.png">
+    <link rel="icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
+    <link rel="icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
+    <link rel="icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
+    <link rel="icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
+	
+    <link rel="apple-touch-icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
+    <link rel="apple-touch-icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
+	
+    <link href="iconos/icon.svg" rel="mask-icon" size="any" color="black">
+
+	<link href="iconos/favicon.icon" rel="shortcut icon" type="image/x-icon">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+	
+    <link rel="manifest" href="manifest.json">
+	
 	
     <STYLE type="text/css" media="print">
         body {visibility: hidden; display: none;}
@@ -262,7 +268,7 @@
 			  	width: 35px;
 			  	height: 35px;
 			  	border-radius: 50%; 
-			  	background: #04AA6D; 
+			  	background: #495ed7; 
 			  	cursor: pointer;
 			}
 
@@ -270,7 +276,7 @@
 			  	width: 35px;
 			  	height: 35px; 
 			  	border-radius: 50%; 
-			  	background: #04AA6D;
+			  	background: #495ed7;
 			  	cursor: pointer; 
 			}
 				
@@ -542,7 +548,6 @@
 	  });
 	  
 	  var formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
-	  console.log(formatter.format(2500.2223));
 	  var Vaciar = false;
 	  var Dinero = 0;
 	  var Coma = 0;

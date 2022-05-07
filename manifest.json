@@ -8,28 +8,36 @@
   "background_color": "#ffffff",
   "icons": [
     {
-      "src": "./nuevoicono/192.png",
+      "src": "iconos/normal192.png",
       "sizes": "192x192",
       "type": "image/png",
       "density": 1
     },
     {
-      "src": "./nuevoicono/144.png",
+      "src": "iconos/normal144
+	  .png",
       "sizes": "144x144",
       "type": "image/png",
       "density": "1"
     },
     {
-      "src": "./nuevoicono/512.png",
+      "src": "iconos/normal512.png",
       "sizes": "512x512",
       "type": "image/png",
       "density": "1"
     },
     {
-      "src": "./nuevoicono/96.png",
+      "src": "iconos/normal96.png",
       "sizes": "96x96",
       "type": "image/png",
       "density": "1"
-    }
+    },
+    {
+      "src": "iconos/512-mask.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "density": "1",
+      "purpose": "maskable"
+    }	
   ]
 }
