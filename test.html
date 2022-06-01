@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">  
+<meta name="apple-mobile-web-app-title" content="CodePen">
+  <title>CodePen - CSS Fix for 100vh Mobile ViewPort Bug</title>
+<style>
+body {
+  min-height: 100vh;
+  /* mobile viewport bug fix */
+  min-height: -webkit-fill-available;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+
+/* general styling */
+:root {
+  font-size: calc(1vw + 1vh + .625vmin);
+}
+
+body {
+  display: flex; 
+  flex-direction: column;
+  font-family: -apple-system, 
+    BlinkMacSystemFont, 
+    "Segoe UI", 
+    Roboto, 
+    Oxygen-Sans, 
+    Ubuntu, 
+    Cantarell, 
+    "Helvetica Neue", 
+    sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+header,
+main,
+footer {
+  padding: 1rem;
+}
+
+header {
+  background-color: #001f3f;
+  color: #80bfff;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: #0074d9;
+  color: #b3dbff;
+}
+
+a {
+  color: #0074d9;
+}
+
+@media only screen and (max-width: 48rem) {
+   body {
+      font-size: 1.325rem;
+   }
+}
+</style>
+
+
+</head>
+
+<body translate="no" >
+  <header>HEADER GOES HERE</header>
+<main>
+  <p>Now eventually you do plan to have <em><a href="https://codepen.io/AllThingsSmitty/full/bpmZpK" target="_blank">dinosaurs</a></em> on your dinosaur tour? I thought you were one of your big brothers. There’s no unauthorized breeding in Jurassic Park.</p>
+  <p>Amphibian DNA. When you gotta go, you gotta go. I bring scientists, you bring a rockstar. Uh uh uh!…You didn’t say the magic word! That is one big pile of shit.</p>
+  <p>Are these characters…auto…erotica? They show extreme intelligence, even problem-solving intelligence. Hold onto your butts. Dinosaurs eat man; woman inherits the earth. Clever girl.</p>
+</main>
+<footer>FOOTER GOES HERE</footer>
+  
+</body>
+
+</html>
+ 
