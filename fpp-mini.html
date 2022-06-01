@@ -52,6 +52,9 @@
 			    overscroll-behavior: contain;
 			  	background-color: #FFFFFF;
 			  	display: flex;
+			    flex-direction: column;
+			    margin: 0;
+				
 			    justify-content: center;
 			  	transition: all 0.3s;
 				position: fixed;
@@ -94,6 +97,29 @@
               color: #cbcbcb !important;
 		  }
 		}
+		
+		
+		header,
+		main,
+		footer {
+		  padding: 1rem;
+		}
+
+		header {
+		  background-color: #001f3f;
+		  color: #80bfff;
+		}
+
+		main {
+		  flex: 1;
+		}
+
+		footer {
+		  background-color: #0074d9;
+		  color: #b3dbff;
+		}
+		
+		
 		
 		* {
 			margin: 0;
@@ -376,8 +402,8 @@
   <body>
 
     <div class="calculator">
-        <div class="cabecera">
-		</div>
+  <header>HEADER GOES HERE</header>
+<main>
       <div class="screen" id="mainscreen_calculadora">
          <div id="txtprecio_calculadora" class="pantalla-precio"></div>
 	  </div>
@@ -427,7 +453,13 @@
         </div>
 
       </div>
+	  </main>
+	  
+	  <footer>FOOTER GOES HERE</footer>
+	  
     </div>
+	
+	
 	<div class="tablafpp">	
         <UL class="encabezado">
             <LI>
