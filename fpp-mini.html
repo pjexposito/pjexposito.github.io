@@ -608,8 +608,8 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	Dinero = 0;
 	Intereses = 0;
 	Cuota = 0;
-		txtDinero_calculadora.innerHTML = "Precio: 0 €";
-	txtCuota_calculadora.innerHTML = "Cuota: 0,00 €/m";
+		txtDinero_calculadora.innerHTML = "0 €";
+	txtCuota_calculadora.innerHTML = "0,00 €/m";
 	txtIntereses_calculadora.innerHTML = "Intereses: 0,00 €";
 		Opera();
 		
@@ -654,8 +654,8 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	} else {
 	txtIntereses_calculadora.innerHTML = "Intereses: " +redondea(Intereses).toLocaleString("es-ES") + " €";
 	}
-	txtCuota_calculadora.innerHTML = "Cuota: "+redondea(Cuota).toLocaleString("es-ES") + " €/m";
-	txtDinero_calculadora.innerHTML = "Precio: "+redondea(Dinero).toLocaleString("es-ES") + " €";
+	txtCuota_calculadora.innerHTML = redondea(Cuota).toLocaleString("es-ES") + " €/m";
+	txtDinero_calculadora.innerHTML = redondea(Dinero).toLocaleString("es-ES") + " €";
 	txtMeses_calculadora.innerHTML = Meses + " meses";
 		barraMeses.value = Meses;
 		precio.value = redondea(Dinero);
