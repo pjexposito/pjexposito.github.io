@@ -2,263 +2,376 @@
 
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <title>FPP</title>
-    <meta name="description" content="Programa para calcular financiaciones">
-    <!-- manifesty things -->
+<head>
+<meta charset="UTF-8" />
+<title>FPP</title>
+<meta name="description" content="Programa para calcular financiaciones">
+<!-- manifesty things -->
 	
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	
-    <meta name="mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="FPP">
-    <meta name="apple-mobile-web-app-title" content="FPP">
-    <meta name="theme-color" content="#ffffff">
-    <meta name="msapplication-navbutton-color" content="#ffffff">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="msapplication-starturl" content="/fpp-mini.html">
-    <link rel="icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
-    <link rel="icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
-    <link rel="icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
-    <link rel="icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="FPP">
+<meta name="apple-mobile-web-app-title" content="FPP">
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-navbutton-color" content="#ffffff">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-starturl" content="/fpp-mini.html">
+<link rel="icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
+<link rel="icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
+<link rel="icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
+<link rel="icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
 	
-    <link rel="apple-touch-icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
-    <link rel="apple-touch-icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
+<link rel="apple-touch-icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
+<link rel="apple-touch-icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
+<link rel="apple-touch-icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
+<link rel="apple-touch-icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
 	
-    <link href="iconos/icon.svg" rel="mask-icon" size="any" color="black">
+<link href="iconos/icon.svg" rel="mask-icon" size="any" color="black">
 
 <!-- For all browsers -->
-    <link rel="icon" type="image/png" sizes="32x32" href="iconos/fav32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="iconos/fav16.png">	
+<link rel="icon" type="image/png" sizes="32x32" href="iconos/fav32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="iconos/fav16.png">	
 	<!-- For Google and Chrome -->
 	<link rel="icon" type="image/png" sizes="48x48" href="iconos/fav48.png">
 	
-    <link rel="manifest" href="manifest.json">
+<link rel="manifest" href="manifest.json">
 	
 	
-    <STYLE type="text/css" media="print">
-        body {visibility: hidden; display: none;}
-    </STYLE>
-    <style type="text/css">
+<STYLE type="text/css" media="print">
+body {visibility: hidden; display: none;}
+</STYLE>
+<style type="text/css">
+
+		:root {
+			--body-color: #000;
+			--body-background: #fff;
+			--white: #000;
+			--slider-line: #000;
+			--slider-background: #d3d3d3;
+			--slider-thumb: #495ed7;
+			--display-color: #000;
+			--key-color:#000;
+			--key-background: #fff;
+			--key-over: #dad6d6;
+			--key-sp: #A9A9A9; 
+			--cls-color: #cbcbcb;
+			--cls-background: #000;
+			--h2-color: #fff;
+			--h2-background: #949494;
+		}
+
+
 		@media only screen and (max-width: 600px) {			
 			.calculator {width: 90%;height: 100%;visibility: visible; display: all;}
-		  	.tablafpp {	visibility: hidden; display: none;}
+			.tablafpp {	visibility: hidden; display: none;}
+			* {
+				box-sizing: border-box;
+			}
+
+			html, body {
+				font-family: Arial, Helvetica, sans-serif;
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+			}
+
+			html {
+				overflow: hidden;
+			}
+
 			body {
 				touch-action: none;
-			    overscroll-behavior: contain;
-			  	background-color: #FFFFFF;
-			  	display: flex;
-			    justify-content: center;
-			  	transition: all 0.3s;
+				overscroll-behavior: contain;
+				align-content: stretch;
+				align-items: stretch;
+				background: var(--body-background);
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				color: var(--body-color);
+				-webkit-user-select: none;
+				-moz-user-select: -moz-none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			.cabecera {
+				height: 5%;
+				display: flex;
+			}
+
+			.slidecontainer {
+				margin: auto;
+				height: 10%;
+				width: 90%; 
+				display: flex;
+				align-items: center; 
+				border-bottom: 1px solid var(--slider-line);
+			}
+
+			.slider {
+				-webkit-appearance: none; 
+				appearance: none;
+				width: 100%;
+				height: 6px; 
+				border-radius: 5px;
+				background: var(--slider-background); 
+				outline: none;
+				opacity: 0.7; 
+				-webkit-transition: .2s;
+				transition: opacity .2s;
+			}
+
+			.slider:hover {
+				opacity: 1;
+			}
+
+			.slider::-webkit-slider-thumb {
+				-webkit-appearance: none;
+				appearance: none;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%; 
+				background: var(--slider-thumb); 
+				cursor: pointer;
+			}
+
+			.slider::-moz-range-thumb {
+				width: 30px;
+				height: 30px; 
+				border-radius: 50%; 
+				background: var(--slider-thumb);
+				cursor: pointer; 
+			}
+
+			.calculator-keys {
 				position: fixed;
-				width:100vw;
-			    height: 100vh; 
-			    min-height: -webkit-fill-available;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+			}
+
+			.calculator-display,.calculator-display2,.calculator-display3, .calculator-display4 {
+				float: left;
+				text-align: left;
+				width: 100%;
+				line-height: 5vh;
+				padding: 0 1rem;
+				color: var(--display-color);
+				overflow-x: none;
+			}
+
+
+
+			.calculator-display{
+				height: 12%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 8.5vmin;
+			}
+		
+		
+			.calculator-display2{
+				height: 12%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 10vmin;
 				
 			}
+		
+			.calculator-display3{
+				height: 8%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 5vmin;
+				width: 65%;
+			}
+		
+			.calculator-display4{
+				height: 8%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 5vmin;
+				width: 35%;
+				text-align: right;	
+			}
+
+			.calculator-key {
+			
+				float: left;
+				text-align: center;
+				width: 25%;
+				height: 10%; /* Era 17%. Ahora el teclado representa el 40% */
+				font-size: 5vh;
+				border: 0px solid var(--key-color);
+				color: var(--key-color);
+				background: var(--key-background); 
+
+			}
+		
+
+
+			button.calculator-key:focus {
+				outline: none;
+			}
+
+			button:active {
+				background: var(--key-over);
+			}
+
+			.calculator-key.wide {
+				width: 50%;
+			}
+		
+			.calculator-key.sp {
+				font-size: 3vh;
+				color: var(--key-sp);
+			}
+		
+			.calculator-key.op {
+				color: var(--key-sp);
+			}		
+			
+			
 		}
 		
 		@media only screen and (min-width: 601px) {
 			.calculator {visibility: hidden; display: none;	}
-		  	.tablafpp {	visibility: visible; display: all;	}
-            body {
-                font: 1.2em Helvetica, arial, sans-serif;
-                max-width: 1000px;
-                margin: auto;
-            }
+			.tablafpp {	visibility: visible; display: all;	}
+		
+			body {
+				font: 1.2em Helvetica, arial, sans-serif;
+				max-width: 1000px;
+				margin: auto;
+				background: var(--body-background);
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			a:link, a:visited {
+				text-decoration: none;
+				color: #f08c00;
+			}
+
+			h1 {
+				text-align: center;
+				margin: 0;
+				padding: 10px;
+				font: 1.2em Helvetica, arial, sans-serif;
+			}
+
+			h2 {
+				background-color: var(--h2-background);
+				color: var(--h2-color);
+				text-align: center;
+				margin: 0;
+				padding: 10px;
+			}
+
+			.encabezado {
+				list-style: none;
+				margin: 1em;
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			}
+
+			.encabezado li {
+				border: 1px solid #808080;
+				border-radius: 5px;
+				display: flex;
+				flex-direction: column;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+
+			.encabezado .cls_input {
+				font: 2.2em Helvetica, arial, sans-serif;
+				border: 0;
+				text-align: center;
+				width:90%;
+			}
+
+			.encabezado .cls_div {
+				margin: auto auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.encabezado .cls_interes {
+				margin-top: auto;
+				border-top: 1px solid #808080;
+				padding: 5px;
+				text-align: center;
+			}
+
+			.encabezado .cls_cuota {
+				padding: 5px;
+				text-align: center;
+			}
+
+			.listing {
+				list-style: none;
+				margin: 1em;
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+			}
+
+			.listing li {
+				border: 1px solid #808080;
+				border-radius: 5px;
+				display: flex;
+				flex-direction: column;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+
+			.listing .cls_interes {
+				margin-top: auto;
+				border-top: 1px solid #808080;
+				padding: 5px;
+				text-align: center;
+			}
+
+			.listing .cls_cuota {
+				padding: 5px;
+				text-align: center;
+			}
 		}
 		
 		@media (prefers-color-scheme: dark) {
-		  body{	
-			background-color: #000;
-		  }
-		  .pantalla-precio, .pantalla-cuota, .pantalla-interes, .pantalla-meses {
-			  color:#cbcbcb;
-		  }
-		  .normal, .especiales, .iva, .personal {
-  		  	background-color: #000 !important;
-			color: #cbcbcb !important;
-		  }
-		  .cls_input, .cls_cuota, .cls_interes {
-    		  	background-color: #000 !important;
+			:root {
+			  --body-color: #fff;
+			  --body-background: #000;
+			  --white: #ffffff;
+			  --slider-line: #fff;
+			  --slider-background: #d3d3d3;
+			  --slider-thumb: #495ed7;
+			  --display-color: #fafafa;
+			  --key-color:#fafafa;
+			  --key-background: #000;
+			  --key-over: #dad6d6;
+			  --key-sp: #A9A9A9; 
+			  --cls-color: #cbcbcb;
+			  --cls-background: #000;
+			  --h2-color: #cbcbcb;
+			  
+			  
+			}
+			.cls_input, .cls_cuota, .cls_interes {
+				background-color: #000 !important;
 				color: #cbcbcb !important;
-		  }
-		  h2 {
-              color: #cbcbcb !important;
-		  }
-		}
-		
-		* {
-			margin: 0;
-			padding: 0;
-			box-sizing: border-box;
-			font-family: Arial, Helvetica, sans-serif;
-		}
-		
-		.cabecera {
-			height: 5%;
-		}
-
-		.screen {
-		  	width: 100%;
-		    height: 10%;
-		  	background-color: #FFFFFF;
-		  	display: flex;
-		    align-items: center;
-		  	border: none;
-		  	background: transparent;
-		  	text-align: left;
-		  	padding: 0px 5px;
-		  	color: #000000;
-		  	font-weight: bold;
-		}
-
-		.pantalla-precio {
-		  	font-size: 3.5vmax;
-		}
-
-		.pantalla-cuota {
-		  	font-size: 4vmax;
-		}
-
-		.pantalla-abajo {
-		    height: 5%;
-		  	width: 100%;
-		  	border: none;
-		  	background: transparent;
-		    align-items: center;
-  		  	padding: 15px 5px;
-		  	font-size: 2vmax;
-		  	color: #000000;
-		  	font-weight: bold;
-		  	display: grid;
-		  	grid-template-columns: 60% 40%;
-		  	font-size: 2vmax;
-		}
-
-		.pantalla-interes {
-		  	text-align: left;
-		  	padding: 0px 0px;
-
-		}
-
-		.pantalla-meses {
-		  	text-align: right;
-		  	padding: 0px 5px;
-		}
-
-	
-		.calc {
-		  	width: 100%;
-		    height: 50%;
-		  	border-radius: 8px;
+			}
+			h2 {
+				color: #cbcbcb !important;
+			}
 		}
 		
 
-
-		button {
-		  	border: none;
-		  	font-weight: bold;
-		  	cursor: pointer;
-		  	display: block;	  	
-			width: 100%;
-		    padding: 14px 28px;
-		    text-align: center;
-		  	font-size: 4vmax;
-		  	background-color: #FFF;
-			
-		}
-
-		.row {
-		  	width: 100%;
-		  	height: 20%;
-		  	padding: none;
-		  	display: -webkit-box;
-		  	display: -ms-flexbox;
-		  	display: flex;
-		  	-webkit-box-align: center;
-		    -ms-flex-align: center;
-		    align-items: center;
-		  	-ms-flex-pack: distribute;
-		    justify-content: space-around;
-		}
-
-		.normal {
-		  	color: #000000;
-		}
-	
-		.especiales {
-		  	color: #636363;
-		  	font-size: 3vmax;
-		}
-
-		.iva {
-		  	color: #636363;
-		  	width: 45%;
-		  	font-size: 2vmax;
-		}
-
-		.personal {
-		  	color: #636363;
-		  	width: 45%;
-		  	font-size: 2vmax;
-		}
-
-		button:active {
-		  	background: #dad6d6;
-		}
-
-		.fortext {
-		  	transition: all 0.2s;
-		}
-		
-		.slidecontainer {
-		    height: 15%;
-		  	width: 100%; 
-			display: flex;
-			align-items: center; 
-		}
-
-		.slider {
-		  	-webkit-appearance: none; 
-		  	appearance: none;
-		  	width: 100%;
-		  	height: 10px; 
-		  	border-radius: 5px;  
-		  	background: #d3d3d3; 
-		  	outline: none;
-		  	opacity: 0.7; 
-		  	-webkit-transition: .2s;
-		  	transition: opacity .2s;
-		}
-		
-		.slider:hover {
-		  	opacity: 1;
-		}
-		
-		.slider::-webkit-slider-thumb {
-		  	-webkit-appearance: none;
-		  	appearance: none;
-		  	width: 35px;
-		  	height: 35px;
-		  	border-radius: 50%; 
-		  	background: #495ed7; 
-		  	cursor: pointer;
-		}
-		
-		.slider::-moz-range-thumb {
-		  	width: 35px;
-		  	height: 35px; 
-		  	border-radius: 50%; 
-		  	background: #495ed7;
-		  	cursor: pointer; 
-		}
-		
-        .visuallyhidden {
+		.visuallyhidden{
 			position:absolute;
 			left:-10000px;
 			top:auto;
@@ -266,427 +379,319 @@
 			height:1px;
 			overflow:hidden;
 		}
-			
-
-        a:link, a:visited {
-            text-decoration: none;
-            color: #f08c00;
-        }
-
-        h1 {
-            text-align: center;
-            margin: 0;
-            padding: 10px;  
-            font: 1.2em Helvetica, arial, sans-serif;
-        }
-
-        h2 {
-            background-color: #949494;
-            color: #fff;
-            text-align: center;
-            margin: 0;
-            padding: 10px;
-        }
-
-        .encabezado {
-            list-style: none;
-            margin: 1em;
-            display: grid;
-            grid-gap: 20px;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-        }
-
-        .encabezado li {
-            border: 1px solid #808080;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-
-        .encabezado .cls_input {
-            font: 2.2em Helvetica, arial, sans-serif;
-            border: 0;
-            text-align: center;
-            width:90%;
-        }
-
-        .encabezado .cls_div {
-            margin: auto auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .encabezado .cls_interes {
-            margin-top: auto;
-            border-top: 1px solid #808080;
-            padding: 5px;
-            text-align: center;
-        }
-        
-        .encabezado .cls_cuota {
-            padding: 5px;
-            text-align: center;
-        }
-
-        .listing {
-            list-style: none;
-            margin: 1em;
-            display: grid;
-            grid-gap: 20px;
-            grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
-        }
-
-        .listing li {
-            border: 1px solid #808080;
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        }
-        
-        .listing .cls_interes {
-            margin-top: auto;
-            border-top: 1px solid #808080;
-            padding: 5px;
-            text-align: center;
-        }
-
-        .listing .cls_cuota {
-            padding: 5px;
-            text-align: center;
-        }
 		
-        .visuallyhidden {
-			position:absolute;
-			left:-10000px;
-			top:auto;
-			width:1px;
-			height:1px;
-			overflow:hidden;
-		}
 
 	</style>
 	
-  </head>
-  <body>
+</head>
+<body>
 
-    <div class="calculator">
-        <div class="cabecera">
-		</div>
-      <div class="screen" id="mainscreen_calculadora">
-         <div id="txtprecio_calculadora" class="pantalla-precio"></div>
-	  </div>
-      <div class="screen" id="mainscreen_calculadora">
-         <div id="txtcuota_calculadora" class="pantalla-cuota"></div>
-	  </div>
-	  
-      <div class="pantalla-abajo">
-         <div id="txtinteres_calculadora" class="pantalla-interes"></div>
-         <div id="txtmeses_calculadora" class="pantalla-meses"></div>
-	  </div>
-	  
-	  <div class="slidecontainer">
-	      <input type="range" min="3" max="36" value="12" class="slider" id="barraMeses_calculadora">  
-		  <label for="barraMeses_calculadora" class="visuallyhidden">Meses</label>
-		  
-	  </div>
-	  
-      <div class="calc" id="calcbody">
-	    <div class="row">
-          <button class="iva" id="IVA_calculadora">Sin IVA</button>
-          <button class="personal" id="personal_calculadora">Quitar 15%</button>
-        </div>
-        <div class="row">
-          <button type="numero_calculadora" class="normal" id="7">7</button>
-          <button type="numero_calculadora" class="normal" id="8">8</button>
-          <button type="numero_calculadora" class="normal" id="9">9</button>
-          <button class="especiales" id="atras_calculadora"><</button>
-        </div>
-        <div class="row">
-          <button type="numero_calculadora" class="normal" id="4">4</button>
-          <button type="numero_calculadora" class="normal" id="5">5</button>
-          <button type="numero_calculadora" class="normal" id="6">6</button>
-          <button class="especiales" id="sumar_calculadora">+</button>
-        </div>
-        <div class="row">
-          <button type="numero_calculadora" class="normal" id="1">1</button>
-          <button type="numero_calculadora" class="normal" id="2">2</button>
-          <button type="numero_calculadora" class="normal" id="3">3</button>
-          <button class="especiales" id="restar_calculadora">-</button>
-        </div>
-        <div class="row">
-          <button class="normal" id="coma_calculadora">,</button>
-          <button type="numero_calculadora" class="normal" id="0">0</button>
-          <button class="normal" id="borrar_calculadora">C</button>
-          <button class="especiales" id="igual_calculadora">=</button>
-        </div>
+<div class="calculator">
+<div class="calculator-keys">
+	<div class="cabecera"></div>
+		
+<div id="txtprecio_calculadora" class="calculator-display"></div>
+<div id="txtcuota_calculadora" class="calculator-display2"></div>
+<div id="txtinteres_calculadora" class="calculator-display3">0.000</div>
+<div id="txtmeses_calculadora" class="calculator-display4">0.000</div>
+	
+	<div class="slidecontainer">
+	<input type="range" min="3" max="36" value="12" class="slider" id="barraMeses_calculadora">
+		<label for="barraMeses_calculadora" class="visuallyhidden">Meses</label>
+		
+	</div>
+	
+<button class="calculator-key wide sp" type="operator" id="IVA_calculadora">Sin IVA</button>
+<button class="calculator-key wide sp" type="operator" id="personal_calculadora">Quitar 15%</button>
 
-      </div>
-    </div>
+
+<button class="calculator-key" type="numero_calculadora" id="7">7</button>
+<button class="calculator-key" type="numero_calculadora" id="8">8</button>
+<button class="calculator-key" type="numero_calculadora" id="9">9</button>
+<button class="calculator-key op" type="operator" id="atras_calculadora"><</button>
+
+<button class="calculator-key" type="numero_calculadora" id="4">4</button>
+<button class="calculator-key" type="numero_calculadora" id="5">5</button>
+<button class="calculator-key" type="numero_calculadora" id="6">6</button>
+<button class="calculator-key op" type="operator" id="sumar_calculadora">+</button>
+
+<button class="calculator-key" type="numero_calculadora" id="1">1</button>
+<button class="calculator-key" type="numero_calculadora" id="2">2</button>
+<button class="calculator-key" type="numero_calculadora" id="3">3</button>
+<button class="calculator-key op" type="operator" id="restar_calculadora">-</button>
+
+<button class="calculator-key" type="decimal" id="coma_calculadora">,</button>
+<button class="calculator-key" type="numero_calculadora" id="0">0</button>
+	
+<button class="calculator-key" type="operator" id="borrar_calculadora">C</button>
+<button class="calculator-key op" type="operator" id="igual_calculadora">=</button>
+	
+</div>
+	
+
+</div>
 	<div class="tablafpp">	
-        <UL class="encabezado">
-            <LI>
-                <H2>Precio </H2>
-                <DIV class="cls_div">
+<UL class="encabezado">
+<LI>
+<H2>Precio </H2>
+<DIV class="cls_div">
 			<INPUT class="cls_input" id="precio" type="number" value="999">
 			<label for="precio" class="visuallyhidden">Precio</label>
 
 		</DIV>
-            </LI>
-            <LI>
-                <H2>Meses</H2>
-                <DIV class="cls_div">
+</LI>
+<LI>
+<H2>Meses</H2>
+<DIV class="cls_div">
 			<INPUT class="cls_input" id="meses" type="number" value="12">
 			<label for="meses" class="visuallyhidden">Meses</label>
 
 		</DIV>
-            </LI>
-            <LI>
-                <H2 id="txt_meses">Personalizado </H2>
-                <DIV class="cls_cuota" id="cuota">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes">Intereses: </DIV>
-            </LI>
-        </UL>
-        <UL class="listing">
-            <LI>
-                <H2>3 meses</H2>
-                <DIV class="cls_cuota" id="cuota_3">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_3">Gastos: </DIV>
-            </LI>
-            <LI>
-                <H2>6 meses</H2>
-                <DIV class="cls_cuota" id="cuota_6">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_6">Intereses: </DIV>
-            </LI>
-            <LI>
-                <H2>9 meses</H2>
-                <DIV class="cls_cuota" id="cuota_9">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_9">Intereses: </DIV>
-            </LI>
-            <LI>
-                <H2>12 meses</H2>
-                <DIV class="cls_cuota" id="cuota_12">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_12">Intereses: </DIV>
-            </LI>
-            <LI>
-                <H2>18 meses</H2>
-                <DIV class="cls_cuota" id="cuota_18">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_18">Intereses: </DIV>
-            </LI>
-            <LI>
-                <H2>24 meses</H2>
-                <DIV class="cls_cuota" id="cuota_24">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_24">Intereses: </DIV>
-            </LI>
-            <LI>
-                <H2>36 meses</H2>
-                <DIV class="cls_cuota" id="cuota_36">Cuota: </DIV>
-                <DIV class="cls_interes" id="interes_36">Intereses: </DIV>
-            </LI>
-            <LI>
-                <H2 id="txt_meses_ideal">Cuota 30€ </H2>
-                <DIV class="cls_cuota" id="cuota_ideal">Cuota:</DIV>
-                <DIV class="cls_interes" id="interes_ideal">Intereses: </DIV>
-            </LI>
-        </UL>
-        <H1>Los valores son aproximados. Por favor, no imprimáis esta hoja.</H1>
+</LI>
+<LI>
+<H2 id="txt_meses">Personalizado </H2>
+<DIV class="cls_cuota" id="cuota">Cuota: </DIV>
+<DIV class="cls_interes" id="interes">Intereses: </DIV>
+</LI>
+</UL>
+<UL class="listing">
+<LI>
+<H2>3 meses</H2>
+<DIV class="cls_cuota" id="cuota_3">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_3">Gastos: </DIV>
+</LI>
+<LI>
+<H2>6 meses</H2>
+<DIV class="cls_cuota" id="cuota_6">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_6">Intereses: </DIV>
+</LI>
+<LI>
+<H2>9 meses</H2>
+<DIV class="cls_cuota" id="cuota_9">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_9">Intereses: </DIV>
+</LI>
+<LI>
+<H2>12 meses</H2>
+<DIV class="cls_cuota" id="cuota_12">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_12">Intereses: </DIV>
+</LI>
+<LI>
+<H2>18 meses</H2>
+<DIV class="cls_cuota" id="cuota_18">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_18">Intereses: </DIV>
+</LI>
+<LI>
+<H2>24 meses</H2>
+<DIV class="cls_cuota" id="cuota_24">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_24">Intereses: </DIV>
+</LI>
+<LI>
+<H2>36 meses</H2>
+<DIV class="cls_cuota" id="cuota_36">Cuota: </DIV>
+<DIV class="cls_interes" id="interes_36">Intereses: </DIV>
+</LI>
+<LI>
+<H2 id="txt_meses_ideal">Cuota 30€ </H2>
+<DIV class="cls_cuota" id="cuota_ideal">Cuota:</DIV>
+<DIV class="cls_interes" id="interes_ideal">Intereses: </DIV>
+</LI>
+</UL>
+<H1>Los valores son aproximados. Por favor, no imprimáis esta hoja.</H1>
 	</div>
 	
 	
-  </body>
-  
-  <script>if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('service-worker.js');
-  }
-  </script>
-  <script>
-	  
+</body>
 
-	  
-	  var formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
-	  var Vaciar = false;
-	  var Dinero = 0;
-	  var Coma = 0;
-	  var Cuota = 0;
-	  var Interes = 0;
-	  var Calculando = 0;
-	  var Meses = 12;
-	  var TIN = 14;
-	  var txtDinero_calculadora = document.getElementById("txtprecio_calculadora");
-	  var txtCuota_calculadora = document.getElementById("txtcuota_calculadora");
-	  var txtIntereses_calculadora = document.getElementById("txtinteres_calculadora");
-	  var txtMeses_calculadora = document.getElementById("txtmeses_calculadora");
-      var barraMeses = document.getElementById('barraMeses_calculadora');
+<script>if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+<script>
+	
 
-	  var edit_meses = document.getElementById("meses");
-	  var edit_precio = document.getElementById("precio");
-	  var txt_cuota = document.getElementById("cuota");
-	  var txt_interes = document.getElementById("interes");
-	  var txt_meses = document.getElementById("txt_meses");
-	  var txt_meses_ideal = document.getElementById("txt_meses_ideal");
-	  var esta_en_local = false;
-	  var ie11= false;
-	  if (window.location.protocol == "file:") esta_en_local = true;
-	  if (!!window.MSInputMethodContext && !!document.documentMode) ie11=true;
-	  if (ie11) {
-		  window.alert("Esta web no funciona correctamente en este navegador. Por favor, utiliza uno más actualizado.");
-		  document.title = "Por favor, utiliza un navegador más actual";
-	  }
-	  precio.addEventListener('input', ActualizaDatos);
-	  meses.addEventListener('input', ActualizaDatos);
-	  window.onload = inicia_script()
+	
+	var formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
+	var Vaciar = false;
+	var Dinero = 0;
+	var Coma = 0;
+	var Cuota = 0;
+	var Interes = 0;
+	var Calculando = 0;
+	var Meses = 12;
+	var TIN = 14;
+	var txtDinero_calculadora = document.getElementById("txtprecio_calculadora");
+	var txtCuota_calculadora = document.getElementById("txtcuota_calculadora");
+	var txtIntereses_calculadora = document.getElementById("txtinteres_calculadora");
+	var txtMeses_calculadora = document.getElementById("txtmeses_calculadora");
+var barraMeses = document.getElementById('barraMeses_calculadora');
 
-	  //txtDinero_calculadora.innerHTML = "Precio: 0 €";
-	  //txtCuota_calculadora.innerHTML = "Cuota: 0.00 €/m";
-	  //txtIntereses_calculadora.innerHTML = "Intereses: 0.00 €";
-	  //txtMeses_calculadora.innerHTML = Meses + " meses";
+	var edit_meses = document.getElementById("meses");
+	var edit_precio = document.getElementById("precio");
+	var txt_cuota = document.getElementById("cuota");
+	var txt_interes = document.getElementById("interes");
+	var txt_meses = document.getElementById("txt_meses");
+	var txt_meses_ideal = document.getElementById("txt_meses_ideal");
+	var esta_en_local = false;
+	var ie11= false;
+	if (window.location.protocol == "file:") esta_en_local = true;
+	if (!!window.MSInputMethodContext && !!document.documentMode) ie11=true;
+	if (ie11) {
+		window.alert("Esta web no funciona correctamente en este navegador. Por favor, utiliza uno más actualizado.");
+		document.title = "Por favor, utiliza un navegador más actual";
+	}
+	precio.addEventListener('input', ActualizaDatos);
+	meses.addEventListener('input', ActualizaDatos);
+	window.onload = inicia_script()
 
-	  const botones = document.querySelectorAll(`[type^="numero_calculadora"]`);
-  
-	  for (i = 0; i < botones.length; i++) {
-		  botones[i].onclick = function(e){boton_pulsado(this.id);}
-	  }
+	//txtDinero_calculadora.innerHTML = "Precio: 0 €";
+	//txtCuota_calculadora.innerHTML = "Cuota: 0.00 €/m";
+	//txtIntereses_calculadora.innerHTML = "Intereses: 0.00 €";
+	//txtMeses_calculadora.innerHTML = Meses + " meses";
 
-	  document.getElementById('coma_calculadora').onclick = function(e){BotonComa();}
-	  document.getElementById('borrar_calculadora').onclick = function(e){BotonBorrar();}
-	  document.getElementById('igual_calculadora').onclick = function(e){BotonIgual();}
-	  document.getElementById('borrar_calculadora').onclick = function(e){BotonBorrar();}
-	  document.getElementById('sumar_calculadora').onclick = function(e){BotonSumar();}
-	  document.getElementById('restar_calculadora').onclick = function(e){BotonRestar();}
-	  document.getElementById('personal_calculadora').onclick = function(e){BotonPersonal();}
-	  document.getElementById('IVA_calculadora').onclick = function(e){BotonIVA();}
-	  document.getElementById('atras_calculadora').onclick = function(e){BotonAtras();}
+	const botones = document.querySelectorAll(`[type^="numero_calculadora"]`);
 
-	  document.getElementById('barraMeses_calculadora').oninput = function(e){
-		  Meses = this.value;
-		  meses.value = this.value;
-		  ActualizaDatos();
-	  }
+	for (i = 0; i < botones.length; i++) {
+		botones[i].onclick = function(e){boton_pulsado(this.id);}
+	}
 
-	  function redondea(valor){
-		  if (Number.EPSILON === undefined) {
-			  Number.EPSILON = Math.pow(2, -52); 
-		  }
-		  return (Math.round((valor + Number.EPSILON) * 100) / 100);
-	  }
-	  
-	  function BotonAtras(){
-		  if (String(Dinero).length>1){
-		      Dinero = parseFloat(String(Dinero).slice(0,-1))
-	      }
-		  else {
-			  Dinero = 0;
-		  }
-		  Coma = 0;
-		  Opera();
-	  }
-  
+	document.getElementById('coma_calculadora').onclick = function(e){BotonComa();}
+	document.getElementById('borrar_calculadora').onclick = function(e){BotonBorrar();}
+	document.getElementById('igual_calculadora').onclick = function(e){BotonIgual();}
+	document.getElementById('borrar_calculadora').onclick = function(e){BotonBorrar();}
+	document.getElementById('sumar_calculadora').onclick = function(e){BotonSumar();}
+	document.getElementById('restar_calculadora').onclick = function(e){BotonRestar();}
+	document.getElementById('personal_calculadora').onclick = function(e){BotonPersonal();}
+	document.getElementById('IVA_calculadora').onclick = function(e){BotonIVA();}
+	document.getElementById('atras_calculadora').onclick = function(e){BotonAtras();}
 
-	  function BotonBorrar() {
-	      Anterior = 0;
-	      Calculando = 0;
-	      Coma = 0;
-	      Dinero = 0;
-	      Intereses = 0;
-	      Cuota = 0;
-	  	  txtDinero_calculadora.innerHTML = "Precio: 0 €";
-	      txtCuota_calculadora.innerHTML = "Cuota: 0,00 €/m";
-	      txtIntereses_calculadora.innerHTML = "Intereses: 0,00 €";
-		  Opera();
-		  
-	  }
+	document.getElementById('barraMeses_calculadora').oninput = function(e){
+		Meses = this.value;
+		meses.value = this.value;
+		ActualizaDatos();
+	}
 
-	  function BotonIVA() {
-	      Dinero = parseFloat(Dinero) / 1.21;
-	      Opera();
-	  }
+	function redondea(valor){
+		if (Number.EPSILON === undefined) {
+			Number.EPSILON = Math.pow(2, -52); 
+		}
+		return (Math.round((valor + Number.EPSILON) * 100) / 100);
+	}
+	
+	function BotonAtras(){
+		if (String(Dinero).length>1){
+		Dinero = parseFloat(String(Dinero).slice(0,-1))
+	}
+		else {
+			Dinero = 0;
+		}
+		Coma = 0;
+		Opera();
+	}
 
-	  function BotonPersonal(){
-	      Dinero = Dinero - ((15 * Dinero) / 100);
-	      Opera();
-	  }
 
-	  function boton_coma(){
-		  Coma = 1;
-	  }
+	function BotonBorrar() {
+	Anterior = 0;
+	Calculando = 0;
+	Coma = 0;
+	Dinero = 0;
+	Intereses = 0;
+	Cuota = 0;
+		txtDinero_calculadora.innerHTML = "Precio: 0 €";
+	txtCuota_calculadora.innerHTML = "Cuota: 0,00 €/m";
+	txtIntereses_calculadora.innerHTML = "Intereses: 0,00 €";
+		Opera();
+		
+	}
 
-	  function CalculaGastos() {
-	      var gastos;
-	      gastos = 3;
-	      if ((Dinero >= 0) && (Dinero <= 200)) gastos = 3;
-	      if ((Dinero > 200) && (Dinero <= 400)) gastos = 5;
-	      if ((Dinero > 400) && (Dinero <= 600)) gastos = 7;
-	      if ((Dinero > 600) && (Dinero <= 1000)) gastos = 9;
-	      if (Dinero > 1000) gastos = 12;
-	      return gastos;
-	  }
+	function BotonIVA() {
+	Dinero = parseFloat(Dinero) / 1.21;
+	Opera();
+	}
 
-	  function Opera() {
-	      if (Meses >= 4) {
-			  Cuota = CalculaCuota(Dinero, Meses);
-	          Intereses = (Cuota * Meses) - Dinero;
-	      }
-	      else {
-	          Intereses = CalculaGastos();
-	          Cuota = (Dinero + Intereses) / parseFloat(Meses);
-	      }
-	      if (Meses < 4) {
-	          txtIntereses_calculadora.innerHTML = "Gastos de gestión: " + redondea(Intereses).toLocaleString("es-ES") + " €";
-	      } else {
-	          txtIntereses_calculadora.innerHTML = "Intereses: " +redondea(Intereses).toLocaleString("es-ES") + " €";
-	      }
-	      txtCuota_calculadora.innerHTML = "Cuota: "+redondea(Cuota).toLocaleString("es-ES") + " €/m";
-	      txtDinero_calculadora.innerHTML = "Precio: "+redondea(Dinero).toLocaleString("es-ES") + " €";
-	      txtMeses_calculadora.innerHTML = Meses + " meses";
-		  barraMeses.value = Meses;
-		  precio.value = redondea(Dinero);
-		  meses.value = Meses;
-          pinta_todos_datos();
-		  
-	  }
-	  
-	  function BotonComa() {
-	      Coma = 1;
-	  }
+	function BotonPersonal(){
+	Dinero = Dinero - ((15 * Dinero) / 100);
+	Opera();
+	}
 
-	  function BotonSumar() {
-	      if (Calculando == 1) Dinero = Dinero + Anterior;
-	      if (Calculando == 2) Dinero = Anterior - Dinero;
-	      Opera();
-	      Calculando = 1;
-	      Anterior = Dinero;
-	      Dinero = 0;
-	  	  Coma = 0;
-	  }
+	function boton_coma(){
+		Coma = 1;
+	}
 
-	  function BotonRestar() {
-	      if (Calculando == 2) Dinero = Anterior - Dinero;
-	      if (Calculando == 1) Dinero = Dinero + Anterior;
-	      Opera();
-	      Calculando = 2;
-	      Anterior = Dinero;
-	      Dinero = 0;
-	  	  Coma = 0;
-	  }
+	function CalculaGastos() {
+	var gastos;
+	gastos = 3;
+	if ((Dinero >= 0) && (Dinero <= 200)) gastos = 3;
+	if ((Dinero > 200) && (Dinero <= 400)) gastos = 5;
+	if ((Dinero > 400) && (Dinero <= 600)) gastos = 7;
+	if ((Dinero > 600) && (Dinero <= 1000)) gastos = 9;
+	if (Dinero > 1000) gastos = 12;
+	return gastos;
+	}
 
-	  function BotonIgual() {
-	      if (Calculando == 1) Dinero = Dinero + Anterior;
-	      if (Calculando == 2) Dinero = Anterior - Dinero;
-	      Opera();
-	      Calculando = 0;
-	      Vaciar = true;
-	  }
+	function Opera() {
+	if (Meses >= 4) {
+			Cuota = CalculaCuota(Dinero, Meses);
+	Intereses = (Cuota * Meses) - Dinero;
+	}
+	else {
+	Intereses = CalculaGastos();
+	Cuota = (Dinero + Intereses) / parseFloat(Meses);
+	}
+	if (Meses < 4) {
+	txtIntereses_calculadora.innerHTML = "Gastos de gestión: " + redondea(Intereses).toLocaleString("es-ES") + " €";
+	} else {
+	txtIntereses_calculadora.innerHTML = "Intereses: " +redondea(Intereses).toLocaleString("es-ES") + " €";
+	}
+	txtCuota_calculadora.innerHTML = "Cuota: "+redondea(Cuota).toLocaleString("es-ES") + " €/m";
+	txtDinero_calculadora.innerHTML = "Precio: "+redondea(Dinero).toLocaleString("es-ES") + " €";
+	txtMeses_calculadora.innerHTML = Meses + " meses";
+		barraMeses.value = Meses;
+		precio.value = redondea(Dinero);
+		meses.value = Meses;
+pinta_todos_datos();
+		
+	}
+	
+	function BotonComa() {
+	Coma = 1;
+	}
 
-	  function boton_pulsado(cantidad) {
-	  	  var tempDecimales;
-	      if (Vaciar) {
-			  Dinero = 0;
-			  Vaciar = false;
-	      }
-		  switch (Coma) {
-		  		case 0:
+	function BotonSumar() {
+	if (Calculando == 1) Dinero = Dinero + Anterior;
+	if (Calculando == 2) Dinero = Anterior - Dinero;
+	Opera();
+	Calculando = 1;
+	Anterior = Dinero;
+	Dinero = 0;
+		Coma = 0;
+	}
+
+	function BotonRestar() {
+	if (Calculando == 2) Dinero = Anterior - Dinero;
+	if (Calculando == 1) Dinero = Dinero + Anterior;
+	Opera();
+	Calculando = 2;
+	Anterior = Dinero;
+	Dinero = 0;
+		Coma = 0;
+	}
+
+	function BotonIgual() {
+	if (Calculando == 1) Dinero = Dinero + Anterior;
+	if (Calculando == 2) Dinero = Anterior - Dinero;
+	Opera();
+	Calculando = 0;
+	Vaciar = true;
+	}
+
+	function boton_pulsado(cantidad) {
+		var tempDecimales;
+	if (Vaciar) {
+			Dinero = 0;
+			Vaciar = false;
+	}
+		switch (Coma) {
+				case 0:
 					if (((Dinero) / 1000) < 1) {
 						tempDecimales = Dinero - parseInt(Dinero);
 						Dinero = (parseInt(Dinero) * 10 + parseInt(cantidad)) + tempDecimales;
@@ -700,123 +705,123 @@
 					Dinero = Dinero + (parseFloat(cantidad) / 100);
 					Coma = 3;
 					break;
-		  }
-	      Opera();
-	      if (Coma == 3) {
-			  Vaciar = true;
-			  Coma = 0;
-	      }
-	  }
+		}
+	Opera();
+	if (Coma == 3) {
+			Vaciar = true;
+			Coma = 0;
+	}
+	}
 
 
-      function CalculaCuota(importe,meses){
-          importe = parseFloat(importe);
-          IndiceIntereses = TIN / 1200;
-          CalculoArriba = IndiceIntereses * (Math.pow((IndiceIntereses + 1), meses));
-          CalculoAbajo = Math.pow((IndiceIntereses + 1), meses) - 1;
-          cuota = (CalculoArriba / CalculoAbajo) * importe;
-          if (meses == 3) {
-              gastos = CalculaGastos(importe);
-              cuota = (importe + gastos) /3;
-          }
-          return cuota;
-      }
+function CalculaCuota(importe,meses){
+importe = parseFloat(importe);
+IndiceIntereses = TIN / 1200;
+CalculoArriba = IndiceIntereses * (Math.pow((IndiceIntereses + 1), meses));
+CalculoAbajo = Math.pow((IndiceIntereses + 1), meses) - 1;
+cuota = (CalculoArriba / CalculoAbajo) * importe;
+if (meses == 3) {
+gastos = CalculaGastos(importe);
+cuota = (importe + gastos) /3;
+}
+return cuota;
+}
  
-      function pinta_datos(valor_meses){
-          valor_cuota = CalculaCuota(precio.value,valor_meses);
-          intereses = (valor_cuota*valor_meses) - precio.value;
-          txt_cuota.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES") + " €/m";
-          txt_interes.innerHTML = "Intereses: " + redondea(intereses).toLocaleString("es-ES") + " €";
-          txt_meses.innerHTML = valor_meses + " meses"
-      }
+function pinta_datos(valor_meses){
+valor_cuota = CalculaCuota(precio.value,valor_meses);
+intereses = (valor_cuota*valor_meses) - precio.value;
+txt_cuota.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES") + " €/m";
+txt_interes.innerHTML = "Intereses: " + redondea(intereses).toLocaleString("es-ES") + " €";
+txt_meses.innerHTML = valor_meses + " meses"
+}
 
-      function cerca_de_valor(importe, valor){
-          diferencia_anterior = importe;
-          mejor_mes = 0;
-          for (i=3;i<37;i++)
-          {
-              temp_calculo =CalculaCuota(importe, i);
-              diferencia = temp_calculo - valor;
-              if ((diferencia > 0) & (diferencia<diferencia_anterior)) 
-              {
-                  diferencia_anterior=diferencia;
-                  mejor_mes = i;
-              }
-          }
-          return mejor_mes;
-      }
+function cerca_de_valor(importe, valor){
+diferencia_anterior = importe;
+mejor_mes = 0;
+for (i=3;i<37;i++)
+{
+temp_calculo =CalculaCuota(importe, i);
+diferencia = temp_calculo - valor;
+if ((diferencia > 0) & (diferencia<diferencia_anterior)) 
+{
+diferencia_anterior=diferencia;
+mejor_mes = i;
+}
+}
+return mejor_mes;
+}
  
-      function pinta_mes_ideal()
-      {
-          var txt_cuota_ideal = document.getElementById("cuota_ideal");
-          var txt_interes_ideal = document.getElementById("interes_ideal");
-          mes_perfecto = cerca_de_valor(precio.value,30);
-          if (mes_perfecto != 0)
-          {
-              valor_cuota = CalculaCuota(precio.value,mes_perfecto);
-              intereses = (valor_cuota*mes_perfecto) - precio.value;
-              txt_cuota_ideal.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES") + " €/m";
-              txt_interes_ideal.innerHTML = "Intereses: " + redondea(intereses).toLocaleString("es-ES") + " €";
-              txt_meses_ideal.innerHTML = mes_perfecto + " meses";                    
-          }
-          else
-          {
-              txt_cuota_ideal.innerHTML = "Cuota inferior";
-              txt_interes_ideal.innerHTML = "a 30€/m";
-              txt_meses_ideal.innerHTML = "Sin datos";                        
-          }
-      }
+function pinta_mes_ideal()
+{
+var txt_cuota_ideal = document.getElementById("cuota_ideal");
+var txt_interes_ideal = document.getElementById("interes_ideal");
+mes_perfecto = cerca_de_valor(precio.value,30);
+if (mes_perfecto != 0)
+{
+valor_cuota = CalculaCuota(precio.value,mes_perfecto);
+intereses = (valor_cuota*mes_perfecto) - precio.value;
+txt_cuota_ideal.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES") + " €/m";
+txt_interes_ideal.innerHTML = "Intereses: " + redondea(intereses).toLocaleString("es-ES") + " €";
+txt_meses_ideal.innerHTML = mes_perfecto + " meses";
+}
+else
+{
+txt_cuota_ideal.innerHTML = "Cuota inferior";
+txt_interes_ideal.innerHTML = "a 30€/m";
+txt_meses_ideal.innerHTML = "Sin datos";
+}
+}
  
-      function pinta_todos_datos()
-      {
-		  pinta_datos(edit_meses.value);
-          pinta_mes_ideal();
-          const array = [ "3", "6", "9", "12", "18", "24", "36" ];
-          array.forEach(function (item, index) {
-              var cuota_array = document.getElementById("cuota_"+item);
-              var interes_array = document.getElementById("interes_"+item);
-              valor_cuota = CalculaCuota(precio.value,item);
-              intereses = (valor_cuota*item) - precio.value;
-              cuota_array.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES") + " €/m";
-    		  if (item == "3"){
-				  interes_array.innerHTML = "Gastos: " + redondea(intereses).toLocaleString("es-ES") + " €";
-    		  } else {
-				  interes_array.innerHTML = "Intereses: " + redondea(intereses).toLocaleString("es-ES") + " €";
-			  }
-		  });
-      }
+function pinta_todos_datos()
+{
+		pinta_datos(edit_meses.value);
+pinta_mes_ideal();
+const array = [ "3", "6", "9", "12", "18", "24", "36" ];
+array.forEach(function (item, index) {
+var cuota_array = document.getElementById("cuota_"+item);
+var interes_array = document.getElementById("interes_"+item);
+valor_cuota = CalculaCuota(precio.value,item);
+intereses = (valor_cuota*item) - precio.value;
+cuota_array.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES") + " €/m";
+		if (item == "3"){
+				interes_array.innerHTML = "Gastos: " + redondea(intereses).toLocaleString("es-ES") + " €";
+		} else {
+				interes_array.innerHTML = "Intereses: " + redondea(intereses).toLocaleString("es-ES") + " €";
+			}
+		});
+}
  
-      function inicia_script() {
-          if (!ie11) {
-            edit_meses.value = localStorage.getItem("meses");
-            edit_precio.value = localStorage.getItem("precio");
-          }
-          if (edit_meses.value.length == 0) {
-              edit_meses.value = 12
-              edit_precio.value = 999
-          }
-		  Dinero = parseFloat(edit_precio.value);
-		  Meses = parseInt(edit_meses.value);		  
-          pinta_todos_datos();
-		  Opera();
-      }
+function inicia_script() {
+if (!ie11) {
+edit_meses.value = localStorage.getItem("meses");
+edit_precio.value = localStorage.getItem("precio");
+}
+if (edit_meses.value.length == 0) {
+edit_meses.value = 12
+edit_precio.value = 999
+}
+		Dinero = parseFloat(edit_precio.value);
+		Meses = parseInt(edit_meses.value);		
+pinta_todos_datos();
+		Opera();
+}
  
-      function ActualizaDatos(e) {
-          if ((edit_meses.value.length > 0) & (edit_precio.value.length > 0)) 
-          {
-              if (edit_precio.value < 1) edit_precio.value=1;
-              if (edit_meses.value < 1) edit_meses.value=1;
-              if (edit_meses.value > 36) edit_meses.value=36;
-              if (!ie11) {
-                  localStorage.setItem("meses", edit_meses.value);
-                  localStorage.setItem("precio", edit_precio.value);
-              }
-			  Dinero = parseFloat(edit_precio.value);
-			  Meses = parseInt(edit_meses.value);
-              pinta_todos_datos();
-			  Opera();
-          }
-      }
+function ActualizaDatos(e) {
+if ((edit_meses.value.length > 0) & (edit_precio.value.length > 0)) 
+{
+if (edit_precio.value < 1) edit_precio.value=1;
+if (edit_meses.value < 1) edit_meses.value=1;
+if (edit_meses.value > 36) edit_meses.value=36;
+if (!ie11) {
+localStorage.setItem("meses", edit_meses.value);
+localStorage.setItem("precio", edit_precio.value);
+}
+			Dinero = parseFloat(edit_precio.value);
+			Meses = parseInt(edit_meses.value);
+pinta_todos_datos();
+			Opera();
+}
+}
 
-  </script>
+</script>
 </html>
