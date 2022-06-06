@@ -102,6 +102,11 @@ body {visibility: hidden; display: none;}
 				user-select: none;
 			}
 			
+			fieldset {
+				border: 0px;
+
+			}
+			
 			.cabecera {
 				height: 5%;
 				display: flex;
@@ -389,9 +394,16 @@ body {visibility: hidden; display: none;}
 <div class="calculator">
 <div class="calculator-keys">
 	<div class="cabecera"></div>
-		
+		<fieldset>
+		    <legend>Precio</legend>
+
 <div id="txtprecio_calculadora" class="calculator-display"></div>
+		</fieldset>
+		<fieldset>
+		    <legend>Cuota</legend>
 <div id="txtcuota_calculadora" class="calculator-display2"></div>
+		</fieldset>
+
 <div id="txtinteres_calculadora" class="calculator-display3">0.000</div>
 <div id="txtmeses_calculadora" class="calculator-display4">0.000</div>
 	
