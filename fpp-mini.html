@@ -569,6 +569,12 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	var esta_en_local = false;
 	var ie11= false;
 	
+	
+	/*
+	
+	
+	QUITO ESTO POR AHORA. Pero puede funcionar perfectamente.
+	
 	fake = 'https://cors-anywhere.herokuapp.com/';
 	url = 'https://www.financieraelcorteingles.es/api/webfeci/fpp/simulator?totalAmount=2000&paymentsNumber=12';
 	
@@ -581,6 +587,8 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 		console.log(res.data['interestTax'])
 	}));
 
+
+*/
 	if (window.location.protocol == "file:") esta_en_local = true;
 	if (!!window.MSInputMethodContext && !!document.documentMode) ie11=true;
 	if (ie11) {
