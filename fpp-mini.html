@@ -568,6 +568,18 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	var txt_meses_ideal = document.getElementById("txt_meses_ideal");
 	var esta_en_local = false;
 	var ie11= false;
+	
+	
+	
+	fetch('https://www.financieraelcorteingles.es/api/webfeci/fpp/simulator?totalAmount=2000&paymentsNumber=12').then(response => 
+		response.json().then(data => ({
+			data: data,
+			status: response.status
+		})
+	).then(res => {
+		console.log(res.data['interestTax'])
+	}));
+
 	if (window.location.protocol == "file:") esta_en_local = true;
 	if (!!window.MSInputMethodContext && !!document.documentMode) ie11=true;
 	if (ie11) {
@@ -577,6 +589,9 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	precio.addEventListener('input', ActualizaDatos);
 	meses.addEventListener('input', ActualizaDatos);
 	window.onload = inicia_script()
+
+
+
 
 	//txtDinero_calculadora.innerHTML = "Precio: 0 €";
 	//txtCuota_calculadora.innerHTML = "Cuota: 0.00 €/m";
