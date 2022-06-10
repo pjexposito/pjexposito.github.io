@@ -2,7 +2,7 @@
   "name": "FPP",
   "short_name": "FPP",
   "lang": "es-ES",
-  "start_url": "./fpp-mini.html",
+  "start_url": "./fpp.html",
   "display": "standalone",
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
