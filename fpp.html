@@ -988,13 +988,14 @@ cuota_array.innerHTML = "Cuota: "+ redondea(valor_cuota).toLocaleString("es-ES")
  
 function inicia_script() {
 if (!ie11) {
-edit_meses.value = localStorage.getItem("meses");
-edit_precio.value = localStorage.getItem("precio");
-valor_checkbox = localStorage.getItem("selector_TIN");
+    edit_meses.value = localStorage.getItem("meses");
+    edit_precio.value = localStorage.getItem("precio");
+    valor_checkbox = localStorage.getItem("selector_TIN");
 }
 if (edit_meses.value.length == 0) {
-edit_meses.value = 12
-edit_precio.value = 999
+    edit_meses.value = 12
+    edit_precio.value = 999
+    valor_checkbox = true;
 }
 		Dinero = parseFloat(edit_precio.value);
 		Meses = parseInt(edit_meses.value);		
