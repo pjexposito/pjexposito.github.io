@@ -398,7 +398,6 @@ body {visibility: hidden; display: none;}
 			}
 		}
 		
-
 		.visuallyhidden{
 			position:absolute;
 			left:-10000px;
@@ -408,6 +407,76 @@ body {visibility: hidden; display: none;}
 			overflow:hidden;
 		}
 		
+		
+    .toggle {
+      --width: 80px;
+      --height: calc(var(--width) / 3);
+
+      position: relative;
+      display: inline-block;
+      width: var(--width);
+      height: var(--height);
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+    }
+
+    .toggle input {
+      display: none;
+    }
+
+    .toggle .labels {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 12px;
+      font-family: sans-serif;
+      transition: all 0.4s ease-in-out;
+      overflow: hidden;
+    }
+
+    .toggle .labels::after {
+      content: attr(data-off);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      color: #4d4d4d;
+      background-color: #f19999;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+      transition: all 0.4s ease-in-out;
+    }
+
+    .toggle .labels::before {
+      content: attr(data-on);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: calc(var(--width) * -1);
+      height: 100%;
+      width: 100%;
+      color: #ffffff;
+      background-color: #4fe132;
+      text-align: center;
+      text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+      transition: all 0.4s ease-in-out;
+    }
+
+    .toggle input:checked~.labels::after {
+      transform: translateX(var(--width));
+    }
+
+    .toggle input:checked~.labels::before {
+      transform: translateX(var(--width));
+    }
+
 
 	</style>
 	
@@ -466,6 +535,13 @@ body {visibility: hidden; display: none;}
 
 </div>
 	<div class="tablafpp">	
+
+
+  <label class="toggle">
+    <input type="checkbox">
+    <span class="labels" data-on="14%" data-off="16%"></span>
+  </label>
+
 <UL class="encabezado">
 <LI>
 <H2>Precio </H2>
@@ -569,6 +645,25 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	var esta_en_local = false;
 	var ie11= false;
 	
+	document.addEventListener('DOMContentLoaded', function () {
+    var checkbox = document.querySelector('input[type="checkbox"]');
+
+    checkbox.addEventListener('change', function () {
+    if (checkbox.checked) {
+      // do this
+      console.log('14%');
+	  	TIN = 14;
+			Opera();
+
+    } else {
+      // do that
+      console.log('16%');
+	  	TIN = 16;
+			Opera();
+
+    }
+  });
+});
 	
 	/*
 	
