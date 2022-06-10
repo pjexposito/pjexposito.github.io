@@ -993,9 +993,10 @@ if (!ie11) {
     valor_checkbox = localStorage.getItem("selector_TIN");
 }
 if (edit_meses.value.length == 0) {
-    edit_meses.value = 12
-    edit_precio.value = 999
-    valor_checkbox = true;
+	console.log("sin datos");
+    edit_meses.value = 12;
+    edit_precio.value = 999;
+    valor_checkbox = "true";
 }
 		Dinero = parseFloat(edit_precio.value);
 		Meses = parseInt(edit_meses.value);		
