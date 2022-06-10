@@ -524,7 +524,7 @@ body {visibility: hidden; display: none;}
 	
 <button class="calculator-key wide sp" type="operator" id="IVA_calculadora">Sin IVA</button>
   <label class="toggle calculator-key wide sp">
-    <input type="checkbox" checked>
+    <input type="checkbox" id="selector_TIN_calculadora">
     <span class="labels" data-on="TIN 14%" data-off="TIN 16% (Apple)"></span>
   </label>
 <button class="calculator-key wide sp" type="operator" id="personal_calculadora">Quitar 15%</button>
@@ -628,7 +628,7 @@ body {visibility: hidden; display: none;}
 
 <div class="seleccion_TIN">
   <label class="toggle resumen">
-    <input type="checkbox" checked>
+    <input type="checkbox" id="selector_TIN">
     <span class="labels" data-on="Valor del TIN 14% (financiación general)" data-off="Valor del TIN 16% (otros productos: Apple, etc.)"></span>
   </label>
 </div>
@@ -671,25 +671,41 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	var esta_en_local = false;
 	var ie11= false;
 	
-	document.addEventListener('DOMContentLoaded', function () {
-    var checkbox = document.querySelector('input[type="checkbox"]');
+
+
+
+
+	var checkbox = document.getElementById("selector_TIN");
+	var checkbox_calculadora = document.getElementById("selector_TIN_calculadora");
+
+
+    checkbox_calculadora.addEventListener('change', function () {
+	    if (checkbox_calculadora.checked) {
+			TIN = 14;
+			checkbox.checked = true;
+		} else {
+			TIN = 16;
+			checkbox.checked = false;
+		}
+		Opera();
+		localStorage.setItem("selector_TIN",checkbox_calculadora.checked);
+  	});
 
     checkbox.addEventListener('change', function () {
-    if (checkbox.checked) {
-      // do this
-      console.log('14%');
-	  	TIN = 14;
-			Opera();
+	    if (checkbox.checked) {
+			TIN = 14;
+			checkbox_calculadora.checked = true;
+			
+		} else {
+			TIN = 16;
+			checkbox_calculadora.checked = false;
+			
+		}
+		Opera();
+		localStorage.setItem("selector_TIN",checkbox.checked);
+  	});
+	
 
-    } else {
-      // do that
-      console.log('16%');
-	  	TIN = 16;
-			Opera();
-
-    }
-  });
-});
 	
 	/*
 	
@@ -707,7 +723,6 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	).then(res => {
 		console.log(res.data['interestTax'])
 	}));
-
 
 */
 	if (window.location.protocol == "file:") esta_en_local = true;
@@ -975,6 +990,7 @@ function inicia_script() {
 if (!ie11) {
 edit_meses.value = localStorage.getItem("meses");
 edit_precio.value = localStorage.getItem("precio");
+valor_checkbox = localStorage.getItem("selector_TIN");
 }
 if (edit_meses.value.length == 0) {
 edit_meses.value = 12
@@ -982,8 +998,18 @@ edit_precio.value = 999
 }
 		Dinero = parseFloat(edit_precio.value);
 		Meses = parseInt(edit_meses.value);		
-pinta_todos_datos();
+		if (valor_checkbox == "true") {
+			checkbox.checked = true;
+			checkbox_calculadora.checked = true;
+			TIN = 14;
+		} else {
+			checkbox.checked = false;
+			checkbox_calculadora.checked = false;
+			TIN = 16;
+		}
+        pinta_todos_datos();
 		Opera();
+
 }
  
 function ActualizaDatos(e) {
@@ -995,6 +1021,7 @@ if (edit_meses.value > 36) edit_meses.value=36;
 if (!ie11) {
 localStorage.setItem("meses", edit_meses.value);
 localStorage.setItem("precio", edit_precio.value);
+
 }
 			Dinero = parseFloat(edit_precio.value);
 			Meses = parseInt(edit_meses.value);
