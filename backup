@@ -1,4 +1,0 @@
-#!/data/data/com.termux/files/usr/bin/sh
-cd /data/data/com.termux/files
-tar -zcvf /sdcard/termux-backup.tar.gz home usr
-echo Copia creada en la raiz del teléfono
