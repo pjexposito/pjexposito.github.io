@@ -29,6 +29,8 @@
         }
 
 html {
+        user-select: none;
+
     margin: 0;
     padding: 0;
     height: 100%;
@@ -71,6 +73,7 @@ body {
 
 .turnoContenedor
 {
+
     position: relative;
     text-align:center;
 
@@ -121,7 +124,7 @@ legend {
     <body>
         <fieldset>
             <legend>Su turno</legend>
-<div class="turnoContenedor">
+<div class="turnoContenedor" id="turnoContenedor">
 	   <div id="txtSeccion" class="turno seccion">0</div>
        <div id="txtTurno"  class="turno">00</div>
 </div>
@@ -165,6 +168,13 @@ legend {
               txtSeccion.innerHTML  = seccion;
             }           
 
+
+var signature = document.getElementById("turnoContenedor");
+signature.onclick = function () {
+  turno += 1;
+              txtTurno.innerHTML  = turno>9 ? turno: "0"+turno;
+
+}
 
 			document.onkeydown = teclaPulsada;
 					
