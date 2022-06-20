@@ -149,36 +149,50 @@ legend {
             let txtSeccion = document.getElementById("txtSeccion");
             let btnReiniciar = document.getElementById("reiniciar");
             let btnEntradaManual = document.getElementById("entrada_manual");
-          
+            let turnoContenedor = document.getElementById("turnoContenedor");
+
+
 
             btnReiniciar.onclick = function(e){
-              turno = 0;
-              seccion = 0;
-              txtTurno.innerHTML  = "0"+turno;
-              txtSeccion.innerHTML  = seccion;
-              btnReiniciar.blur();
+                turno = 0;
+                seccion = 0;
+                pinta();
+                btnReiniciar.blur();
             }
 
             btnEntradaManual.onclick = function(e){
-              let iseccion = prompt("Número para la sección:", 0);
-              let iturno = prompt("Turno:", 0);
-              turno = Number(iturno);
-              seccion = Number(iseccion);
-              txtTurno.innerHTML  = turno;
-              txtSeccion.innerHTML  = seccion;
+                let iseccion = prompt("Número para la sección:", 0);
+                let iturno = prompt("Turno:", 0);
+                turno = Number(iturno);
+                seccion = Number(iseccion);
+                pinta();
             }           
 
 
-var signature = document.getElementById("turnoContenedor");
-signature.onclick = function () {
-  turno += 1;
-              txtTurno.innerHTML  = turno>9 ? turno: "0"+turno;
 
-}
+            function pinta(){
+                if (turno > 99){
+                    turno = 0;
+                    seccion +=1;
+                }      
+                if ((turno < 0) && (seccion>0)){
+                    turno = 99;
+                    seccion -=1;
+                }   
+                if (turno<0) turno = 0;
+                if (seccion<0) seccion = 0;     
+                txtTurno.innerHTML  = turno>9 ? turno: "0"+turno;
+                txtSeccion.innerHTML  = seccion;
+            }
 
-			document.onkeydown = teclaPulsada;
+            turnoContenedor.onclick = function () {
+                snd.play();
+                turno += 1;
+                pinta();
+            }
+
 					
-		    function teclaPulsada(e) {
+		    document.onkeydown = function (e) {
 				if (e.which == 39 || e.which == 32 || e.which == 13) {
 					turno += 1;
 					snd.play();
@@ -186,21 +200,11 @@ signature.onclick = function () {
 				if (e.which == 37) {
 					turno -= 1;
 				}		
-              if (turno > 99){
-                turno = 0;
-                seccion +=1;
-              }		
-              if ((turno < 0) && (seccion>0)){
-                turno = 99;
-                seccion -=1;
-              }         
-                
-              if (turno<0) turno = 0;
-              if (seccion<0) seccion = 0;     
-		      txtTurno.innerHTML  = turno>9 ? turno: "0"+turno;
-              txtSeccion.innerHTML  = seccion;
+                pinta();
 
 		    }
+
+
         </script>
     </body>
 </html>
