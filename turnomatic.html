@@ -62,7 +62,10 @@ body {
 
 }
 
+.button.opciones {
+    width: 80px;
 
+}
 
 .button:hover {
   background-color: var(--boton-pulsado);
@@ -130,9 +133,13 @@ legend {
 </div>
         </fieldset>
 
-<div class="botonesContenedor">       
-<button class="button" id="reiniciar">Reiniciar</button>
-<button class="button" id="entrada_manual">Entrada manual</button>
+<div class="botonesContenedor" id="divcontenedorOpciones">       
+   <button class="button opciones" id="btnopciones">...</button>
+</div>
+
+<div class="botonesContenedor" id="divopciones">       
+<button class="button" id="btnreiniciar">Reiniciar</button>
+<button class="button" id="btnentrada_manual">Entrada manual</button>
 </div>
 
 
@@ -147,16 +154,29 @@ legend {
 			let snd = new Audio("data:audio/ogg;base64," + base64string);
 			let txtTurno = document.getElementById("txtTurno");
             let txtSeccion = document.getElementById("txtSeccion");
-            let btnReiniciar = document.getElementById("reiniciar");
-            let btnEntradaManual = document.getElementById("entrada_manual");
+            let btnReiniciar = document.getElementById("btnreiniciar");
+            let btnEntradaManual = document.getElementById("btnentrada_manual");
             let turnoContenedor = document.getElementById("turnoContenedor");
+            let divcontenedorOpciones = document.getElementById("divcontenedorOpciones");
+            let divopciones = document.getElementById("divopciones");
+            let btnopciones = document.getElementById("btnopciones");
+
+            divopciones.style.display = "none";
+            divcontenedorOpciones.style.display = "block";
 
 
+            btnopciones.onclick = function(e){
+                divopciones.style.display = "block";
+                divcontenedorOpciones.style.display = "none";
+                btnopciones.blur();
+            }
 
             btnReiniciar.onclick = function(e){
                 turno = 0;
                 seccion = 0;
                 pinta();
+                divopciones.style.display = "none";
+                divcontenedorOpciones.style.display = "block";
                 btnReiniciar.blur();
             }
 
@@ -165,6 +185,8 @@ legend {
                 let iturno = prompt("Turno:", 0);
                 turno = Number(iturno);
                 seccion = Number(iseccion);
+                divopciones.style.display = "none";
+                divcontenedorOpciones.style.display = "block";
                 pinta();
             }           
 
@@ -180,7 +202,8 @@ legend {
                     seccion -=1;
                 }   
                 if (turno<0) turno = 0;
-                if (seccion<0) seccion = 0;     
+                if (seccion<0 || seccion >9) seccion = 0;   
+
                 txtTurno.innerHTML  = turno>9 ? turno: "0"+turno;
                 txtSeccion.innerHTML  = seccion;
             }
