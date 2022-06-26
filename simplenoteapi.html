@@ -1,0 +1,62 @@
+<html>
+ <head>
+    <title>Simplenote API</title>
+        <style type='text/css'>
+            span {
+                text-decoration:underline;
+                color:blue;
+                cursor:pointer;
+            }
+        </style>
+<script type="text/javascript" src="https://js.simperium.com/v0.1/"></script>
+
+<script>
+	
+	var datos = [];
+	var valorToken = GetURLParameter('token');
+	console.log(valorToken);
+
+function GetURLParameter(sParam)
+// De aquí: https://stackoverflow.com/questions/22607150/getting-the-url-parameters-inside-the-html-page
+{
+    var sPageURL = window.location.search.substring(1);
+    var sURLVariables = sPageURL.split('&');
+    for (var i = 0; i < sURLVariables.length; i++) 
+    {
+        var sParameterName = sURLVariables[i].split('=');
+        if (sParameterName[0] == sParam) 
+        {
+            return sParameterName[1];
+        }
+    }
+}
+//8939641f5f824cdfa0192bc305b41b86
+	function ejecuta() 
+	{
+	console.log("Descargando datos...");
+    var api = new Simperium('chalk-bump-f49', {token : valorToken});
+	var bucket = api.bucket('note');
+	var tags_html="";
+	
+	bucket.on('notify', function(id, object) {
+		total = object['content'].length;
+	document.getElementById("texto").innerHTML = total;
+		var lineas = object['content'].split("\n");   
+		var firstline = lineas.shift();   
+		var rest = lineas.join("\n");
+		datos.push({key:id,cabecera: firstline,texto: rest,etiquetas: object['tags']});
+	});
+
+	bucket.start();
+	document.getElementById("texto").innerHTML = datos[1];
+
+	console.log("Datos cargados")
+}
+
+</script>
+</head>
+<body onload="ejecuta()">
+   <div id='texto'>API para Simplenote. Se debe ejecutar con parámetros</div>
+
+</body>
+</html>
