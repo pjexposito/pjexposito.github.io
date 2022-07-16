@@ -1,0 +1,766 @@
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<title>FPP</title>
+<meta name="description" content="Programa para calcular financiaciones">
+<!-- manifesty things -->
+	
+<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="application-name" content="FPP">
+<meta name="apple-mobile-web-app-title" content="FPP">
+<meta name="theme-color" content="#ffffff">
+<meta name="msapplication-navbutton-color" content="#ffffff">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="msapplication-starturl" content="/fpp-mini.html">
+<link rel="icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
+<link rel="icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
+<link rel="icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
+<link rel="icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
+	
+<link rel="apple-touch-icon" type="image/png" sizes="192x192" density="1" href="iconos/ios-192.png">
+<link rel="apple-touch-icon" type="image/png" sizes="512x512" density="1" href="iconos/ios-512.png">
+<link rel="apple-touch-icon" type="image/png" sizes="96x96" density="1" href="iconos/ios-96.png">
+<link rel="apple-touch-icon" type="image/png" sizes="144x144" density="1" href="iconos/ios-144.png">
+	
+<link href="iconos/icon.svg" rel="mask-icon" size="any" color="black">
+
+<!-- For all browsers -->
+<link rel="icon" type="image/png" sizes="32x32" href="iconos/fav32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="iconos/fav16.png">	
+	<!-- For Google and Chrome -->
+	<link rel="icon" type="image/png" sizes="48x48" href="iconos/fav48.png">
+	
+<link rel="manifest" href="manifest.json">
+	
+	
+<STYLE type="text/css" media="print">
+body {visibility: hidden; display: none;}
+</STYLE>
+<style type="text/css">
+
+		:root {
+			--body-color: #000;
+			--body-background: #fff;
+			--white: #000;
+			--slider-line: #000;
+			--slider-background: #d3d3d3;
+			--slider-thumb: #495ed7;
+			--display-color: #000;
+			--key-color:#000;
+			--key-background: #fff;
+			--key-over: #dad6d6;
+			--key-sp: #A9A9A9; 
+			--cls-color: #cbcbcb;
+			--cls-background: #000;
+			--h2-color: #fff;
+			--h2-background: #949494;
+		    --h1-background: #fff;
+		    --h1-color: #000;
+		}
+
+
+		@media only screen and (max-width: 600px) {	
+			
+			/* 
+			Cabecera: 8            8
+			slider: 10             10
+			Pantallas: 12, 12, 8   32
+			teclado: 10 por fila   40
+			Total:                 90
+			 */
+					
+			.calculator {width: 90%;height: 100%;visibility: visible; display: all;}
+			.tablafpp {	visibility: hidden; display: none;}
+			* {
+				box-sizing: border-box;
+			}
+
+			html, body {
+				font-family: Arial, Helvetica, sans-serif;
+				-moz-osx-font-smoothing: grayscale;
+				-webkit-font-smoothing: antialiased;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				width: 100%;
+			}
+
+			html {
+				overflow: hidden;
+			}
+
+			body {
+				touch-action: none;
+				overscroll-behavior: contain;
+				align-content: stretch;
+				align-items: stretch;
+				background: var(--body-background);
+				display: flex;
+				flex-direction: column;
+				flex-wrap: nowrap;
+				justify-content: flex-start;
+				color: var(--body-color);
+				-webkit-user-select: none;
+				-moz-user-select: -moz-none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			
+			fieldset {
+			    background-color: rgba(0,0,0,0.2);
+				margin: 10px;
+			}
+			
+			legend {
+				font-size: 4vmin;
+				position: absolute;
+			    margin: -20px 0 0; /* half of font-size */
+				
+				font-weight: lighter;
+				
+			}
+			
+			.cabecera {
+				height: 4%;
+				display: flex;
+			}
+
+			.slidecontainer {
+				margin: auto;
+				height: 10%;
+				width: 90%; 
+				display: flex;
+				align-items: center; 
+				border-bottom: 1px solid var(--slider-line);
+			}
+
+			.slider {
+				-webkit-appearance: none; 
+				appearance: none;
+				width: 100%;
+				height: 6px; 
+				border-radius: 5px;
+				background: var(--slider-background); 
+				outline: none;
+				opacity: 0.7; 
+				-webkit-transition: .2s;
+				transition: opacity .2s;
+			}
+
+			.slider:hover {
+				opacity: 1;
+			}
+
+			.slider::-webkit-slider-thumb {
+				-webkit-appearance: none;
+				appearance: none;
+				width: 30px;
+				height: 30px;
+				border-radius: 50%; 
+				background: var(--slider-thumb); 
+				cursor: pointer;
+			}
+
+			.slider::-moz-range-thumb {
+				width: 30px;
+				height: 30px; 
+				border-radius: 50%; 
+				background: var(--slider-thumb);
+				cursor: pointer; 
+			}
+
+			.calculator-keys {
+				position: fixed;
+				top: 0;
+				bottom: 0;
+				width: 100%;
+			}
+
+			.calculator-display,.calculator-display2,.calculator-display3, .calculator-display4 {
+				float: left;
+				text-align: left;
+				width: 100%;
+				line-height: 11vmin; /*Era 5vh. Poniendo 12vmin se soluciona el overlap */
+				padding: 0 1rem;
+				color: var(--display-color);
+			}
+
+
+
+			.calculator-display{
+				height: 12%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 11vmin;
+				text-align: right;	
+				
+			}
+		
+		
+			.calculator-display2{
+				height: 12%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 12.5vmin;
+				text-align: right;	
+				
+				
+			}
+		
+			.calculator-display3{
+				margin-top:-5px;
+				height: 8%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 5vmin;
+				width: 65%;
+				background-color: gray;
+				
+			}
+		
+			.calculator-display4{
+				
+				height: 8%; /* Era el 5%. Ahora las pantallas representan el 30% */
+				font-size: 5vmin;
+				width: 35%;
+				text-align: right;	
+			}
+
+			.calculator-key {
+			
+				float: left;
+				text-align: center;
+				width: 25%;
+				height: 10%; /* Era 17%. Ahora el teclado representa el 40% */
+				font-size: 5vh;
+				border: 0px solid var(--key-color);
+				color: var(--key-color);
+				background: var(--key-background); 
+
+			}
+		
+
+
+			button.calculator-key:focus {
+				outline: none;
+			}
+
+			button:active {
+				background: var(--key-over);
+			}
+
+			.calculator-key.wide {
+				width: 33%;
+			}
+		
+			.calculator-key.sp {
+				font-size: 3vh;
+				color: var(--key-sp);
+			}
+		
+			.calculator-key.op {
+				color: var(--key-sp);
+			}		
+			
+			
+		}
+		
+		@media only screen and (min-width: 601px) {
+			.calculator {visibility: hidden; display: none;	}
+			.tablafpp {	visibility: visible; display: all;	}
+		
+			body {
+				font: 1.2em Helvetica, arial, sans-serif;
+				max-width: 1000px;
+				margin: auto;
+				background: var(--body-background);
+			}
+			* {
+				margin: 0;
+				padding: 0;
+				box-sizing: border-box;
+				font-family: Arial, Helvetica, sans-serif;
+			}
+			
+			a:link, a:visited {
+				text-decoration: none;
+				color: #f08c00;
+			}
+
+			h1 {
+				text-align: center;
+				margin: 0;
+				padding: 10px;
+				font: 1.2em Helvetica, arial, sans-serif;
+				background-color: var(--h1-background);
+				color: var(--h1-color);
+			}
+
+			h2 {
+				background-color: var(--h2-background);
+				color: var(--h2-color);
+				text-align: center;
+				margin: 0;
+				padding: 10px;			}
+			
+			.seleccion_TIN {
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+				
+				text-align: center;
+				padding: 10px;
+				
+			}
+
+			.encabezado {
+				list-style: none;
+				margin: 1em;
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+			}
+
+			.encabezado li {
+				border: 1px solid #808080;
+				border-radius: 5px;
+				display: flex;
+				flex-direction: column;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+
+			.encabezado .cls_input {
+				font: 2.2em Helvetica, arial, sans-serif;
+				border: 0;
+				text-align: center;
+				width:90%;
+			}
+
+			.encabezado .cls_div {
+				margin: auto auto;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+
+			.encabezado .cls_interes {
+				margin-top: auto;
+				border-top: 1px solid #808080;
+				padding: 5px;
+				text-align: center;
+			}
+
+			.encabezado .cls_cuota {
+				padding: 5px;
+				text-align: center;
+			}
+
+			.listing {
+				list-style: none;
+				margin: 1em;
+				display: grid;
+				grid-gap: 20px;
+				grid-template-columns: repeat(auto-fill,minmax(200px, 1fr));
+			}
+
+			.listing li {
+				border: 1px solid #808080;
+				border-radius: 5px;
+				display: flex;
+				flex-direction: column;
+				box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+			}
+
+			.listing .cls_interes {
+				margin-top: auto;
+				border-top: 1px solid #808080;
+				padding: 5px;
+				text-align: center;
+			}
+
+			.listing .cls_cuota {
+				padding: 5px;
+				text-align: center;
+			}
+		}
+		
+		@media (prefers-color-scheme: dark) {
+			:root {
+
+
+			  --body-color: #fff;
+			  --body-background: #1c1c1e;
+			  --white: #ffffff;
+			  --slider-line: #fff;
+			  --slider-background: #d3d3d3;
+			  --slider-thumb: #495ed7;
+			  --display-color: #fafafa;
+			  --key-color:#fafafa;
+			  --key-background: #1c1c1e;
+			  --key-over: #dad6d6;
+			  --key-sp: #A9A9A9; 
+			  --cls-color: #cbcbcb;
+			  --cls-background: #1c1c1e;
+			  --h2-color: #cbcbcb;
+			  --h2-background: #949494;
+			  --h1-background: #1c1c1e;
+			  --h1-color: #cbcbcb;
+			  
+			}
+			.cls_input, .cls_cuota, .cls_interes {
+				background-color: var(--cls-background) !important;
+				color: var(--cls-color) !important;
+			}
+			h2 {
+				color: #cbcbcb !important;
+			}
+		}
+		
+		.visuallyhidden{
+			position:absolute;
+			left:-10000px;
+			top:auto;
+			width:1px;
+			height:1px;
+			overflow:hidden;
+		}
+		
+
+
+    .toggle {
+      --width: 400px;
+      --height: calc(var(--width) / 10);
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+    }
+	
+	.toggle.resumen {
+        --width: 400px;
+        --height: calc(var(--width) / 10);
+        width: var(--width);
+        height: var(--height);
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        color: var(--h1-color);
+        background-color: var(--h1-background);
+	}
+
+    .toggle input {
+      display: none;
+    }
+
+    .toggle .labels {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      font-size: 16px;
+      font-family: sans-serif;
+      transition: all 0.4s ease-in-out;
+      overflow: hidden;
+    }
+
+    .toggle .labels::after {
+      content: attr(data-off);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      transition: all 0.4s ease-in-out;
+    }
+
+    .toggle .labels::before {
+      content: attr(data-on);
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: calc(var(--width) * -1);
+      height: 100%;
+      width: 100%;
+
+      text-align: center;
+      transition: all 0.4s ease-in-out;
+    }
+	
+    .toggle input:checked~.labels::after {
+      transform: translateX(var(--width));
+    }
+
+    .toggle input:checked~.labels::before {
+      transform: translateX(var(--width));
+    }
+	
+
+	</style>
+	
+</head>
+<body>
+
+<div class="calculator">
+<div class="calculator-keys">
+	<div class="cabecera"></div>
+	
+	
+		<fieldset>
+		    <legend>PRECIO</legend>
+
+<div id="txtprecio_calculadora" class="calculator-display"></div>
+		</fieldset>
+		<fieldset>
+		    <legend>CUOTA</legend>
+<div id="txtcuota_calculadora" class="calculator-display2"></div>
+		</fieldset>
+
+<div id="txtinteres_calculadora" class="calculator-display3">0.000</div>
+<div id="txtmeses_calculadora" class="calculator-display4">0.000</div>
+	
+	<div class="slidecontainer">
+	<input type="range" min="3" max="36" value="12" class="slider" id="barraMeses_calculadora">
+		<label for="barraMeses_calculadora" class="visuallyhidden">Meses</label>
+		
+	</div>
+	
+<button class="calculator-key wide sp" type="operator" id="IVA_calculadora">Sin IVA</button>
+  <label class="toggle calculator-key wide sp">
+    <input type="checkbox" id="selector_TIN_calculadora" checked>
+    <span class="labels" data-on="TIN 14%" data-off="TIN 16%"></span>
+  </label>
+<button class="calculator-key wide sp" type="operator" id="personal_calculadora">Quitar 15%</button>
+
+
+<button class="calculator-key" type="numero_calculadora" id="7">7</button>
+<button class="calculator-key" type="numero_calculadora" id="8">8</button>
+<button class="calculator-key" type="numero_calculadora" id="9">9</button>
+<button class="calculator-key op" type="operator" id="atras_calculadora"><</button>
+
+<button class="calculator-key" type="numero_calculadora" id="4">4</button>
+<button class="calculator-key" type="numero_calculadora" id="5">5</button>
+<button class="calculator-key" type="numero_calculadora" id="6">6</button>
+<button class="calculator-key op" type="operator" id="sumar_calculadora">+</button>
+
+<button class="calculator-key" type="numero_calculadora" id="1">1</button>
+<button class="calculator-key" type="numero_calculadora" id="2">2</button>
+<button class="calculator-key" type="numero_calculadora" id="3">3</button>
+<button class="calculator-key op" type="operator" id="restar_calculadora">-</button>
+
+<button class="calculator-key" type="decimal" id="coma_calculadora">,</button>
+<button class="calculator-key" type="numero_calculadora" id="0">0</button>
+	
+<button class="calculator-key" type="operator" id="borrar_calculadora">C</button>
+<button class="calculator-key op" type="operator" id="igual_calculadora">=</button>
+	
+</div>
+	
+
+</div>
+	<div class="tablafpp">	
+
+
+
+
+<UL class="encabezado">
+<LI>
+<H2>Precio </H2>
+<DIV class="cls_div">
+			<INPUT class="cls_input" id="editprecio_tablafpp" type="number" value="999">
+			<label for="editprecio_tablafpp" class="visuallyhidden">Precio</label>
+
+		</DIV>
+</LI>
+<LI>
+<H2>Meses</H2>
+<DIV class="cls_div">
+			<INPUT class="cls_input" id="editmeses_tablafpp" type="number" value="12">
+			<label for="editmeses_tablafpp" class="visuallyhidden">Meses</label>
+
+		</DIV>
+</LI>
+<LI>
+<H2 id="txtpersonalizado_tablafpp">Personalizado </H2>
+<DIV class="cls_cuota" id="txtcuota_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtintereses_tablafpp">Intereses: </DIV>
+</LI>
+</UL>
+<UL class="listing">
+<LI>
+<H2>3 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_3_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_3_tablafpp">Gastos: </DIV>
+</LI>
+<LI>
+<H2>6 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_6_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_6_tablafpp">Intereses: </DIV>
+</LI>
+<LI>
+<H2>9 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_9_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_9_tablafpp">Intereses: </DIV>
+</LI>
+<LI>
+<H2>12 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_12_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_12_tablafpp">Intereses: </DIV>
+</LI>
+<LI>
+<H2>18 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_18_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_18_tablafpp">Intereses: </DIV>
+</LI>
+<LI>
+<H2>24 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_24_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_24_tablafpp">Intereses: </DIV>
+</LI>
+<LI>
+<H2>36 meses</H2>
+<DIV class="cls_cuota" id="txtcuota_36_tablafpp">Cuota: </DIV>
+<DIV class="cls_interes" id="txtinteres_36_tablafpp">Intereses: </DIV>
+</LI>
+<LI>
+<H2 id="txtmeses_ideal_tablafpp">Cuota 30€ </H2>
+<DIV class="cls_cuota" id="txtcuota_ideal_tablafpp">Cuota:</DIV>
+<DIV class="cls_interes" id="txtinteres_ideal_tablafpp">Intereses: </DIV>
+</LI>
+</UL>
+
+<div class="seleccion_TIN">
+  <label class="toggle resumen">
+    <input type="checkbox" id="selector_TIN_tablafpp" checked>
+    <span class="labels" data-on="Valor del TIN 14% (financiación general)" data-off="Valor del TIN 16% (otros productos)"></span>
+  </label>
+</div>
+
+<H1>Los valores son aproximados. Por favor, no imprimáis esta hoja.</H1>
+	</div>
+	
+	
+</body>
+
+<script>if ('serviceWorker' in navigator) {
+navigator.serviceWorker.register('service-worker.js');
+}
+</script>
+
+<script>
+	//let formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
+	
+	let valor_precio = 0;
+	let valor_meses = 0;
+	let coma = false;
+	let valor_precio_anterior = 0;
+	let operador = "igual";
+	//Se definen lo cuadros de salida de datos en la vista apaisada y vista calculadora
+	
+	let txtPrecio_calculadora = document.getElementById("txtprecio_calculadora");
+	let txtCuota_calculadora = document.getElementById("txtcuota_calculadora");
+	let txtIntereses_calculadora = document.getElementById("txtinteres_calculadora");
+	let txtMeses_calculadora = document.getElementById("txtmeses_calculadora");
+	let barraMeses_calculadora = document.getElementById('barraMeses_calculadora');
+	
+	
+	let editmeses_tablafpp = document.getElementById("editmeses_tablafpp");
+	let editprecio_tablafpp = document.getElementById("editprecio_tablafpp");
+	let txtcuota_tablafpp = document.getElementById("txtcuota_tablafpp");
+	let txtinteres_tablafpp = document.getElementById("txtinteres_tablafpp");
+	let txtmeses_ideal_tablafpp = document.getElementById("txtmeses_ideal_tablafpp");
+	
+	let selector_TIN_tablafpp = document.getElementById("selector_TIN_tablafpp");
+	let selector_TIN_calculadora = document.getElementById("selector_TIN_calculadora");
+	
+	const botones = document.querySelectorAll(`[type^="numero_calculadora"]`);
+
+	for (i = 0; i < botones.length; i++) {
+		botones[i].onclick = function(e){boton_pulsado(this.id);}
+	}
+	document.getElementById('coma_calculadora').onclick = function(e){coma = true;}
+	document.getElementById('borrar_calculadora').onclick = function(e){boton_borrar();}
+	document.getElementById('atras_calculadora').onclick = function(e){boton_atras();}
+	document.getElementById('igual_calculadora').onclick = function(e){boton_operacion("igual");}
+	document.getElementById('sumar_calculadora').onclick = function(e){boton_operacion("sumar");}
+	document.getElementById('restar_calculadora').onclick = function(e){boton_operacion("restar");}
+	
+	
+
+	editprecio_tablafpp.addEventListener('input', ActualizaPrecio);
+	editmeses_tablafpp.addEventListener('input', ActualizaMeses);
+	
+	Opera();
+	
+	function boton_borrar(){
+		valor_precio = 0;
+		coma = false;
+		Opera();
+	}
+	
+	function boton_atras(){
+		valor_precio = valor_precio.toString().slice(0, -1)
+		Opera();
+	}
+	
+	function boton_pulsado(cantidad) {
+		if (coma==true && valor_precio.toString().indexOf('.')<0) {
+			valor_precio = valor_precio + ".";
+		}
+		valor_precio = eval(valor_precio + cantidad);
+		coma = false;
+		Opera();
+	}
+	
+	function boton_operacion(valor_operador){
+  		if (operador == "sumar") {
+  			valor_precio = valor_precio + valor_precio_anterior;
+  		}
+  		if (operador == "restar") {
+  			valor_precio = valor_precio_anterior -valor_precio;
+  		}
+		Opera();
+		
+		if (valor_operador != "igual"){
+		    valor_precio_anterior = valor_precio;
+		    valor_precio=0;
+	    }
+		coma = false;
+		operador = valor_operador;
+		
+	}
+	
+	function boton_igual(){
+
+
+	}
+	
+	function ActualizaPrecio(e) {
+		valor_precio = editprecio_tablafpp.value;
+		Opera();
+    }
+	function ActualizaMeses(e) {
+		valor_meses = editmeses_tablafpp.value;
+		Opera();
+    }
+	
+	function Opera(){
+		if (valor_precio < 0) valor_precio = 0;
+		console.log('Precio: ',valor_precio);
+		console.log('Valor_anterior: ',valor_precio_anterior);
+		editprecio_tablafpp.value = valor_precio;
+		txtPrecio_calculadora.innerHTML = valor_precio;
+		txtCuota_calculadora.innerHTML = valor_precio;
+		
+		
+	}
+	
+</script>
+
+
+
+
+</html>
