@@ -15,7 +15,13 @@
 	  touch-action: none;
 	  overscroll-behavior: contain;
 	  position: relative;
-      height: 95vh; /*probar luego quitando esto */
+          min-height: 100vh;
+          min-height: -webkit-fill-available;
+          /*height: 95vh; probar luego quitando esto */
+	}
+	
+	html {
+	    height: -webkit-fill-available;
 	}
 
 	.calculator {
