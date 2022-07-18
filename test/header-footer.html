@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+
+  <meta charset="UTF-8">
+  
+<link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
+<meta name="apple-mobile-web-app-title" content="CodePen">
+
+<link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
+
+<link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-8f3771b1072e3c38bd662872f6b673a722f4b3ca2421637d5596661b4e2132cc.svg" color="#111" />
+
+
+  <meta name="robots" content="noindex">
+  <title>CodePen - Full-height CSS Grid</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+  
+  
+<style>
+body {
+  height: 100vh;
+}
+
+body {
+  display: grid;
+  grid-template-areas: "header header" "nav main" "footer footer";
+  grid-template-columns: minmax(auto, 12em) 5fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+h1 {
+  grid-area: header;
+}
+
+footer {
+  grid-area: footer;
+}
+
+nav {
+  grid-area: nav;
+}
+
+article {
+  grid-area: main;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+h1, footer {
+  background: lightgray;
+}
+
+nav {
+  border-right: 1px solid lightgray;
+}
+
+nav, article {
+  overflow-y: auto;
+}
+
+h1, nav, article, footer {
+  padding: 1rem;
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+
+</head>
+
+<body translate="no" >
+  <h1>My<strong>Application</strong></h1>
+
+<nav>
+  <h2>My Projects</h2>
+  <ul>
+    <li><a href="#"></a>Project 1</a></li>
+    <li><a href="#"></a>Project 2</a></li>
+    <li><a href="#"></a>Project 3</a></li>
+    <li><a href="#"></a>Project 4</a></li>
+    <li><a href="#"></a>Project 5</a></li>
+    <li><a href="#"></a>Project 6</a></li>
+    <li><a href="#"></a>Project 7</a></li>
+    <li><a href="#"></a>Project 8</a></li>
+    <li><a href="#"></a>Project 9</a></li>
+    <li><a href="#"></a>Project 10</a></li>
+  </ul>
+</nav>
+
+<article>
+  <h2>Project Title</h2>
+  <p>
+    All the main content lives in here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem eius cumque, nihil nesciunt qui ea vero consequatur, dignissimos maxime ratione itaque amet, ab aliquid recusandae illo quibusdam debitis? Deserunt, saepe.
+  </p>
+</article>
+
+<footer>
+  Copyright (c) 1017 Nobody Ever
+</footer>
+  
+  
+  
+  
+
+</body>
+
+</html>
