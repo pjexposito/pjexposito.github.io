@@ -23,6 +23,10 @@
   
 <style>
 body {
+  touch-action: none;
+  overscroll-behavior: contain;
+
+  
   min-height: 100vh;
   min-height: -webkit-fill-available;
   }
@@ -32,6 +36,7 @@ html {
   }
 
 body {
+  
   display: grid;
   grid-template-areas: "header header" "nav main" "footer footer";
   grid-template-columns: minmax(auto, 12em) 5fr;
