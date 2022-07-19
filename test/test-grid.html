@@ -4,40 +4,108 @@
 
 <head>
 
-  <meta charset="UTF-8">
-  
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
+ <meta charset="UTF-8">
+ 
+ 
+ <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0, shrink-to-fit=no, viewport-fit=cover"> 
 
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <title>Test</title>
+ <title>Test</title>
 
 <style>
+	
+	:root {
+		--body-color: #000;
+		--body-background: #fff;
+		--white: #000;
+		--slider-line: #000;
+		--slider-background: #d3d3d3;
+		--slider-thumb: #495ed7;
+		--display-color: #000;
+		--key-color:#000;
+		--key-background: #fff;
+		--key-over: #dad6d6;
+		--key-sp: #A9A9A9; 
+		--cls-color: #cbcbcb;
+		--cls-background: #000;
+		--h2-color: #fff;
+		--h2-background: #949494;
+	    --h1-background: #fff;
+	    --h1-color: #000;
+	}
+	
 body {
-  touch-action: none;
-  overscroll-behavior: contain;
-      height: 100vh;
+ touch-action: none;
+ overscroll-behavior: contain;
+   height: 100vh;
 
-    
   
-  }
+ 
+ }
  
 html {
-  	overflow: hidden;
-    height: 100vh;
+ 	overflow: hidden;
+  height: 100vh;
 
-  }
+ }
 
-.container {  
-  display: grid;
-  grid-template-columns: 25% 25% 25% 25%;
-  grid-template-rows: 3% 10% 12% 8% 7% 5% 10% 10% 10% 10% 10% 5%;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  width: 100%;
-  height: 90%;
+.container { 
+ display: grid;
+ grid-template-columns: 25% 25% 25% 25%;
+ grid-template-rows: 3% 10% 12% 8% 7% 5% 10% 10% 10% 10% 10% 5%;
+ gap: 0px 0px;
+ grid-auto-flow: row;
+ width: 100%;
+ height: 90%;
 }
+
+
+.calculator-display,.calculator-display2,.calculator-display3, .calculator-display4 {
+	float: left;
+	text-align: left;
+	width: 100%;
+	line-height: 5vh;
+	padding: 0 1rem;
+	color: var(--display-color);
+	overflow-x: none;
+}
+
+
+
+.calculator-display{
+	height: 12%; /* Era el 5%. Ahora las pantallas representan el 30% */
+	font-size: 12vmin;
+	text-align: right;	
+	
+}
+
+
+.calculator-display2{
+	height: 12%; /* Era el 5%. Ahora las pantallas representan el 30% */
+	font-size: 13.5vmin;
+	text-align: right;	
+	
+	
+}
+
+.calculator-display3{
+	padding: 1rem;
+	
+	height: 8%; /* Era el 5%. Ahora las pantallas representan el 30% */
+	font-size: 5vmin;
+	width: 65%;
+}
+
+.calculator-display4{
+	padding: 1rem;
+	
+	height: 8%; /* Era el 5%. Ahora las pantallas representan el 30% */
+	font-size: 5vmin;
+	width: 35%;
+	text-align: right;	
+}
+
 
 .Precio { grid-area: 2 / 1 / 3 / 5; }
 
@@ -51,50 +119,68 @@ html {
 
 .Separador { grid-area: 6 / 1 / 7 / 5; }
 
-.IVA { grid-area: 7 / 1 / 8 / 2; }
 
-.TIN { grid-area: 7 / 2 / 8 / 3; }
+.boton {
+	float: left;
+	text-align: center;
+	font-size: 5vh;
+	border: 0px solid var(--key-color);
+	color: var(--key-color);
+	background: var(--key-background); 
+}
 
-.Personal { grid-area: 7 / 3 / 8 / 4; }
+.boton:focus {
+	outline: none;
+}
 
-.Otro { grid-area: 7 / 4 / 8 / 5; }
+.boton:active {
+	background: var(--key-over);
+}
 
-.Siete { grid-area: 8 / 1 / 9 / 2; }
+.boton.IVA { grid-area: 7 / 1 / 8 / 2; }
 
-.Ocho { grid-area: 8 / 2 / 9 / 3; }
+.boton.TIN { grid-area: 7 / 2 / 8 / 3; }
 
-.Nueve { grid-area: 8 / 3 / 9 / 4; }
+.boton.Personal { grid-area: 7 / 3 / 8 / 4; }
 
-.Atras { grid-area: 8 / 4 / 9 / 5; }
+.boton.Otro { grid-area: 7 / 4 / 8 / 5; }
 
-.Mas { grid-area: 9 / 4 / 10 / 5; }
+.boton.Siete { grid-area: 8 / 1 / 9 / 2; }
 
-.Menos { grid-area: 10 / 4 / 11 / 5; }
+.boton.Ocho { grid-area: 8 / 2 / 9 / 3; }
 
-.Igual { grid-area: 11 / 4 / 12 / 5; }
+.boton.Nueve { grid-area: 8 / 3 / 9 / 4; }
 
-.Cuatro { grid-area: 9 / 1 / 10 / 2; }
+.boton.Atras { grid-area: 8 / 4 / 9 / 5; }
 
-.Cinco { grid-area: 9 / 2 / 10 / 3; }
+.boton.Mas { grid-area: 9 / 4 / 10 / 5; }
 
-.Seis { grid-area: 9 / 3 / 10 / 4; }
+.boton.Menos { grid-area: 10 / 4 / 11 / 5; }
 
-.Uno { grid-area: 10 / 1 / 11 / 2; }
+.boton.Igual { grid-area: 11 / 4 / 12 / 5; }
 
-.Dos { grid-area: 10 / 2 / 11 / 3; }
+.boton.Cuatro { grid-area: 9 / 1 / 10 / 2; }
 
-.Tres { grid-area: 10 / 3 / 11 / 4; }
+.boton.Cinco { grid-area: 9 / 2 / 10 / 3; }
 
-.Coma { grid-area: 11 / 1 / 12 / 2; }
+.boton.Seis { grid-area: 9 / 3 / 10 / 4; }
 
-.Cero { grid-area: 11 / 2 / 12 / 3; }
+.boton.Uno { grid-area: 10 / 1 / 11 / 2; }
 
-.C { grid-area: 11 / 3 / 12 / 4; }
+.boton.Dos { grid-area: 10 / 2 / 11 / 3; }
+
+.boton.Tres { grid-area: 10 / 3 / 11 / 4; }
+
+.boton.Coma { grid-area: 11 / 1 / 12 / 2; }
+
+.boton.Cero { grid-area: 11 / 2 / 12 / 3; }
+
+.boton.C { grid-area: 11 / 3 / 12 / 4; }
 
 </style>
 
-  
-  
+ 
+ 
 
 
 
@@ -102,37 +188,37 @@ html {
 
 <body translate="no" >
 <div class="container">
-  <div class="Precio">PRECIO: 222€</div>
-  <div class="Cuota">Cuota: 11 €/m</div>
-  <div class="Intereses">23 €</div>
-  <div class="Meses">12 meses</div>
-  <div class="Slider">Soy un slider</div>
-  <div class="Separador"></div>
-  <div class="IVA">IVA</div>
-  <div class="TIN">TIN</div>
-  <div class="Personal">15%</div>
-  <div class="Otro">Otro</div>
-  <button  class="Siete">7</button>
-  <button  class="Ocho">8</button>
-  <button  class="Nueve">9</button>
-  <button  class="Atras">Atrás</button>
-  <button  class="Mas">Mas</button>
-  <button  class="Menos">-</button>
-  <button  class="Igual">=</button>
-  <button  class="Cuatro">4</button>
-  <button  class="Cinco">5</button>
-  <button  class="Seis">6</button>
-  <button  class="Uno">1</button>
-  <button  class="Dos">2</button>
-  <button  class="Tres">3</button>
-  <button  class="Coma">,</button>
-  <button  class="Cero">0</button>
-  <button  class="C">C</button >
+ <div class="Precio">PRECIO: 222€</div>
+ <div class="Cuota">Cuota: 11 €/m</div>
+ <div class="Intereses">23 €</div>
+ <div class="Meses">12 meses</div>
+ <div class="Slider">Soy un slider</div>
+ <div class="Separador"></div>
+ <button class="boton IVA">IVA</button>
+ <button class="boton TIN">TIN</button>
+ <button class="boton Personal">15%</button>
+ <button class="boton Otro">Otro</button>
+ <button class="boton Siete">7</button>
+ <button class="boton Ocho">8</button>
+ <button class="boton Nueve">9</button>
+ <button class="boton Atras">Atrás</button>
+ <button class="boton Mas">Mas</button>
+ <button class="boton Menos">-</button>
+ <button class="boton Igual">=</button>
+ <button class="boton Cuatro">4</button>
+ <button class="boton Cinco">5</button>
+ <button class="boton Seis">6</button>
+ <button class="boton Uno">1</button>
+ <button class="boton Dos">2</button>
+ <button class="boton Tres">3</button>
+ <button class="boton Coma">,</button>
+ <button class="boton Cero">0</button>
+ <button class="boton C">C</button >
 </div>
-  
-  
-  
-  
+ 
+ 
+ 
+ 
 
 </body>
 
