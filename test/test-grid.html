@@ -188,38 +188,149 @@ html {
 
 <body translate="no" >
 <div class="container">
- <div class="Precio">PRECIO: 222€</div>
- <div class="Cuota">Cuota: 11 €/m</div>
- <div class="Intereses">23 €</div>
- <div class="Meses">12 meses</div>
- <div class="Slider">Soy un slider</div>
+ <div id="txtprecio_calculadora" class="Precio">PRECIO: 222€</div>
+ <div id="txtcuota_calculadora" class="Cuota">Cuota: 11 €/m</div>
+ <div id="txtinteres_calculadora" class="Intereses">23 €</div>
+ <div cid="txtmeses_calculadora" lass="Meses">12 meses</div>
+	<div class="Slider">
+	<input type="range" min="3" max="36" value="12" class="slider" id="barraMeses_calculadora">
+		<label for="barraMeses_calculadora" class="visuallyhidden">Meses</label>
+		
+	</div>
+
  <div class="Separador"></div>
- <button class="boton IVA">IVA</button>
+ <button id="IVA_calculadora" class="boton IVA">IVA</button>
  <button class="boton TIN">TIN</button>
- <button class="boton Personal">15%</button>
+ <button id="personal_calculadora" class="boton Personal">15%</button>
  <button class="boton Otro">Otro</button>
- <button class="boton Siete">7</button>
- <button class="boton Ocho">8</button>
- <button class="boton Nueve">9</button>
- <button class="boton Atras">Atrás</button>
- <button class="boton Mas">Mas</button>
- <button class="boton Menos">-</button>
- <button class="boton Igual">=</button>
- <button class="boton Cuatro">4</button>
- <button class="boton Cinco">5</button>
- <button class="boton Seis">6</button>
- <button class="boton Uno">1</button>
- <button class="boton Dos">2</button>
- <button class="boton Tres">3</button>
- <button class="boton Coma">,</button>
- <button class="boton Cero">0</button>
- <button class="boton C">C</button >
+ <button class="boton Siete" type="numero_calculadora" id="7">7</button>
+ <button class="boton Ocho" type="numero_calculadora" id="8">8</button>
+ <button class="boton Nueve" type="numero_calculadora" id="9">9</button>
+ <button class="boton Atras" type="operator" id="atras_calculadora"><</button>
+ <button class="boton Mas"type="operator" id="sumar_calculadora">+</button>
+ <button class="boton Menos" type="operator" id="restar_calculadora">-</button>
+ <button class="boton Igual" type="operator" id="igual_calculadora">=</button>
+ <button class="boton Cuatro" type="numero_calculadora" id="4">4</button>
+ <button class="boton Cinco" type="numero_calculadora" id="5">5</button>
+ <button class="boton Seis" type="numero_calculadora" id="6">6</button>
+ <button class="boton Uno" type="numero_calculadora" id="1">1</button>
+ <button class="boton Dos" type="numero_calculadora" id="2">2</button>
+ <button class="boton Tres" type="numero_calculadora" id="3">3</button>
+ <button class="boton Coma" type="decimal" id="coma_calculadora">,</button>
+ <button class="boton Cero" type="numero_calculadora" id="0">0</button>
+ <button class="boton C" type="operator" id="borrar_calculadora">C</button >
 </div>
- 
- 
- 
- 
 
 </body>
+
+<script>
+	//let formatter = new Intl.NumberFormat('es-ES', {style: 'currency',currency: 'EUR',minimumFractionDigits: 0,maximunFractionDigits: 0});
+	
+	let valor_precio = 0;
+	let valor_meses = 0;
+	let coma = false;
+	let valor_precio_anterior = 0;
+	let operador = "igual";
+	//Se definen lo cuadros de salida de datos en la vista apaisada y vista calculadora
+	
+	let txtPrecio_calculadora = document.getElementById("txtprecio_calculadora");
+	let txtCuota_calculadora = document.getElementById("txtcuota_calculadora");
+	let txtIntereses_calculadora = document.getElementById("txtinteres_calculadora");
+	let txtMeses_calculadora = document.getElementById("txtmeses_calculadora");
+	let barraMeses_calculadora = document.getElementById('barraMeses_calculadora');
+	
+	
+	let editmeses_tablafpp = document.getElementById("editmeses_tablafpp");
+	let editprecio_tablafpp = document.getElementById("editprecio_tablafpp");
+	let txtcuota_tablafpp = document.getElementById("txtcuota_tablafpp");
+	let txtinteres_tablafpp = document.getElementById("txtinteres_tablafpp");
+	let txtmeses_ideal_tablafpp = document.getElementById("txtmeses_ideal_tablafpp");
+	
+	let selector_TIN_tablafpp = document.getElementById("selector_TIN_tablafpp");
+	let selector_TIN_calculadora = document.getElementById("selector_TIN_calculadora");
+	
+	const botones = document.querySelectorAll(`[type^="numero_calculadora"]`);
+
+	for (i = 0; i < botones.length; i++) {
+		botones[i].onclick = function(e){boton_pulsado(this.id);}
+	}
+	document.getElementById('coma_calculadora').onclick = function(e){coma = true;}
+	document.getElementById('borrar_calculadora').onclick = function(e){boton_borrar();}
+	document.getElementById('atras_calculadora').onclick = function(e){boton_atras();}
+	document.getElementById('igual_calculadora').onclick = function(e){boton_operacion("igual");}
+	document.getElementById('sumar_calculadora').onclick = function(e){boton_operacion("sumar");}
+	document.getElementById('restar_calculadora').onclick = function(e){boton_operacion("restar");}
+	
+	
+
+	//editprecio_tablafpp.addEventListener('input', ActualizaPrecio);
+	//editmeses_tablafpp.addEventListener('input', ActualizaMeses);
+	
+	Opera();
+	
+	function boton_borrar(){
+		valor_precio = 0;
+		coma = false;
+		Opera();
+	}
+	
+	function boton_atras(){
+		valor_precio = valor_precio.toString().slice(0, -1)
+		Opera();
+	}
+	
+	function boton_pulsado(cantidad) {
+		if (coma==true && valor_precio.toString().indexOf('.')<0) {
+			valor_precio = valor_precio + ".";
+		}
+		valor_precio = eval(valor_precio + cantidad);
+		coma = false;
+		Opera();
+	}
+	
+	function boton_operacion(valor_operador){
+  		if (operador == "sumar") {
+  			valor_precio = valor_precio + valor_precio_anterior;
+  		}
+  		if (operador == "restar") {
+  			valor_precio = valor_precio_anterior -valor_precio;
+  		}
+		Opera();
+		
+		if (valor_operador != "igual"){
+		    valor_precio_anterior = valor_precio;
+		    valor_precio=0;
+	    }
+		coma = false;
+		operador = valor_operador;
+		
+	}
+	
+	function boton_igual(){
+
+
+	}
+	
+	function ActualizaPrecio(e) {
+		valor_precio = editprecio_tablafpp.value;
+		Opera();
+    }
+	function ActualizaMeses(e) {
+		valor_meses = editmeses_tablafpp.value;
+		Opera();
+    }
+	
+	function Opera(){
+		if (valor_precio < 0) valor_precio = 0;
+		console.log('Precio: ',valor_precio);
+		console.log('Valor_anterior: ',valor_precio_anterior);
+		//editprecio_tablafpp.value = valor_precio;
+		txtPrecio_calculadora.innerHTML = valor_precio;
+		txtCuota_calculadora.innerHTML = valor_precio;
+		
+		
+	}
+	
+</script>
 
 </html>
