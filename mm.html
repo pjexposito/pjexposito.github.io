@@ -1,0 +1,62 @@
+<html>
+  <head>
+	
+<!-- 
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Event",
+        "name": "A random event",
+        "startDate": "2013-09-14T21:30",
+        "endDate": "2013-09-14T21:30"
+      }
+    </script>
+-->	
+	<script type="application/ld+json">
+		{
+		"@context":"http://schema.org",
+		"@type":"Product",
+		"name":"Tarjeta de Memoria SanDisk Ultra Micro SDXC Clase 10 A1 de 256 GB + Adaptador",
+		"sku":"0619659183264",
+		"url":"https://www.elcorteingles.es/electronica/A24208342-tarjeta-de-memoria-sandisk-ultra-micro-sdxc-clase-10-a1-de-256-gb--adaptador/?color=Gris%20%2F%20Rojo&s=001028634912266&hierarchy=electronica&deep_search=&stype=text_box",
+		"image":"//cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/201802/22/00128634912266____1__1200x1200.jpg",
+		"brand":"Sandisk",
+		"offers":{
+			"@type":"AggregateOffer",
+			"priceCurrency":"EUR",
+			"availability":"http://schema.org/InStock",
+			"lowPrice":27.99,
+			"highPrice":29.99,
+			"offerCount":1
+			},
+		"subjectOf":[{
+			"@type":"ImageGallery",
+			"image":[{
+				"@type":"ImageObject",
+				"url":"//cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/201802/22/00128634912266____1__1200x1200.jpg"
+				},{
+					"@type":"ImageObject",
+					"url":"//cdn.grupoelcorteingles.es/SGFM/dctm/MEDIA03/201802/22/00128634912266____2__1200x1200.jpg"}
+					],
+				"url":"https://www.elcorteingles.es/electronica/A24208342-tarjeta-de-memoria-sandisk-ultra-micro-sdxc-clase-10-a1-de-256-gb--adaptador/?color=Gris%20%2F%20Rojo&s=001028634912266&hierarchy=electronica&deep_search=&stype=text_box"}
+			]
+		}
+	</script>
+
+  </head>
+  <body>
+    <p>El EAN es: <strong id="result"></strong></p>
+  </body>
+<script> 
+	function procesa(datos){
+		var jsonld = JSON.parse(document.querySelector('script[type="application/ld+json"]').innerText);
+		document.getElementById('result').innerText = jsonld.sku;
+		console.log(jsonld.sku);
+	}
+	
+	
+	fetch('https://jsonplaceholder.typicode.com/todos/1')
+	  .then(response => response.text())
+	  .then(data => procesa(data));
+	</script>
+</html>
