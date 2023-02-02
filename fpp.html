@@ -817,10 +817,14 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	function CalculaGastos() {
 	var gastos;
 	gastos = 3;
-	if ((Dinero >= 0) && (Dinero <= 200)) gastos = 3;
-	if ((Dinero > 200) && (Dinero <= 400)) gastos = 6;
-	if ((Dinero > 400) && (Dinero <= 600)) gastos = 8;
-	if (Dinero > 600) gastos = 12;
+	if ((Dinero >= 0) && (Dinero <= 99)) gastos = 1;
+	if ((Dinero > 99) && (Dinero <= 125)) gastos = 2;
+	if ((Dinero > 125) && (Dinero <= 250)) gastos = 3;
+	if ((Dinero > 250) && (Dinero <= 350)) gastos = 6;
+	if ((Dinero > 350) && (Dinero <= 600)) gastos = 8;
+	if ((Dinero > 600) && (Dinero <= 800)) gastos = 12;
+	if ((Dinero > 800) && (Dinero <= 1000)) gastos = 16;	
+	if (Dinero > 1000) gastos = 18;
 	return gastos;
 	}
 
