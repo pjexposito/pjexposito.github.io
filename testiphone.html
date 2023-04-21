@@ -219,8 +219,12 @@ h2 {
 			      pvif = Math.pow(1 + rate, nper);
 			      pmt = - rate * (pv * pvif + fv) / (pvif - 1);
 				  
+				  texto_resultado = 'Precio: '+precio+" €\r\n";
+				  texto_resultado += 'Cuota durante '+nper+':'+ redondea(pmt) + ' €/m\r\n'
+				  texto_resultado += 'Última cuota: '+fv+'\r\n';
+				  
                   var txt_resultado = document.getElementById("resultado");
-                  txt_resultado.innerHTML = "Cuota: "+ redondea(pmt) + " €/m";
+                  txt_resultado.innerHTML = texto_resultado;
 				  
 				  
 				  console.log(pmt);
