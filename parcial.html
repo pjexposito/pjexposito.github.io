@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Selección de botones</title>
+    <style>
+      /* Estilo para los botones */
+      input[type="radio"] {
+        display: none; /* ocultamos el botón real */
+      }
+
+      /* Estilo para las etiquetas */
+      label {
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+
+      /* Estilo para el botón seleccionado */
+      input[type="radio"]:checked + label {
+        background-color: #007bff;
+        color: #fff;
+        border-color: #007bff;
+      }
+
+      /* Estilo para las filas de botones */
+      .fila {
+        margin-bottom: 20px;
+      }
+
+      /* Estilo para adaptar la página a diferentes tamaños de pantalla */
+      @media (max-width: 767px) {
+        label {
+          font-size: 14px;
+          padding: 8px 16px;
+        }
+      }
+
+      @media (max-width: 479px) {
+        label {
+          font-size: 12px;
+          padding: 6px 12px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fila">
+      <input type="radio" id="boton1" name="fila1" value="boton1">
+      <label for="boton1">Botón 1</label>
+      <input type="radio" id="boton2" name="fila1" value="boton2">
+      <label for="boton2">Botón 2</label>
+      <input type="radio" id="boton3" name="fila1" value="boton3">
+      <label for="boton3">Botón 3</label>
+      <input type="radio" id="boton4" name="fila1" value="boton4">
+      <label for="boton4">Botón 4</label>
+      <input type="radio" id="boton5" name="fila1" value="boton5">
+      <label for="boton5">Botón 5</label>
+    </div>
+
+    <div class="fila">
+      <input type="radio" id="boton6" name="fila2" value="boton6">
+      <label for="boton6">Botón 6</label>
+      <input type="radio" id="boton7" name="fila2" value="boton7">
+      <label for="boton7">Botón 7</label>
+      <input type="radio" id="boton8" name="fila2" value="boton8">
+      <label for="boton8">Botón 8</label>
+      <input type="radio" id="boton9" name="fila2" value="boton9">
+      <label for="boton9">Botón 9</label>
+      <input type="radio" id="boton10" name="fila2" value="boton10">
+      <label for="boton10">Botón 10</label>
+    </div>
+</body>
+</html>
