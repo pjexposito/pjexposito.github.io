@@ -70,14 +70,14 @@
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 1.2rem;
             margin-bottom: 1px;
         }
 
 		@media only screen and (max-width: 600px) {	
             .switch-field label {
-                font-size: 0.8rem;
-                padding: calc(2px + 0.2vw) calc(1px + 0.2vw);
+                font-size: 1rem;
+                padding: calc(2px + 0.4vw) calc(2px + 0.4vw);
             }
         }
     </style>
@@ -220,7 +220,7 @@
 			      pmt = - rate * (pv * pvif + fv) / (pvif - 1);
 				  
 				  texto_resultado = 'Precio: '+precio+" €<br/>";
-				  texto_resultado += 'Cuota durante '+nper+'meses:'+ redondea(pmt) + ' €/m<br />'
+				  texto_resultado += 'Cuota durante '+nper+' meses:'+ redondea(pmt) + ' €/m<br />'
 				  texto_resultado += 'Última cuota: '+fv+'<br />';
 				  
                   var txt_resultado = document.getElementById("resultado");
