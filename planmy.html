@@ -10,6 +10,14 @@
 
   
 <style>
+		.resultado{
+		    text-align: center;
+            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+            font-weight: normal;
+            font-size: 2.5rem;
+			
+		}
+	
         .switch-field {
             display: flex;
             margin-bottom: 5px;
@@ -137,7 +145,7 @@
 		<input type="radio" id="pro" name="boton-seleccion" value="pro" disabled/>
 		<label class="cinco" for="pro">Pro</label>
 		<input type="radio" id="promax" name="boton-seleccion" value="promax" disabled/>
-		<label class="cinco" for="promax">Pro Max</label>
+		<label class="cinco" for="promax">Max</label>
 	</div>
 </form>
 
@@ -156,7 +164,7 @@
 		<label class="cinco" for="1tb">1Tb</label>
 	</div>
 	<br />
-    <div id ='resultado'></div>
+    <div id ='resultado' class="resultado"></div>
 
 </form>
   
@@ -240,7 +248,11 @@
 			  contador+=1;
 			  modelo = modelo+' '+document.getElementById(elem.id).label.innerHTML;
 			  if (contador==3){
+			  		modelo = modelo.replace('Max', 'Pro Max')
+				  
 			  		modelo = modelo.replace('Normal ', '').substring(1);
+					
+					console.log(modelo);
 					if (nuevo_precio == null) {
 				  		precio = datos_json[modelo].PVP;
 			  		}
@@ -255,15 +267,15 @@
 				  pv = -precio-18;
 			      pvif = Math.pow(1 + rate, nper);
 			      pmt = - rate * (pv * pvif + fv) / (pvif - 1);
+				  intereses = ((pmt*nper)+fv)-precio;
                   codigo_enlace = '<a class="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">'
 				  texto_resultado =  'Precio: '+codigo_enlace+precio+" €</a><br/>";
-				  texto_resultado += 'Cuota durante '+nper+' meses:'+ redondea(pmt) + ' €/m<br />'
-				  texto_resultado += 'Última cuota: '+fv+'<br />';
-				  
+				  texto_resultado += 'Cuota durante '+nper+' meses: '+ redondea(pmt) + ' €/m<br />'
+				  texto_resultado += 'Última cuota (valor residual): '+fv+' €<br />';
+				  texto_resultado += 'Coste total del crédito: '+redondea(intereses)+ '€';
                   var txt_resultado = document.getElementById("resultado");
                   txt_resultado.innerHTML = texto_resultado;
 				  
-				  //calcula(modelo);
 			  }
 		  }
    	  });
