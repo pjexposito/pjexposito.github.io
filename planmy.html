@@ -28,7 +28,6 @@
         }
 
         .switch-field label {
-			width: calc(33.33% - 2px);
             background-color: #f2f2f2;
             color: rgba(0, 0, 0, 0.6);
             font-size: 1.5rem;
@@ -40,7 +39,15 @@
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
             transition: all 0.1s ease-in-out;
         }
-
+		
+		.switch-field label.tres {
+			width: calc(33.33% - 5px);
+		}
+		
+		.switch-field label.cinco {
+			width: calc(20% - 5px);
+		}
+		
         .switch-field label:hover {
             cursor: pointer;
         }
@@ -98,11 +105,11 @@
 	<h2>Simulador Plan My</h2>
 	<div class="switch-field iphone">
 		<input type="radio" id="iphone12" name="boton-seleccion" value="iphone12" />
-		<label for="iphone12">iPhone 12</label>
+		<label class="tres" for="iphone12">iPhone 12</label>
 		<input type="radio" id="iphone13" name="boton-seleccion" value="iphone13"/>
-		<label for="iphone13">iPhone 13</label>
+		<label class="tres" for="iphone13">iPhone 13</label>
 		<input type="radio" id="iphone14" name="boton-seleccion" value="iphone14" />
-		<label for="iphone14">iPhone 14</label>
+		<label class="tres" for="iphone14">iPhone 14</label>
 	</div>
 
 </form>
@@ -110,15 +117,15 @@
 
 	<div class="switch-field">
 		<input type="radio" id="normal" name="boton-seleccion" value="normal" disabled/>
-		<label for="normal">Normal</label>
+		<label class="cinco" for="normal">Normal</label>
 		<input type="radio" id="mini" name="boton-seleccion" value="mini" disabled/>
-		<label for="mini">Mini</label>
+		<label class="cinco" for="mini">Mini</label>
 		<input type="radio" id="plus" name="boton-seleccion" value="plus" disabled/>
-		<label for="plus">Plus</label>
+		<label class="cinco" for="plus">Plus</label>
 		<input type="radio" id="pro" name="boton-seleccion" value="pro" disabled/>
-		<label for="pro">Pro</label>
+		<label class="cinco" for="pro">Pro</label>
 		<input type="radio" id="promax" name="boton-seleccion" value="promax" disabled/>
-		<label for="promax">Pro Max</label>
+		<label class="cinco" for="promax">Pro Max</label>
 	</div>
 </form>
 
@@ -126,15 +133,15 @@
 
 	<div class="switch-field">
 		<input type="radio" id="64gb" name="boton-seleccion" value="64gb" disabled/>
-		<label for="64gb">64Gb</label>
+		<label class="cinco" for="64gb">64Gb</label>
 		<input type="radio" id="128gb" name="boton-seleccion" value="128gb" disabled/>
-		<label for="128gb">128Gb</label>
+		<label class="cinco" for="128gb">128Gb</label>
 		<input type="radio" id="256gb" name="boton-seleccion" value="256gb" disabled/>
-		<label for="256gb">256Gb</label>
+		<label class="cinco" for="256gb">256Gb</label>
 		<input type="radio" id="512gb" name="boton-seleccion" value="512gb" disabled/>
-		<label for="512gb">512Gb</label>
+		<label class="cinco" for="512gb">512Gb</label>
 		<input type="radio" id="1tb" name="boton-seleccion" value="1tb" disabled/>
-		<label for="1tb">1Tb</label>
+		<label class="cinco" for="1tb">1Tb</label>
 	</div>
 	<br />
     <div id ='resultado'></div>
@@ -166,6 +173,15 @@
             }
         return (Math.round((valor + Number.EPSILON) * 100) / 100);
     }
+	
+	function CambiarPrecio(precio) {
+		
+		let nuevo_precio = prompt("Introduce el precio", precio);
+
+		if (nuevo_precio != null) {
+			precio = nuevo_precio;
+		}
+	}
 	
     function actualiza(e) {
 		var item = event.target.value;
@@ -220,8 +236,8 @@
 				  pv = -precio-18;
 			      pvif = Math.pow(1 + rate, nper);
 			      pmt = - rate * (pv * pvif + fv) / (pvif - 1);
-				  
-				  texto_resultado = 'Precio: '+precio+" €<br/>";
+                  codigo_enlace = '<a id="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">'
+				  texto_resultado =  'Precio: '+codigo_enlace+precio+" €</a><br/>";
 				  texto_resultado += 'Cuota durante '+nper+' meses:'+ redondea(pmt) + ' €/m<br />'
 				  texto_resultado += 'Última cuota: '+fv+'<br />';
 				  
