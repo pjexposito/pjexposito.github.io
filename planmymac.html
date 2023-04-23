@@ -123,6 +123,25 @@
 		  background-color: gray;
 		  color: white;
 		}
+		
+		
+		
+		select {
+		  // A reset of styles, including removing the default dropdown arrow
+		  appearance: none;
+		  background-color: transparent;
+		  border: none;
+		  padding: 0 1em 0 0;
+		  margin: 0;
+		  width: 100%;
+		  font-family: inherit;
+          font-size: 1.2rem;
+
+		}
+
+
+
+
     </style>
 
   
@@ -144,9 +163,9 @@
 		<input type="radio" id="imac" name="boton-seleccion" value="imac" />
 		<label class="cuatro" for="imac">iMac</label>
 		<input type="radio" id="macmini" name="boton-seleccion" value="macmini" />
-		<label class="cuatro" for="macmini">Mac Mini / Studio</label>
+		<label class="cuatro" for="macmini">Mini/Studio</label>
 	</div>
-	<div class="combo">
+	<div class="select">
 
   <select id="modelos"></select>
   
@@ -201,7 +220,8 @@
     }
 	
 	function CambiarPrecio(precio) {
-		
+		let modelos = document.querySelector('#modelos').selection;
+
 		let nuevo_precio = parseInt(prompt("Introduce el precio", precio));
 
 		if (nuevo_precio != null && !isNaN(nuevo_precio)) {
