@@ -88,18 +88,24 @@
         }
 
         h2 {
-            font-size: 1.2rem;
+            font-size: 2rem;
             margin-bottom: 1px;
         }
 
 		@media only screen and (max-width: 600px) {	
             .switch-field label {
-                font-size: 1rem;
-                padding: calc(2px + 0.7vw) calc(3px + 0.4vw);
+                font-size: 0.9rem;
+                padding: calc(7px + 0.7vw) calc(3px + 0.4vw);
             }
 			.resultado{
-	            font-size: 1.5rem;
+	            font-size: 1.1rem;
+			    text-align: left;
+				
 			}
+	        h2 {
+	            font-size: 1.5rem;
+	            margin-bottom: 1px;
+	        }
         }
 		
 		
@@ -125,6 +131,7 @@
 
 
 	<h2>Simulador Plan My</h2>
+	<br>
 	<div class="switch-field iphone">
 		<input type="radio" id="iphone12" name="boton-seleccion" value="iphone12" />
 		<label class="tres" for="iphone12">iPhone 12</label>
@@ -271,10 +278,18 @@
 			      pmt = - rate * (pv * pvif + fv) / (pvif - 1);
 				  intereses = ((pmt*nper)+fv)-precio;
                   codigo_enlace = '<a class="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">'
-				  texto_resultado =  'Precio: '+codigo_enlace+precio+" €</a><br/>";
-				  texto_resultado += 'Cuota durante '+nper+' meses: '+ redondea(pmt) + ' €/m<br />'
-				  texto_resultado += 'Última cuota (valor residual): '+fv+' €<br />';
-				  texto_resultado += 'Coste total del crédito: '+redondea(intereses)+ '€';
+				  texto_resultado =  'Precio: '+codigo_enlace+'<b>'+precio+"</b> €</a><br/>";
+				  texto_resultado += 'Cuota: <b>'+ redondea(pmt) + ' €/m</b><br />';
+				  texto_resultado += 'Última cuota: '+fv+' €<br />';
+				  texto_resultado += 'Intereses + gastos: '+redondea(intereses)+ '€<br />';
+				  texto_resultado += 'Meses: '+nper+' (+1) meses';
+				  
+				  texto_resultado = modelo + ': '+codigo_enlace+'<b>'+precio+" €</b></a><br/>";
+				  texto_resultado += nper +' cuotas de <b>'+redondea(pmt)+ '€</b><br>';
+				  texto_resultado += 'Y una última cuota de <b>'+redondea(fv)+' €</b><br>';
+				  texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses';
+				  
+				  
                   var txt_resultado = document.getElementById("resultado");
                   txt_resultado.innerHTML = texto_resultado;
 				  
