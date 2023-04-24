@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en" >
 
@@ -11,7 +12,12 @@
   
 <style>
 	
-	.cuerpo {width: 80%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+	.cuerpo {
+		width: 80%;height: 100%;visibility: visible; display: all;  margin: 0 auto;
+        font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	
+	
+	}
 	
 	
 		.resultado{
@@ -50,6 +56,9 @@
             box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
             transition: all 0.1s ease-in-out;
         }
+		.switch-field label.dos {
+			width: calc(50% - 5px);
+		}
 		
 		.switch-field label.tres {
 			width: calc(33.33% - 5px);
@@ -163,22 +172,55 @@
 
 <body translate="no">
 	<div class="cuerpo">
-	
-  <form class="form">
-
-
-	<h2>Simulador Plan My</h2>
+		<h2>Simulador Plan My</h2>
 	<br>
-	<div class="switch-field iphone">
-		<input type="radio" id="ipad" name="boton-seleccion" value="ipad" />
+  <form class="form">
+	<div class="switch-field tipo">
+		<input type="radio" id="ipad" name="boton-seleccion-tipo" value="ipad" />
 		<label class="cuatro" for="ipad">iPad</label>
-		<input type="radio" id="mac" name="boton-seleccion" value="macbook"/>
-		<label class="cuatro" for="mac">Macbook</label>
-		<input type="radio" id="imac" name="boton-seleccion" value="imac" />
+		<input type="radio" id="macbook" name="boton-seleccion-tipo" value="macbook"/>
+		<label class="cuatro" for="macbook">Macbook</label>
+		<input type="radio" id="imac" name="boton-seleccion-tipo" value="imac" />
 		<label class="cuatro" for="imac">iMac</label>
-		<input type="radio" id="macmini" name="boton-seleccion" value="macmini" />
-		<label class="cuatro" for="macmini">Mini/Studio</label>
+		<input type="radio" id="mac" name="boton-seleccion-tipo" value="mac" />
+		<label class="cuatro" for="mac">Mac</label>
 	</div>
+	
+</form>
+  <form class="form" id="idtipoipad">
+	<div class="switch-field tipoipad">
+		<input type="radio" id="ipad9" name="boton-seleccion" value="ipad9" />
+		<label class="cuatro" for="ipad9">(9th)</label>
+		<input type="radio" id="ipad10" name="boton-seleccion" value="ipad10"/>
+		<label class="cuatro" for="ipad10">(10th)</label>
+		<input type="radio" id="ipadair" name="boton-seleccion" value="ipadair" />
+		<label class="cuatro" for="ipadair">Air</label>
+		<input type="radio" id="ipadpro" name="boton-seleccion" value="ipadpro" />
+		<label class="cuatro" for="ipadpro">Pro</label>
+	</div>
+</form>
+  <form class="form" id="idtipomacbook">
+	<div class="switch-field tipomacbook">
+		<input type="radio" id="macair" name="boton-seleccion" value="macair" />
+		<label class="cuatro" for="macair">Air</label>
+		<input type="radio" id="pro13" name="boton-seleccion" value="pro13"/>
+		<label class="cuatro" for="pro13">Pro 13</label>
+		<input type="radio" id="pro14" name="boton-seleccion" value="pro14" />
+		<label class="cuatro" for="pro14">Pro 14</label>
+		<input type="radio" id="pro16" name="boton-seleccion" value="pro16" />
+		<label class="cuatro" for="pro16">Pro 16</label>
+	</div>
+</form>
+  <form class="form" id="idtipomac">
+	<div class="switch-field tipomac">
+		<input type="radio" id="macmini" name="boton-seleccion" value="macmini" />
+		<label class="dos" for="macmini">Mini</label>
+		<input type="radio" id="studio" name="boton-seleccion" value="studio"/>
+		<label class="dos" for="studio">Studio</label>
+
+	</div>
+</form>
+
 	<div class="select">
 
   <select id="modelos"></select>
@@ -188,17 +230,26 @@
 
 	<br>
     <div id ='resultado' class="resultado"></div>
-	
 
-</form>
 </div>
   
 <script type="text/javascript">
 	var datos_mac = '{"iMac 24-4.5K/M1/7GPU/8/256":{"PVP":1569, "VR":324.1735537190083},"iMac 24-4.5K/M1/8GPU/8/256":{"PVP":1799, "VR":371.6942148760331},"iMac 24-4.5K/M1/8GPU/8/512":{"PVP":2029, "VR":419.21487603305786},"iPad (9th) Cell 256Gb":{"PVP":799, "VR":132.06611570247935},"iPad (9th) Cell 64Gb":{"PVP":599, "VR":99.00826446280992},"iPad (9th) WI-FI 256Gb":{"PVP":629, "VR":103.96694214876034},"iPad (9th) WI-FI 64Gb":{"PVP":429, "VR":70.90909090909092},"iPad Air (5th) Cell 256Gb":{"PVP":1169, "VR":193.2231404958678},"iPad Air (5th) Cell 64Gb":{"PVP":969, "VR":160.16528925619835},"iPad Air (5th) Wifi 256Gb":{"PVP":969, "VR":160.16528925619835},"iPad Air (5th) Wifi 64Gb":{"PVP":769, "VR":127.10743801652893},"Mac Mini- M1/8/256":{"PVP":659, "VR":108.92561983471076},"Mac Mini- M1/8/512":{"PVP":889, "VR":146.94214876033058},"Mac Studio - M1(Max)/32/512Gb":{"PVP":2329, "VR":481.19834710743805},"Mac Studio - M1(Ultra)/64/1Tb":{"PVP":4629, "VR":956.404958677686},"Macbook Air 13 - M1/8/256":{"PVP":1219, "VR":201.48760330578514},"Macbook Air 13 - M2/8/256VER":{"PVP":1519, "VR":376.6115702479339},"Macbook Air 13 - M2/8/512VER":{"PVP":1869, "VR":463.3884297520661},"Macbook Pro 13 - M2/8/256VER":{"PVP":1619, "VR":401.40495867768595},"Macbook Pro 13 - M2/8/512VER":{"PVP":1849, "VR":458.4297520661157},"Macbook Pro 14 - M1(Pro)/16/1Tb":{"PVP":2634, "VR":435.37190082644634},"Macbook Pro 14 - M1(Pro)/16/512":{"PVP":2134, "VR":352.72727272727275},"Macbook Pro 16 - M1(Max)/32/1Tb":{"PVP":3619, "VR":598.1818181818182},"Macbook Pro 16 - M1(Pro)/16/1Tb":{"PVP":2749, "VR":454.3801652892562},"Macbook Pro 16 - M1(Pro)/16/512":{"PVP":2519, "VR":416.36363636363643},"iPad Pro 11 (4th) Wifi 128":{"PVP":1049, "VR":173.38842975206614},"iPad Pro 11 (4th) Wifi 256":{"PVP":1179, "VR":194.87603305785126},"iPad Pro 11 (4th) Wifi 512":{"PVP":1429, "VR":236.19834710743805},"iPad Pro 11 (4th) Wifi 1Tb":{"PVP":1929, "VR":318.8429752066116},"iPad Pro 11 (4th) Wifi 2Tb":{"PVP":2429, "VR":401.4876033057851},"iPad Pro 11 (4th) Cell 128":{"PVP":1249, "VR":206.44628099173556},"iPad Pro 11 (4th) Cell 256":{"PVP":1379, "VR":227.93388429752068},"iPad Pro 11 (4th) Cell 512":{"PVP":1629, "VR":269.2561983471075},"iPad Pro 11 (4th) Cell 1Tb":{"PVP":2129, "VR":351.90082644628103},"iPad Pro 11 (4th) Cell 2Tb":{"PVP":2629, "VR":434.5454545454546},"iPad Pro 12 (6th) Wifi 128":{"PVP":1449, "VR":239.50413223140495},"iPad Pro 12 (6th) Wifi 256":{"PVP":1579, "VR":260.9917355371901},"iPad Pro 12 (6th) Wifi 512":{"PVP":1829, "VR":302.3140495867769},"iPad Pro 12 (6th) Wifi 1Tb":{"PVP":2329, "VR":384.9586776859505},"iPad Pro 12 (6th) Wifi 2Tb":{"PVP":2829, "VR":467.60330578512395},"iPad Pro 12 (6th) Cell 128":{"PVP":1649, "VR":272.56198347107437},"iPad Pro 12 (6th) Cell 256":{"PVP":1779, "VR":294.0495867768595},"iPad Pro 12 (6th) Cell 512":{"PVP":2029, "VR":335.37190082644634},"iPad Pro 12 (6th) Cell 1Tb":{"PVP":2524, "VR":417.1900826446281},"iPad Pro 12 (6th) Cell 2Tb":{"PVP":3024, "VR":499.8347107438017},"iPad (10th) Wifi 64Gb":{"PVP":579, "VR":95.70247933884298},"iPad (10th) Wifi 256Gb":{"PVP":779, "VR":128.7603305785124},"iPad (10th) Cell 64Gb":{"PVP":779, "VR":128.7603305785124},"iPad (10th) Cell 256Gb":{"PVP":979, "VR":161.81818181818184},"Mac Mini- M2/8/256":{"PVP":719, "VR":148.55371900826447},"Mac Mini- M2/8/512":{"PVP":949, "VR":196.07438016528926},"Mac Mini- M2(Pro)/16/512":{"PVP":1569, "VR":324.1735537190083},"Macbook Pro 14- M2(Pro)/16/512":{"PVP":2449, "VR":607.1900826446281},"Macbook Pro 14- M2(Pro)/16/1Tb":{"PVP":3049, "VR":755.9504132231405},"Macbook Pro 14- M2(Max)/32/1Tb":{"PVP":3749, "VR":929.504132231405},"Macbook Pro 16- M2(Pro)/16/512":{"PVP":3049, "VR":755.9504132231405},"Macbook Pro 16- M2(Pro)/16/1Tb":{"PVP":3279, "VR":812.9752066115703},"Macbook Pro 16- M2(Max)/32/1Tb":{"PVP":4199, "VR":1041.0743801652893}}';
     var json_mac = JSON.parse(datos_mac);
     var todos_modelos = Object.keys(json_mac);
+
+                      document.getElementById("idtipoipad").style.display="none";
+	document.getElementById("idtipomac").style.display="none";
+	document.getElementById("idtipomacbook").style.display="none";
+
 	if (document.querySelector('input[name="boton-seleccion"]')) {
 	  document.querySelectorAll('input[name="boton-seleccion"]').forEach((elem) => {
+	    elem.addEventListener("change", actualiza);
+	  });
+	}
+
+	if (document.querySelector('input[name="boton-seleccion-tipo"]')) {
+	  document.querySelectorAll('input[name="boton-seleccion-tipo"]').forEach((elem) => {
 	    elem.addEventListener("change", actualiza);
 	  });
 	}
@@ -253,28 +304,35 @@
 	
     function actualiza(e) {
 		var item = event.target.value;
+		nombre = document.getElementById(item).label.innerHTML;
+                                                var getSelectedValue = document.querySelector( 'input[name="boton-seleccion-tipo"]:checked');   
+ 		var tipo_mac = getSelectedValue.label.innerHTML;
+
+		var modelo_completo =  tipo_mac + ' '+nombre;
+		if (modelo_completo == 'iMac iMac') modelo_completo='iMac';
+		   BorraCombo();
+		      MeteModelosCombo(modelo_completo);
 		if (item=='imac'){
-			BorraCombo();
-			MeteModelosCombo('iMac');
+                                                                        document.getElementById("idtipoipad").style.display="none";
+			document.getElementById("idtipomac").style.display="none";
+			document.getElementById("idtipomacbook").style.display="none";
 		}
 		if (item=='macbook'){
+                                                                        document.getElementById("idtipoipad").style.display="none";
+			document.getElementById("idtipomac").style.display="none";
+			document.getElementById("idtipomacbook").style.display="block";
 			BorraCombo();
-			
-			MeteModelosCombo('Macbook');
-
  	   }
 	   if (item=='ipad'){
-		   BorraCombo();
-		   
-		   MeteModelosCombo('iPad');
+                                                                        document.getElementById("idtipoipad").style.display="block";
+			document.getElementById("idtipomac").style.display="none";
+			document.getElementById("idtipomacbook").style.display="none";
 	   }
-	   if (item=='macmini'){
-		   BorraCombo();
-		   
-		   MeteModelosCombo('Mac Mini');
-		   MeteModelosCombo('Mac Studio');
-		   
-	   }
+	   if (item=='mac'){
+                                                                        document.getElementById("idtipoipad").style.display="none";
+			document.getElementById("idtipomac").style.display="block";
+			document.getElementById("idtipomacbook").style.display="none";
+   	   }
 
        function dibujaCuota(modelo, nuevo_precio) {
 
@@ -289,7 +347,7 @@
 				  	}
 				  
 				  fv = json_mac[modelo].VR;
-				  rate = 6.95/100/12;
+				  rate = 7.45/100/12;
 				  nper = 36;
 				  pv = -precio-18;
 			      pvif = Math.pow(1 + rate, nper);
