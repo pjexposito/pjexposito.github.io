@@ -93,6 +93,10 @@
         }
 
 		@media only screen and (max-width: 600px) {	
+			
+			.cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+			
+			
             .switch-field label {
                 font-size: 0.9rem;
                 padding: calc(7px + 0.7vw) calc(3px + 0.4vw);
@@ -127,6 +131,8 @@
 </head>
 
 <body translate="no">
+	<div class="cuerpo" id="cuerpo">
+	
   <form class="form">
 
 
@@ -174,12 +180,13 @@
 	</div>
 	<br />
     <div id ='resultado' class="resultado"></div>
+	</div>
 
 </form>
   
 <script type="text/javascript">
-	const datos = '{"iPhone 14 128Gb":{"PVP":1009, "VR":233.49},"iPhone 14 256Gb":{"PVP":1139, "VR":263.57},"iPhone 14 512Gb":{"PVP":1399, "VR":323.74},"iPhone 14 Pro 128Gb":{"PVP":1319, "VR":305.22},"iPhone 14 Pro 256Gb":{"PVP":1449, "VR":335.31},"iPhone 14 Pro 512Gb":{"PVP":1709, "VR":395.47},"iPhone 14 Pro 1Tb":{"PVP":1969, "VR":455.64},"iPhone 14 Pro Max 128Gb":{"PVP":1469, "VR":339.93},"iPhone 14 Pro Max 256Gb":{"PVP":1599, "VR":370.02},"iPhone 14 Pro Max 512Gb":{"PVP":1859, "VR":430.18},"iPhone 14 Pro Max 1Tb":{"PVP":2119, "VR":490.35},"iPhone 14 Plus 128Gb":{"PVP":1159, "VR":268.2},"iPhone 14 Plus 256Gb":{"PVP":1259, "VR":298.28},"iPhone 14 Plus 512Gb":{"PVP":1549, "VR":358.45},"iPhone 13 128Gb":{"PVP":909, "VR":150.25},"iPhone 13 256Gb":{"PVP":1029, "VR":170.08},"iPhone 13 512Gb":{"PVP":1259, "VR":208.1},"iPhone 13 Mini 128Gb":{"PVP":809, "VR":133.72},"iPhone 13 Mini 256Gb":{"PVP":929, "VR":153.55},"iPhone 13 Mini 512Gb":{"PVP":1159, "VR":191.57},"iPhone 13 Pro 128Gb":{"PVP":1159, "VR":191.5702479338843},"iPhone 13 Pro 256Gb":{"PVP":1279, "VR":211.40495867768595},"iPhone 13 Pro 512Gb":{"PVP":1509, "VR":249.4214876033058},"iPhone 13 Pro 1Tb":{"PVP":1739, "VR":287.43801652892563},"iPhone 13 Pro Max 128Gb":{"PVP":1259, "VR":208.099173553719},"iPhone 13 Pro Max 256Gb":{"PVP":1379, "VR":227.93388429752068},"iPhone 13 Pro Max 512Gb":{"PVP":1609, "VR":265.9504132231405},"iPhone 13 Pro Max 1Tb":{"PVP":1839, "VR":303.9669421487603},"iPhone 12 64Gb":{"PVP":809, "VR":66.9},"iPhone 12 128Gb":{"PVP":859, "VR":70.9},"iPhone 12 256Gb":{"PVP":979, "VR":80.9}}';
-	const datos_json = JSON.parse(datos);
+	var datos;
+	var datos_json;
 	
 	if (document.querySelector('input[name="boton-seleccion"]')) {
 	  document.querySelectorAll('input[name="boton-seleccion"]').forEach((elem) => {
@@ -261,7 +268,6 @@
 				  
 			  		modelo = modelo.replace('Normal ', '').substring(1);
 					
-					console.log(modelo);
 					if (nuevo_precio == null) {
 				  		precio = datos_json[modelo].PVP;
 			  		}
@@ -287,7 +293,7 @@
 				  texto_resultado = modelo + ': '+codigo_enlace+'<b>'+precio+" €</b></a><br/>";
 				  texto_resultado += nper +' cuotas de <b>'+redondea(pmt)+ '€</b><br>';
 				  texto_resultado += 'Y una última cuota de <b>'+redondea(fv)+' €</b><br>';
-				  texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses';
+				  texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses (incluido en la cuota)';
 				  
 				  
                   var txt_resultado = document.getElementById("resultado");
@@ -297,6 +303,62 @@
 		  }
    	  });
   };
+  
+    async function decrypt(texto) {
+	  
+  const saltHex    = "55de388d8fd8e67b6da0e68d4022e444"
+  const ivHex      = "05998ad87dde9461c89b50cc97ebbb8e"
+  let cipherHex  = "cc3dffeaa571836ea9382c17c8ab2b31a973f767b3c3689e575559cdbc755b91ea9875660d338183190be11e5db7f69282726e89ee413d97f5ddd1d99bf85ca62dd8af3ff6aaa6cddb89b13a9c6ebf97b54e4e167d895c898534e157b928c40d8bf7b815ba0b0781a3c91c86a582aea9324e2643d48d3b75c90761ffdcfd171e9b3e0852f3e03f11a00745433a6b9b10c45dabbe034bfdc094c4463f40643311b1700d3b6f616f4c6347434d1c7ac0ee210e273190d9846e62562dcc27e8641af6f1d6e5dc3ff9f508dacb61944151f272ef77ae11127cfca4a880bff670d861aaea2e28782ab5cfa3c48cd844fe57a939543419664ec17faf8f9e09ab9b649b10c83b20c3081c5351df881bf44fe7da9532e072dd8c781d83fe41cc0a3b5c4ce3b4b2c33c1f57e7a437af46f3fc3e97a5c716a527dbda3e9925448e2da37cbbd3de440a193cd1dc5e4a12286b2a30132b17a815b289c5a2167cb7cb69f41e4d77756533e5e2e804d504c964a8a339c4dbf91b04519c9e4a5a5cc0448791fce3cb30ea0d344c4f89fe85796c36918d7249aa73827eaae771257188bb74ba2545066f11b6e6d7443a143fcd81f298f64dcf06ca677d7a0871f3eb856d374797bb41fac88fc0d67790e0ddbcf4d025c8bde8b5b131b86359ad2702fcc2f2502749e3d530e86cf034e51d00a9f8350003b4309a0a9c969b6bcc15dcac0f5ea5abac380a6126cd2bcc902fd068ba09fe6a20f343529304cea0cadd352cda4250087212a032e06dcfe0e6e25cfd7289625379af517ed270886d2e47ad0709b6a5e87b0e2646767cd18b8d25291d56a130e4975f49c09b9992eb037248868029f61392c1b7f2026109650c9190204fa0692645e7c92b4dc1bb9cf28cc8a559fbf882f8f318d777a5f83dc519c7985bcb97ccfcd8e125128c7bced933aeb01d1e810a5b98d556e3908e8f3c334f9690e9ae7120d8946e2fd04d543c8caf7af236b16924ade466d81ae14794520f0f03421ce7928d6f4ff41237009ee48f5b0910a73ab4bb9077b54772b2353b240fc9259f3008a9225e16a1e6cee179354dd8ca27784e2dac154132d0513a624f2f74fcdd22d3a44f691a43bffd1145c287be5c1ec4693114932d5f46f8acee76fbc957a724fb040d7d935cc185e976463c062eea4733bde530f0c2b57df6855706c5cfd93c2d555391d11faaea11bdc3515569917cba725c8f22eb49c93b836e1a89f29905e03887aafcb6f264562319b1031535e50581e8c5587ac5e843c36d05f123b1f1dc4f652d793148c98bc4b665c0f5b1d261188427c815a00f89dcaf280d1d8d1aa85a6320767f8e7a12c0fade54b7edece3ee97de75c8583b54cc46bb8a02736af25309c4f24d85a333eeec683fd43ed65121f9dbe81ee0a0d73881a82de09fbab604c6eaba637eb6f77a871cb0b09ea3962aa95db4c5b825c1cc98c4b24fe4e4226ed6a624417d127c8ae1545137aab65ddb2fa63d5ff3fb7e13f8ea08e9ab2a818a8fa51aca9fde6e5e2b3165f2fa43aa644d4b501048369201133bb97b2ee76abcb942a74471085e340496795ab9d83c92ea6c8593c90b7e1062cd72d6dc14d4f12581b24a1e62b3adcca11805299206b0a5f7ad667852cadd7c05c1d90074fcd78001908eb04ba940217fd3f228413e78cf0e00d576243570c08eacb2ec8556f5c625f463fcdf3b843c1729b9a23c578f7b19c79fc7aa28acd0395c63d5792dc64b9d4e8b9922e8c403746f80040bc52859ebac2399e2005ce0ac6c1f5cbe092e833be7bf92e42da77a1159ce0d350d8f8a752ea0e07fba6f6c87eca4a37b18aaa8c85859c62b4d6e8ca4b874b92c826f9f8ae174d6ec55c24a1105fbf57448b2f58e24ceb57034b2f5bf21d5143740203ed613cb12d6264483d2bd8566b4f8d330001b724db614f135c05da69a0cbf4c989d7ff3fb06f066b5bb05b79266b652ef6ac98b48be870744800c518a04c3fbed858f2af447016fd83c9c4c1a7ce4ef6b0869320f0e37ab57e74c80e25338ae1211802200146102c4fd98cbf381b2e15dbe24552c81cb76e0ec9ce71d2b1261a74dea84fab39ad497e57d6b04e57d4d5fcfe66e9350987f8cfd2f50c3a34be654f8263b3bb7d267f60bac64a5ca9f9f6f62610e58345b120bf6e4948e8fa81459bb41b8fb821ce844bff489458ab81a9f5cd409a0d57f17d6b450fc656e5d004062495e9214e56c0cc3ce29c4272a"
+	  
+	  
+	  
+        let salt = hexStringToBytes(saltHex)
+
+
+        let iv = hexStringToBytes(ivHex)
+
+        let password = new TextEncoder().encode(texto)
+
+        let passwordKey = await window.crypto.subtle.importKey("raw", password,{name: "PBKDF2"},false,["deriveKey"])
+
+        let key = await window.crypto.subtle.deriveKey({name: "PBKDF2",salt: salt,iterations: 1000000,hash: "SHA-1",},passwordKey, {name: "AES-GCM",length: 32 * 8, },false, ["decrypt"])
+        let cipher = hexStringToBytes(cipherHex)
+        let decryptedBuffer = await window.crypto.subtle.decrypt({name: "AES-GCM", iv: iv, },key,cipher)
+        decrypted = removePadding(new Uint8Array(decryptedBuffer))
+
+        plainText = new TextDecoder().decode(decrypted)
+        document.getElementById("cuerpo").style.display="block";
+  
+        datos = plainText;
+
+
+   
+    }
+
+    // Transform hexadecimal string to Uint8Array
+    function hexStringToBytes(input) {
+      for (var bytes = [], c = 0; c < input.length; c += 2) {
+        bytes.push(parseInt(input.substr(c, 2), 16));
+      }
+      return Uint8Array.from(bytes);
+    }
+
+
+    function removePadding(input) {
+      // Last byte is the amount of padding
+      padAmount = input[input.length-1]
+      unpaddedSize = input.length - padAmount
+      return input.slice(0, unpaddedSize)
+    }
+	
+	
+	document.getElementById("cuerpo").style.display="none";
+	
+	pass = prompt("Contenido protegido. Introduce la contraseña: ")
+	decrypt(pass).then(function() {
+		 
+		 datos_json = JSON.parse(datos);
+    });
 </script>
   
   
