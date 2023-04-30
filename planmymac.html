@@ -251,6 +251,9 @@
 						modelos.add(data);
 					}
 				}
+				let modelo_seleccionado = document.getElementById('modelos').value;
+				if (modelo_seleccionado) dibujaCuota(modelo_seleccionado);
+
 			}
 	
 			function redondea(valor){
