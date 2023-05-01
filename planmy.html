@@ -6,6 +6,9 @@
 		<meta charset="UTF-8">
 		<title>Plan My</title>
 		<style>
+				#cuerpo {width: 80%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+			
+			
 				.resultado{
 				    text-align: center;
 		            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
@@ -89,7 +92,7 @@
 
 				@media only screen and (max-width: 600px) {	
 			
-					.cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+					#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
 			
 		            .switch-field label {
 		                font-size: 0.9rem;
@@ -97,7 +100,7 @@
 		            }
 			
 					.resultado{
-			            font-size: 1.1rem;
+			            font-size: 1rem;
 					    text-align: left;
 				
 					}
@@ -121,45 +124,45 @@
 		</style>
 	</head>
 	<body translate="no">
-		<div class="cuerpo" id="cuerpo">
+		<div id="cuerpo">
 			<form class="form">
 				<h2>Simulador Plan My</h2>
 				<br>
 				<div class="switch-field iphone">
-					<input type="radio" id="iphone12" name="boton-seleccion" value="iphone12" />
+					<input type="radio" id="iphone12" name="boton">
 					<label class="tres" for="iphone12">iPhone 12</label>
-					<input type="radio" id="iphone13" name="boton-seleccion" value="iphone13"/>
+					<input type="radio" id="iphone13" name="boton">
 					<label class="tres" for="iphone13">iPhone 13</label>
-					<input type="radio" id="iphone14" name="boton-seleccion" value="iphone14" />
+					<input type="radio" id="iphone14" name="boton">
 					<label class="tres" for="iphone14">iPhone 14</label>
 				</div>
 			</form>
 			<form class="form">
 				<div class="switch-field">
-					<input type="radio" id="normal" name="boton-seleccion" value="normal" disabled/>
+					<input type="radio" id="normal" name="boton" disabled>
 					<label class="cinco" for="normal">Normal</label>
-					<input type="radio" id="mini" name="boton-seleccion" value="mini" disabled/>
+					<input type="radio" id="mini" name="boton" disabled/>
 					<label class="cinco" for="mini">Mini</label>
-					<input type="radio" id="plus" name="boton-seleccion" value="plus" disabled/>
+					<input type="radio" id="plus" name="boton" disabled/>
 					<label class="cinco" for="plus">Plus</label>
-					<input type="radio" id="pro" name="boton-seleccion" value="pro" disabled/>
+					<input type="radio" id="pro" name="boton" disabled/>
 					<label class="cinco" for="pro">Pro</label>
-					<input type="radio" id="promax" name="boton-seleccion" value="promax" disabled/>
+					<input type="radio" id="promax" name="boton" disabled/>
 					<label class="cinco" for="promax">Max</label>
 				</div>
 			</form>
 
 			<form class="form">
 				<div class="switch-field">
-					<input type="radio" id="64gb" name="boton-seleccion" value="64gb" disabled/>
+					<input type="radio" id="64gb" name="boton" disabled/>
 					<label class="cinco" for="64gb">64Gb</label>
-					<input type="radio" id="128gb" name="boton-seleccion" value="128gb" disabled/>
+					<input type="radio" id="128gb" name="boton" disabled/>
 					<label class="cinco" for="128gb">128Gb</label>
-					<input type="radio" id="256gb" name="boton-seleccion" value="256gb" disabled/>
+					<input type="radio" id="256gb" name="boton" disabled/>
 					<label class="cinco" for="256gb">256Gb</label>
-					<input type="radio" id="512gb" name="boton-seleccion" value="512gb" disabled/>
+					<input type="radio" id="512gb" name="boton" disabled/>
 					<label class="cinco" for="512gb">512Gb</label>
-					<input type="radio" id="1tb" name="boton-seleccion" value="1tb" disabled/>
+					<input type="radio" id="1tb" name="boton" disabled/>
 					<label class="cinco" for="1tb">1Tb</label>
 				</div>
 				<br />
@@ -170,14 +173,42 @@
 
   
 		<script type="text/javascript">
-			let datos;
-			let datos_json;
-	
-			if (document.querySelector('input[name="boton-seleccion"]')) {
-				document.querySelectorAll('input[name="boton-seleccion"]').forEach((elem) => {
-					elem.addEventListener("change", actualiza);
-				});
+			var datos;
+			var datos_json;
+			
+			var btn_iphone12 = document.getElementById("iphone12");
+			var btn_iphone13 = document.getElementById("iphone13");
+			var btn_iphone14 = document.getElementById("iphone14");			
+			var btn_normal = document.getElementById("normal");
+			var btn_mini = document.getElementById("mini");
+			var btn_plus = document.getElementById("plus");
+			var btn_pro = document.getElementById("pro");
+			var btn_promax = document.getElementById("promax");
+			var btn_64 = document.getElementById("64gb");
+			var btn_128 = document.getElementById("128gb");
+			var btn_256 = document.getElementById("256gb");
+			var btn_512 = document.getElementById("512gb");
+			var btn_1tb = document.getElementById("1tb");
+            var txt_resultado = document.getElementById("resultado");
+			
+			var conjunto_botones = [btn_iphone12, btn_iphone13, btn_iphone14, btn_normal, btn_mini, btn_plus, btn_pro, btn_promax, btn_64, btn_128, btn_256, btn_512, btn_1tb];
+			
+			function estadoBotones (estado){
+				btn_normal.disabled = estado;
+				btn_mini.disabled = estado;
+				btn_plus.disabled = estado;
+				btn_pro.disabled = estado;
+				btn_promax.disabled = estado;
+				btn_64.disabled = estado;
+				btn_128.disabled = estado;
+				btn_256.disabled = estado;
+				btn_512.disabled = estado;
+				btn_1tb.disabled = estado;
 			}
+	
+			conjunto_botones.forEach((elem) => {
+				elem.addEventListener("change", actualiza);
+			});
 	
 			let labels = document.getElementsByTagName('label');
 			for (var i = 0; i < labels.length; i++) {
@@ -202,74 +233,60 @@
 				}
 			}
 	
+			function realizaCalculos(modelo, nuevo_precio){
+				modelo = modelo.replace('Max', 'Pro Max')				  
+				modelo = modelo.replace('Normal ', '').substring(1);	
+				if (nuevo_precio == null) {
+					precio = datos_json[modelo].PVP;
+				}
+				else
+				{
+					precio = nuevo_precio;
+				}				  
+				fv = datos_json[modelo].VR;
+				rate = 6.95/100/12;
+				nper = 24;
+				pv = -precio-18;
+				pvif = Math.pow(1 + rate, nper);
+				pmt = - rate * (pv * pvif + fv) / (pvif - 1);
+				intereses = ((pmt*nper)+fv)-precio;
+				codigo_enlace = '<a class="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">';				 
+				texto_resultado = modelo + ': '+codigo_enlace+'<b>'+precio+" €</b></a><br/>";
+				texto_resultado += nper +' cuotas de <b>'+redondea(pmt)+ '€</b><br>';
+				texto_resultado += 'Y una última cuota de <b>'+redondea(fv)+' €</b><br>';
+				texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses (incluidos en la cuota)';
+                txt_resultado.innerHTML = texto_resultado;	
+			}
+	
 			function actualiza(e, nuevo_precio) {
-				let item = event.target.value;
+				let item = event.target.id;
 				if (item=='iphone12'){
-					document.getElementById("normal").disabled = false;
-					document.getElementById("mini").disabled = true;
-					document.getElementById("plus").disabled = true;
-					document.getElementById("pro").disabled = true;
-					document.getElementById("promax").disabled = true;
-					document.getElementById("64gb").disabled = false;
-					document.getElementById("128gb").disabled = false;
-					document.getElementById("256gb").disabled = false;
-					document.getElementById("512gb").disabled = true;
-					document.getElementById("1tb").disabled = true;
+					estadoBotones(true);
+					btn_normal.disabled = false;
+					btn_64.disabled = false;
+					btn_128.disabled = false;
+					btn_256.disabled = false;
 				}
 				if (item=='iphone13'){
-					document.getElementById("normal").disabled = false;
-					document.getElementById("mini").disabled = false;
-					document.getElementById("plus").disabled = true;
-					document.getElementById("pro").disabled = false;
-					document.getElementById("promax").disabled = false;
-					document.getElementById("64gb").disabled = true;
-					document.getElementById("128gb").disabled = false;
-					document.getElementById("256gb").disabled = false;
-					document.getElementById("512gb").disabled = false;
-					document.getElementById("1tb").disabled = true;
+					estadoBotones(false);
+					btn_plus.disabled = true;
+					btn_64.disabled = true;
+					btn_1tb.disabled = true;
 		 	   }
 			   if (item=='iphone14'){
-				   document.getElementById("normal").disabled = false;
-				   document.getElementById("mini").disabled = true;
-				   document.getElementById("plus").disabled = false;
-				   document.getElementById("pro").disabled = false;
-				   document.getElementById("promax").disabled = false;
-				   document.getElementById("64gb").disabled = true;
-				   document.getElementById("128gb").disabled = false;
-				   document.getElementById("256gb").disabled = false;
-				   document.getElementById("512gb").disabled = false;
-				   document.getElementById("1tb").disabled = false;
+				   estadoBotones(false);
+				   btn_mini.disabled = true;
+				   btn_64.disabled = true;
 			  }
 			  let modelo = '';
 			  let contador = 0;
-			  document.querySelectorAll('input[name="boton-seleccion"]').forEach((elem) => {
+			  
+			  conjunto_botones.forEach((elem) => {
 				  if (elem.checked==true) {
 					  contador+=1;
 					  modelo = modelo+' '+document.getElementById(elem.id).label.innerHTML;
 					  if (contador==3){
-						  modelo = modelo.replace('Max', 'Pro Max')				  
-						  modelo = modelo.replace('Normal ', '').substring(1);	
-						  if (nuevo_precio == null) {
-							  precio = datos_json[modelo].PVP;
-						  }
-						  else
-						  {
-							  precio = nuevo_precio;
-						  }				  
-						  fv = datos_json[modelo].VR;
-						  rate = 6.95/100/12;
-						  nper = 24;
-						  pv = -precio-18;
-						  pvif = Math.pow(1 + rate, nper);
-						  pmt = - rate * (pv * pvif + fv) / (pvif - 1);
-						  intereses = ((pmt*nper)+fv)-precio;
-						  codigo_enlace = '<a class="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">';				 
-						  texto_resultado = modelo + ': '+codigo_enlace+'<b>'+precio+" €</b></a><br/>";
-						  texto_resultado += nper +' cuotas de <b>'+redondea(pmt)+ '€</b><br>';
-						  texto_resultado += 'Y una última cuota de <b>'+redondea(fv)+' €</b><br>';
-						  texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses (incluido en la cuota)';
-		                  let txt_resultado = document.getElementById("resultado");
-		                  txt_resultado.innerHTML = texto_resultado;	  
+						  realizaCalculos(modelo, nuevo_precio);
 					  }
 				  }
 			  });
@@ -310,7 +327,9 @@
 				document.getElementById("cuerpo").style.display="block";
 				datos = plainText;
 			}
-	
+			
+			estadoBotones(true);
+			
 			document.getElementById("cuerpo").style.display="none";
 			pass = prompt("Contenido protegido. Introduce la contraseña: ")
 			decrypt(pass).then(function() {	 
