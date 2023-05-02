@@ -16,7 +16,7 @@
 		            font-size: 2.5rem;
 				}
 	
-		        .switch-field {
+		        .conjunto-botones {
 		            display: flex;
 		            margin-bottom: 5px;
 		            overflow: hidden;
@@ -24,7 +24,7 @@
 				    width: auto;
 		        }
 
-		        .switch-field input {
+		        .conjunto-botones input {
 		            position: absolute !important;
 		            clip: rect(0, 0, 0, 0);
 		            height: 1px;
@@ -33,7 +33,7 @@
 		            overflow: hidden;
 		        }
 
-		        .switch-field label {
+		        .conjunto-botones label {
 		            background-color: #f2f2f2;
 		            color: rgba(0, 0, 0, 0.6);
 		            font-size: 1.5rem;
@@ -46,35 +46,35 @@
 		            transition: all 0.1s ease-in-out;
 		        }
 		
-				.switch-field label.tres {
+				.conjunto-botones label.tres {
 					width: calc(33.33% - 5px);
 				}
 		
-				.switch-field label.cinco {
+				.conjunto-botones label.cinco {
 					width: calc(20% - 5px);
 				}
 		
-		        .switch-field label:hover {
+		        .conjunto-botones label:hover {
 		            cursor: pointer;
 		        }
 
-		        .switch-field input:checked + label {
+		        .conjunto-botones input:checked + label {
 		            background-color: #c1c1c1 ;
 		            box-shadow: none;
 					color: #000000;
 		        }
 
-		        .switch-field input:disabled + label {
+		        .conjunto-botones input:disabled + label {
 		            background-color: #d9d9d9;
 					color: #b8b8b8;
 		            box-shadow: none;
 		        }
 
-		        .switch-field label:first-of-type {
+		        .conjunto-botones label:first-of-type {
 		            border-radius: 4px 0 0 4px;
 		        }
 
-		        .switch-field label:last-of-type {
+		        .conjunto-botones label:last-of-type {
 		            border-radius: 0 4px 4px 0;
 		        }
 
@@ -90,27 +90,6 @@
 		            margin-bottom: 1px;
 		        }
 
-				@media only screen and (max-width: 600px) {	
-			
-					#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
-			
-		            .switch-field label {
-		                font-size: 0.9rem;
-		                padding: calc(7px + 0.7vw) calc(3px + 0.4vw);
-		            }
-			
-					.resultado{
-			            font-size: 1rem;
-					    text-align: left;
-				
-					}
-			
-			        h2 {
-			            font-size: 1.5rem;
-			            margin-bottom: 1px;
-			        }
-		        }
-		
 				.link_precio:link, .link_precio:visited {
 				  background-color: #f2f2f2;
 				  color: black;
@@ -121,6 +100,26 @@
 				  background-color: gray;
 				  color: white;
 				}
+
+				@media only screen and (max-width: 600px) {	
+			
+					#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+			
+		            .conjunto-botones label {
+		                font-size: 0.9rem;
+		                padding: calc(7px + 0.7vw) calc(3px + 0.4vw);
+		            }
+			
+					.resultado{
+			            font-size: 1rem;
+					    text-align: left;
+					}
+			
+			        h2 {
+			            font-size: 1.5rem;
+			            margin-bottom: 1px;
+			        }
+		        }
 		</style>
 	</head>
 	<body translate="no">
@@ -128,7 +127,7 @@
 			<form class="form">
 				<h2>Simulador Plan My</h2>
 				<br>
-				<div class="switch-field iphone">
+				<div class="conjunto-botones iphone">
 					<input type="radio" id="iphone12" name="boton">
 					<label class="tres" for="iphone12">iPhone 12</label>
 					<input type="radio" id="iphone13" name="boton">
@@ -138,31 +137,31 @@
 				</div>
 			</form>
 			<form class="form">
-				<div class="switch-field">
-					<input type="radio" id="normal" name="boton" disabled>
+				<div class="conjunto-botones">
+					<input type="radio" id="normal" name="boton">
 					<label class="cinco" for="normal">Normal</label>
-					<input type="radio" id="mini" name="boton" disabled/>
+					<input type="radio" id="mini" name="boton">
 					<label class="cinco" for="mini">Mini</label>
-					<input type="radio" id="plus" name="boton" disabled/>
+					<input type="radio" id="plus" name="boton">
 					<label class="cinco" for="plus">Plus</label>
-					<input type="radio" id="pro" name="boton" disabled/>
+					<input type="radio" id="pro" name="boton">
 					<label class="cinco" for="pro">Pro</label>
-					<input type="radio" id="promax" name="boton" disabled/>
+					<input type="radio" id="promax" name="boton">
 					<label class="cinco" for="promax">Max</label>
 				</div>
 			</form>
 
 			<form class="form">
-				<div class="switch-field">
-					<input type="radio" id="64gb" name="boton" disabled/>
+				<div class="conjunto-botones">
+					<input type="radio" id="64gb" name="boton">
 					<label class="cinco" for="64gb">64Gb</label>
-					<input type="radio" id="128gb" name="boton" disabled/>
+					<input type="radio" id="128gb" name="boton">
 					<label class="cinco" for="128gb">128Gb</label>
-					<input type="radio" id="256gb" name="boton" disabled/>
+					<input type="radio" id="256gb" name="boton">
 					<label class="cinco" for="256gb">256Gb</label>
-					<input type="radio" id="512gb" name="boton" disabled/>
+					<input type="radio" id="512gb" name="boton">
 					<label class="cinco" for="512gb">512Gb</label>
-					<input type="radio" id="1tb" name="boton" disabled/>
+					<input type="radio" id="1tb" name="boton">
 					<label class="cinco" for="1tb">1Tb</label>
 				</div>
 				<br />
@@ -191,7 +190,7 @@
 			var btn_1tb = document.getElementById("1tb");
             var txt_resultado = document.getElementById("resultado");
 			
-			var conjunto_botones = [btn_iphone12, btn_iphone13, btn_iphone14, btn_normal, btn_mini, btn_plus, btn_pro, btn_promax, btn_64, btn_128, btn_256, btn_512, btn_1tb];
+			var array_botones = [btn_iphone12, btn_iphone13, btn_iphone14, btn_normal, btn_mini, btn_plus, btn_pro, btn_promax, btn_64, btn_128, btn_256, btn_512, btn_1tb];
 			
 			function estadoBotones (estado){
 				btn_normal.disabled = estado;
@@ -206,7 +205,7 @@
 				btn_1tb.disabled = estado;
 			}
 	
-			conjunto_botones.forEach((elem) => {
+			array_botones.forEach((elem) => {
 				elem.addEventListener("change", actualiza);
 			});
 	
@@ -234,8 +233,7 @@
 			}
 	
 			function realizaCalculos(modelo, nuevo_precio){
-				modelo = modelo.replace('Max', 'Pro Max')				  
-				modelo = modelo.replace('Normal ', '').substring(1);	
+
 				if (nuevo_precio == null) {
 					precio = datos_json[modelo].PVP;
 				}
@@ -278,16 +276,26 @@
 				   btn_mini.disabled = true;
 				   btn_64.disabled = true;
 			  }
-			  let modelo = '';
-			  let contador = 0;
+			  if ((btn_iphone14.checked == true) && ((btn_pro.checked== true) || (btn_promax.checked== true))){
+				  btn_1tb.disabled = false;
+			  }
+			  else {
+				  btn_1tb.disabled = true;
+			  	
+			  }
 			  
-			  conjunto_botones.forEach((elem) => {
+			  let modelo = '';	  
+			  array_botones.forEach((elem) => {
 				  if (elem.checked==true) {
-					  contador+=1;
-					  modelo = modelo+' '+document.getElementById(elem.id).label.innerHTML;
-					  if (contador==3){
+					  let espacio = modelo ? ' ' : '';
+					  let item_seleccionado = document.getElementById(elem.id).label.innerHTML;
+					  if (item_seleccionado == 'Max') item_seleccionado = 'Pro Max';
+					  modelo = modelo+espacio+item_seleccionado;
+					  modelo = modelo.replace('Normal ', '');
+					  if (datos_json.hasOwnProperty(modelo)){
 						  realizaCalculos(modelo, nuevo_precio);
 					  }
+
 				  }
 			  });
 			};
