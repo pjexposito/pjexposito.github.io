@@ -4,6 +4,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 		<title>Plan My</title>
+		
+		<style type="text/css" media="print">
+				body {visibility: hidden; display: none;}
+		</style>
+		
 		<style>	
 			.cuerpo {
 				width: 80%;
@@ -13,6 +18,15 @@
 				margin: 0 auto;
 		        font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 			}
+			
+			.aviso{
+			    text-align: center;
+	            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	            font-weight: normal;
+	            font-size: 1.5rem;
+				color: #616161;
+			}
+			
 			.resultado{
 			    text-align: center;
 		        font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
@@ -208,6 +222,10 @@
 			<div class="select">
 				<select id="modelos"></select>
 			</div>
+			<br>
+			
+			<div class='aviso'>	Los valores son aproximados. Por favor, no imprimáis esta hoja.</div>
+			
 			<br>
 			<div id ='resultado' class="resultado">
 			</div>
