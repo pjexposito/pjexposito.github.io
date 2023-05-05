@@ -5,6 +5,11 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
 		<title>Plan My</title>
+		
+		<style type="text/css" media="print">
+				body {visibility: hidden; display: none;}
+		</style>
+		
 		<style>
 				#cuerpo {width: 80%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
 			
@@ -16,6 +21,15 @@
 		            font-size: 2.5rem;
 				}
 	
+				.aviso{
+				    text-align: center;
+		            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+		            font-weight: normal;
+		            font-size: 1.5rem;
+					color: #616161;
+					
+				}
+				
 		        .conjunto-botones {
 		            display: flex;
 		            margin-bottom: 5px;
@@ -164,6 +178,8 @@
 					<input type="radio" id="1tb" name="boton">
 					<label class="cinco" for="1tb">1Tb</label>
 				</div>
+				<div class='aviso'>	Los valores son aproximados. Por favor, no imprimáis esta hoja.</div>
+
 				<br />
 				<div id ='resultado' class="resultado">
 				</div>
