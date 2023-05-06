@@ -292,6 +292,23 @@
 			seccionmac.style.display="none";
 			
 			
+			const nombre_botones_iphone = ["iphone12", "iphone13", "iphone14", "normal", "mini", "plus", "pro", "promax", "64gb", "128gb", "256gb", "512gb", "1tb"];
+			const nombre_botones_mac = ["ipad", "macbook", "imac", "mac", "ipad9", "ipad10", "ipadair", "ipadpro", "macair", "pro13", "pro14", "pro16", "macmini", "studio"];
+			
+			const botonesiphone = {};
+			const botonesmac = {};
+			
+
+			for(let i=0; i<nombre_botones_iphone.length; i++) {
+			  botonesiphone[nombre_botones_iphone[i]] = document.getElementById(nombre_botones_iphone[i]);
+			}
+			for(let i=0; i<nombre_botones_mac.length; i++) {
+			  botonesmac[nombre_botones_mac[i]] = document.getElementById(nombre_botones_mac[i]);
+			}			
+			
+
+			console.log(botonesmac.macbook, botonesmac.mac, botonesmac.ipad10, botonesiphone["256gb"]); // Se puede usar de ambos modos.
+			
 			const btn_tipoiphone = document.getElementById("tipoiphone");
 			const btn_tipomac = document.getElementById("tipomac");			
 			const btn_iphone12 = document.getElementById("iphone12");
