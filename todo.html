@@ -1,0 +1,504 @@
+
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<title>Plan My</title>
+		
+		<style type="text/css" media="print">
+				body {visibility: hidden; display: none;}
+		</style>
+		
+		<style>
+				#cuerpo {width: 80%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+			
+			
+				.resultado{
+				    text-align: center;
+		            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+		            font-weight: normal;
+		            font-size: 2.5rem;
+				}
+	
+				.aviso{
+				    text-align: center;
+		            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+		            font-weight: normal;
+		            font-size: 1.5rem;
+					color: #616161;
+				}
+				
+		        .conjunto-botones {
+		            display: flex;
+		            margin-bottom: 5px;
+		            overflow: hidden;
+		            justify-content: center;
+				    width: auto;
+		        }
+
+		        .conjunto-botones input {
+		            position: absolute !important;
+		            clip: rect(0, 0, 0, 0);
+		            height: 1px;
+		            width: 1px;
+		            border: 0;
+		            overflow: hidden;
+		        }
+
+		        .conjunto-botones label {
+		            background-color: #f2f2f2;
+		            color: rgba(0, 0, 0, 0.6);
+		            font-size: 1.5rem;
+		            line-height: 1;
+		            text-align: center;
+		            padding: calc(6px + 0.5vw) calc(5px + 2vw);
+		            margin-right: -1px;
+		            border: 1px solid rgba(0, 0, 0, 0.2);
+		            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+		            transition: all 0.1s ease-in-out;
+		        }
+				
+				.conjunto-botones label.dos {
+					width: calc(50% - 5px);
+				}
+		
+				.conjunto-botones label.tres {
+					width: calc(33.33% - 5px);
+				}
+		
+				.conjunto-botones label.cuatro {
+					width: calc(25% - 5px);
+				}
+				
+				.conjunto-botones label.cinco {
+					width: calc(20% - 5px);
+				}
+		
+		        .conjunto-botones label:hover {
+		            cursor: pointer;
+		        }
+
+		        .conjunto-botones input:checked + label {
+		            background-color: #c1c1c1 ;
+		            box-shadow: none;
+					color: #000000;
+		        }
+
+		        .conjunto-botones input:disabled + label {
+		            background-color: #d9d9d9;
+					color: #b8b8b8;
+		            box-shadow: none;
+		        }
+
+		        .conjunto-botones label:first-of-type {
+		            border-radius: 4px 0 0 4px;
+		        }
+
+		        .conjunto-botones label:last-of-type {
+		            border-radius: 0 4px 4px 0;
+		        }
+
+		        .form {
+		            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+		            font-weight: normal;
+		            line-height: 1.625;
+		            max-width: 100vw;
+		        }
+
+		        h2 {
+		            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+		            font-size: 2rem;
+		            margin-bottom: 1px;
+		        }
+
+				.link_precio:link, .link_precio:visited {
+					background-color: #f2f2f2;
+					color: black;
+					text-decoration: none;
+				}
+
+				.link_precio:hover, .link_precio:active {
+					background-color: gray;
+					color: white;
+				}
+
+				select {
+					// A reset of styles, including removing the default dropdown arrow
+					appearance: none;
+					background-color: #f2f2f2;
+					border: none;
+					padding: 0 1em 0 0;
+					margin: 0;
+					width: 100%;
+					font-family: inherit;
+					font-size: 1.1rem;
+
+				}
+
+				select option {
+					margin: 40px;
+					background: rgba(50, 100, 0, 0.3);
+					color: #ddd;
+					text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
+				}
+
+				@media only screen and (max-width: 600px) {	
+			
+					#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
+			
+		            .conjunto-botones label {
+		                font-size: 0.9rem;
+		                padding: calc(7px + 0.7vw) calc(3px + 0.4vw);
+		            }
+			
+					.resultado{
+			            font-size: 1rem;
+					    text-align: left;
+					}
+			
+			        h2 {
+			            font-size: 1.5rem;
+			            margin-bottom: 1px;
+			        }
+					
+					.aviso{
+			            font-size: 0.8rem;
+					}
+		        }
+		</style>
+	</head>
+	<body translate="no">
+		<div id="cuerpo">
+			<h2>Simulador Plan My</h2>
+			<br>
+			<form class="form">
+				<div class="conjunto-botones tipo_dispositivo">
+					<input type="radio" id="tipoiphone" name="boton">
+					<label class="dos" for="tipoiphone">iPhone</label>
+					<input type="radio" id="tipomac" name="boton">
+					<label class="dos" for="tipomac">Mac/iPad</label>
+				</div>
+			</form>
+			<div id="seccion-iphone">
+				<form class="form">
+					<div class="conjunto-botones iphone">
+						<input type="radio" id="iphone12" name="boton">
+						<label class="tres" for="iphone12">iPhone 12</label>
+						<input type="radio" id="iphone13" name="boton">
+						<label class="tres" for="iphone13">iPhone 13</label>
+						<input type="radio" id="iphone14" name="boton">
+						<label class="tres" for="iphone14">iPhone 14</label>
+					</div>
+				</form>
+				<form class="form">
+					<div class="conjunto-botones">
+						<input type="radio" id="normal" name="boton">
+						<label class="cinco" for="normal">Normal</label>
+						<input type="radio" id="mini" name="boton">
+						<label class="cinco" for="mini">Mini</label>
+						<input type="radio" id="plus" name="boton">
+						<label class="cinco" for="plus">Plus</label>
+						<input type="radio" id="pro" name="boton">
+						<label class="cinco" for="pro">Pro</label>
+						<input type="radio" id="promax" name="boton">
+						<label class="cinco" for="promax">Max</label>
+					</div>
+				</form>
+
+				<form class="form">
+					<div class="conjunto-botones">
+						<input type="radio" id="c64gb" name="boton">
+						<label class="cinco" for="c64gb">64Gb</label>
+						<input type="radio" id="c128gb" name="boton">
+						<label class="cinco" for="c128gb">128Gb</label>
+						<input type="radio" id="c256gb" name="boton">
+						<label class="cinco" for="c256gb">256Gb</label>
+						<input type="radio" id="c512gb" name="boton">
+						<label class="cinco" for="c512gb">512Gb</label>
+						<input type="radio" id="c1tb" name="boton">
+						<label class="cinco" for="c1tb">1Tb</label>
+					</div>
+				</form>
+			</div>
+			<div id="seccion-mac">
+				<form class="form">
+					<div class="conjunto-botones tipo">
+						<input type="radio" id="ipad" name="boton-seleccion-tipo" value="ipad" />
+						<label class="cuatro" for="ipad">iPad</label>
+						<input type="radio" id="macbook" name="boton-seleccion-tipo" value="macbook"/>
+						<label class="cuatro" for="macbook">Macbook</label>
+						<input type="radio" id="imac" name="boton-seleccion-tipo" value="imac" />
+						<label class="cuatro" for="imac">iMac</label>
+						<input type="radio" id="mac" name="boton-seleccion-tipo" value="mac" />
+						<label class="cuatro" for="mac">Mac</label>
+					</div>	
+				</form>
+				<form class="form" id="idtipoipad">
+					<div class="conjunto-botones tipoipad">
+						<input type="radio" id="ipad9" name="boton-seleccion" value="ipad9" />
+						<label class="cuatro" for="ipad9">(9th)</label>
+						<input type="radio" id="ipad10" name="boton-seleccion" value="ipad10"/>
+						<label class="cuatro" for="ipad10">(10th)</label>
+						<input type="radio" id="ipadair" name="boton-seleccion" value="ipadair" />
+						<label class="cuatro" for="ipadair">Air</label>
+						<input type="radio" id="ipadpro" name="boton-seleccion" value="ipadpro" />
+						<label class="cuatro" for="ipadpro">Pro</label>
+					</div>
+				</form>
+				<form class="form" id="idtipomacbook">
+					<div class="conjunto-botones tipomacbook">
+						<input type="radio" id="macair" name="boton-seleccion" value="macair" />
+						<label class="cuatro" for="macair">Air</label>
+						<input type="radio" id="pro13" name="boton-seleccion" value="pro13"/>
+						<label class="cuatro" for="pro13">Pro 13</label>
+						<input type="radio" id="pro14" name="boton-seleccion" value="pro14" />
+						<label class="cuatro" for="pro14">Pro 14</label>
+						<input type="radio" id="pro16" name="boton-seleccion" value="pro16" />
+						<label class="cuatro" for="pro16">Pro 16</label>
+					</div>
+				</form>
+				<form class="form" id="idtipomac">
+					<div class="conjunto-botones tipomac">
+						<input type="radio" id="macmini" name="boton-seleccion" value="macmini" />
+						<label class="dos" for="macmini">Mini</label>
+						<input type="radio" id="studio" name="boton-seleccion" value="studio"/>
+						<label class="dos" for="studio">Studio</label>
+					</div>
+				</form>
+				<div class="select">
+					<select id="modelos"></select>
+				</div>
+			</div>
+			
+			<div class='aviso'>	Los valores son aproximados. Por favor, no imprimáis esta hoja.</div>
+			<br />
+			<div id ='resultado' class="resultado">
+			</div>
+		</div>
+
+  
+		<script type="text/javascript">
+			var datos_iphone;
+			var json_iphone;
+	
+			let datos_mac;
+			let json_mac;
+			let todos_modelos;
+	
+			const seccionmac = document.getElementById("seccion-mac");
+			const seccioniphone = document.getElementById("seccion-iphone");
+			
+			seccionmac.style.display="none";
+			
+			
+			const nombre_botones_iphone = ["iphone12", "iphone13", "iphone14", "normal", "mini", "plus", "pro", "promax", "c64gb", "c128gb", "c256gb", "c512gb", "c1tb"];
+			const nombre_botones_mac = ["ipad", "macbook", "imac", "mac", "ipad9", "ipad10", "ipadair", "ipadpro", "macair", "pro13", "pro14", "pro16", "macmini", "studio"];
+			
+			const botonesiphone = {};
+			const botonesmac = {};
+			
+
+			for(let i=0; i<nombre_botones_iphone.length; i++) {
+			  botonesiphone[nombre_botones_iphone[i]] = document.getElementById(nombre_botones_iphone[i]);
+			  botonesiphone[nombre_botones_iphone[i]].addEventListener("change", actualiza);
+			  
+			}
+			for(let i=0; i<nombre_botones_mac.length; i++) {
+			  botonesmac[nombre_botones_mac[i]] = document.getElementById(nombre_botones_mac[i]);
+			}			
+			
+
+			
+			const btn_tipoiphone = document.getElementById("tipoiphone");
+			const btn_tipomac = document.getElementById("tipomac");					
+			
+            const txt_resultado = document.getElementById("resultado");
+			
+			const array_botones_especiales = [btn_tipoiphone, btn_tipomac];
+
+			
+			function estadoBotones (estado){
+				botonesiphone.normal.disabled = estado;
+				botonesiphone.mini.disabled = estado;
+				botonesiphone.plus.disabled = estado;
+				botonesiphone.pro.disabled = estado;
+				botonesiphone.promax.disabled = estado;
+				botonesiphone.c64gb.disabled = estado;
+				botonesiphone.c128gb.disabled = estado;
+				botonesiphone.c256gb.disabled = estado;
+				botonesiphone.c512gb.disabled = estado;
+				botonesiphone.c1tb.disabled = estado;
+			}
+			
+			//Oculta secciones que no se van a usar. Mejor crear una función y llamarla cuando se pulsa el botón ipad
+			document.getElementById("idtipoipad").style.display="none";
+			document.getElementById("idtipomac").style.display="none";
+			document.getElementById("idtipomacbook").style.display="none";
+	
+
+			
+
+
+			array_botones_especiales.forEach((elem) => {
+				elem.addEventListener("change", actualiza);
+			});			
+			
+	
+			let labels = document.getElementsByTagName('label');
+			for (var i = 0; i < labels.length; i++) {
+				if (labels[i].htmlFor != '') {
+					let elem = document.getElementById(labels[i].htmlFor);
+					if (elem)
+						elem.label = labels[i];         
+				}
+			}
+	
+			function redondea(valor){
+				if (Number.EPSILON === undefined) {
+					Number.EPSILON = Math.pow(2, -52); //Hay que meter esto para que funcione en IE11
+				}
+				return (Math.round((valor + Number.EPSILON) * 100) / 100);
+			}
+	
+			function CambiarPrecio(precio) {	
+				let nuevo_precio = parseInt(prompt("Introduce el precio", precio));
+				if (nuevo_precio != null && !isNaN(nuevo_precio)) {
+					actualiza(null,nuevo_precio);
+				}
+			}
+	
+			function realizaCalculos(modelo, nuevo_precio){
+
+				if (nuevo_precio == null) {
+					precio = json_iphone[modelo].PVP;
+				}
+				else
+				{
+					precio = nuevo_precio;
+				}				  
+				fv = json_iphone[modelo].VR;
+				rate = 6.95/100/12;
+				nper = 24;
+				pv = -precio-18;
+				pvif = Math.pow(1 + rate, nper);
+				pmt = - rate * (pv * pvif + fv) / (pvif - 1);
+				intereses = ((pmt*nper)+fv)-precio;
+				codigo_enlace = '<a class="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">';				 
+				texto_resultado = modelo + ': '+codigo_enlace+'<b>'+precio+" €</b></a><br/>";
+				texto_resultado += nper +' cuotas de <b>'+redondea(pmt)+ '€</b><br>';
+				texto_resultado += 'Y una última cuota de <b>'+redondea(fv)+' €</b><br>';
+				texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses (incluidos en la cuota)';
+                txt_resultado.innerText = texto_resultado;	
+			}
+	
+			function actualiza(e, nuevo_precio) {
+				let item = event.target.id;
+				if (item=='tipoiphone'){
+					seccionmac.style.display="none";
+					seccioniphone.style.display="block";
+				}
+				if (item=='tipomac') {
+					seccionmac.style.display="block";
+					seccioniphone.style.display="none";
+				}
+				if (item=='iphone12'){
+					estadoBotones(true);
+					botonesiphone.normal.disabled = false;
+					botonesiphone.c64gb.disabled = false;
+					botonesiphone.c128gb.disabled = false;
+					botonesiphone.c256gb.disabled = false;
+				}
+				if (item=='iphone13'){
+					estadoBotones(false);
+					botonesiphone.plus.disabled = true;
+					botonesiphone.c64gb.disabled = true;
+					botonesiphone.c1tb.disabled = true;
+		 	   }
+			   if (item=='iphone14'){
+				   estadoBotones(false);
+				   botonesiphone.mini.disabled = true;
+				   botonesiphone.c64gb.disabled = true;
+			  }
+			  if ((botonesiphone.iphone14.checked == true) && ((botonesiphone.pro.checked== true) || (botonesiphone.promax.checked== true))){
+				  botonesiphone.c1tb.disabled = false;
+			  }
+			  else {
+				  botonesiphone.c1tb.disabled = true;
+			  	
+			  }
+			  
+			  let modelo = '';	  
+			 Object.keys(botonesiphone).forEach(elem => {
+				  if (botonesiphone[elem].checked==true) {
+					  let espacio = modelo ? ' ' : '';
+					  let item_seleccionado = botonesiphone[elem].label.innerText;
+					  if (item_seleccionado == 'Max') item_seleccionado = 'Pro Max';
+					  modelo = modelo+espacio+item_seleccionado;
+					  modelo = modelo.replace('Normal ', '');
+					  if (json_iphone.hasOwnProperty(modelo)){
+						  realizaCalculos(modelo, nuevo_precio);
+					  }
+
+				  }
+			  });
+			};
+  
+			async function decrypt(texto) {
+    
+				// Este es el texto de apoyo del programa. Está encriptado por el tipo de datos que se usan
+				let cipherHex_iphone  = "cc3dffeaa571836ea9382c17c8ab2b31a973f767b3c3689e575559cdbc755b91ea9875660d338183190be11e5db7f69282726e89ee413d97f5ddd1d99bf85ca62dd8af3ff6aaa6cddb89b13a9c6ebf97b54e4e167d895c898534e157b928c40d8bf7b815ba0b0781a3c91c86a582aea9324e2643d48d3b75c90761ffdcfd171e9b3e0852f3e03f11a00745433a6b9b10c45dabbe034bfdc094c4463f40643311b1700d3b6f616f4c6347434d1c7ac0ee210e273190d9846e62562dcc27e8641af6f1d6e5dc3ff9f508dacb61944151f272ef77ae11127cfca4a880bff670d861aaea2e28782ab5cfa3c48cd844fe57a939543419664ec17faf8f9e09ab9b649b10c83b20c3081c5351df881bf44fe7da9532e072dd8c781d83fe41cc0a3b5c4ce3b4b2c33c1f57e7a437af46f3fc3e97a5c716a527dbda3e9925448e2da37cbbd3de440a193cd1dc5e4a12286b2a30132b17a815b289c5a2167cb7cb69f41e4d77756533e5e2e804d504c964a8a339c4dbf91b04519c9e4a5a5cc0448791fce3cb30ea0d344c4f89fe85796c36918d7249aa73827eaae771257188bb74ba2545066f11b6e6d7443a143fcd81f298f64dcf06ca677d7a0871f3eb856d374797bb41fac88fc0d67790e0ddbcf4d025c8bde8b5b131b86359ad2702fcc2f2502749e3d530e86cf034e51d00a9f8350003b4309a0a9c969b6bcc15dcac0f5ea5abac380a6126cd2bcc902fd068ba09fe6a20f343529304cea0cadd352cda4250087212a032e06dcfe0e6e25cfd7289625379af517ed270886d2e47ad0709b6a5e87b0e2646767cd18b8d25291d56a130e4975f49c09b9992eb037248868029f61392c1b7f2026109650c9190204fa0692645e7c92b4dc1bb9cf28cc8a559fbf882f8f318d777a5f83dc519c7985bcb97ccfcd8e125128c7bced933aeb01d1e810a5b98d556e3908e8f3c334f9690e9ae7120d8946e2fd04d543c8caf7af236b16924ade466d81ae14794520f0f03421ce7928d6f4ff41237009ee48f5b0910a73ab4bb9077b54772b2353b240fc9259f3008a9225e16a1e6cee179354dd8ca27784e2dac154132d0513a624f2f74fcdd22d3a44f691a43bffd1145c287be5c1ec4693114932d5f46f8acee76fbc957a724fb040d7d935cc185e976463c062eea4733bde530f0c2b57df6855706c5cfd93c2d555391d11faaea11bdc3515569917cba725c8f22eb49c93b836e1a89f29905e03887aafcb6f264562319b1031535e50581e8c5587ac5e843c36d05f123b1f1dc4f652d793148c98bc4b665c0f5b1d261188427c815a00f89dcaf280d1d8d1aa85a6320767f8e7a12c0fade54b7edece3ee97de75c8583b54cc46bb8a02736af25309c4f24d85a333eeec683fd43ed65121f9dbe81ee0a0d73881a82de09fbab604c6eaba637eb6f77a871cb0b09ea3962aa95db4c5b825c1cc98c4b24fe4e4226ed6a624417d127c8ae1545137aab65ddb2fa63d5ff3fb7e13f8ea08e9ab2a818a8fa51aca9fde6e5e2b3165f2fa43aa644d4b501048369201133bb97b2ee76abcb942a74471085e340496795ab9d83c92ea6c8593c90b7e1062cd72d6dc14d4f12581b24a1e62b3adcca11805299206b0a5f7ad667852cadd7c05c1d90074fcd78001908eb04ba940217fd3f228413e78cf0e00d576243570c08eacb2ec8556f5c625f463fcdf3b843c1729b9a23c578f7b19c79fc7aa28acd0395c63d5792dc64b9d4e8b9922e8c403746f80040bc52859ebac2399e2005ce0ac6c1f5cbe092e833be7bf92e42da77a1159ce0d350d8f8a752ea0e07fba6f6c87eca4a37b18aaa8c85859c62b4d6e8ca4b874b92c826f9f8ae174d6ec55c24a1105fbf57448b2f58e24ceb57034b2f5bf21d5143740203ed613cb12d6264483d2bd8566b4f8d330001b724db614f135c05da69a0cbf4c989d7ff3fb06f066b5bb05b79266b652ef6ac98b48be870744800c518a04c3fbed858f2af447016fd83c9c4c1a7ce4ef6b0869320f0e37ab57e74c80e25338ae1211802200146102c4fd98cbf381b2e15dbe24552c81cb76e0ec9ce71d2b1261a74dea84fab39ad497e57d6b04e57d4d5fcfe66e9350987f8cfd2f50c3a34be654f8263b3bb7d267f60bac64a5ca9f9f6f62610e58345b120bf6e4948e8fa81459bb41b8fb821ce844bff489458ab81a9f5cd409a0d57f17d6b450fc656e5d004062495e9214e56c0cc3ce29c4272a"
+	
+				let cipherHex_mac  = "cc3dfff7ac7dcd39bd242c19ccd23c3bfa7efa5bc1c611f65a5d5dcbae760c93989877660d3087860e13f84127c7bdf8d92f34c2ff473a82f2dbd0afc0ea56e53cf5d54dbdddf69fc882a9378a16d8fea031490a6bfb3ba1862ea735e4718852d0e4dc63df180ff7f6d21fd1a7f0aeab324e2447dc9a216cdf6302e9def9131d863a0d52f3e03f0ca90b0b142e779b1ea164ebd30356fdc0a6b3537c4d015473b170472a0e0e134e7b23215d1f65d0f9596e377688cad4103808779130ef600995b38cf2d63cb29e4891a17bd2312f9b24bd6fba664e3cb0a6cce7ab8b21c96efffb4f03042ae6a8f292ce9d469931ab5317680b7d4fc50efc9c9145b9f906fc0bc13f6adf13592312edfa11f708b6c69b45b2639d8e2779acf30d935128383ae3e4e7d6347219e5bc1adf349f952583a4ce18ae3dcfcc5ef93f4e8321a42fa1c5ca3849144c918a44471b3908434d270d17d741fcee96b21440f7b905df1e2717177e25f4f4886fdb1eda02c9af3ac1def9010f53d58a5f053c9b1f94d8febbaf71de5f73557680af851c102d90a67045e516b00ac0be694412e1a062ae352a786d09d383c5503d166cd893a2f8a7129853d366706a6131e1e7ea651f06c6aa32d4d88dd29821a89fadddab8d71ddb6f1a3d405c87b18bb446482d1f01c3a5db3a978a554c736ee1819caa468127de47c8a0ff1c18167800ff1d67d15cff8f929722474cf55abc67dcd71c942a1337de9557ca14e9bb58dad5248d828054b381eb1228e788ff8edaf4e8315ef755b70a75672c86193034f50ea191de7dbbb62024546543496d09c6d310921983af8c44d4ec3eabcd2f3422b3a80865bee1095caaeeb0c17791164829c2258a971214fa2dc3b11a7e2caa4dadde941f9c1beece418a32fe59f77d257d4932bcaae88afc9e2256cc279d6f443dcdc7e0983135994845ae3af8cc5696c18818febbe7726d3eb3c3cdc034454e3cc25e42dcc316bad8b59e451f656ec530e05190d05f3d9e77c02ca21471397f288571377e74edce28816d32f7eb1363e2007dc3d8e526dba285817ece4dc94657a4ffcf3217e0d68c1155d2aca5539170f3735a5af24d5d6576b1348a6e41f33b2f3d64f10c077300e9061475ca6cab62aa69c42ae6af76b2972995ca3c3a4554d711c78e85a54c58a6bb0dba362e4883465d5b28a2d240046f3fa63aab973e69e061c698219c81d0fd573fa55cd34fc3f0c84b88b62825b9da0f0f9e76a3b602cc3725b71b45fc0fddd051bd6a946c77619f52aaff4c82d3d17723347839bd38217d8b4a7b405718a3ddb72c7149fc5b848710b871fa85e7523763594604dedbe9377b3aebfbfa1ac8c5b811b295db804b4903460159c2c19cbf55e8ae13d9e986e4fcc35d55929fbcefd7880b6da3382aa3bec93befd18d7b0da3e26e0a76b8252bcc2a1add57af3049887db76c8cef9a1c240fe982276d7a536561d161be2f15f1b3bced039c020af3e59fde16604978d57ffba74e7ccd6fa4edf99dd7c3a6e6776f4f20cc12422104850770fa9036863fe6b26f86ab3cf5db7517b13522b02f20d3ca3d571808909e584cb476a0432b13a9be423d6fa2297d116427abacd9cba154b39f266d6b6b0b073060a859f313cf8db6a34abc09f06839ba037ad5a2b68d8f52b214857c11612a74e1d0b37da8ea9a385db19f7dd16ae79f9dd32ed6a0527fbb55437e86e15ce98cba679a0d0226f228d24729545fd05dd8824e8d11b671583124ec63f01899209a5a51a16f1dc6a3d11a47577cf22f9aa86f51da77a5e4ea675511d8c8c732ba9fa69a9080b92abbab30157f0f9940f0ad249063699a7bc62ac71e37cde8afb7491a644c5560001ebb86e7ef1ddf841ddbd0560a3fbe823a7143540203bd316dc0dc1352be1c0bf8566b5e2dc3604526f5cc947a1669b02f8c770ef4ae8c424bdb3068c64bdbb05b79b04e61ce06eacdb48be870744800c518a07cafbe0858f2af447016fd8399d4c1478e5e468086f34000b36a953af1d8ea94e31a21e1bcf7812642559a3ae8cd1a583af8625d17f153597d464ed8b9aa705275f6dce669684a9d0c48ac0ac7d7860976e4552b1bc6298138b17eb953c52caae43f246a75c4b54ec8635b75dba68d7d1a0d7313a2403494b4a086eb2ccdf8384e51938b973b8fbc009813ecff4e5259fb61b8352cf228ffd4f29e98a74c5575466000450934f0eddcb3fee768d3b4cb338215f284112d49a757f038356e4cbfba5fc56ac4381c43eb4fc9faa50495f6b2b931001a7d8796882f85006b57c4c509d59de55db0620677cda0f067d5ebb88115bac17433d83a2c52ffb1713b93093e08f5b6cc09f6d13659d3752d5873bcc6d755449db3b685ec0a1e8fed1c4ace250293fedcfb9ee016bb2e7d5826a35f6fdfb98922034839d994e890ed7b4db91c99e8bae2a7d517171be4d6b3185156fb7f35c0d05688aa251dd3ee3a5b3b4efb684f1844b08f91c785a3e0eb96cffbd250f85c83e5fd23bc8d3f6d671199c3bd5023ee5ae5aecf77956a8729d3610877cddb0793244cb5d01fbde90e2cf08e0ce60897a2c762bfaea0f73fdbc312c9bb35f44b8a6e289295661c4d945ed63c750c38d4d07349113d5c2fe70af93cb8897217943c3f5122b522bb5779c0c262704ca8422ce6bbdc07d1703b9dd01c97da021d44f89598b185ceb36e678ca614ac7735bc1f51405347f21b6d6449a26317d2ebafe0c252eefb6dd32b151474a5194609639d0a091f3927e5999d3207b60a1e93c4be9f1d03d0c497122a2b43259584da8fa36c3f191a998df2b6cc9ce4bf49076f568d8aec08219d662b0080ad4714e57a24638f4409bf7fd1193d29e0c04ca5"
+				cipherHex_mac  +=  "d4d52025cb9dd8e32648fc19c7126730d16e1e219ff5a44ddf92a985899bf7dae421bd6693b62c325525930991ad586ab3bdf44295c13ea69175b10b012200594d28f33e18aa60132160cb7560a97c9b31b9b97d2cc5ac5005f062200b4c214fd5176120f5e81e2cb4ab718411f44ca45dc9c45fbf5659cc8b8ea68e6101a88428adcd5a31569273d5bd8b00777c852bb63a4ef0dde8faeb7346b51a09732f00b80e9b27c9164cc50320c16c51f10af97fa022cde97da3ba99fd0f8e6eebe2aa5fd69e38b7e1c782295ba5d9f524d4b3d7de7293f0b4c436f13deab38d128e5fe35f4be3d3fd1810df59b631141f5cfc674e05edb69916db88051d925866c72c9a112957bbf78440c4dbfda64ef401c4e2c0ec13534ba3d57c344f585df41a47681d89d83ef451a6c7e10c96ceb24e151fca246599108d8786ee86a4591a31c5a80e44297cccf296c80fc5476ad16ee01c22bcd8510bcdd313e24e2513369f8eb5bdf6c4940482978ac906ac92c45f5ad4054a86234232db77d4f6ae1f83d25592aaa529eff77b92e808e803b4e38aa58202e0613bce19c72f25bfb368b10d2ddec2149460837e8985cb27d8e0a0d1ab722efc00a72b11f499feb4d7e96e961d947bfd6573321687f6bdbbb28a034c0ff7d02791e8f714c8862441e7beffe53f5e16c636b1184a6fa79fab8d2a12d2087ea26d4a58beba9fe454f89cc5f864b6c9b3e63393230ed1f14f853c2983d535c6b3dca25ccbfcc298d29029bdad4ab6be82f080994b53da6ee4858ec863255692e65464151a52b62dbf3b33ad0658979e46aa383f55eebe89a0beffe47033a4a2514c4e41d34b3f10a7b37be3750e0b6e856c3f89b52db497d8a3b630522fd6ff1de70573ac20928c5276bfc30af7a8e1056527679e5b938b9d0605fedd84c84cc0ba7a5b278783fc3213cbac7abf2736061897cf35851fc855b7d27073d8bd29ce0ec1c788e72b423af809a7343914ac1cbc73bea863ade140b50000be7196ac8b1a1b3b21bd11686e1457d6f9eb4dca937b1ed6d2e6179cb5b834736d06a2f29114bef937ce71759289d5d1831ef3ed79145149a1ddd381ffd2cd3a43a5a256a48c1dcb77f7c283548afca5b822574d12ff21f94a482a01ba4ec02cef97c5f91767ff983379ade7f3587a37b0e6b319ecda07ff855d20c84a6b055111c3b09a0f0bc4f51523e56e457ed9993619854597a8f1c1b0c060e7d599ff2a3bc9c7d9d1a3cebf154e9c7dc97bd7e7310306a78d71c0fda82de9eb15e3ee96803158ce237dfce9425c9db9122ebe4d64206cfd112f2e282fb6f380c968524f034c7c4d092ce036af3c73925b1f866b362437355206aee89d3762bd797c51cf992cf81b0b6c2e7ba590fec7362386241061c474d6dacb88729212c5d6259e6334e4ae349ace72b3a70d678f832e88f3ce0e0d51eece2f97fe84083d250f5baaba9fb870638cb947fa819b8d0bc1cdff6c9a0f551e91d0a5d7d870db3c69a8eb691e7df8f9a9c6231bdee2ad724d0abffb4ed1a0082f396279837f8ed3a0a534b535da5f4069b4c3bc2577b2c8df475139cd5b6b899fe24cd9d4f4e3c86dec415956acbb853aba134387a61622758ea7dec747bfe661691d829146969c02bd03ee30cf60b1f97cc18a49de766b86329ce43ebc7f8f5c8dc3f0f04f295d492a4ea59ea942ed03eb0e6cd8943bf8b38602c355ce11f40dca2aa6270af669099d1b6d9a9332ed88e572b6e898f29125f4b36e681a04447526d45cfe6017afde5533e29a6e6390fe51d6ede0714bde52fd9f63db79154938af403653ee4ad3edd0b2e10024c3b42fb21a2c0a4d191294d4fbd57172d0a88029ea14246cc87a6b38d373732782f519b1115538ecad798293817a03efbbfc2c69d9cb9900d8f47333a9020cd8203f9c99f8af17ca0707337242125df6e5799acffa4155ecbb24d9b8089b48e0510bf13aa33652eb6feeabb5ea339cd2c964926ac9da5e5ed5a776219cb3d79531b340104619f43cc6a9a27fc0dfb1f0ca1026ccd297d8135eb5877260382a21f45c5704f5e9060e25322a502d7c06912a25b111c0ec1944584b122edf630d85893e118cf280c20766ca5b4db38b88fb1bf10719dc31e12a34d3eedeb7f64981654a885fdedff8f0195d07fa46087c73d0dbabb8cfed0934e5387399f36dbfa153ab99236c7ba3d464fa27f19f71433d69f017fc88fe24f20a60708b07fc172c29fd1de07237975eaa360617a20c1ecc7a8adf97851359a610bd50945a7e3d88b0e53cd3b1ffb9f0f6792f23e8072c8f85cb17ea60763028621562244cdc80aa1590814cf6cf77c262c38fe98f5106336dd3ec51e8dd3411865cf922c9ee5bd9fa0d229da0cf8b0abec92b371e93b4b00929805f348cdc2e14399e5278e29e88c643fcd647020d0e641a49accaeea595e2490a3cdecd5eb015e73eafa47033854104b989d6f868d7f6b73d5f738e33629616f0df64dcbf6ca5263c7c3115dab7cf392b6612d1343ce15174409cbab29996923cbd302a3520ede464b594bd3371d658eb7cfa9f7bf0f912f871cf30d";  
+	
+	
+				// Funciones de apoyo
+				function hexStringToBytes(input) {
+					for (var bytes = [], c = 0; c < input.length; c += 2) {
+						bytes.push(parseInt(input.substr(c, 2), 16));
+					}
+					return Uint8Array.from(bytes);
+				}
+		
+				function removePadding(input) {
+					padAmount = input[input.length-1]
+					unpaddedSize = input.length - padAmount
+					return input.slice(0, unpaddedSize)
+				}	  
+  
+				// Código de desencriptación. ivHex y saltHex no cambian entre webs. Siempre uso la misma.
+				const saltHex    = "55de388d8fd8e67b6da0e68d4022e444";
+				const ivHex      = "05998ad87dde9461c89b50cc97ebbb8e";
+				let salt = hexStringToBytes(saltHex);
+				let iv = hexStringToBytes(ivHex);
+				let password = new TextEncoder().encode(texto);
+				let passwordKey = await window.crypto.subtle.importKey("raw", password,{name: "PBKDF2"},false,["deriveKey"]);
+				let key = await window.crypto.subtle.deriveKey({name: "PBKDF2",salt: salt,iterations: 1000000,hash: "SHA-1",},passwordKey, {name: "AES-GCM",length: 32 * 8, },false, ["decrypt"]);
+				let cipher_iphone = hexStringToBytes(cipherHex_iphone);
+				let cipher_mac = hexStringToBytes(cipherHex_mac);
+				
+				let decryptedBuffer_iphone = await window.crypto.subtle.decrypt({name: "AES-GCM", iv: iv, },key,cipher_iphone);
+				let decryptedBuffer_mac = await window.crypto.subtle.decrypt({name: "AES-GCM", iv: iv, },key,cipher_iphone);
+				
+				decrypted_iphone = removePadding(new Uint8Array(decryptedBuffer_iphone))
+				decrypted_mac = removePadding(new Uint8Array(decryptedBuffer_mac))
+				
+				datos_iphone = new TextDecoder().decode(decrypted_iphone)
+				datos_mac = new TextDecoder().decode(decrypted_mac)
+				
+				// Hace visible el cuerpo de la web, para que se pueda usar el programa. Los datos desencriptados se guardan en la variable "datos"
+				document.getElementById("cuerpo").style.display="block";
+			}
+			
+			estadoBotones(true);
+			
+			document.getElementById("cuerpo").style.display="none";
+			pass = prompt("Contenido protegido. Introduce la contraseña: ")
+			decrypt(pass).then(function() {	 
+				json_iphone = JSON.parse(datos_iphone);
+		    });
+		</script>
+	</body>
+</html>
