@@ -208,16 +208,16 @@
 
 				<form class="form">
 					<div class="conjunto-botones">
-						<input type="radio" id="64gb" name="boton">
-						<label class="cinco" for="64gb">64Gb</label>
-						<input type="radio" id="128gb" name="boton">
-						<label class="cinco" for="128gb">128Gb</label>
-						<input type="radio" id="256gb" name="boton">
-						<label class="cinco" for="256gb">256Gb</label>
-						<input type="radio" id="512gb" name="boton">
-						<label class="cinco" for="512gb">512Gb</label>
-						<input type="radio" id="1tb" name="boton">
-						<label class="cinco" for="1tb">1Tb</label>
+						<input type="radio" id="c64gb" name="boton">
+						<label class="cinco" for="c64gb">64Gb</label>
+						<input type="radio" id="c128gb" name="boton">
+						<label class="cinco" for="c128gb">128Gb</label>
+						<input type="radio" id="c256gb" name="boton">
+						<label class="cinco" for="c256gb">256Gb</label>
+						<input type="radio" id="c512gb" name="boton">
+						<label class="cinco" for="c512gb">512Gb</label>
+						<input type="radio" id="c1tb" name="boton">
+						<label class="cinco" for="c1tb">1Tb</label>
 					</div>
 				</form>
 			</div>
@@ -292,7 +292,7 @@
 			seccionmac.style.display="none";
 			
 			
-			const nombre_botones_iphone = ["iphone12", "iphone13", "iphone14", "normal", "mini", "plus", "pro", "promax", "64gb", "128gb", "256gb", "512gb", "1tb"];
+			const nombre_botones_iphone = ["iphone12", "iphone13", "iphone14", "normal", "mini", "plus", "pro", "promax", "c64gb", "c128gb", "c256gb", "c512gb", "c1tb"];
 			const nombre_botones_mac = ["ipad", "macbook", "imac", "mac", "ipad9", "ipad10", "ipadair", "ipadpro", "macair", "pro13", "pro14", "pro16", "macmini", "studio"];
 			
 			const botonesiphone = {};
@@ -301,65 +301,34 @@
 
 			for(let i=0; i<nombre_botones_iphone.length; i++) {
 			  botonesiphone[nombre_botones_iphone[i]] = document.getElementById(nombre_botones_iphone[i]);
+			  botonesiphone[nombre_botones_iphone[i]].addEventListener("change", actualiza);
+			  
 			}
 			for(let i=0; i<nombre_botones_mac.length; i++) {
 			  botonesmac[nombre_botones_mac[i]] = document.getElementById(nombre_botones_mac[i]);
 			}			
 			
 
-			console.log(botonesmac.macbook, botonesmac.mac, botonesmac.ipad10, botonesiphone["256gb"]); // Se puede usar de ambos modos.
 			
 			const btn_tipoiphone = document.getElementById("tipoiphone");
-			const btn_tipomac = document.getElementById("tipomac");			
-			const btn_iphone12 = document.getElementById("iphone12");
-			const btn_iphone13 = document.getElementById("iphone13");
-			const btn_iphone14 = document.getElementById("iphone14");			
-			const btn_normal = document.getElementById("normal");
-			const btn_mini = document.getElementById("mini");
-			const btn_plus = document.getElementById("plus");
-			const btn_pro = document.getElementById("pro");
-			const btn_promax = document.getElementById("promax");
-			const btn_64 = document.getElementById("64gb");
-			const btn_128 = document.getElementById("128gb");
-			const btn_256 = document.getElementById("256gb");
-			const btn_512 = document.getElementById("512gb");
-			const btn_1tb = document.getElementById("1tb");
-			
-			const btn_ipad = document.getElementById("ipad");
-			const btn_macbook = document.getElementById("macbook");
-			const btn_imac = document.getElementById("imac");
-			const btn_mac = document.getElementById("mac");
-			const btn_ipad9 = document.getElementById("ipad9");
-			const btn_ipad10 = document.getElementById("ipad10");
-			const btn_ipadair = document.getElementById("ipadair");
-			const btn_ipadpro = document.getElementById("ipadpro");
-			const btn_macair = document.getElementById("macair");
-			const btn_pro13 = document.getElementById("pro13");
-			const btn_pro14 = document.getElementById("pro14");
-			const btn_pro16 = document.getElementById("pro16");
-			const btn_macmini = document.getElementById("macmini");
-			const btn_studio = document.getElementById("studio");
-			
-		
-			
+			const btn_tipomac = document.getElementById("tipomac");					
 			
             const txt_resultado = document.getElementById("resultado");
 			
 			const array_botones_especiales = [btn_tipoiphone, btn_tipomac];
-			const array_botones_iphone = [btn_iphone12, btn_iphone13, btn_iphone14, btn_normal, btn_mini, btn_plus, btn_pro, btn_promax, btn_64, btn_128, btn_256, btn_512, btn_1tb];
-			const array_botones_mac = [btn_ipad, btn_macbook, btn_imac, btn_mac, btn_ipad9, btn_ipad10, btn_ipadair, btn_ipadpro, btn_macair, btn_pro13, pro14, pro16, macmini, studio]
+
 			
 			function estadoBotones (estado){
-				btn_normal.disabled = estado;
-				btn_mini.disabled = estado;
-				btn_plus.disabled = estado;
-				btn_pro.disabled = estado;
-				btn_promax.disabled = estado;
-				btn_64.disabled = estado;
-				btn_128.disabled = estado;
-				btn_256.disabled = estado;
-				btn_512.disabled = estado;
-				btn_1tb.disabled = estado;
+				botonesiphone.normal.disabled = estado;
+				botonesiphone.mini.disabled = estado;
+				botonesiphone.plus.disabled = estado;
+				botonesiphone.pro.disabled = estado;
+				botonesiphone.promax.disabled = estado;
+				botonesiphone.c64gb.disabled = estado;
+				botonesiphone.c128gb.disabled = estado;
+				botonesiphone.c256gb.disabled = estado;
+				botonesiphone.c512gb.disabled = estado;
+				botonesiphone.c1tb.disabled = estado;
 			}
 			
 			//Oculta secciones que no se van a usar. Mejor crear una función y llamarla cuando se pulsa el botón ipad
@@ -367,9 +336,9 @@
 			document.getElementById("idtipomac").style.display="none";
 			document.getElementById("idtipomacbook").style.display="none";
 	
-			array_botones_iphone.forEach((elem) => {
-				elem.addEventListener("change", actualiza);
-			});
+
+			
+
 
 			array_botones_especiales.forEach((elem) => {
 				elem.addEventListener("change", actualiza);
@@ -435,39 +404,38 @@
 				}
 				if (item=='iphone12'){
 					estadoBotones(true);
-					btn_normal.disabled = false;
-					btn_64.disabled = false;
-					btn_128.disabled = false;
-					btn_256.disabled = false;
+					botonesiphone.normal.disabled = false;
+					botonesiphone.c64gb.disabled = false;
+					botonesiphone.c128gb.disabled = false;
+					botonesiphone.c256gb.disabled = false;
 				}
 				if (item=='iphone13'){
 					estadoBotones(false);
-					btn_plus.disabled = true;
-					btn_64.disabled = true;
-					btn_1tb.disabled = true;
+					botonesiphone.plus.disabled = true;
+					botonesiphone.c64gb.disabled = true;
+					botonesiphone.c1tb.disabled = true;
 		 	   }
 			   if (item=='iphone14'){
 				   estadoBotones(false);
-				   btn_mini.disabled = true;
-				   btn_64.disabled = true;
+				   botonesiphone.mini.disabled = true;
+				   botonesiphone.c64gb.disabled = true;
 			  }
-			  if ((btn_iphone14.checked == true) && ((btn_pro.checked== true) || (btn_promax.checked== true))){
-				  btn_1tb.disabled = false;
+			  if ((botonesiphone.iphone14.checked == true) && ((botonesiphone.pro.checked== true) || (botonesiphone.promax.checked== true))){
+				  botonesiphone.c1tb.disabled = false;
 			  }
 			  else {
-				  btn_1tb.disabled = true;
+				  botonesiphone.c1tb.disabled = true;
 			  	
 			  }
 			  
 			  let modelo = '';	  
-			  array_botones_iphone.forEach((elem) => {
-				  if (elem.checked==true) {
+			  nombre_botones_iphone.forEach((elem) => {
+				  if (botonesiphone[elem].checked==true) {
 					  let espacio = modelo ? ' ' : '';
-					  let item_seleccionado = document.getElementById(elem.id).label.innerHTML;
+					  let item_seleccionado = document.getElementById(botonesiphone[elem].id).label.innerHTML;
 					  if (item_seleccionado == 'Max') item_seleccionado = 'Pro Max';
 					  modelo = modelo+espacio+item_seleccionado;
 					  modelo = modelo.replace('Normal ', '');
-					  console.log(modelo);
 					  if (json_iphone.hasOwnProperty(modelo)){
 						  realizaCalculos(modelo, nuevo_precio);
 					  }
