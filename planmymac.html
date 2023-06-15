@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -168,8 +169,8 @@
 
 			select option {
 			  margin: 40px;
-			  background: rgba(50, 100, 0, 0.3);
-			  color: #ddd;
+			  background:  #ddd;
+			  color: #000;
 			  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.4);
 			}
 
@@ -417,11 +418,23 @@
 	
 			document.getElementById("cuerpo").style.display="none";
 			document.querySelector('#modelos').addEventListener("change", actualizaCombo);
-			pass = prompt("Contenido protegido. Introduce la contraseña: ")
+			if (localStorage.getItem('password')) {
+				pass = localStorage.getItem('password');
+			} else {
+				pass = prompt("Contenido protegido. Introduce la contraseña: ");
+			}
 			decrypt(pass).then(function() {		 
 				json_mac = JSON.parse(datos_mac);
 				todos_modelos = Object.keys(json_mac);
-			});
+				localStorage.setItem('password', pass);
+			}).catch(function (error) {
+				localStorage.removeItem('password');
+    				console.log("No se han podido cargar los datos. Se borra la contraseña guardada.");
+ 			});
+
+
+
+
 		</script>
 	</body>
 </html>

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 
@@ -358,10 +359,18 @@
 			estadoBotones(true);
 			
 			document.getElementById("cuerpo").style.display="none";
-			pass = prompt("Contenido protegido. Introduce la contraseña: ")
+			if (localStorage.getItem('password')) {
+				pass = localStorage.getItem('password');
+			} else {
+				pass = prompt("Contenido protegido. Introduce la contraseña: ");
+			}
 			decrypt(pass).then(function() {	 
 				datos_json = JSON.parse(datos);
-		    });
+				localStorage.setItem('password', pass);
+		   	 }).catch(function (error) {
+				localStorage.removeItem('password');
+    				console.log("No se han podido cargar los datos. Se borra la contraseña guardada.");
+ 			});
 		</script>
 	</body>
 </html>
