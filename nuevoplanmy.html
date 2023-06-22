@@ -3,12 +3,12 @@
 <head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta charset="UTF-8">
-		<title>Plan nuevo My</title>
+		<title>Simulador PlanMy</title>
 
 <style>
     h2 {
-        font-size: 2rem;
-        margin-bottom: 1px;
+        font-size: 1.8rem;
+        margin-bottom: 0.7px;
     }
 			#cuerpo {
 	            line-height: 1.4;
@@ -26,7 +26,7 @@ display: flex;
 list-style-type: none;
 padding: 0;
 width: 100%;
-margin-bottom: -10px;
+margin-bottom: -11px;
 
 }
 
@@ -55,7 +55,7 @@ cursor: pointer;
 padding: calc(6px + 0.5vw) calc(5px + 2vw);
 margin-right: -1px;
 border: 1px solid rgba(0, 0, 0, 0.2);
-box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
+box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 
 }
 
@@ -72,19 +72,21 @@ box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3), 0 1px rgba(255, 255, 255, 0.1);
 .horizontal-list li button.selected {
 background-color: #c1c1c1;
 color: #000000;
+box-shadow: none;
+
 }
 
 			.resultado{
 			    text-align: center;
 		        font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 		        font-weight: normal;
-		        font-size: 2.5rem;
+		        font-size: 2rem;
 margin-top: 20px;
 			}
 
 	@media only screen and (max-width: 600px) {	
         h2 {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             margin-bottom: 1px;
         }
 		#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
@@ -307,7 +309,7 @@ container.appendChild(generateHorizontalList(nombres,0));
 	<body translate="no">
 
 		<div class="cuerpo" id="cuerpo">
-			<h2>Simulador Plan My</h2>
+			<h2>Simulador PlanMy</h2>
 <div id="list-container"></div>
 			<div id ='resultado' class="resultado">
 			</div>
