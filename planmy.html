@@ -5,6 +5,10 @@
 		<meta charset="UTF-8">
 		<title>Simulador PlanMy</title>
 
+		<style type="text/css" media="print">
+				body {visibility: hidden; display: none;}
+		</style>
+
 <style>
     h2 {
         font-size: 1.8rem;
@@ -19,6 +23,14 @@
 				display: all;  
 				margin: 0 auto;
 		        font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+			}
+			
+			.aviso{
+			    text-align: center;
+	            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+	            font-weight: normal;
+	            font-size: 1.5rem;
+				color: #616161;
 			}
 
 .horizontal-list {
@@ -92,8 +104,8 @@ margin-top: 20px;
 		#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
 		.horizontal-list li 
 button { font-size: 0.9rem;}
-.resultado{font-size:1rem; text-align: 
-left}
+.resultado{font-size:1rem; text-align: left;}
+.aviso{font-size: 0.8rem;}
 }
 </style>
 
@@ -311,6 +323,10 @@ container.appendChild(generateHorizontalList(nombres,0));
 		<div class="cuerpo" id="cuerpo">
 			<h2>Simulador PlanMy</h2>
 <div id="list-container"></div>
+			<br>
+			
+			<div class='aviso'>	Los valores son aproximados. <br>Por favor, no imprimáis esta hoja.</div>
+			
 			<div id ='resultado' class="resultado">
 			</div>
 </div>
