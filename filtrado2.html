@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filtrar filas de CSV</title>
+</head>
+<body>
+  <textarea id="csvContent" rows="10" cols="50">
+Nombre,Color,OtraColumna1,OtraColumna2
+Perro -verde,verde,valor1,valor2
+Perro -rojo,rojo,valor1,valor2
+Perro -morado,morado,valor1,valor2
+Gato -sil,sil,valor1,valor2
+Gato -spg,spg,valor1,valor2
+Gato -nar,nar,valor1,valor2
+Ejemplo verde,verde,valor1,valor2
+Ejemplo rojo,rojo,valor1,valor2
+Ejemplo marron,marron,valor1,valor2
+Ejemploazul,azul,valor1,valor2
+  </textarea>
+  <br>
+  <button onclick="filtrarNombresComunes()">Filtrar</button>
+  <br>
+  <textarea id="resultado" rows="10" cols="50"></textarea>
+
+  <script>
+    function filtrarNombresComunes() {
+      const csvContent = document.getElementById('csvContent').value;
+      const filas = csvContent.split('\n');
+      const nombresComunes = new Set();
+      const grupos = {}; // Objeto para almacenar los grupos de filas
+
+      // Recorremos cada fila del CSV
+      for (let i = 1; i < filas.length; i++) {
+        const fila = filas[i].trim();
+        if (fila !== '') {
+          const campos = fila.split(',');
+          const nombreCompleto = campos[0].trim();
+          const nombreComun = nombreCompleto.replace(/[-\s][^-]+$/, ''); // Eliminamos el color del final
+
+          // Verificamos si ya hemos encontrado este nombre común
+          // Si no, creamos un nuevo grupo en el objeto grupos
+          if (!nombresComunes.has(nombreComun)) {
+            nombresComunes.add(nombreComun);
+            grupos[nombreComun] = [];
+          }
+
+          // Agregamos la fila completa al grupo correspondiente
+          grupos[nombreComun].push(fila);
+        }
+      }
+
+      // Obtenemos todas las filas únicas de los grupos (sin incluir el color)
+      const filasUnicas = Object.values(grupos).map((grupo) => {
+        const nombreCompleto = grupo[0].split(',')[0];
+        const nombreComun = nombreCompleto.replace(/[-\s][^-]+$/, ''); // Eliminamos el color del final
+        return grupo[0].replace(nombreCompleto, nombreComun);
+      });
+
+      // Actualizamos el resultado en el textarea
+      document.getElementById('resultado').value = `Nombre,Color,OtraColumna1,OtraColumna2\n${filasUnicas.join('\n')}`;
+    }
+  </script>
+</body>
+</html>
