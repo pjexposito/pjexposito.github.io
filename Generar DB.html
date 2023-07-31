@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+<style type="text/css">
+
+body {
+	margin: 0;
+}
+
+#demo-container {
+	text-align: center;
+	margin: 40px auto;
+}
+
+#file-input-label {
+	width: 200px;
+	cursor: pointer;
+	background-color: #336699;
+	color: white;
+	padding: 10px;
+	display: block;
+	margin: 0 auto;
+}
+
+#file-input {
+	display: none;
+}
+
+#file-progress-container {
+	display: none;
+	margin: 15px 0 0 0;
+}
+
+#contents {
+	margin: 15px 0 0 0;
+	display: none;
+	text-align: left;
+	background-color: rgba(0,0,0,0.1);
+	padding: 10px;
+	font-size: 13px;
+	max-height: 300px;
+	overflow: auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<div id="demo-container">
+	<label for="file-input" id="file-input-label">Elige el archivo</label>
+	<input type="file" id="file-input" accept=".csv" />
+	<div id="contents"></div>
+</div>
+
+<script type="text/javascript">
+
+	const blockSize = 16;
+	const saltSize = 16;
+	const iterations = 1000000;
+	const keySize = 32;
+	let esiPhone = false;
+
+    async function encriptar(cadena_json) {
+	  let pass_user = prompt("Escribe la contraseña:")
+      let password = new TextEncoder().encode(pass_user)
+      let ivHexString = "05998ad87dde9461c89b50cc97ebbb8e"
+      let saltHexString = "55de388d8fd8e67b6da0e68d4022e444"
+	  
+      let passwordKey = await window.crypto.subtle.importKey("raw",password,{name: "PBKDF2"},false,["deriveKey"])
+      let salt = hexStringToBytes(saltHexString)
+      let key = await window.crypto.subtle.deriveKey({name: "PBKDF2", salt: salt,iterations: iterations,hash: "SHA-1",},passwordKey,{name: "AES-GCM",length: keySize * 8},false,["encrypt"])
+      let iv = hexStringToBytes(ivHexString)
+
+      let plainText = new Uint8Array()
+    
+  	plainText = new TextEncoder().encode(cadena_json);
+
+      plaintText = function(input) {
+        output = []
+        padAmount = blockSize - (input.length % blockSize)
+        for (var i = 0; i < input.length; i++) {
+          output.push(input[i])
+        }
+        for (var i = 0; i < padAmount; i++) {
+          output.push(padAmount)
+        }
+        return Uint8Array.from(output);
+      }(plainText)
+
+
+      let cipherBuffer = await window.crypto.subtle.encrypt({name: "AES-GCM",iv: iv,},key,plaintText)
+      let cipherHexString = bytesToHexString(new Uint8Array(cipherBuffer))
+
+      return {salt: saltHexString,iv: ivHexString,cipher: cipherHexString,}
+    }
+	
+    function bytesToHexString(input) {
+      for (var hex = [], i = 0; i < input.length; i++) {
+        var current = input[i] < 0 ? input[i] + 256 : input[i];
+        hex.push((current >>> 4).toString(16));
+        hex.push((current & 0xF).toString(16));
+      }
+      return hex.join("");
+    }
+
+    function hexStringToBytes(input) {
+		for (var bytes = [], c = 0; c < input.length; c += 2) {
+        bytes.push(parseInt(input.substr(c, 2), 16));
+      }
+      return Uint8Array.from(bytes);
+    }
+
+	function depura (linea){
+		linea = linea.replace(".","");
+		linea = linea.replace(",",".");
+		linea = linea.replace(".00","");
+		linea = linea.replace("\"","");
+		return linea;
+	}
+	
+	function depura_modelo_iphone(modelo){
+		salida = '';
+		modelo = modelo.replace('\"','');
+		modelo = modelo.replace('\"\"',' ');
+		
+		modelo = modelo.replace('Iphone','iPhone');
+		
+		modelo = modelo.replace('mini','Mini');
+		modelo = modelo.replace('Pro Max','Pro Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
+														// al hacer el .split(' ') lo tome como una sola palabra.
+			
+
+		var expresionRegular = /iPhone (\d+) (\d+)/g;
+		modelo = modelo.replace(expresionRegular, "iPhone $1 Normal $2");
+
+		modelo = modelo.replace('iPhone ','iPhone '); // De nuevo el hack del espacio. De esa forma no se separa por iPhone y luego número.
+
+		
+		if (modelo.slice(-1)==' '){
+			modelo = modelo.slice(0, -1);
+		}
+		salida = modelo;
+		return salida;
+	}
+	
+	function depura_modelo(modelo){
+		
+		salida = '';
+		modelo = modelo.replace('\"','');
+		modelo = modelo.replace('\"\"',' ');
+		modelo = modelo.replace('\'\'','');
+		
+		
+		modelo = modelo.replace('\"','');
+		modelo = modelo.replace('IPAD','iPad');
+		modelo = modelo.replace('AIR','Air');
+		modelo = modelo.replace('IMAC','iMac');
+		modelo = modelo.replace('MINI','Mini');
+		modelo = modelo.replace('CELL','Cell');
+		modelo = modelo.replace('WIFI','Wifi');
+		modelo = modelo.replace('MAC','Mac');
+		modelo = modelo.replace('STUDIO','Studio');
+		modelo = modelo.replace('TH','th');
+		modelo = modelo.replace('PRO','Pro');
+		modelo = modelo.replace('TB','Tb');
+		modelo = modelo.replace('GB','Gb');
+		modelo = modelo.replace('MBA','Macbook Air');
+		modelo = modelo.replace('MBP','Macbook Pro');
+		
+		
+		
+		modelo = modelo.replace('(9th)','9th');
+		modelo = modelo.replace('(10th)','10th');
+		modelo = modelo.replace('(4th)','');
+		modelo = modelo.replace('(5th)','');
+		modelo = modelo.replace('(6th)','');
+		
+		modelo = modelo.replace('Mini-','Mini');
+		modelo = modelo.replace('-4.5K',' ');
+		
+		modelo = modelo.replace('(Pro)', ' Pro');
+		modelo = modelo.replace('(Max)', ' Max');
+		modelo = modelo.replace('(Ultra)', ' Ultra');
+		
+		
+		modelo = modelo.replace('VER', '');
+		
+		modelo = modelo.replace('iMac 24', 'iMac');
+		
+		
+		
+		
+		modelo = modelo.split('/').join(' '); //Replace sólo reemplaza la primera ocurrencia. Con split y join se reemplaza todo.
+		
+		modelo = modelo.split('  ').join(' '); //Replace sólo reemplaza la primera ocurrencia. Con split y join se reemplaza todo.
+		
+		
+		
+		modelo = modelo.replace(' - ',' ');
+		
+		
+		
+		modelo = modelo.replace('8 ', '8/');
+		modelo = modelo.replace('16 512', '16/512');
+		modelo = modelo.replace('16 1Tb', '16/1Tb');
+		modelo = modelo.replace('64 1Tb', '64/1Tb');
+		modelo = modelo.replace('8/256-', '8/256');
+		modelo = modelo.replace('8/512-', '8/512');
+		
+		
+		modelo = modelo.replace('32 ', '32/');
+		
+		console.log(modelo);
+		if (modelo.includes("Mac Studio") || modelo.includes("Mac Mini") || modelo.includes('PIN')|| modelo.includes("SIL") || modelo.includes("GLD") ||modelo.includes("- SIL") ||modelo.includes("-SIL") || modelo.includes("-Blue") || modelo.includes("-GRIS") || modelo.includes("-STL") || modelo.includes("-SL") || modelo.includes("- SLV") || modelo.includes("- SILVER") )   
+		{
+			modelo = modelo.replace('- SIL', '');
+			modelo = modelo.replace('-SIL', '');
+			modelo = modelo.replace('-Blue', '');
+			modelo = modelo.replace('-GRIS', '');
+			modelo = modelo.replace('-STL', '');
+			modelo = modelo.replace('-SL', '');
+			modelo = modelo.replace('- SLV', '');
+			modelo = modelo.replace('- SILVER', '');
+			modelo = modelo.replace('- SILVER', '');
+			modelo = modelo.replace('PIN', '');
+			modelo = modelo.replace('GLD', '');
+			
+			modelo = modelo.replace('WI-FI', 'Wifi');
+			
+			
+			
+			modelo = modelo.replace('SIL', '');
+			
+			if (modelo.slice(-1)==' '){
+				modelo = modelo.slice(0, -1);
+			}
+			salida = modelo;
+
+		}
+
+		return salida;
+	}
+
+
+	function csvToJson(csv) {
+	  var resultante = '{';
+	  var lines = csv.replace(/\r/g, "");
+	  var lines = lines.split("\n");
+	  
+	  for (var i = 1; i < lines.length; i++) {
+		var linea;
+		var modelo;
+	    var lineaActual = lines[i].split(";");
+		
+		if (lineaActual[0].toLowerCase().includes('iphone')){
+			esiPhone = true;
+			modelo = depura_modelo_iphone(lineaActual[0]);
+			
+	   	} else
+	   	{
+   	 	  	modelo = depura_modelo(lineaActual[0]);
+	   	}
+		var pvp = depura(lineaActual[1]);
+		var vr = depura(lineaActual[2]);
+		if (modelo)	{
+
+			
+			linea = '\"'+modelo + '\":{\"PVP\":'+pvp+', \"VR\":'+vr+'},'
+		    resultante = resultante +linea;
+		}
+	  }
+	  resultante = resultante.slice(0, -1);
+	  resultante = resultante + '}';
+	  
+
+      return(resultante);
+	}
+
+
+	function transformarDatos(datos) {
+	  const categorias = {
+	    "PlanMy Mac": {},
+	    "PlanMy iPhone": {}
+	  };
+
+	  for (const key in datos) {
+	    const producto = key.split(" ");
+	    let currentCategory;
+
+	    if (producto[0].includes("iPhone")) {
+	      currentCategory = categorias["PlanMy iPhone"];
+	    } else {
+	      currentCategory = categorias["PlanMy Mac"];
+	    }
+
+	    for (let i = 0; i < producto.length - 1; i++) {
+	      const category = producto[i];
+
+	      if (!currentCategory[category]) {
+	        currentCategory[category] = {};
+	      }
+
+	      currentCategory = currentCategory[category];
+	    }
+
+	    const subcategoria = producto[producto.length - 1];
+	    currentCategory[subcategoria] = datos[key];
+	  }
+
+	  return categorias;
+	}
+
+
+
+
+
+	function ___transformarDatos(datos) {
+		
+		//if (modelo.includes('iPhone') && !seccioniPhone) {
+		//	seccioniPhone =true;
+		//	resultante = resultante.slice(0, -1);
+		//	resultante = resultante + '}},{"PlanMy iPhone":{'
+		//};
+  	  var seccioniPhone = false;
+		
+	  var nuevaDatos = {};
+nuevaDatos.add('jj')
+	  for (var modelo in datos) {
+	    var modeloSplit = modelo.split(' ');
+
+	      if (modeloSplit[0].includes('iPhone') && !seccioniPhone)
+		      {
+			  console.log(nuevaDatos)
+			  seccioniPhone = true;
+			  
+		      }
+	    var subDatos = nuevaDatos;
+
+	    for (var i = 0; i < modeloSplit.length - 1; i++) {
+	      var palabra = modeloSplit[i];
+
+	      subDatos[palabra] = subDatos[palabra] || {};
+	      subDatos = subDatos[palabra];
+	    }
+
+	    var capacidad = modeloSplit[modeloSplit.length - 1];
+	    subDatos[capacidad] = datos[modelo];
+	  }
+
+	  return nuevaDatos;
+	}
+
+
+
+
+document.querySelector("#file-input").addEventListener('change', function() {
+	
+	// files that user has chosen
+	var all_files = this.files;
+	if(all_files.length == 0) {
+		alert('Error. No se ha seleccionado ningún archivo.');
+		return;
+	}
+
+	var file = all_files[0];
+	var allowed_types = [ 'text/csv' ];
+	if(allowed_types.indexOf(file.type) == -1) {
+		alert('Error. Tipo de archivo incorrecto');
+		return;
+	}
+
+	var max_size_allowed = 2*1024*1024
+	if(file.size > max_size_allowed) {
+		alert('Error. El archivo es mayor de 2 MB');
+		return;
+	}
+
+
+	var reader = new FileReader();
+
+
+	reader.addEventListener('load', async function(e) {
+        
+
+				
+	    var text = e.target.result;
+		json_final = csvToJson(text);
+		json_nuevo = JSON.stringify(transformarDatos(JSON.parse(json_final)));
+		console.log(json_nuevo)
+        let encryption = await encriptar(json_nuevo);
+		primera_parte = encryption.cipher.substring(0,4000);
+		segunda_parte = encryption.cipher.substring(4000, encryption.cipher.length);
+		document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte)+'\"';
+		
+	});
+
+	reader.addEventListener('error', function() {
+	    alert('Error cargando el archivo.');
+	});
+
+
+	reader.readAsText(file);
+	
+});
+
+</script>
+
+</body>
+</html>
