@@ -14,7 +14,7 @@ body {
 	margin: 40px auto;
 }
 
-#file-input-label {
+#file-input-label,#miBoton {
 	width: 200px;
 	cursor: pointer;
 	background-color: #336699;
@@ -22,16 +22,15 @@ body {
 	padding: 10px;
 	display: block;
 	margin: 0 auto;
+	font-size: 20px;
+	
 }
 
 #file-input {
 	display: none;
 }
 
-#file-progress-container {
-	display: none;
-	margin: 15px 0 0 0;
-}
+
 
 #contents {
 	margin: 15px 0 0 0;
@@ -50,8 +49,17 @@ body {
 <body>
 
 <div id="demo-container">
-	<label for="file-input" id="file-input-label">Elige el archivo</label>
+	<label for="file-input" id="file-input-label">Cargar datos</label>
 	<input type="file" id="file-input" accept=".csv" />
+	<br>
+	
+    <textarea id="precodigo" rows="20" cols="100"></textarea>
+	<br>
+	<div>El símbolo (+) se sustituirá por un espacio invisible</div>
+	
+    <button id="miBoton" onclick="encriptarDatos()">Encriptar</button>
+	
+	
 	<div id="contents"></div>
 </div>
 
@@ -155,12 +163,15 @@ body {
     corregido = corregido.replaceAll('512;','512Gb;');
   corregido = corregido.replaceAll('MBA','Macbook Air');
   corregido = corregido.replaceAll('MBP','Macbook Pro');
-  corregido = corregido.replaceAll('Pro Max','Pro Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
+  //corregido = corregido.replaceAll('Pro Max','Pro Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
+  corregido = corregido.replaceAll('Pro Max','Pro+Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
   
   var expresionRegular = /iPhone (\d+) (\d+)/g;
   corregido = corregido.replaceAll(expresionRegular, "iPhone $1 Normal $2");
 
-  corregido = corregido.replaceAll('iPhone ','iPhone '); // De nuevo el hack del espacio. De esa forma no se separa por iPhone y luego número.
+  //corregido = corregido.replaceAll('iPhone ','iPhone '); // De nuevo el hack del espacio. De esa forma no se separa por iPhone y luego número.
+  corregido = corregido.replaceAll('iPhone ','iPhone+'); // De nuevo el hack del espacio. De esa forma no se separa por iPhone y luego número.
+  
   
   corregido = corregido.replaceAll('(Pro)', ' Pro');
   corregido = corregido.replaceAll('(Max)', ' Max');
@@ -285,14 +296,16 @@ document.querySelector("#file-input").addEventListener('change', function() {
 
 				
 	    var text = elimina_ronya(e.target.result);
+        document.getElementById('precodigo').value = text;
+		
 		console.log(text);
-		json_final = csvToJson(text);
-		json_nuevo = JSON.stringify(transformarDatos(JSON.parse(json_final)));
-		console.log(json_nuevo)
-        let encryption = await encriptar(json_nuevo);
-		primera_parte = encryption.cipher.substring(0,4000);
-		segunda_parte = encryption.cipher.substring(4000, encryption.cipher.length);
-		document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte)+'\"';
+		//json_final = csvToJson(text);
+		//json_nuevo = JSON.stringify(transformarDatos(JSON.parse(json_final)));
+		//console.log(json_nuevo)
+        //let encryption = await encriptar(json_nuevo);
+		//primera_parte = encryption.cipher.substring(0,4000);
+		//segunda_parte = encryption.cipher.substring(4000, encryption.cipher.length);
+		//document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte)+'\"';
 		
 	});
 
@@ -304,6 +317,19 @@ document.querySelector("#file-input").addEventListener('change', function() {
 	reader.readAsText(file);
 	
 });
+
+async function encriptarDatos(){
+    text = document.getElementById('precodigo').value;
+	text = text.replaceAll('+',' ');  //Reemplaza todos los (+) por espacios falsos.
+	json_final = csvToJson(text);
+	json_nuevo = JSON.stringify(transformarDatos(JSON.parse(json_final)));
+	console.log(json_nuevo)
+    let encryption = await encriptar(json_nuevo);
+	primera_parte = encryption.cipher.substring(0,4000);
+	segunda_parte = encryption.cipher.substring(4000, encryption.cipher.length);
+	document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte)+'\"';
+	console.log("Hola mundo");
+}
 
 </script>
 
