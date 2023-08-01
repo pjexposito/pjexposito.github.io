@@ -113,136 +113,79 @@ body {
       return Uint8Array.from(bytes);
     }
 
-	function depura (linea){
-		linea = linea.replace(".","");
-		linea = linea.replace(",",".");
-		linea = linea.replace(".00","");
-		linea = linea.replace("\"","");
-		return linea;
-	}
+
 	
-	function depura_modelo_iphone(modelo){
-		salida = '';
-		modelo = modelo.replace('\"','');
-		modelo = modelo.replace('\"\"',' ');
-		
-		modelo = modelo.replace('Iphone','iPhone');
-		
-		modelo = modelo.replace('mini','Mini');
-		modelo = modelo.replace('Pro Max','Pro Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
-														// al hacer el .split(' ') lo tome como una sola palabra.
-			
+  function eliminarDuplicados(listado) {
+	  const conjunto = new Set(listado.split('\n'));
+	  const listadoSinDuplicados = Array.from(conjunto);
+	  return listadoSinDuplicados.join('\n');
+  }
+  
+  
+  function elimina_ronya(entrada){
+	const colores = [",00",".","\'","\"","MIDNIGHT","SILVER","SPACEGREY","WHITE","BLUE","PINK","YELLOW", "BLU","GRE","PIN","SIL","SPG","AZUL","BLAN","GRIS","PURP","ROSA","PUR","STL","GLD","SLV","SL","SP"];
+    const csvContent = entrada;
+    let corregido = csvContent.toUpperCase();
+    colores.forEach(function(color) {
+         corregido = corregido.replaceAll(color, '');
+    });
 
-		var expresionRegular = /iPhone (\d+) (\d+)/g;
-		modelo = modelo.replace(expresionRegular, "iPhone $1 Normal $2");
+    corregido = corregido.replaceAll('-',' ');
+    corregido = corregido.replaceAll('45K', '');
+    corregido = corregido.replaceAll('WI FI','Wifi');
+    corregido = corregido.replaceAll('IMAC','iMac');
+    corregido = corregido.replaceAll('MAC','Mac');
+    corregido = corregido.replaceAll('IPHONE','iPhone');
+    corregido = corregido.replaceAll('WIFI','Wifi');
+    corregido = corregido.replaceAll('CELL','Cell');
+    corregido = corregido.replaceAll('GB','Gb');
+    corregido = corregido.replaceAll('TB','Tb');
+    corregido = corregido.replaceAll('IPAD','iPad');
+    corregido = corregido.replaceAll('AIR','Air');
+    corregido = corregido.replaceAll('MINI','Mini');
+    corregido = corregido.replaceAll('TH','th');
+    corregido = corregido.replaceAll('PRO','Pro');
+    corregido = corregido.replaceAll('MAX','Max');
+    corregido = corregido.replaceAll('ULTRA','Ultra');
+    corregido = corregido.replaceAll('STUDIO','Studio');
+    corregido = corregido.replaceAll('PLUS','Plus');
+    corregido = corregido.replaceAll('64;','64Gb;');
+    corregido = corregido.replaceAll('128;','128Gb;');
+    corregido = corregido.replaceAll('256;','256Gb;');
+    corregido = corregido.replaceAll('512;','512Gb;');
+  corregido = corregido.replaceAll('MBA','Macbook Air');
+  corregido = corregido.replaceAll('MBP','Macbook Pro');
+  corregido = corregido.replaceAll('Pro Max','Pro Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
+  
+  var expresionRegular = /iPhone (\d+) (\d+)/g;
+  corregido = corregido.replaceAll(expresionRegular, "iPhone $1 Normal $2");
 
-		modelo = modelo.replace('iPhone ','iPhone '); // De nuevo el hack del espacio. De esa forma no se separa por iPhone y luego número.
+  corregido = corregido.replaceAll('iPhone ','iPhone '); // De nuevo el hack del espacio. De esa forma no se separa por iPhone y luego número.
+  
+  corregido = corregido.replaceAll('(Pro)', ' Pro');
+  corregido = corregido.replaceAll('(Max)', ' Max');
+  corregido = corregido.replaceAll('(Ultra)', ' Ultra');
+  corregido = corregido.replaceAll('iMac 24 /', 'iMac ');
+  corregido = corregido.replaceAll('(9th)','9th');
+  corregido = corregido.replaceAll('(10th)','10th');
+  corregido = corregido.replaceAll('(4th)','');
+  corregido = corregido.replaceAll('(5th)','');
+  corregido = corregido.replaceAll('(6th)','');
 
-		
-		if (modelo.slice(-1)==' '){
-			modelo = modelo.slice(0, -1);
-		}
-		salida = modelo;
-		return salida;
-	}
+    corregido = corregido.replaceAll(',','.');
+    corregido = corregido.replaceAll('   ','  ');
+    corregido = corregido.replaceAll('  ',' ');
+    corregido = corregido.replaceAll('/',' ');
+    corregido = corregido.replaceAll(' ;',';');
 	
-	function depura_modelo(modelo){
-		
-		salida = '';
-		modelo = modelo.replace('\"','');
-		modelo = modelo.replace('\"\"',' ');
-		modelo = modelo.replace('\'\'','');
-		
-		
-		modelo = modelo.replace('\"','');
-		modelo = modelo.replace('IPAD','iPad');
-		modelo = modelo.replace('AIR','Air');
-		modelo = modelo.replace('IMAC','iMac');
-		modelo = modelo.replace('MINI','Mini');
-		modelo = modelo.replace('CELL','Cell');
-		modelo = modelo.replace('WIFI','Wifi');
-		modelo = modelo.replace('MAC','Mac');
-		modelo = modelo.replace('STUDIO','Studio');
-		modelo = modelo.replace('TH','th');
-		modelo = modelo.replace('PRO','Pro');
-		modelo = modelo.replace('TB','Tb');
-		modelo = modelo.replace('GB','Gb');
-		modelo = modelo.replace('MBA','Macbook Air');
-		modelo = modelo.replace('MBP','Macbook Pro');
-		
-		
-		
-		modelo = modelo.replace('(9th)','9th');
-		modelo = modelo.replace('(10th)','10th');
-		modelo = modelo.replace('(4th)','');
-		modelo = modelo.replace('(5th)','');
-		modelo = modelo.replace('(6th)','');
-		
-		modelo = modelo.replace('Mini-','Mini');
-		modelo = modelo.replace('-4.5K',' ');
-		
-		modelo = modelo.replace('(Pro)', ' Pro');
-		modelo = modelo.replace('(Max)', ' Max');
-		modelo = modelo.replace('(Ultra)', ' Ultra');
-		
-		
-		modelo = modelo.replace('VER', '');
-		
-		modelo = modelo.replace('iMac 24', 'iMac');
-		
-		
-		
-		
-		modelo = modelo.split('/').join(' '); //Replace sólo reemplaza la primera ocurrencia. Con split y join se reemplaza todo.
-		
-		modelo = modelo.split('  ').join(' '); //Replace sólo reemplaza la primera ocurrencia. Con split y join se reemplaza todo.
-		
-		
-		
-		modelo = modelo.replace(' - ',' ');
-		
-		
-		
-		modelo = modelo.replace('8 ', '8/');
-		modelo = modelo.replace('16 512', '16/512');
-		modelo = modelo.replace('16 1Tb', '16/1Tb');
-		modelo = modelo.replace('64 1Tb', '64/1Tb');
-		modelo = modelo.replace('8/256-', '8/256');
-		modelo = modelo.replace('8/512-', '8/512');
-		
-		
-		modelo = modelo.replace('32 ', '32/');
-		
-		console.log(modelo);
-		if (modelo.includes("Mac Studio") || modelo.includes("Mac Mini") || modelo.includes('PIN')|| modelo.includes("SIL") || modelo.includes("GLD") ||modelo.includes("- SIL") ||modelo.includes("-SIL") || modelo.includes("-Blue") || modelo.includes("-GRIS") || modelo.includes("-STL") || modelo.includes("-SL") || modelo.includes("- SLV") || modelo.includes("- SILVER") )   
-		{
-			modelo = modelo.replace('- SIL', '');
-			modelo = modelo.replace('-SIL', '');
-			modelo = modelo.replace('-Blue', '');
-			modelo = modelo.replace('-GRIS', '');
-			modelo = modelo.replace('-STL', '');
-			modelo = modelo.replace('-SL', '');
-			modelo = modelo.replace('- SLV', '');
-			modelo = modelo.replace('- SILVER', '');
-			modelo = modelo.replace('- SILVER', '');
-			modelo = modelo.replace('PIN', '');
-			modelo = modelo.replace('GLD', '');
-			
-			modelo = modelo.replace('WI-FI', 'Wifi');
-			
-			
-			
-			modelo = modelo.replace('SIL', '');
-			
-			if (modelo.slice(-1)==' '){
-				modelo = modelo.slice(0, -1);
-			}
-			salida = modelo;
+  
+    return eliminarDuplicados(corregido);
+  }
+	
+	
 
-		}
+	
 
-		return salida;
-	}
 
 
 	function csvToJson(csv) {
@@ -252,22 +195,12 @@ body {
 	  
 	  for (var i = 1; i < lines.length; i++) {
 		var linea;
-		var modelo;
 	    var lineaActual = lines[i].split(";");
 		
-		if (lineaActual[0].toLowerCase().includes('iphone')){
-			esiPhone = true;
-			modelo = depura_modelo_iphone(lineaActual[0]);
-			
-	   	} else
-	   	{
-   	 	  	modelo = depura_modelo(lineaActual[0]);
-	   	}
-		var pvp = depura(lineaActual[1]);
-		var vr = depura(lineaActual[2]);
+		var modelo = lineaActual[0];
+		var pvp = lineaActual[1];
+		var vr = lineaActual[2];
 		if (modelo)	{
-
-			
 			linea = '\"'+modelo + '\":{\"PVP\":'+pvp+', \"VR\":'+vr+'},'
 		    resultante = resultante +linea;
 		}
@@ -317,41 +250,6 @@ body {
 
 
 
-	function ___transformarDatos(datos) {
-		
-		//if (modelo.includes('iPhone') && !seccioniPhone) {
-		//	seccioniPhone =true;
-		//	resultante = resultante.slice(0, -1);
-		//	resultante = resultante + '}},{"PlanMy iPhone":{'
-		//};
-  	  var seccioniPhone = false;
-		
-	  var nuevaDatos = {};
-nuevaDatos.add('jj')
-	  for (var modelo in datos) {
-	    var modeloSplit = modelo.split(' ');
-
-	      if (modeloSplit[0].includes('iPhone') && !seccioniPhone)
-		      {
-			  console.log(nuevaDatos)
-			  seccioniPhone = true;
-			  
-		      }
-	    var subDatos = nuevaDatos;
-
-	    for (var i = 0; i < modeloSplit.length - 1; i++) {
-	      var palabra = modeloSplit[i];
-
-	      subDatos[palabra] = subDatos[palabra] || {};
-	      subDatos = subDatos[palabra];
-	    }
-
-	    var capacidad = modeloSplit[modeloSplit.length - 1];
-	    subDatos[capacidad] = datos[modelo];
-	  }
-
-	  return nuevaDatos;
-	}
 
 
 
@@ -386,7 +284,8 @@ document.querySelector("#file-input").addEventListener('change', function() {
         
 
 				
-	    var text = e.target.result;
+	    var text = elimina_ronya(e.target.result);
+		console.log(text);
 		json_final = csvToJson(text);
 		json_nuevo = JSON.stringify(transformarDatos(JSON.parse(json_final)));
 		console.log(json_nuevo)
