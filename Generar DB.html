@@ -182,11 +182,18 @@ body {
   corregido = corregido.replaceAll('(4th)','');
   corregido = corregido.replaceAll('(5th)','');
   corregido = corregido.replaceAll('(6th)','');
+  corregido = corregido.replaceAll('M1/','M1 ');
+  corregido = corregido.replaceAll('M2/','M2 ');
+  
+  corregido = corregido.replaceAll('Pro/','Pro ');
+  corregido = corregido.replaceAll('Max/','Max ');
+  corregido = corregido.replaceAll('Ultra/','Ultra ');
+  
+
 
     corregido = corregido.replaceAll(',','.');
     corregido = corregido.replaceAll('   ','  ');
     corregido = corregido.replaceAll('  ',' ');
-    corregido = corregido.replaceAll('/',' ');
     corregido = corregido.replaceAll(' ;',';');
 	
   
@@ -327,8 +334,7 @@ async function encriptarDatos(){
     let encryption = await encriptar(json_nuevo);
 	primera_parte = encryption.cipher.substring(0,4000);
 	segunda_parte = encryption.cipher.substring(4000, encryption.cipher.length);
-	document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte)+'\"';
-	console.log("Hola mundo");
+	document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte+'\"');
 }
 
 </script>
