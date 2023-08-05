@@ -120,6 +120,11 @@ button { font-size: 0.9rem;}
 	
 	let datos;
 	
+	function borrapass(){
+		localStorage.setItem('password', '');
+		console.log('Contraseña borrada')
+	}
+	
 	async function decrypt(texto) {
 
 		// Este es el texto de apoyo del programa. Está encriptado por el tipo de datos que se usan
@@ -153,9 +158,10 @@ button { font-size: 0.9rem;}
 		let decryptedBuffer = await window.crypto.subtle.decrypt({name: "AES-GCM", iv: iv, },key,cipher)
 		decrypted = removePadding(new Uint8Array(decryptedBuffer))
 		plainText = new TextDecoder().decode(decrypted)
-		// Hace visible el cuerpo de la web, para que se pueda usar el programa. Los datos desencriptados se guardan en la variable "datos"
-		document.getElementById("cuerpo").style.display="block";
+
+		
 		datos_brutos = plainText;
+		
 	}
 
 
@@ -259,7 +265,12 @@ return list;
 document.addEventListener('DOMContentLoaded', function() {
 	
 const container = document.getElementById('list-container');
+const cuerpo = document.getElementById('cuerpo');
+const sinpass = document.getElementById('sinpass');
 
+
+cuerpo.style.display="none";
+sinpass.style.display="none";
 		
 
 	//const nombres = Object.keys(datos);
@@ -310,15 +321,25 @@ container.appendChild(generateHorizontalList(nombres,0));
 			decrypt(pass).then(function() {	 
 				datos = JSON.parse(datos_brutos);
 				localStorage.setItem('password', pass);
+				// Hace visible el cuerpo de la web, para que se pueda usar el programa. Los datos desencriptados se guardan en la variable "datos"
+				document.getElementById("cuerpo").style.display="block";
+				document.getElementById('cargando').style.display="none";
+				
 		   	 }).catch(function (error) {
 				localStorage.removeItem('password');
     				console.log("No se han podido cargar los datos. Se borra la contraseña guardada.");
+					document.getElementById("sinpass").style.display="block";
+					document.getElementById('cargando').style.display="none";
+					
  			});
+			
 
 
 </script>
 </head>
 	<body translate="no">
+		<div class='aviso' id='cargando'>Cargando...</div>
+		<div class='aviso' id='sinpass'>No se han podido cargar los datos.<br><a href="#" onclick="location.reload()">Actualiza esta página</a> e introduce la contraseña correcta.</div>
 
 		<div class="cuerpo" id="cuerpo">
 			<h2>Simulador PlanMy</h2>
