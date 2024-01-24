@@ -241,6 +241,10 @@ const container = document.getElementById('list-container');
  		dibujaCuota(seleccion, precio, VR);
 		if (seleccion.includes('iPhone')) {
 			const meses_financiados = document.getElementById('meses-financiados');
+			const boton24meses = document.getElementById('boton24meses');
+			const boton36meses = document.getElementById('boton36meses');
+			boton24meses.classList.add('selected-meses');
+			boton36meses.classList.remove('selected-meses');
 			meses_financiados.style.display ="flex";
 		}
 	}
@@ -340,13 +344,17 @@ container.appendChild(generateHorizontalList(nombres,0));
 				
 				
 		  		if (modelo.includes('iPhone')) {
-				      rate = 6.95/100/12; 
-				      nper = muestraMesesiPhone();
+				    nper = muestraMesesiPhone();
+					TIN = (nper == 24) ? 8.5 : 9.9;
+				    rate = TIN/100/12; 
+					
 				}
 				else
-				{
-				rate = 7.45/100/12;
-				nper = 36;
+				{			
+					TIN = 9.9		
+					nper = 36;
+					rate = TIN/100/12;
+					
 				}
 
 				pv = -precio-18;
@@ -413,7 +421,7 @@ container.appendChild(generateHorizontalList(nombres,0));
 			<br>
 			
 			<div class='aviso'><b>Los valores son aproximados.</b> <br>Por favor, no imprimáis esta hoja.</div>
-			<div class='aviso_mini'>23/01/24: Valores actualizados.</div>
+			<div class='aviso_mini'>24/01/24: Valores actualizados. TIN actualizado.</div>
 			
 			<div id ='resultado' class="resultado">
 			</div>
