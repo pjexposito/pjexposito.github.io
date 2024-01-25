@@ -14,6 +14,10 @@
         font-size: 1.8rem;
         margin-bottom: 0.7px;
     }
+	hr {
+	    width:50%;
+	    margin:10px auto;
+	}
 			#cuerpo {
 	            line-height: 1.4;
 				
@@ -40,7 +44,7 @@
 				color: #919191;
 			}
 
-.horizontal-list, .horizontal-list-meses {
+.horizontal-list {
 display: flex;
 list-style-type: none;
 padding: 0;
@@ -60,11 +64,11 @@ margin-bottom: -11px;
   color: white;
 }
 
-.horizontal-list li, .horizontal-list-meses li {
+.horizontal-list li {
 flex-grow: 1;
 }
 
-.horizontal-list li button, .horizontal-list-meses li button {
+.horizontal-list li button {
 width: 100%;
 background: #f2f2f2;
 color: rgba(0, 0, 0, 0.6);
@@ -78,17 +82,17 @@ box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
 
 }
 
-.horizontal-list li:first-child button, .horizontal-list-meses li:first-child button {
+.horizontal-list li:first-child button {
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
 }
 
-.horizontal-list li:last-child button, .horizontal-list-meses li:last-child button {
+.horizontal-list li:last-child button {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
-.horizontal-list li button.selected, .horizontal-list-meses li button.selected-meses {
+.horizontal-list li button.selected {
 background-color: #c1c1c1;
 color: #000000;
 box-shadow: none;
@@ -96,10 +100,12 @@ box-shadow: none;
 }
 
 			.resultado{
+				color: #616161;
+				
 			    text-align: center;
 		        font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 		        font-weight: normal;
-		        font-size: 1.7rem;
+		        font-size: 1.6rem;
 margin-top: 20px;
 			}
 
@@ -126,9 +132,6 @@ button { font-size: 0.9rem;}
 	let datos_brutos;
 	
 	let datos;
-	
-	let precio_global;
-	
 	
 	function borrapass(){
 		localStorage.setItem('password', '');
@@ -193,14 +196,14 @@ let patron = `\\b${palabra}\\b`;
 let regExp = new RegExp(patron, 'g');
 let esta = regExp.test(frase)
 let result = esta ? true : false;
-return result;
+return result
 }
 
 			function CambiarPrecio(precio) {	
 				let nuevo_precio = parseInt(prompt("Introduce el precio", precio));
 				if (nuevo_precio != null && !isNaN(nuevo_precio)) {
 					dibujaCuota(recopilaSeleccionados(), nuevo_precio, VR);
-					precio_global = nuevo_precio;
+
 				}
 			}
 	
@@ -215,46 +218,25 @@ return result;
 
 	}
 
-function muestraMesesiPhone(){
-		
-	const boton24meses = document.getElementById('boton24meses');
-	if (boton24meses.classList == 'selected-meses') {
-	    return 24;	
-	   }
-	else {
-	    return 36;	
-	   }
-	}
-
-
 function showSelectedItem(item) {
 const container = document.getElementById('list-container');
 		
+
 	x = parseInt(item.parentElement.parentElement.id)+1;
 	const nombres = devuelveValores(recopilaSeleccionados());
 	const nombres_valores = Object.keys(nombres);
 	if (nombres_valores.includes('PVP')) {
 		precio = nombres['PVP'];
-		precio_global = '';
 		VR = nombres['VR'];
-		seleccion = recopilaSeleccionados();
- 		dibujaCuota(seleccion, precio, VR);
-		if (seleccion.includes('iPhone')) {
-			const meses_financiados = document.getElementById('meses-financiados');
-			const boton24meses = document.getElementById('boton24meses');
-			const boton36meses = document.getElementById('boton36meses');
-			boton24meses.classList.add('selected-meses');
-			boton36meses.classList.remove('selected-meses');
-			meses_financiados.style.display ="flex";
-		}
+		VR2 = recopilaSeleccionados().includes('iPhone') ? nombres['VR2'] : '';
+ 		dibujaCuota(recopilaSeleccionados(), precio, VR, VR2);
 	}
 	else
 	{
-		let txt_resultado = document.getElementById("resultado");
-		txt_resultado.innerHTML = '';
-		container.appendChild(generateHorizontalList(nombres_valores,x));
-		const meses_financiados = document.getElementById('meses-financiados');
-		meses_financiados.style.display ="none";
+						let txt_resultado = document.getElementById("resultado");
+				txt_resultado.innerHTML = '';
+container.appendChild(generateHorizontalList(nombres_valores,x));
+		
 	}
 }
 
@@ -269,6 +251,7 @@ button.textContent = item;
 button.addEventListener('click', function() {
 const selectedButton = list.querySelector('button.selected');
 const nivel_actual = parseInt(this.parentElement.parentElement.id);
+
 
 	for (var i = nivel_actual+1; i <10 ; i++) {
 		var elem = document.getElementById(i);
@@ -296,42 +279,11 @@ document.addEventListener('DOMContentLoaded', function() {
 const container = document.getElementById('list-container');
 const cuerpo = document.getElementById('cuerpo');
 const sinpass = document.getElementById('sinpass');
-const meses_financiados = document.getElementById('meses-financiados');
-
 
 
 cuerpo.style.display="none";
 sinpass.style.display="none";
-meses_financiados.style.display ="none";
 		
-const boton24meses = document.getElementById('boton24meses');
-const boton36meses = document.getElementById('boton36meses');
-
-
-
-boton24meses.addEventListener("click", function() {
-	boton24meses.classList.add('selected-meses');
-	boton36meses.classList.remove('selected-meses');
-	const nombres = devuelveValores(recopilaSeleccionados());
-	const nombres_valores = Object.keys(nombres);
-	
-	//Ojo, he usado un operador ternario. La sintaxis es condicion ? expresionSiVerdadero : expresionSiFalso;
-	precio = precio_global ? precio_global : nombres['PVP'];
-	VR = nombres['VR'];
-	seleccion = recopilaSeleccionados();
-	dibujaCuota(seleccion, precio, VR);
-});
-boton36meses.addEventListener("click", function() {
-	boton36meses.classList.add('selected-meses');
-	boton24meses.classList.remove('selected-meses');
-	const nombres = devuelveValores(recopilaSeleccionados());
-	const nombres_valores = Object.keys(nombres);
-	precio = precio_global ? precio_global : nombres['PVP'];
-	VR = nombres['VR2'];
-	seleccion = recopilaSeleccionados();
-	dibujaCuota(seleccion, precio, VR);	
-});
-
 
 	//const nombres = Object.keys(datos);
 	const nombres = ['PlanMy Mac','PlanMy iPhone'];
@@ -340,32 +292,56 @@ container.appendChild(generateHorizontalList(nombres,0));
 	
 });
 
-			function dibujaCuota(modelo,precio, fv) {		
+			function dibujaCuota(modelo,precio, fv, fv2) {		
 				
-				
+
+				const TIN24 = 8.5;
+				const TIN36 = 9.9;
 		  		if (modelo.includes('iPhone')) {
-				    nper = muestraMesesiPhone();
-					TIN = (nper == 24) ? 8.5 : 9.9;
-				    rate = TIN/100/12; 
+	  				pv = -precio-18;
 					
+				    rate = TIN24/100/12; 
+				    nper = 24;
+	  				pvif = Math.pow(1 + rate, nper);
+	  				pmt = - rate * (pv * pvif + fv) / (pvif - 1);
+	  				intereses = ((pmt*nper)+fv)-precio;	
+				    linea1 = [nper, pmt, fv, intereses];	
+					
+				    rate = TIN36/100/12; 
+				    nper = 36;
+	  				pvif = Math.pow(1 + rate, nper);
+	  				pmt = - rate * (pv * pvif + fv2) / (pvif - 1);
+	  				intereses = ((pmt*nper)+fv2)-precio;	
+				    linea2 = [nper, pmt, fv2, intereses];	
+					
+							
 				}
 				else
-				{			
-					TIN = 9.9		
-					nper = 36;
-					rate = TIN/100/12;
+				{
+				    rate = TIN36/100/12;
+				    nper = 36;
+					pv = -precio-18;
+					pvif = Math.pow(1 + rate, nper);
+					pmt = - rate * (pv * pvif + fv) / (pvif - 1);
+					intereses = ((pmt*nper)+fv)-precio;
+				    linea1 = [nper, pmt, fv, intereses];	
 					
 				}
 
-				pv = -precio-18;
-				pvif = Math.pow(1 + rate, nper);
-				pmt = - rate * (pv * pvif + fv) / (pvif - 1);
-				intereses = ((pmt*nper)+fv)-precio;
+
 				codigo_enlace = '<a class="link_precio" title="Pulsa para modificar el precio" href="#" onclick="CambiarPrecio(' + precio+');return false;">';	  
-				texto_resultado = 'Importe: '+codigo_enlace+'<b>'+precio+" €</b></a><br/>";
-				texto_resultado += nper +' cuotas de <b>'+redondea(pmt)+ '€</b><br>';
-				texto_resultado += 'Y una última cuota de <b>'+redondea(fv)+' €</b><br>';
-				texto_resultado += 'Pagando <b>'+redondea(intereses)+ ' €</b> de intereses<br>(incluidos en la cuota)';
+				texto_resultado = 'Importe: '+codigo_enlace+'<b>'+precio+" €</b></a><br/><hr><b>";
+				texto_resultado += linea1[0] +'</b> cuotas de <b>'+redondea(linea1[1])+ '€</b><br>';
+				texto_resultado += 'Y una última cuota de <b>'+redondea(linea1[2])+' €</b><br>';
+				texto_resultado += 'Incluye <b>'+redondea(linea1[3])+ ' €</b> de intereses.';
+		  		
+				if (modelo.includes('iPhone')) {
+				
+				    texto_resultado += '<br><hr><b>'+linea2[0] +'</b> cuotas de <b>'+redondea(linea2[1])+ '€</b><br>';
+				    texto_resultado += 'Y una última cuota de <b>'+redondea(linea2[2])+' €</b><br>';
+				    texto_resultado += 'Incluye <b>'+redondea(linea2[3])+ ' €</b> de intereses';				
+				}
+				
 				let txt_resultado = document.getElementById("resultado");
 				txt_resultado.innerHTML = texto_resultado;
 			}
@@ -408,20 +384,10 @@ container.appendChild(generateHorizontalList(nombres,0));
 		<div class="cuerpo" id="cuerpo">
 			<h2>Simulador PlanMy</h2>
 <div id="list-container"></div>
-
-<div id="list-container">
-
-<ul class="horizontal-list-meses" id="meses-financiados">
-	<li><button class="selected-meses" id="boton24meses">24 meses</button></li>
-	<li><button id="boton36meses">36 meses</button></li>
-</ul>
-</div>
-
-
 			<br>
 			
 			<div class='aviso'><b>Los valores son aproximados.</b> <br>Por favor, no imprimáis esta hoja.</div>
-			<div class='aviso_mini'>24/01/24: Valores actualizados. TIN actualizado.</div>
+			<div class='aviso_mini'>23/01/24: Valores actualizados.</div>
 			
 			<div id ='resultado' class="resultado">
 			</div>
