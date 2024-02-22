@@ -40,9 +40,21 @@
 			    text-align: center;
 	            font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
 	            font-weight: normal;
-	            font-size: 0.8rem;
+	            font-size: 0.7rem;
 				color: #919191;
 			}
+
+        #footer {
+			font-family: "Lucida Grande", Tahoma, Verdana, sans-serif;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            color: #c1c1c1;
+            padding: 10px;
+            text-align: center;
+			font-size: 0.6rem;
+
+        }
 
 .horizontal-list {
 display: flex;
@@ -114,11 +126,17 @@ margin-top: 20px;
             font-size: 1.2rem;
             margin-bottom: 1px;
         }
+		hr {
+			width:100%;
+			margin:auto;
+			color: #f2f2f2;
+		}
 		#cuerpo {width: 95%;height: 100%;visibility: visible; display: all;  margin: 0 auto;}
 		.horizontal-list li 
 button { font-size: 0.9rem;}
 .resultado{font-size:1rem; text-align: left;}
 .aviso{font-size: 0.8rem;}
+.aviso_mini{font-size: 0.6rem;}
 }
 </style>
 
@@ -387,10 +405,14 @@ container.appendChild(generateHorizontalList(nombres,0));
 			<br>
 			
 			<div class='aviso'><b>Los valores son aproximados.</b> <br>Por favor, no imprimáis esta hoja.</div>
+			<div class='aviso_mini'>22/02/24: Cambios visuales. </div>			
 			<div class='aviso_mini'>25/01/24: Valores actualizados. </div>
 			
 			<div id ='resultado' class="resultado">
 			</div>
 </div>
+    <div id="footer">
+        PJEE 2023-2024
+    </div>
 </body>
 </html>
