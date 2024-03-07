@@ -56,6 +56,7 @@ body {
     <textarea id="precodigo" rows="20" cols="100"></textarea>
 	<br>
 	<div>El símbolo (+) se sustituirá por un espacio invisible</div>
+	<div>La primera línea tiene el tipo de datos. Todo lo escrito en la primera línea no se procesará.</div>
 	
     <button id="miBoton" onclick="encriptarDatos()">Encriptar</button>
 	
@@ -138,6 +139,21 @@ body {
          corregido = corregido.replaceAll(color, '');
     });
 
+    corregido = corregido.replaceAll('�','');
+    corregido = corregido.replaceAll(' ;',';');
+    corregido = corregido.replaceAll('; ',';');
+    corregido = corregido.replaceAll('(8G) ','8Gb/');
+    corregido = corregido.replaceAll('(16G) ','16Gb/');
+    corregido = corregido.replaceAll('(18G) ','18Gb/');
+    corregido = corregido.replaceAll('(36G) ','36Gb/');
+    corregido = corregido.replaceAll('(14 CORE) ','14 Core+');
+    corregido = corregido.replaceAll('(16 CORE) ','16 Core+');
+
+
+	
+	
+
+
     corregido = corregido.replaceAll('-',' ');
     corregido = corregido.replaceAll('45K', '');
     corregido = corregido.replaceAll('WI FI','Wifi');
@@ -145,7 +161,8 @@ body {
     corregido = corregido.replaceAll('MAC','Mac');
     corregido = corregido.replaceAll('IPHONE','iPhone');
     corregido = corregido.replaceAll('WIFI','Wifi');
-    corregido = corregido.replaceAll('CELL','Cell');
+	corregido = corregido.replaceAll('CELLULAR','Cellular');
+    corregido = corregido.replaceAll('Cellular','Cell');
     corregido = corregido.replaceAll('GB','Gb');
     corregido = corregido.replaceAll('TB','Tb');
     corregido = corregido.replaceAll('IPAD','iPad');
@@ -161,6 +178,28 @@ body {
     corregido = corregido.replaceAll('128;','128Gb;');
     corregido = corregido.replaceAll('256;','256Gb;');
     corregido = corregido.replaceAll('512;','512Gb;');
+    corregido = corregido.replaceAll('\"24\"\" ','');
+    corregido = corregido.replaceAll('-Core ','');
+	corregido = corregido.replaceAll('24 iMac','iMac');
+	corregido = corregido.replaceAll('GEN','');
+	corregido = corregido.replaceAll('CORE GPU','Core');
+
+
+    corregido = corregido.replaceAll('M2 Pro','M2+Pro');
+    corregido = corregido.replaceAll('M2 Max','M2+Max');
+    corregido = corregido.replaceAll('M2 Ultra','M2+Ultra');
+	
+    corregido = corregido.replaceAll('M3 Pro','M3+Pro');
+    corregido = corregido.replaceAll('M3 Max','M3+Max');
+    corregido = corregido.replaceAll('M3 Ultra','M3+Ultra');
+	
+    corregido = corregido.replaceAll(' Core','+Core');
+
+	
+	
+	
+	
+	
   corregido = corregido.replaceAll('MBA','Macbook Air');
   corregido = corregido.replaceAll('MBP','Macbook Pro');
   //corregido = corregido.replaceAll('Pro Max','Pro Max');  // Ojo, parece un espacio pero no lo es. Se sustituye el espacio normal por uno algo menor para que
@@ -188,6 +227,7 @@ body {
   corregido = corregido.replaceAll('Pro/','Pro ');
   corregido = corregido.replaceAll('Max/','Max ');
   corregido = corregido.replaceAll('Ultra/','Ultra ');
+  corregido = corregido.replaceAll('MacBOOK','Macbook');
   
 
 
@@ -218,9 +258,19 @@ body {
 		var modelo = lineaActual[0];
 		var pvp = lineaActual[1];
 		var vr = lineaActual[2];
+		if (modelo.includes('iPhone')) {
+		   var vr2 = lineaActual[3];
+		   console.log(vr2);
+		}
 		if (modelo)	{
-			linea = '\"'+modelo + '\":{\"PVP\":'+pvp+', \"VR\":'+vr+'},'
-		    resultante = resultante +linea;
+			if (vr2) {
+				linea = '\"'+modelo + '\":{\"PVP\":'+pvp+', \"VR\":'+vr+', \"VR2\":'+vr2+'},'
+		    }
+			else
+			{
+				linea = '\"'+modelo + '\":{\"PVP\":'+pvp+', \"VR\":'+vr+'},'
+			}
+			resultante = resultante +linea;
 		}
 	  }
 	  resultante = resultante.slice(0, -1);
@@ -333,8 +383,10 @@ async function encriptarDatos(){
 	console.log(json_nuevo)
     let encryption = await encriptar(json_nuevo);
 	primera_parte = encryption.cipher.substring(0,4000);
-	segunda_parte = encryption.cipher.substring(4000, encryption.cipher.length);
-	document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte+'\"');
+	segunda_parte = encryption.cipher.substring(4000, 8000);
+	tercera_parte = encryption.cipher.substring(8000, encryption.cipher.length);
+	
+	document.write('let cipherHex  = \"'+primera_parte+'\";<br>cipherHex  +=  \"'+segunda_parte+'\";<br>cipherHex  +=  \"'+tercera_parte+'\"');
 }
 
 </script>
