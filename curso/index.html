@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="mainContainer" class="main-container">
+        <div id="Principal" class="container">
+            <div class="category" onclick="showSubcategories('div-bienvenido')">
+                <img src="cat1.png" alt="Cat1" class="category-img">
+                <span>Bienvenido a ECI</span>
+            </div>
+            <div class="category" onclick="showSubcategories('div-vender')">
+                <img src="cat2.png" alt="Cat2" class="category-img">
+                <span>Aprende a vender</span>
+            </div>
+        </div>
+        <div id="div-bienvenido" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory" onclick="showExplanation('principios')">Nuestros principios</div>
+            <div class="subcategory" onclick="showExplanation('trato')">El trato con el cliente</div>
+            <div class="subcategory" onclick="showExplanation('ayudar')">Aprendiendo a ayudar</div>
+        </div>
+        <div id="explica_principios" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
+            <div class="explanation-content">
+                <h2>Nuestros principios</h2>
+
+				<p>En nuestra empresa, dedicada a la venta de productos de alta calidad, el cliente ocupa el centro de nuestra filosofía empresarial. Creemos firmemente que la satisfacción del cliente no solo es un objetivo, sino un principio fundamental que guía cada una de nuestras acciones y decisiones. Desde el momento en que un cliente entra en contacto con nosotros, ya sea en nuestra tienda física o a través de nuestros canales digitales, nos comprometemos a ofrecerle una experiencia excepcional y personalizada. Escuchamos atentamente sus necesidades y nos esforzamos por superar sus expectativas en cada interacción.</p>
+
+<p>Para asegurar que cada cliente se sienta valorado y respetado, promovemos un ambiente de trabajo donde nuestros empleados son tratados con dignidad y reconocimiento. Creemos que un equipo feliz y motivado es clave para proporcionar un servicio al cliente excepcional. Por ello, invertimos en el desarrollo profesional de nuestros empleados, fomentando un espíritu de colaboración y un sentido de pertenencia hacia nuestros valores empresariales. Este enfoque no solo fortalece nuestro compromiso con la excelencia, sino que también contribuye a crear relaciones duraderas y significativas con nuestros clientes.</p>
+
+<p>En cada transacción y en cada interacción, nos esforzamos por mantener los más altos estándares éticos y profesionales. Nuestra integridad y transparencia son pilares fundamentales en nuestras relaciones comerciales. Valoramos la confianza que nuestros clientes depositan en nosotros y trabajamos incansablemente para merecerla día a día. Como empresa comprometida con la excelencia en el servicio y la satisfacción del cliente, nos sentimos honrados de ser su elección y estamos dedicados a superar sus expectativas en cada paso del camino.</p>
+            </div>
+        </div>
+        <div id="explica_trato" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
+            <div class="explanation-content">
+                <h2>El trato con el cliente</h2>
+                <p>En nuestra empresa, la premisa fundamental es el trato excepcional que ofrecemos a nuestros clientes. Desde el primer contacto hasta la postventa, nos dedicamos a comprender y satisfacer sus necesidades de manera efectiva y cordial. Valoramos cada interacción como una oportunidad para fortalecer la confianza y construir relaciones duraderas, asegurando que cada cliente se sienta valorado y escuchado. Nuestro compromiso con la excelencia en el servicio es evidente en cada aspecto de nuestra operación, y nos esforzamos continuamente por superar las expectativas y proporcionar experiencias memorables que inspiren lealtad y satisfacción.</p>
+            </div>
+        </div>
+        <div id="explica_ayudar" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
+            <div class="explanation-content">
+                <h2>Aprendiendo a ayudar</h2>
+                <p>
+				    <form id="quizForm" onsubmit="return checkAnswers()">
+				      <div class="form-group">
+				        <label for="q1">Pregunta 1: ¿Cuál es la capital de Portugal?</label>
+				        <input type="text" id="q1" name="q1" required>
+				      </div>
+				      <div class="form-group">
+				        <label for="q2">Pregunta 2: ¿Qué animal australiano es famoso saltar?</label>
+				        <input type="text" id="q2" name="q2" required>
+				      </div>
+				      <div class="form-group">
+				        <label for="q3">Pregunta 3: ¿Cuántos lados tiene un triángulo?</label>
+				        <input type="text" id="q3" name="q3" required>
+				      </div>
+				      <div class="form-group">
+				        <input type="submit" value="Enviar respuestas">
+				      </div>
+				    </form>
+					
+					
+                </p>
+            </div>
+        </div>
+        <div id="div-vender" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory" onclick="showExplanation('ofrecimiento')">El ofrecimiento</div>
+            <div class="subcategory" onclick="showExplanation('complementaria')">La venta complementaria</div>
+            <div class="subcategory" onclick="showExplanation('cerrar')">Como cerrar una venta</div>
+        </div>
+        <div id="explica_ofrecimiento" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
+            <div class="explanation-content">
+                <h2>El ofrecimeinto</h2>
+                <p>
+				    <form id="quizForm" onsubmit="return checkAnswers()">
+				      <div class="form-group-radio">
+				        <label>Pregunta: ¿Cuál es el océano más grande del mundo?</label><br>
+				        <input type="radio" id="q1a" name="q1" value="a" required>
+				        <label for="q1a">a) Océano Atlántico</label><br>
+				        <input type="radio" id="q1b" name="q1" value="b">
+				        <label for="q1b">b) Océano Índico</label><br>
+				        <input type="radio" id="q1c" name="q1" value="c">
+				        <label for="q1c">c) Océano Pacífico</label><br>
+				        <input type="radio" id="q1d" name="q1" value="d">
+				        <label for="q1d">d) Océano Ártico</label>
+				      </div>
+				      <div class="form-group-radio">
+				        <input type="submit" value="Enviar respuesta">
+				      </div>
+				    </form>
+                	
+					
+                </p>
+            </div>
+        </div>
+        <div id="explica_complementaria" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
+            <div class="explanation-content">
+                <h2>La venta complementaria</h2>
+                <p>Aquí puedes escribir el contenido explicativo para La venta complementaria.</p>
+            </div>
+        </div>
+        <div id="explica_cerrar" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
+            <div class="explanation-content">
+                <h2>Como cerrar una venta</h2>
+                <p>Aquí puedes escribir el contenido explicativo para Como cerrar una venta.</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

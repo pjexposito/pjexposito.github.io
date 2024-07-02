@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación por Categorías</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="mainContainer" class="main-container">
+        <div id="Principal" class="container">
+            <div class="category" onclick="showSubcategories('bienvenido-div')">
+                <img src="cat1.png" alt="Cat1" class="category-img">
+                <span>Bienvenido a ECI</span>
+            </div>
+            <div class="category" onclick="showSubcategories('vender-div')">
+                <img src="cat2.png" alt="Cat2" class="category-img">
+                <span>Aprende a vender</span>
+            </div>
+        </div>
+        <div id="bienvenido-div" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory" onclick="showSubcategories('bienvenido-principios-div')">Nuestros principios</div>
+            <div class="subcategory">El trato con el cliente</div>
+            <div class="subcategory">Aprendiendo a ayudar</div>
+        </div>
+        <div id="vender-div" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory">El ofrecimiento</div>
+            <div class="subcategory">La venta complementaria</div>
+            <div class="subcategory">Como cerrar una venta</div>
+        </div>
+		
+        <div id="bienvenido-principios-div" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory">Esto es un texto explicativo de como hacer algo</div>
+
+        </div>		
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

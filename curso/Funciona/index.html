@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navegación por Categorías</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="Principal" class="container">
+        <div class="category" onclick="showSubcategories('Div1')">
+            <img src="cat1.png" alt="Cat1" class="category-img">
+            <span>Cat1</span>
+        </div>
+        <div class="category" onclick="showSubcategories('Div2')">
+            <img src="cat2.png" alt="Cat2" class="category-img">
+            <span>Cat2</span>
+        </div>
+    </div>
+    <div id="Div1" class="container subcategory-container">
+        <button class="back-button" onclick="showMain()">Atrás</button>
+        <div class="subcategory">Lev1</div>
+        <div class="subcategory">Lev2</div>
+        <div class="subcategory">Lev3</div>
+    </div>
+    <div id="Div2" class="container subcategory-container">
+        <button class="back-button" onclick="showMain()">Atrás</button>
+        <div class="subcategory">Ne1</div>
+        <div class="subcategory">Ne2</div>
+        <div class="subcategory">Ne3</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
