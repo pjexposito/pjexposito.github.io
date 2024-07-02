@@ -157,3 +157,10 @@ form {
   border-radius: 3px;
   cursor: pointer;
 }
+
+.contenedor {
+   margin-top: 60px;
+   width: 90%; /* Ancho del div */
+   height: 90%; /* Altura del div */
+   overflow: auto; /* Habilita la barra de desplazamiento si es necesario */
+   border: 0px; /* Borde para visualización */
