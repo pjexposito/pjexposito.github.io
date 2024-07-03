@@ -6,7 +6,7 @@
     <title>Curso</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body onload="checkAllCoursesStatus()">
     <div id="mainContainer" class="main-container">
         <div id="Principal" class="container">
             <div class="category" onclick="showSubcategories('div-bienvenido')">
@@ -20,9 +20,22 @@
         </div>
         <div id="div-bienvenido" class="container subcategory-container">
             <button class="back-button" onclick="showMain()">Volver</button>
-            <div class="subcategory" onclick="showExplanation('principios')">Nuestros principios</div>
-            <div class="subcategory" onclick="showExplanation('trato')">El trato con el cliente</div>
-            <div class="subcategory" onclick="showExplanation('ayudar')">Aprendiendo a ayudar</div>
+            <div class="subcategory" onclick="showExplanation('principios')">
+                <img src="vacio.png" alt="Curso1" class="category-img" id="status-img-Curso1">
+			
+				<span>Nuestros principios</span>
+			</div>
+            <div class="subcategory" onclick="showExplanation('trato')">
+                <img src="vacio.png" alt="Curso2" class="category-img" id="status-img-Curso2">
+				
+				<span>El trato con el cliente</span>
+			
+			</div>
+            <div class="subcategory" onclick="showExplanation('ayudar')">
+                <img src="vacio.png" alt="Curso3" class="category-img" id="status-img-Curso3">
+				
+				<span>Aprendiendo a ayudar</span>
+			</div>
         </div>
         <div id="explica_principios" class="container explanation-container">
             <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
@@ -34,6 +47,8 @@
 <p>Para asegurar que cada cliente se sienta valorado y respetado, promovemos un ambiente de trabajo donde nuestros empleados son tratados con dignidad y reconocimiento. Creemos que un equipo feliz y motivado es clave para proporcionar un servicio al cliente excepcional. Por ello, invertimos en el desarrollo profesional de nuestros empleados, fomentando un espíritu de colaboración y un sentido de pertenencia hacia nuestros valores empresariales. Este enfoque no solo fortalece nuestro compromiso con la excelencia, sino que también contribuye a crear relaciones duraderas y significativas con nuestros clientes.</p>
 
 <p>En cada transacción y en cada interacción, nos esforzamos por mantener los más altos estándares éticos y profesionales. Nuestra integridad y transparencia son pilares fundamentales en nuestras relaciones comerciales. Valoramos la confianza que nuestros clientes depositan en nosotros y trabajamos incansablemente para merecerla día a día. Como empresa comprometida con la excelencia en el servicio y la satisfacción del cliente, nos sentimos honrados de ser su elección y estamos dedicados a superar sus expectativas en cada paso del camino.</p>
+            <div class="end-marker" data-course="Curso1"></div>
+
             </div>
         </div>
         <div id="explica_trato" class="container explanation-container">
@@ -41,14 +56,16 @@
             <div class="explanation-content contenedor">
                 <h2>El trato con el cliente</h2>
                 <p>En nuestra empresa, la premisa fundamental es el trato excepcional que ofrecemos a nuestros clientes. Desde el primer contacto hasta la postventa, nos dedicamos a comprender y satisfacer sus necesidades de manera efectiva y cordial. Valoramos cada interacción como una oportunidad para fortalecer la confianza y construir relaciones duraderas, asegurando que cada cliente se sienta valorado y escuchado. Nuestro compromiso con la excelencia en el servicio es evidente en cada aspecto de nuestra operación, y nos esforzamos continuamente por superar las expectativas y proporcionar experiencias memorables que inspiren lealtad y satisfacción.</p>
-            </div>
+            <div class="end-marker" data-course="Curso2"></div>
+            
+			</div>
         </div>
         <div id="explica_ayudar" class="container explanation-container">
             <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
             <div class="explanation-content">
                 <h2>Aprendiendo a ayudar</h2>
                 <p>
-				    <form id="quizForm" onsubmit="return checkAnswers()">
+				    <form id="quizForm" onsubmit="return checkAnswers_palabras()">
 				      <div class="form-group">
 				        <label for="q1">Pregunta 1: ¿Cuál es la capital de Portugal?</label>
 				        <input type="text" id="q1" name="q1" required>
@@ -81,7 +98,7 @@
             <div class="explanation-content">
                 <h2>El ofrecimeinto</h2>
                 <p>
-				    <form id="quizForm" onsubmit="return checkAnswers()">
+				    <form id="quizForm" onsubmit="return checkAnswers_check()">
 				      <div class="form-group-radio">
 				        <label>Pregunta: ¿Cuál es el océano más grande del mundo?</label><br>
 				        <input type="radio" id="q1a" name="q1" value="a" required>
@@ -117,6 +134,10 @@
             </div>
         </div>
     </div>
+    <button class="reiniciar-button" onclick="resetAllCoursesStatus()">Reiniciar</button>
+	
+    <div id="info-box" class="hidden">Cuadro informativo</div>
+	
     <script src="script.js"></script>
 </body>
 </html>
