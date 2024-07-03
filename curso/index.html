@@ -29,18 +29,18 @@
         <div id="div-bienvenido" class="container subcategory-container">
             <button class="back-button" onclick="showMain()">Volver</button>
             <div class="subcategory" onclick="showExplanation('principios')">
-                <img src="vacio.png" alt="Curso1" class="category-img" id="status-img-Curso1">
+                <img src="vacio.png" alt="Curso1" class="check-img" id="status-img-Curso1">
 			
 				<span>Nuestros principios</span>
 			</div>
             <div class="subcategory" onclick="showExplanation('trato')">
-                <img src="vacio.png" alt="Curso2" class="category-img" id="status-img-Curso2">
+                <img src="vacio.png" alt="Curso2" class="check-img" id="status-img-Curso2">
 				
 				<span>El trato con el cliente</span>
 			
 			</div>
             <div class="subcategory" onclick="showExplanation('ayudar')">
-                <img src="vacio.png" alt="Curso3" class="category-img" id="status-img-Curso3">
+                <img src="vacio.png" alt="Curso3" class="check-img" id="status-img-Curso3">
 				
 				<span>Información extra</span>
 			</div>
@@ -109,26 +109,26 @@
         </div>
         <div id="div-vender" class="container subcategory-container">
             <button class="back-button" onclick="showMain()">Volver</button>
-            <div class="subcategory" onclick="showExplanation('ofrecimiento')">El ofrecimiento</div>
             <div class="subcategory" onclick="showExplanation('complementaria')">La venta complementaria</div>
+            <div class="subcategory" onclick="showExplanation('pago')">Opciones de pago</div>
             <div class="subcategory" onclick="showExplanation('cerrar')">Como cerrar una venta</div>
         </div>
-        <div id="explica_ofrecimiento" class="container explanation-container">
+        <div id="explica_complementaria" class="container explanation-container">
             <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
             <div class="explanation-content">
-                <h2>El ofrecimeinto</h2>
+                <h2>Venta complementaria</h2>
                 <p>
 				    <form id="quizForm" onsubmit="return checkAnswers_check()">
 				      <div class="form-group-radio">
-				        <label>Pregunta: ¿Cuál es el océano más grande del mundo?</label><br>
+				        <label>¿En qué momento es mejor ofrecer venta complementaria?</label><br><br>
 				        <input type="radio" id="q1a" name="q1" value="a" required>
-				        <label for="q1a">a) Océano Atlántico</label><br>
+				        <label for="q1a">a) Nunca, no es necesario.</label><br>
 				        <input type="radio" id="q1b" name="q1" value="b">
-				        <label for="q1b">b) Océano Índico</label><br>
+				        <label for="q1b">b) Al final de la venta, tras el cobro.</label><br>
 				        <input type="radio" id="q1c" name="q1" value="c">
-				        <label for="q1c">c) Océano Pacífico</label><br>
+				        <label for="q1c">c) Durante la entrevista de venta.</label><br>
 				        <input type="radio" id="q1d" name="q1" value="d">
-				        <label for="q1d">d) Océano Ártico</label>
+				        <label for="q1d">d) Se llama al cliente al día siguiente.</label>
 				      </div>
 				      <div class="form-group-radio">
 				        <input type="submit" value="Enviar respuesta">
@@ -139,11 +139,11 @@
                 </p>
             </div>
         </div>
-        <div id="explica_complementaria" class="container explanation-container">
+        <div id="explica_pago" class="container explanation-container">
             <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
             <div class="explanation-content">
-                <h2>La venta complementaria</h2>
-                <p>Aquí puedes escribir el contenido explicativo para La venta complementaria.</p>
+                <h2>Opciones de pago</h2>
+                <p>Explicar financiaciones.</p>
             </div>
         </div>
         <div id="explica_cerrar" class="container explanation-container">
