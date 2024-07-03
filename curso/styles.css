@@ -9,14 +9,21 @@ body {
     overflow: hidden;
 }
 
+
 .main-container {
     position: relative;
-    width: 90%;
+    width: 60%;
     height: 90%;
     background-color: #fff;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     overflow: hidden;
+}
+
+@media only screen and (max-width: 600px) {	
+	.main-container {
+	    width: 95%;
+	}
 }
 
 .container {
@@ -34,7 +41,7 @@ body {
     background-color: #f0f0f0;
     padding: 20px;
     margin: 10px;
-	width: 35%;
+	width: 80%;
     border-radius: 8px;
     display: flex;
     align-items: center;
