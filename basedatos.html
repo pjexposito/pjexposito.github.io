@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQLite en el Navegador</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #output {
+            margin-top: 20px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <h1>SQLite en el Navegador</h1>
+    <button id="createTableBtn">Crear Tabla</button>
+    <button id="insertDataBtn">Insertar Datos</button>
+    <button id="queryDataBtn">Consultar Datos</button>
+    <button id="saveDbBtn">Guardar Base de Datos</button>
+    <button id="loadDbBtn">Cargar Base de Datos</button>
+    <button id="exportDbBtn">Exportar Base de Datos</button>
+    <input type="file" id="importDbInput" />
+    <div id="output"></div>
+
+    <script src="sql-wasm.js"></script>
+    <script>
+        let db;
+
+        // Función para inicializar la base de datos
+        function initDatabase() {
+            if (localStorage.getItem('db')) {
+                const savedDb = localStorage.getItem('db');
+                const binaryArray = Uint8Array.from(atob(savedDb), c => c.charCodeAt(0));
+                db = new SQL.Database(binaryArray);
+                document.getElementById('output').textContent = 'Base de datos cargada desde localStorage.';
+            } else {
+                db = new SQL.Database();
+                document.getElementById('output').textContent = 'Nueva base de datos creada.';
+            }
+        }
+
+        // Cargar y inicializar SQL.js
+        initSqlJs({ locateFile: file => `sql-wasm.wasm` }).then(SQL => {
+            initDatabase();
+        });
+
+        document.getElementById('createTableBtn').addEventListener('click', () => {
+            db.run("CREATE TABLE IF NOT EXISTS test (id INTEGER PRIMARY KEY, content TEXT);");
+            document.getElementById('output').textContent = 'Tabla creada.';
+        });
+
+        document.getElementById('insertDataBtn').addEventListener('click', () => {
+            db.run("INSERT INTO test (content) VALUES ('Hola Mundo');");
+            document.getElementById('output').textContent = 'Datos insertados.';
+        });
+
+        document.getElementById('queryDataBtn').addEventListener('click', () => {
+            const stmt = db.prepare("SELECT * FROM test;");
+            let result = [];
+            while (stmt.step()) {
+                const row = stmt.getAsObject();
+                result.push(row);
+            }
+            stmt.free();
+            document.getElementById('output').textContent = JSON.stringify(result, null, 2);
+        });
+
+        document.getElementById('saveDbBtn').addEventListener('click', () => {
+            const binaryArray = db.export();
+            const binaryString = btoa(String.fromCharCode.apply(null, binaryArray));
+            localStorage.setItem('db', binaryString);
+            document.getElementById('output').textContent = 'Base de datos guardada en localStorage.';
+        });
+
+        document.getElementById('loadDbBtn').addEventListener('click', () => {
+            const savedDb = localStorage.getItem('db');
+            if (savedDb) {
+                const binaryArray = Uint8Array.from(atob(savedDb), c => c.charCodeAt(0));
+                db = new SQL.Database(binaryArray);
+                document.getElementById('output').textContent = 'Base de datos cargada desde localStorage.';
+            } else {
+                document.getElementById('output').textContent = 'No se encontró ninguna base de datos guardada.';
+            }
+        });
+
+        document.getElementById('exportDbBtn').addEventListener('click', () => {
+            const binaryArray = db.export();
+            const blob = new Blob([binaryArray], { type: 'application/octet-stream' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'database.sqlite';
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+        });
+
+        document.getElementById('importDbInput').addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const binaryArray = new Uint8Array(e.target.result);
+                    db = new SQL.Database(binaryArray);
+                    document.getElementById('output').textContent = 'Base de datos importada desde archivo.';
+                };
+                reader.readAsArrayBuffer(file);
+            }
+        });
+    </script>
+</body>
+</html>
