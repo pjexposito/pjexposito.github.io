@@ -81,14 +81,16 @@
 
         // Comenzar a escanear
         html5QrCode.start(
-            { facingMode: "environment", width: { min: 640, ideal: 1280 }, height: { min: 480, ideal: 720 } }, // Mayor resolución de video
-            {
-                fps: 15, // Aumentar el FPS para mejorar la captura en tiempo real
-                qrbox: 400 // Caja de escaneo más grande
+            cameraID,
+            { 
+                fps:15,
+                qrbox: 400,
+                aspectRatio: 1.0,
+                videoConstraints:{width:{ideal:1280},height:{ideal:720}}
             },
-            onScanSuccess, 
+            onScanSuccess,
             onScanError
-        );
+            };
     </script>
 
 </body>
