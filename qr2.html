@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura de Códigos QR con Alta Resolución</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #preview {
+            width: 480px;
+            height: 480px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #qr-capture {
+            width: 480px;
+            height: 480px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            display: none;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lectura Continua de Códigos QR</h1>
+    <video id="preview"></video>
+    <canvas id="qr-capture"></canvas>
+    <ul id="qr-results">
+        <!-- Aquí se mostrarán los códigos QR escaneados -->
+    </ul>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script>
+        // Referencia a la lista donde se mostrarán los resultados
+        const qrResultsList = document.getElementById('qr-results');
+        const canvas = document.getElementById('qr-capture');
+        const context = canvas.getContext('2d');
+        const videoElement = document.getElementById('preview');
+
+        // Función que se ejecuta cuando se detecta un QR
+        function onScanSuccess(qrCodeMessage) {
+            // Crear un nuevo elemento de lista con el código QR escaneado
+            const listItem = document.createElement('li');
+            listItem.textContent = qrCodeMessage;
+            qrResultsList.appendChild(listItem);
+
+            // Capturar el fotograma actual de la vista previa
+            canvas.style.display = 'block';
+            context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        }
+
+        function onScanError(errorMessage) {
+            // Opcional: Manejar errores de escaneo
+            console.error(errorMessage);
+        }
+
+        // Inicializar el lector de QR con mayor resolución y mejor tamaño de caja de escaneo
+        let html5QrCode = new Html5Qrcode("preview");
+
+        // Comenzar a escanear
+        html5QrCode.start(
+            { facingMode: "environment", width: { min: 640, ideal: 1280 }, height: { min: 480, ideal: 720 } }, // Mayor resolución de video
+            {
+                fps: 15, // Aumentar el FPS para mejorar la captura en tiempo real
+                qrbox: 400 // Caja de escaneo más grande
+            },
+            onScanSuccess, 
+            onScanError
+        );
+    </script>
+
+</body>
+</html>
