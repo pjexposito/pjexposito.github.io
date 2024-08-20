@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lectura Continua de Códigos QR</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        #preview {
+            width: 480px;
+            height: 480px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        #qr-capture {
+            width: 480px;
+            height: 480px;
+            border: 1px solid #ccc;
+            margin-bottom: 20px;
+            display: none;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            margin: 5px 0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Lectura Continua de Códigos QR</h1>
+    <video id="preview"></video>
+    <canvas id="qr-capture"></canvas>
+    <ul id="qr-results">
+        <!-- Aquí se mostrarán los códigos QR escaneados -->
+    </ul>
+
+    <script src="https://unpkg.com/html5-qrcode"></script>
+    <script>
+        // Referencias a elementos del DOM
+        const qrResultsList = document.getElementById('qr-results');
+        const canvas = document.getElementById('qr-capture');
+        const context = canvas.getContext('2d');
+        const videoElement = document.getElementById('preview');
+
+        // Función que se ejecuta cuando se detecta un QR
+        function onScanSuccess(qrCodeMessage) {
+            const listItem = document.createElement('li');
+            listItem.textContent = qrCodeMessage;
+            qrResultsList.appendChild(listItem);
+
+            canvas.style.display = 'block';
+            context.drawImage(videoElement, 0, 0, canvas.width, canvas.height);
+        }
+
+        function onScanError(errorMessage) {
+            console.error(errorMessage);
+        }
+
+        function startQrScanner() {
+            // Inicializar el lector de QR
+            const html5QrCode = new Html5Qrcode("preview");
+
+            // Obtener acceso a la cámara y comenzar a escanear
+            Html5Qrcode.getCameras().then(cameras => {
+                if (cameras && cameras.length) {
+                    const cameraId = cameras[0].id; // Usar la primera cámara disponible
+
+                    html5QrCode.start(
+                        cameraId,  // Pasar solo el ID de la cámara como primer parámetro
+                        {
+                            fps: 15, 
+                            qrbox: 400,
+                            aspectRatio: 1.0,
+                            videoConstraints: {
+                                width: { ideal: 1280 },  // Mayor resolución
+                                height: { ideal: 720 }
+                            }
+                        },
+                        onScanSuccess,
+                        onScanError
+                    ).catch(err => {
+                        console.error("Error al iniciar el escaneo:", err);
+                    });
+                } else {
+                    console.error("No se encontraron cámaras.");
+                }
+            }).catch(err => {
+                console.error("Error al obtener las cámaras:", err);
+            });
+        }
+
+        // Iniciar el escáner QR cuando se carga la página
+        window.addEventListener('load', startQrScanner);
+    </script>
+
+</body>
+</html>
