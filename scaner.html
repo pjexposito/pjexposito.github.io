@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escáner de Código de Barras con ZXing</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        #scanner-container {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            height: 300px;
+            background-color: #000;
+        }
+
+        #camera {
+            width: 100%;
+            height: 100%;
+        }
+
+        #codes-list {
+            margin-top: 20px;
+            width: 90%;
+            max-width: 400px;
+            border: 1px solid #ccc;
+            background: #fff;
+            padding: 10px;
+            box-shadow: 0px 0px 5px rgba(0,0,0,0.2);
+        }
+
+        .code-item {
+            padding: 5px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .code-item:last-child {
+            border-bottom: none;
+        }
+
+        #save-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        #save-btn:hover {
+            background-color: #218838;
+        }
+
+        .highlight {
+            background-color: #d4edda;
+        }
+    </style>
+</head>
+<body>
+    <div id="scanner-container">
+        <video id="camera" autoplay></video>
+    </div>
+    <div id="codes-list"></div>
+    <button id="save-btn">Guardar en CSV</button>
+
+    <!-- ZXing library -->
+    <script src="https://unpkg.com/@zxing/library@0.18.6/umd/index.min.js"></script>
+    <script>
+        const codes = [];
+        const codeReader = new ZXing.BrowserBarcodeReader();
+
+        codeReader.decodeFromVideoDevice(undefined, 'camera', (result, err) => {
+            if (result) {
+                const code = result.text;
+                if (!codes.includes(code)) {
+                    codes.push(code);
+                    displayCode(code);
+                    indicateCapture();
+                }
+            }
+            if (err && !(err instanceof ZXing.NotFoundException)) {
+                console.error(err);
+            }
+        });
+
+        function displayCode(code) {
+            const list = document.getElementById('codes-list');
+            const item = document.createElement('div');
+            item.className = 'code-item';
+            item.textContent = code;
+            list.appendChild(item);
+        }
+
+        function indicateCapture() {
+            const list = document.getElementById('codes-list');
+            list.lastChild.classList.add('highlight');
+            setTimeout(() => {
+                list.lastChild.classList.remove('highlight');
+            }, 1000);
+
+            const audio = new Audio('https://www.soundjay.com/button/sounds/beep-07.mp3');
+            audio.play();
+        }
+
+        document.getElementById('save-btn').addEventListener('click', function () {
+            const csvContent = "data:text/csv;charset=utf-8," + codes.join("\n");
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "codigos.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
