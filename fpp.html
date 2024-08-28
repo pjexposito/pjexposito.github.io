@@ -525,10 +525,14 @@ body {visibility: hidden; display: none;}
 	</div>
 	
 <button class="calculator-key wide sp" type="operator" id="IVA_calculadora">Sin IVA</button>
+<!-- ANTIGUO BOTÓN TIN
+ 
   <label class="toggle calculator-key wide sp">
     <input type="checkbox" id="selector_TIN_calculadora" checked>
     <span class="labels" data-on="TIN 14%" data-off="TIN 16%"></span>
   </label>
+  
+ YA NO SE USA POR AHORA-->
 <button class="calculator-key wide sp" type="operator" id="personal_calculadora">Quitar 15%</button>
 
 
@@ -628,12 +632,15 @@ body {visibility: hidden; display: none;}
 </LI>
 </UL>
 
+<!-- ANTIGUO BOTÓN DE TIN
+
 <div class="seleccion_TIN">
   <label class="toggle resumen">
     <input type="checkbox" id="selector_TIN" checked>
     <span class="labels" data-on="Valor del TIN 14% (financiación general)" data-off="Valor del TIN 16% (otros productos)"></span>
   </label>
 </div>
+POR AHORA SE QUITA -->
 
 <H1>Los valores son aproximados. Por favor, no imprimáis esta hoja.</H1>
 	</div>
@@ -674,11 +681,21 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	var ie11= false;
 	
 
+	const fechaActual = new Date();
+	const mes = fechaActual.getMonth(); // Enero es 0, Diciembre es 11
+
+	if (mes >= 8 ){ // A partir de septiembre
+       	TIN=18;
+	} else {
+  		TIN=16;
+	}
 
 
+/* Antigua función para el TIM variable. Ahora se fija en 18
 
 	var checkbox = document.getElementById("selector_TIN");
 	var checkbox_calculadora = document.getElementById("selector_TIN_calculadora");
+
 
 
     checkbox_calculadora.addEventListener('change', function () {
@@ -707,7 +724,7 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 		localStorage.setItem("selector_TIN",checkbox.checked);
   	});
 	
-
+*/
 	
 	/*
 	
@@ -1001,11 +1018,16 @@ if (edit_precio.value.length == 0) {
     edit_meses.value = 12;
     edit_precio.value = 999;
 }
-if (!valor_checkbox) {
-    valor_checkbox = "false";
-}
+
 		Dinero = parseFloat(edit_precio.value);
 		Meses = parseInt(edit_meses.value);		
+		
+		/* Se quita porque no hay TIM variable
+		
+		if (!valor_checkbox) {
+    		valor_checkbox = "false";
+		}
+		
 		if (valor_checkbox == "true") {
 			checkbox.checked = true;
 			checkbox_calculadora.checked = true;
@@ -1015,6 +1037,9 @@ if (!valor_checkbox) {
 			checkbox_calculadora.checked = false;
 			TIN = 16;
 		}
+		
+		*/
+		
         pinta_todos_datos();
 		Opera();
 
