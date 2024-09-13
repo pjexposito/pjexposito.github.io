@@ -681,16 +681,6 @@ var barraMeses = document.getElementById('barraMeses_calculadora');
 	var txt_meses_ideal = document.getElementById("txt_meses_ideal");
 	var esta_en_local = false;
 	var ie11= false;
-	
-
-	const fechaActual = new Date();
-	const mes = fechaActual.getMonth(); // Enero es 0, Diciembre es 11
-
-	if (mes >= 9 ){ // A partir de octubre
-       	TIN=18;
-	} else {
-  		TIN=16;
-	}
 
 
 /* Antigua función para el TIM variable. Ahora se fija en 18
