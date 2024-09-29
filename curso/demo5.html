@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Profesional</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .timeline {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .milestone {
+            border-left: 2px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .milestone:last-child {
+            border-left: none;
+        }
+        .milestone::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 0;
+        }
+        .milestone-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .milestone-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .milestone-title {
+            font-weight: bold;
+            margin: 0;
+        }
+        .milestone-description {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .milestone-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: #ecf0f1;
+            border-radius: 4px;
+        }
+        .milestone-content textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .milestone-content button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .milestone-content button:hover {
+            background: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Desarrollo Profesional</h1>
+        <div class="timeline" id="timeline"></div>
+    </div>
+
+    <script>
+        const milestones = [
+            { id: 1, status: 'completed', title: 'Primer día. Contrato', description: 'Lectura de contrato. Claves Nexo. Kit bienvenida.', content: '' },
+            { id: 2, status: 'completed', title: 'Primer día. Presentación jefe', description: 'Explicación estructura comercial. Asignación mentor.', content: '' },
+            { id: 3, status: 'completed', title: 'Primer día. Formación.', description: 'Código Ético. Conocer la empresa. PRL. Video bienvenida.', content: '' },
+            { id: 4, status: 'completed', title: '30 días. Entrevista de jefe directo', description: 'Evaluación del progreso. Identificación de expectativas y objetivos', content: '' },
+            { id: 5, status: 'completed', title: '30 días. Formación técnicas de venta y MPOS', description: 'AulaECI de técnicas de venta. Uso de MPOS', content: '' },
+            { id: 6, status: 'completed', title: '30 días. Opcional. Curso de productos.', description: 'Curso de producto', content: '' },
+            { id: 7, status: 'in-progress', title: 'Tres meses. Entrevista jefe multiactividad', description: 'Entrevista con el responsable de multiactividad.', content: '' },
+            { id: 8, status: 'upcoming', title: 'Cuatro meses. Entrevista jefe personal', description: 'Entrevista con el jefe de personal.', content: '' },
+            { id: 9, status: 'upcoming', title: 'Seis meses. Cuestionario APP', description: 'Es necesario acceder a la APP para realizar cuestionario.', content: '' },
+            { id: 10, status: 'upcoming', title: 'Hito 6: Gestiona tareas de equipo', description: 'Gestiona tareas de equipo y coordina proyectos colaborativos.', content: '' },
+            { id: 11, status: 'upcoming', title: 'Hito 7: Mejora tu comunicación', description: 'Mejora tu habilidad para comunicarte con claridad y persuasión.', content: '' },
+            { id: 12, status: 'upcoming', title: 'Hito 8: Lidera reuniones efectivas', description: 'Lidera reuniones efectivas y motiva a tu equipo.', content: '' },
+            { id: 13, status: 'upcoming', title: 'Hito 9: Crea informes de impacto', description: 'Aprende a crear informes detallados que generen impacto.', content: '' },
+            { id: 14, status: 'upcoming', title: 'Hito 10: Mantén relaciones con clientes', description: 'Desarrolla habilidades para mantener relaciones a largo plazo con clientes.', content: '' },
+        ];
+
+        function getStatusIcon(status) {
+            switch (status) {
+                case 'completed':
+                    return '✓';
+                case 'in-progress':
+                    return '▶';
+                case 'upcoming':
+                    return '?';
+            }
+        }
+
+        function getStatusColor(status) {
+            switch (status) {
+                case 'completed':
+                    return '#2ecc71';
+                case 'in-progress':
+                    return '#f39c12';
+                case 'upcoming':
+                    return '#95a5a6';
+            }
+        }
+
+        function createMilestoneElement(milestone) {
+            const milestoneElement = document.createElement('div');
+            milestoneElement.className = 'milestone';
+            milestoneElement.innerHTML = `
+                <div class="milestone-header">
+                    <div class="milestone-icon" style="background-color: ${getStatusColor(milestone.status)}">
+                        ${getStatusIcon(milestone.status)}
+                    </div>
+                    <div>
+                        <h3 class="milestone-title">${milestone.title}</h3>
+                        <p class="milestone-description">${milestone.description}</p>
+                    </div>
+                </div>
+                <div class="milestone-content">
+                    <div class="milestone-html-content"></div>
+                    <textarea placeholder="Inserte el código HTML aquí...">${milestone.content}</textarea>
+                    <button onclick="updateContent(${milestone.id})">Actualizar Contenido HTML</button>
+                </div>
+            `;
+
+            milestoneElement.querySelector('.milestone-header').addEventListener('click', () => {
+                toggleContent(milestone.id);
+            });
+
+            return milestoneElement;
+        }
+
+        function toggleContent(id) {
+            const milestoneElement = document.getElementById(`milestone-${id}`);
+            const content = milestoneElement.querySelector('.milestone-content');
+            const allContents = document.querySelectorAll('.milestone-content');
+            
+            // Cerrar todos los contenidos abiertos
+            allContents.forEach(el => {
+                if (el !== content && el.style.display === 'block') {
+                    el.style.display = 'none';
+                }
+            });
+
+            // Alternar la visibilidad del contenido actual
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            
+            if (content.style.display === 'block') {
+                updateHTMLContent(id);
+            }
+        }
+
+        function updateContent(id) {
+            const milestone = milestones.find(m => m.id === id);
+            const milestoneElement = document.getElementById(`milestone-${id}`);
+            const textarea = milestoneElement.querySelector('textarea');
+            milestone.content = textarea.value;
+            updateHTMLContent(id);
+        }
+
+        function updateHTMLContent(id) {
+            const milestone = milestones.find(m => m.id === id);
+            const milestoneElement = document.getElementById(`milestone-${id}`);
+            const htmlContent = milestoneElement.querySelector('.milestone-html-content');
+            htmlContent.innerHTML = milestone.content || '<p>No hay contenido adicional.</p>';
+        }
+
+        function renderTimeline() {
+            const timelineElement = document.getElementById('timeline');
+            milestones.forEach(milestone => {
+                const milestoneElement = createMilestoneElement(milestone);
+                milestoneElement.id = `milestone-${milestone.id}`;
+                timelineElement.appendChild(milestoneElement);
+            });
+        }
+
+        renderTimeline();
+    </script>
+</body>
+</html>
