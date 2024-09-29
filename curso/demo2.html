@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil Profesional - Trayectoria</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-header img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-right: 20px;
+        }
+
+        .profile-header h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .profile-header p {
+            font-size: 1.2rem;
+            color: #666;
+        }
+
+        .points {
+            margin-top: 10px;
+            font-weight: bold;
+            color: #3B82F6;
+        }
+
+        /* Estilo de los hitos con scroll vertical */
+        .milestones {
+            max-height: 200px;
+            overflow-y: scroll;
+            margin-bottom: 30px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #f9f9f9;
+        }
+
+        .milestones h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .milestone-item {
+            padding: 10px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            font-size: 1rem;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+        }
+
+        .milestone-last {
+            background-color: #e0e0e0;
+            color: #666;
+        }
+
+        .milestone-current {
+            background-color: #000;
+            color: #fff;
+        }
+
+        .milestone-next {
+            background-color: #3B82F6;
+            color: #fff;
+        }
+
+        .milestone-future {
+            background-color: #e0e8ff;
+            color: #555;
+        }
+
+        .milestone-past {
+            background-color: #f0f0f0;
+            color: #999;
+        }
+
+        /* Detalles del hito actual */
+        .current-details {
+            margin-bottom: 30px;
+        }
+
+        .current-details h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .current-details ul {
+            list-style: none;
+        }
+
+        .current-details ul li {
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        .completed {
+            background-color: #e0f7df;
+            color: #28a745;
+        }
+
+        .pending {
+            background-color: #fbe2e2;
+            color: #f04e4e;
+        }
+
+        /* Recursos opcionales */
+        .resources {
+            margin-bottom: 30px;
+        }
+
+        .resources h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .resources ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        .resources ul li {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        /* Estilo adicional */
+        .extra-content {
+            margin-top: 30px;
+            background-color: #f0f8ff;
+            padding: 15px;
+            border-left: 4px solid #3B82F6;
+            border-radius: 8px;
+        }
+
+        .extra-content h3 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .extra-content p {
+            color: #666;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Header del perfil -->
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/100" alt="Foto de perfil">
+            <div>
+                <h1>Nombre del Empleado</h1>
+                <p class="points">Puntos: 850</p>
+            </div>
+        </div>
+
+        <!-- Cuadro de hitos con scroll vertical -->
+        <div class="milestones">
+            <h2>Hitos de la Trayectoria</h2>
+
+            <!-- Lista de hitos -->
+            <div class="milestone-item milestone-past" onclick="updateMilestone('Inducción completada', ['Firma de contrato', 'Entrega de equipo', 'Presentación del equipo'])">Primer trimestre: Inducción completada</div>
+            <div class="milestone-item milestone-past" onclick="updateMilestone('Evaluación de desempeño', ['Revisión de objetivos', 'Feedback del supervisor', 'Autoevaluación'])">Segundo trimestre: Evaluación de desempeño</div>
+            <div class="milestone-item milestone-current" onclick="updateMilestone('Formación continua', ['Prevención de riesgos (Realizado)', 'Ética profesional', 'Ventas'])">Tercer trimestre: Formación continua</div>
+            <div class="milestone-item milestone-next" onclick="updateMilestone('Certificación en ventas', ['Curso de ventas avanzado', 'Simulaciones de ventas'])">Cuarto trimestre: Certificación en ventas</div>
+            <div class="milestone-item milestone-future" onclick="updateMilestone('Gestión de proyectos', ['Introducción a la gestión de proyectos', 'Herramientas de gestión'])">Quinto trimestre: Gestión de proyectos</div>
+            <div class="milestone-item milestone-future" onclick="updateMilestone('Evaluación final', ['Examen final', 'Revisión de desempeño general'])">Sexto trimestre: Evaluación final</div>
+        </div>
+
+        <!-- Detalles del hito actual -->
+        <div class="current-details">
+            <h3 id="current-title">Hito actual: Formación continua</h3>
+            <ul id="current-courses">
+                <li class="completed">Prevención de riesgos (Realizado)</li>
+                <li class="pending">Ética profesional (Pendiente)</li>
+                <li class="pending">Ventas (Pendiente)</li>
+            </ul>
+        </div>
+
+        <!-- Recursos opcionales -->
+        <div class="resources">
+            <h3>Recursos opcionales</h3>
+            <ul>
+                <li>Curso de producto</li>
+                <li>Mejoras en tu puesto de trabajo</li>
+            </ul>
+        </div>
+
+        <!-- Contenido adicional -->
+        <div class="extra-content">
+            <h3>Consejo del mes</h3>
+            <p>Recuerda que completar los recursos opcionales te ayudará a mejorar tus habilidades y prepararte mejor para los futuros hitos.</p>
+        </div>
+    </div>
+
+    <script>
+        // Función para actualizar el hito actual
+        function updateMilestone(title, courses) {
+            document.getElementById('current-title').innerText = 'Hito actual: ' + title;
+
+            // Limpiar la lista de cursos actuales
+            const coursesList = document.getElementById('current-courses');
+            coursesList.innerHTML = '';
+
+            // Añadir los cursos actualizados
+            courses.forEach(course => {
+                const li = document.createElement('li');
+                li.innerText = course;
+
+                // Aplicar estilos según el estado del curso
+                if (course.includes('(Realizado)')) {
+                    li.classList.add('completed');
+                } else {
+                    li.classList.add('pending');
+                }
+
+                coursesList.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>
