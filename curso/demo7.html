@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desarrollo Profesional</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .timeline {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .level {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .level-1 { background-color: #e8f5e9; }
+        .level-2 { background-color: #e3f2fd; }
+        .level-3 { background-color: #fff3e0; }
+        .level-4 { background-color: #f3e5f5; }
+        .level-5 { background-color: #e0f2f1; }
+        .level-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .milestone {
+            border-left: 2px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .milestone:last-child {
+            border-left: none;
+        }
+        .milestone::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 0;
+        }
+        .milestone-header {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+        .milestone-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .milestone-title {
+            font-weight: bold;
+            margin: 0;
+        }
+        .milestone-description {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .milestone-content {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 4px;
+        }
+        .milestone-content textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
+        }
+        .milestone-content button {
+            background: #3498db;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .milestone-content button:hover {
+            background: #2980b9;
+        }
+        .level-separator {
+            border-top: 2px dashed #bdc3c7;
+            margin: 20px 0;
+        }
+        .points-display {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .goal {
+            background-color: #f1c40f;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .goal h2 {
+            color: #2c3e50;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Desarrollo Profesional</h1>
+        <div class="points-display" id="pointsDisplay">Puntos: 0</div>
+        <div class="timeline" id="timeline"></div>
+        <div class="goal">
+            <h2>Meta: 24 meses</h2>
+            <p>¡Felicidades por completar tu desarrollo profesional!</p>
+        </div>
+    </div>
+
+    <script>
+        const levelNames = ["Sastrería", "Preciados", "Expansión", "Online", "Elche"];
+        
+        const milestones = [
+            { id: 1, status: 'completed', title: 'Primer día. Contrato', description: 'Lectura de contrato. Claves Nexo. Kit bienvenida.', content: '', level: 1, points: 10 },
+            { id: 2, status: 'completed', title: 'Primer día. Presentación jefe', description: 'Explicación estructura comercial. Asignación mentor.', content: '', level: 1, points: 10 },
+            { id: 3, status: 'completed', title: 'Primer día. Formación.', description: 'Código Ético. Conocer la empresa. PRL. Video bienvenida.', content: '', level: 1, points: 10 },
+            { id: 4, status: 'completed', title: '30 días. Entrevista de jefe directo', description: 'Evaluación del progreso. Identificación de expectativas y objetivos', content: '', level: 2, points: 20 },
+            { id: 5, status: 'completed', title: '30 días. Formación técnicas de venta y MPOS', description: 'AulaECI de técnicas de venta. Uso de MPOS', content: '', level: 2, points: 20 },
+            { id: 6, status: 'completed', title: '30 días. Opcional. Curso de productos.', description: 'Curso de producto', content: '', level: 2, points: 20 },
+            { id: 7, status: 'in-progress', title: 'Tres meses. Entrevista jefe multiactividad', description: 'Entrevista con el responsable de multiactividad.', content: '', level: 3, points: 30 },
+            { id: 8, status: 'upcoming', title: 'Cuatro meses. Entrevista jefe personal', description: 'Entrevista con el jefe de personal.', content: '', level: 3, points: 30 },
+            { id: 9, status: 'upcoming', title: 'Seis meses. Cuestionario APP', description: 'Es necesario acceder a la APP para realizar cuestionario.', content: '', level: 3, points: 30 },
+            { id: 10, status: 'upcoming', title: 'Hito 6: Gestiona tareas de equipo', description: 'Gestiona tareas de equipo y coordina proyectos colaborativos.', content: '', level: 4, points: 40 },
+            { id: 11, status: 'upcoming', title: 'Hito 7: Mejora tu comunicación', description: 'Mejora tu habilidad para comunicarte con claridad y persuasión.', content: '', level: 4, points: 40 },
+            { id: 12, status: 'upcoming', title: 'Hito 8: Lidera reuniones efectivas', description: 'Lidera reuniones efectivas y motiva a tu equipo.', content: '', level: 4, points: 40 },
+            { id: 13, status: 'upcoming', title: 'Hito 9: Crea informes de impacto', description: 'Aprende a crear informes detallados que generen impacto.', content: '', level: 5, points: 50 },
+            { id: 14, status: 'upcoming', title: 'Hito 10: Mantén relaciones con clientes', description: 'Desarrolla habilidades para mantener relaciones a largo plazo con clientes.', content: '', level: 5, points: 50 },
+        ];
+
+        let totalPoints = 0;
+
+        function getStatusIcon(status) {
+            switch (status) {
+                case 'completed': return '✓';
+                case 'in-progress': return '▶';
+                case 'upcoming': return '?';
+            }
+        }
+
+        function getStatusColor(status) {
+            switch (status) {
+                case 'completed': return '#2ecc71';
+                case 'in-progress': return '#f39c12';
+                case 'upcoming': return '#95a5a6';
+            }
+        }
+
+        function createMilestoneElement(milestone) {
+            const milestoneElement = document.createElement('div');
+            milestoneElement.className = 'milestone';
+            milestoneElement.innerHTML = `
+                <div class="milestone-header">
+                    <div class="milestone-icon" style="background-color: ${getStatusColor(milestone.status)}">
+                        ${getStatusIcon(milestone.status)}
+                    </div>
+                    <div>
+                        <h3 class="milestone-title">${milestone.title}</h3>
+                        <p class="milestone-description">${milestone.description}</p>
+                    </div>
+                </div>
+                <div class="milestone-content">
+                    <div class="milestone-html-content"></div>
+                    <textarea placeholder="Inserte el código HTML aquí...">${milestone.content}</textarea>
+                    <button onclick="updateContent(${milestone.id})">Actualizar Contenido HTML</button>
+                </div>
+            `;
+
+            milestoneElement.querySelector('.milestone-header').addEventListener('click', () => {
+                toggleContent(milestone.id);
+            });
+
+            return milestoneElement;
+        }
+
+        function toggleContent(id) {
+            const milestoneElement = document.getElementById(`milestone-${id}`);
+            const content = milestoneElement.querySelector('.milestone-content');
+            const allContents = document.querySelectorAll('.milestone-content');
+            
+            allContents.forEach(el => {
+                if (el !== content && el.style.display === 'block') {
+                    el.style.display = 'none';
+                }
+            });
+
+            content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            
+            if (content.style.display === 'block') {
+                updateHTMLContent(id);
+            }
+        }
+
+        function updateContent(id) {
+            const milestone = milestones.find(m => m.id === id);
+            const milestoneElement = document.getElementById(`milestone-${id}`);
+            const textarea = milestoneElement.querySelector('textarea');
+            milestone.content = textarea.value;
+            updateHTMLContent(id);
+        }
+
+        function updateHTMLContent(id) {
+            const milestone = milestones.find(m => m.id === id);
+            const milestoneElement = document.getElementById(`milestone-${id}`);
+            const htmlContent = milestoneElement.querySelector('.milestone-html-content');
+            htmlContent.innerHTML = milestone.content || '<p>No hay contenido adicional.</p>';
+        }
+
+        function renderTimeline() {
+            const timelineElement = document.getElementById('timeline');
+            let currentLevel = 0;
+            let levelElement;
+
+            milestones.forEach(milestone => {
+                if (milestone.level !== currentLevel) {
+                    if (currentLevel !== 0) {
+                        timelineElement.appendChild(document.createElement('div')).className = 'level-separator';
+                    }
+                    currentLevel = milestone.level;
+                    levelElement = document.createElement('div');
+                    levelElement.className = `level level-${currentLevel}`;
+                    levelElement.innerHTML = `<div class="level-title">${levelNames[currentLevel - 1]}</div>`;
+                    timelineElement.appendChild(levelElement);
+                }
+
+                const milestoneElement = createMilestoneElement(milestone);
+                milestoneElement.id = `milestone-${milestone.id}`;
+                levelElement.appendChild(milestoneElement);
+
+                if (milestone.status === 'completed') {
+                    totalPoints += milestone.points;
+                }
+            });
+
+            updatePointsDisplay();
+        }
+
+        function updatePointsDisplay() {
+            const pointsDisplay = document.getElementById('pointsDisplay');
+            pointsDisplay.textContent = `Puntos: ${totalPoints}`;
+        }
+
+        renderTimeline();
+    </script>
+</body>
+</html>
