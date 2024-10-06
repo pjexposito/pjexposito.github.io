@@ -1,0 +1,67 @@
+{
+  "levelInfo": [
+    { "name": "Sastrería El Corte Inglés", "icon": "fas fa-tape", "unlockTime": 0 },
+    { "name": "Compra edificios Preciados", "icon": "fas fa-building", "unlockTime": 0 },
+    { "name": "Grandes Almacenes", "icon": "fas fa-shopping-cart", "unlockTime": 0 },
+    { "name": "Nace la tarjeta de compra de El Corte Inglés", "icon": "fas fa-credit-card", "unlockTime": 4 },
+    { "name": "Se constituye Viajes El Corte Inglés", "icon": "fas fa-globe", "unlockTime": 7 },
+    { "name": "Si no queda satisfecho le devolvemos su dinero", "icon": "fas fa-money-bill-wave", "unlockTime": 7 },
+    { "name": "Hipercor", "icon": "fas fa-store", "unlockTime": 10 },
+    { "name": "Correduría de Seguros El Corte Inglés", "icon": "fas fa-file-contract", "unlockTime": 13 },
+    { "name": "Adquisición de Galerías Preciados", "icon": "fas fa-handshake", "unlockTime": 16 },
+    { "name": "Portugal", "icon": "fas fa-flag", "unlockTime": 19 },
+    { "name": "Sfera", "icon": "fas fa-tshirt", "unlockTime": 22 },
+    { "name": "Bricor", "icon": "fas fa-tools", "unlockTime": 22 },
+    { "name": "Sicor y nueva APP", "icon": "fas fa-mobile-alt", "unlockTime": 24 },
+    { "name": "MPOS", "icon": "fas fa-credit-card", "unlockTime": 24 }
+  ],
+  "milestones": [
+    { "id": 1, "status": "completed", "title": "Primer día. Lectura de contrato", "description": "Lectura de contrato. Claves Nexo. Kit bienvenida.", "content": "Bienvenido a tu primer día. Aquí encontrarás información importante sobre tu contrato y los primeros pasos en la empresa.", "level": 1, "points": 10, "url": "https://www.elcorteingles.es/" },
+    { "id": 2, "status": "completed", "title": "Primer día. Presentación jefe", "description": "Explicación estructura comercial. Asignación mentor.", "content": "Conoce a tu jefe y la estructura de la empresa. Tu mentor te guiará en tus primeros pasos.", "level": 1, "points": 10, "url": "https://www.elcorteingles.es/informacioncorporativa/" },
+{
+      "id": 3,
+      "status": "completed",
+      "title": "Primer día. Formación.",
+      "description": "Código Ético. Conocer la empresa. PRL. Video bienvenida.",
+      "content": "Formación inicial sobre el código ético de la empresa, medidas de prevención de riesgos laborales y bienvenida oficial.",
+      "level": 1,
+      "points": 10,
+      "url": "https://www.elcorteingles.es/recursos-humanos/",
+      "type": "video",
+      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+    },
+    { "id": 4, "status": "completed", "title": "30 días. Entrevista de jefe directo", "description": "Evaluación del progreso. Identificación de expectativas y objetivos", "content": "Revisión de tu primer mes en la empresa. Establecimiento de objetivos a corto y medio plazo.", "level": 2, "points": 20, "url": "https://www.elcorteingles.es/recursos-humanos/desarrollo-profesional/" },
+    { "id": 5, "status": "completed", "title": "30 días. Formación técnicas de venta y MPOS", "description": "AulaECI de técnicas de venta. Uso de MPOS", "content": "Formación en técnicas de venta y uso del sistema MPOS para mejorar la atención al cliente.", "level": 2, "points": 20, "url": "https://www.elcorteingles.es/formacion-ventas/" },
+    { "id": 6, "status": "completed", "title": "30 días. Opcional. Curso de productos.", "description": "Curso de producto", "content": "Curso opcional para profundizar en el conocimiento de los productos de la empresa.", "level": 2, "points": 20, "url": "https://www.elcorteingles.es/catalogo-productos/" },
+    { "id": 7, "status": "completed", "title": "Tres meses. Entrevista jefe multiactividad", "description": "Entrevista con el responsable de multiactividad.", "content": "Evaluación de tu desempeño en diferentes áreas y planificación de tu desarrollo futuro.", "level": 3, "points": 30, "url": "https://www.elcorteingles.es/recursos-humanos/evaluacion-desempeno/" },
+    { "id": 8, "status": "pending", "title": "Cuatro meses. Entrevista jefe personal", "description": "Entrevista con el jefe de personal.", "content": "Revisión de tu progreso y discusión sobre tu carrera profesional en la empresa.", "level": 3, "points": 30, "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/" },
+{
+      "id": 9,
+      "status": "pending",
+      "title": "Esto es un ejemplo de video",
+      "description": "Aquí se muestra como quedaría el video de bienvenida.",
+      "content": "Formación en la creación de informes efectivos para mejorar la toma de decisiones.",
+      "level": 4,
+      "points": 40,
+      "url": "",
+      "type": "video",
+      "videoUrl": "https://www.example.com/videos/informes.mp4"
+    },
+    {
+      "id": 10,
+      "status": "pending",
+      "title": "Y esto es un ejemplo de página web",
+      "description": "Aquí se enseña como mostrar una web incrustada.",
+      "content": "Estrategias y técnicas para fidelizar clientes y mejorar la satisfacción del cliente.",
+      "level": 4,
+      "points": 40,
+      "url": "",
+      "type": "web",
+      "webUrl": "https://www.example.com/fidelizacion-clientes"
+    },
+    { "id": 11, "status": "pending", "title": "Seis meses. Cuestionario APP", "description": "Es necesario acceder a la APP para realizar cuestionario.", "content": "Evaluación de conocimientos y habilidades adquiridas en los primeros seis meses.", "level": 5, "points": 50, "url": "https://www.elcorteingles.es/app-evaluacion/" },
+    { "id": 12, "status": "pending", "title": "Otros meses. Demo", "description": "Es necesario acceder a la APP para realizar cuestionario.", "content": "Demostración práctica de habilidades y conocimientos adquiridos.", "level": 6, "points": 50, "url": "https://www.elcorteingles.es/demo-habilidades/" },
+    { "id": 13, "status": "pending", "title": "Otros más. Demo", "description": "Es necesario acceder a la APP para realizar cuestionario.", "content": "Evaluación final y planificación de desarrollo futuro en la empresa.", "level": 6, "points": 50, "url": "https://www.elcorteingles.es/evaluacion-final/" },
+    { "id": 14, "status": "pending", "title": "Otros más. Demo", "description": "Es necesario acceder a la APP para realizar cuestionario.", "content": "Evaluación final y planificación de desarrollo futuro en la empresa.", "level": 7, "points": 50, "url": "https://www.elcorteingles.es/evaluacion-final/" }
+  ]
+}
