@@ -427,17 +427,17 @@ function scrollToFirstInProgressLevel() {
 function openModal(milestone) {
     const modal = document.getElementById('modal');
     const modalContent = document.getElementById('modalContent');
-    
+    console.log(milestone);
     const contentTypes = {
         'video': `
             <h2>${milestone.title}</h2>
             <video width="100%" controls>
-                <source src="${milestone.videoUrl || 'https://www.w3schools.com/html/mov_bbb.mp4'}" type="video/mp4">
+                <source src="${milestone.videoUrl}" type="video/mp4">
                 Tu navegador no soporta el elemento de video.
             </video>`,
         'web': `
             <h2>${milestone.title}</h2>
-            <iframe src="${milestone.webUrl || 'https://pjexposito.github.io/curso/index.html'}" width="100%" height="400" frameborder="0"></iframe>`,
+            <iframe src="${milestone.webURL}" width="100%" height="400" frameborder="0"></iframe>`,
         'default': `
             <h2>${milestone.title}</h2>
             <p>${milestone.content}</p>

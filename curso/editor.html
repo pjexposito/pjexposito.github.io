@@ -43,6 +43,8 @@
                 <th>Estado</th>
                 <th>Nivel</th>
                 <th>Puntos</th>
+                <th>Tipo de Contenido</th>
+                <th>Enlace</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -93,6 +95,14 @@
                     ${generateOptions(1, 15, milestone.level)}
                 </select>`;
                 row.insertCell().innerHTML = `<input type="number" value="${milestone.points}" onchange="editMilestone(${index}, 'points', this.value)">`;
+
+                row.insertCell().innerHTML = `<select onchange="editMilestone(${index}, 'type', this.value); handleLinkInput(${index}, this.value);">
+                    <option value="normal" ${milestone.type === 'normal' || !milestone.type ? 'selected' : ''}>normal</option>
+                    <option value="web" ${milestone.type === 'web' ? 'selected' : ''}>web</option>
+                    <option value="video" ${milestone.type === 'video' ? 'selected' : ''}>video</option>
+                </select>`;
+
+                row.insertCell().innerHTML = generateLinkInput(milestone, index);
             });
         }
 
@@ -102,6 +112,28 @@
                 options += `<option value="${i}" ${i === selectedValue ? 'selected' : ''}>${i}</option>`;
             }
             return options;
+        }
+
+        function generateLinkInput(milestone, index) {
+            if (milestone.type === 'web') {
+                return `<input type="text" placeholder="URL Web" value="${milestone.webURL || ''}" onchange="editMilestone(${index}, 'webURL', this.value)">`;
+            } else if (milestone.type === 'video') {
+                return `<input type="text" placeholder="URL Video" value="${milestone.videoUrl || ''}" onchange="editMilestone(${index}, 'videoUrl', this.value)">`;
+            } else {
+                return `<input type="text" placeholder="Sin enlace" disabled>`;
+            }
+        }
+
+        function handleLinkInput(index, type) {
+            const row = document.getElementById('milestonesTable').rows[index + 1]; // +1 para ajustarse a la tabla
+            const linkCell = row.cells[6]; // La celda de enlace es la 7ma (índice 6)
+            if (type === 'web') {
+                linkCell.innerHTML = `<input type="text" placeholder="URL Web" onchange="editMilestone(${index}, 'webURL', this.value)">`;
+            } else if (type === 'video') {
+                linkCell.innerHTML = `<input type="text" placeholder="URL Video" onchange="editMilestone(${index}, 'videoUrl', this.value)">`;
+            } else {
+                linkCell.innerHTML = `<input type="text" placeholder="Sin enlace" disabled>`;
+            }
         }
 
         function editLevel(index, field, value) {
