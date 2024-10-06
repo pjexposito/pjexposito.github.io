@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor JSON de Niveles y Hitos</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        table, th, td { border: 1px solid black; }
+        th, td { padding: 8px; text-align: left; }
+        input[type="text"] { width: 100%; }
+        textarea { width: 100%; resize: none; }
+        select { width: 100%; }
+        .small { width: 60px; } /* Ajuste para combos de Nivel y Tiempo de desbloqueo */
+    </style>
+</head>
+<body>
+
+    <h1>Editor de Niveles y Hitos</h1>
+
+    <input type="file" id="fileInput" accept=".json">
+    <button onclick="downloadJson()">Descargar JSON Editado</button>
+
+    <h2>Niveles</h2>
+    <table id="levelsTable">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Icono</th>
+                <th>Tiempo de Desbloqueo (meses)</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Hitos</h2>
+    <table id="milestonesTable">
+        <thead>
+            <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Estado</th>
+                <th>Nivel</th>
+                <th>Puntos</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        let jsonData;
+
+        document.getElementById('fileInput').addEventListener('change', function(event) {
+            const file = event.target.files[0];
+            const reader = new FileReader();
+
+            reader.onload = function(e) {
+                jsonData = JSON.parse(e.target.result);
+                displayData();
+            };
+
+            reader.readAsText(file);
+        });
+
+        function displayData() {
+            const levelsTableBody = document.getElementById('levelsTable').querySelector('tbody');
+            levelsTableBody.innerHTML = ''; // Limpiar la tabla de niveles
+
+            jsonData.levelInfo.forEach((level, index) => {
+                const row = levelsTableBody.insertRow();
+
+                row.insertCell().innerHTML = `<input type="text" value="${level.name}" onchange="editLevel(${index}, 'name', this.value)">`;
+                row.insertCell().innerHTML = `<input type="text" value="${level.icon}" onchange="editLevel(${index}, 'icon', this.value)">`;
+                row.insertCell().innerHTML = `<select class="small" onchange="editLevel(${index}, 'unlockTime', this.value)">
+                    ${generateOptions(0, 24, level.unlockTime)}
+                </select>`;
+            });
+
+            const milestonesTableBody = document.getElementById('milestonesTable').querySelector('tbody');
+            milestonesTableBody.innerHTML = ''; // Limpiar la tabla de hitos
+
+            jsonData.milestones.forEach((milestone, index) => {
+                const row = milestonesTableBody.insertRow();
+
+                row.insertCell().innerHTML = `<textarea rows="2" onchange="editMilestone(${index}, 'title', this.value)">${milestone.title}</textarea>`;
+                row.insertCell().innerHTML = `<textarea rows="3" onchange="editMilestone(${index}, 'description', this.value)">${milestone.description}</textarea>`;
+                row.insertCell().innerHTML = `<select onchange="editMilestone(${index}, 'status', this.value)">
+                    <option value="pending" ${milestone.status === 'pending' ? 'selected' : ''}>pending</option>
+                    <option value="completed" ${milestone.status === 'completed' ? 'selected' : ''}>completed</option>
+                </select>`;
+                row.insertCell().innerHTML = `<select class="small" onchange="editMilestone(${index}, 'level', this.value)">
+                    ${generateOptions(1, 15, milestone.level)}
+                </select>`;
+                row.insertCell().innerHTML = `<input type="number" value="${milestone.points}" onchange="editMilestone(${index}, 'points', this.value)">`;
+            });
+        }
+
+        function generateOptions(min, max, selectedValue) {
+            let options = '';
+            for (let i = min; i <= max; i++) {
+                options += `<option value="${i}" ${i === selectedValue ? 'selected' : ''}>${i}</option>`;
+            }
+            return options;
+        }
+
+        function editLevel(index, field, value) {
+            jsonData.levelInfo[index][field] = value;
+        }
+
+        function editMilestone(index, field, value) {
+            jsonData.milestones[index][field] = value;
+        }
+
+        function downloadJson() {
+            const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(jsonData, null, 2));
+            const downloadAnchorNode = document.createElement('a');
+            downloadAnchorNode.setAttribute("href", dataStr);
+            downloadAnchorNode.setAttribute("download", "data.json");
+            document.body.appendChild(downloadAnchorNode);
+            downloadAnchorNode.click();
+            downloadAnchorNode.remove();
+        }
+    </script>
+
+</body>
+</html>
