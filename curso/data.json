@@ -2,74 +2,74 @@
   "levelInfo": [
     {
       "name": "Sastrería El Corte Inglés",
-      "icon": "fas fa-tape",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1935-compra-de-la-sasteria-el-corte-ingles.png",
       "unlockTime": 0,
       "description": "Ramón Areces compra una sastrería fundada en 1890 que lleva por nombre El Corte Inglés."
     },
     {
       "name": "Compra edificios Preciados",
-      "icon": "fas fa-building",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1935-apertura-sastreria.png",
       "unlockTime": 0,
       "description": "Se adquiere una finca en la calle Preciados 3 de Madrid."
     },
     {
       "name": "Grandes Almacenes",
-      "icon": "fas fa-shopping-cart",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
       "unlockTime": 0
     },
     {
       "name": "Nace la tarjeta de compra de El Corte Inglés",
-      "icon": "fas fa-credit-card",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-tarjeta-el-corte-ingles.png",
       "unlockTime": 1
     },
     {
       "name": "Se constituye Viajes El Corte Inglés",
-      "icon": "fas fa-globe",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
       "unlockTime": 3
     },
     {
       "name": "Si no queda satisfecho le devolvemos su dinero",
-      "icon": "fas fa-money-bill-wave",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1972.png",
       "unlockTime": 4
     },
     {
       "name": "Hipercor",
-      "icon": "fas fa-store",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1979-creacion-hipercor.png",
       "unlockTime": 6
     },
     {
       "name": "Correduría de Seguros El Corte Inglés",
-      "icon": "fas fa-file-contract",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1982-consititucion-correduria-seguros.png",
       "unlockTime": 8
     },
     {
       "name": "Adquisición de Galerías Preciados",
-      "icon": "fas fa-handshake",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/historia-1995-el-corte-ingles-adquiere-activos-de-la-sociedad-galerias-preciados.png",
       "unlockTime": 12
     },
     {
       "name": "Portugal",
-      "icon": "fas fa-flag",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
       "unlockTime": 14
     },
     {
       "name": "Sfera",
-      "icon": "fas fa-tshirt",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2002-sfera.png",
       "unlockTime": 16
     },
     {
       "name": "Bricor",
-      "icon": "fas fa-tools",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2006-bricor.png",
       "unlockTime": 18
     },
     {
       "name": "Sicor y nueva APP",
-      "icon": "fas fa-mobile-alt",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
       "unlockTime": 20
     },
     {
       "name": "MPOS",
-      "icon": "fas fa-credit-card",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2021-2022.png",
       "unlockTime": 24
     }
   ],
