@@ -4,73 +4,91 @@
       "name": "Sastrería El Corte Inglés",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1935-compra-de-la-sasteria-el-corte-ingles.png",
       "unlockTime": 0,
-      "description": "Ramón Areces compra una sastrería fundada en 1890 que lleva por nombre El Corte Inglés."
+      "description": "1935 .Ramón Areces compra una sastrería fundada en 1890 que lleva por nombre El Corte Inglés."
     },
     {
       "name": "Compra edificios Preciados",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1935-apertura-sastreria.png",
       "unlockTime": 0,
-      "description": "Se adquiere una finca en la calle Preciados 3 de Madrid."
+      "description": "1939. Se adquiere una finca en la calle de Preciados 3, Madrid. Da comienzo una nueva fase al destinarse a la venta las plantas baja, primera y parte de la segunda."
     },
     {
       "name": "Grandes Almacenes",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
-      "unlockTime": 0
+      "unlockTime": 0,
+      "description": "1945-1946. Se realiza la primera reforma integral del edificio de Preciados, al mismo tiempo que se pone en marcha una estructura de venta por departamentos, propia de un gran almacén."
     },
     {
-      "name": "Nace la tarjeta de compra de El Corte Inglés",
+      "name": "Expansión",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
+      "unlockTime": 0,
+      "description": "1962. El Corte Inglés comienza su expansión en la década de los sesenta e inaugura su segundo centro, Plaza Cataluña en Barcelona. Al mismo tiempo abre centros en Sevilla y Bilbao."
+    },
+    {
+      "name": "1966. Nace la tarjeta de compra de El Corte Inglés",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-tarjeta-el-corte-ingles.png",
-      "unlockTime": 1
+      "unlockTime": 1,
+      "description": "1966. Nace la tarjeta de compra de El Corte Inglés, para facilitar la compra a sus clientes."
     },
     {
       "name": "Se constituye Viajes El Corte Inglés",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
-      "unlockTime": 3
+      "unlockTime": 3,
+      "description": "1969. Se constituye la sociedad Viajes El Corte Inglés que ofrece una amplia gama de servicios, así como organización de eventos, congresos y convenciones."
     },
     {
       "name": "Si no queda satisfecho le devolvemos su dinero",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1972.png",
-      "unlockTime": 4
+      "unlockTime": 4,
+      "description": "1972. Aparece impreso por primera vez el slogan “Si no queda satisfecho le devolvemos su dinero”."
     },
     {
       "name": "Hipercor",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1979-creacion-hipercor.png",
-      "unlockTime": 6
+      "unlockTime": 6,
+      "description": "1972. Se crea Hipercor, un nuevo concepto de hipermercado con secciones de textil, bazar, ultramarinos, perecederos y hostelería."
     },
     {
       "name": "Correduría de Seguros El Corte Inglés",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1982-consititucion-correduria-seguros.png",
-      "unlockTime": 8
+      "unlockTime": 8,
+      "description": "1982. Se constituye la Correduría de Seguros del Grupo El Corte Inglés, hoy líder de su sector."
     },
     {
       "name": "Adquisición de Galerías Preciados",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/historia-1995-el-corte-ingles-adquiere-activos-de-la-sociedad-galerias-preciados.png",
-      "unlockTime": 12
+      "unlockTime": 12,
+      "description": "1995. El Corte Inglés adquiere activos de la sociedad Galerías Preciados, empresa que durante décadas fue su gran competidor en grandes almacenes."
     },
     {
       "name": "Portugal",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
-      "unlockTime": 14
+      "unlockTime": 14,
+      "description": "2001. Se inaugura en Lisboa (Portugal) el primer gran almacén de El Corte Inglés en el extranjero."
     },
     {
       "name": "Sfera",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2002-sfera.png",
-      "unlockTime": 16
+      "unlockTime": 16,
+      "description": "2002. Se pone en marcha Sfera, una cadena de tiendas especializadas en moda y complementos que ofrece una gran oferta para mujer, hombre y niños."
     },
     {
       "name": "Bricor",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2006-bricor.png",
-      "unlockTime": 18
+      "unlockTime": 18,
+      "description": "2006. Se inaugura la primera tienda de Bricor, cadena especializada en bricolaje y decoración del Grupo."
+    },
+    {
+      "name": "Click&Express",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2015-servicio-clickexpress.png",
+      "unlockTime": 20,
+      "description": "2015. Se lanza el servicio Click&Express que permite realizar la compra online y recibir el pedido en el domicilio en menos de dos horas o en la franja horaria que elija el destinatario."
     },
     {
       "name": "Sicor y nueva APP",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
-      "unlockTime": 20
-    },
-    {
-      "name": "MPOS",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2021-2022.png",
-      "unlockTime": 24
+      "unlockTime": 24,
+      "description": "2020. Lanzamos la nueva app y la tarifa plana, El Corte Inglés Plus."
     }
   ],
   "milestones": [
@@ -383,6 +401,16 @@
       "description": "Colabora.",
       "content": "Curso de centros.",
       "level": 14,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 29,
+      "status": "pending",
+      "title": "Cuestionario final",
+      "description": "Tras dos años, es hora de que nos cuentes tu experiencia.",
+      "content": "Curso de centros.",
+      "level": 15,
       "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     }

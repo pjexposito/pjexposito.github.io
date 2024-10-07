@@ -67,11 +67,12 @@
             align-items: center;
         }
         .level-image {
-            width: 40px;
-            height: 40px;
-            margin-right: 10px;
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
             object-fit: cover;
-            border-radius: 50%;
+            border-radius: 10%;
+            overflow: hidden;
         }
         .level-status {
             margin-left: auto;
@@ -394,7 +395,9 @@
                 levelElement.className = `level level-${levelStatus} ${isLocked ? 'level-locked' : ''}`;
                 levelElement.innerHTML = `
                     <div class="level-title">
-                        <img src="${levelData.imageUrl}" alt="${levelData.name}" class="level-image">
+                        <div class="level-image">
+                            <img src="${levelData.imageUrl}" alt="${levelData.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
                         ${levelData.name}
                         <span class="level-status status-${levelStatus}">
                             ${isLocked ? `Disponible en ${formatDate(unlockDate)}` : 
