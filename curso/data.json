@@ -3,12 +3,14 @@
     {
       "name": "Sastrería El Corte Inglés",
       "icon": "fas fa-tape",
-      "unlockTime": 0
+      "unlockTime": 0,
+      "description": "Ramón Areces compra una sastrería fundada en 1890 que lleva por nombre El Corte Inglés."
     },
     {
       "name": "Compra edificios Preciados",
       "icon": "fas fa-building",
-      "unlockTime": 0
+      "unlockTime": 0,
+      "description": "Se adquiere una finca en la calle Preciados 3 de Madrid."
     },
     {
       "name": "Grandes Almacenes",
@@ -82,7 +84,8 @@
       "points": 10,
       "url": "https://www.elcorteingles.es/",
       "type": "web",
-      "webURL": "editor.html"
+      "webURL": "editor.html",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/06/el-corte-ingles-triangulo.png"
     },
     {
       "id": 2,
@@ -136,7 +139,8 @@
       "content": "Acceso a AULA ECI",
       "level": 2,
       "points": 20,
-      "url": "https://www.elcorteingles.es/formacion-ventas/"
+      "url": "https://www.elcorteingles.es/formacion-ventas/",
+      "imageUrl":"https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/28/el-grupo-abre-un-establecimiento-de-el-corte-ingles-e-hipercor-en-la-ciudad-de-e-mini-1180x535.jpg"
     },
     {
       "id": 6,
