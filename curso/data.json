@@ -152,7 +152,7 @@
     },
     {
       "id": 9,
-      "status": "pending",
+      "status": "completed",
       "title": "Role-playing en ventas avanzadas",
       "description": "Un ejercicio donde los empleados simulan situaciones desafiantes en las ventas para mejorar sus habilidades de negociación.",
       "content": "Video o texto explicativo.",
@@ -162,7 +162,7 @@
     },
     {
       "id": 10,
-      "status": "pending",
+      "status": "completed",
       "title": "Ciclo de charlas internas con líderes",
       "description": "Charlas con directivos sobre áreas como Omnicanalidad, Seguridad, PRL, RRHH, etc.",
       "content": "Video o texto explicativo.",
@@ -172,7 +172,7 @@
     },
     {
       "id": 11,
-      "status": "pending",
+      "status": "completed",
       "title": "Recorrido por distintas áreas de la tienda",
       "description": "Experimentar cómo se gestiona cada área de la tienda para entender la operación integral.",
       "content": "Comentarios.",
@@ -184,7 +184,7 @@
     },
     {
       "id": 12,
-      "status": "pending",
+      "status": "completed",
       "title": "Team Building: ",
       "description": "Actividades de cohesión y fortalecimiento de relaciones entre equipos.",
       "content": "Aquí el contenido",
@@ -196,7 +196,7 @@
     },
     {
       "id": 13,
-      "status": "pending",
+      "status": "completed",
       "title": "Superación del periodo de prueba",
       "description": "Al superar el periodo de prueba, se premia al empleado por su integración inicial.",
       "content": "Evaluación de conocimientos y habilidades adquiridas en los primeros tres meses.",
@@ -206,7 +206,7 @@
     },
     {
       "id": 14,
-      "status": "pending",
+      "status": "completed",
       "title": "Rotación entre departamentos",
       "description": "Rota temporalmente entre diferentes secciones de la tienda para entender las áreas de diversificación (viajes, seguros, etc.).",
       "content": "Contenido.",
@@ -216,7 +216,7 @@
     },
     {
       "id": 15,
-      "status": "pending",
+      "status": "completed",
       "title": "Simulación de gestión de clientes de servicios: ",
       "description": "Experimenta cómo gestionar servicios, no solo productos, como parte del crecimiento de la empresa.",
       "content": "Integración, claridad de funciones, ambiente laboral, oportunidades de mejora",
@@ -226,7 +226,7 @@
     },
     {
       "id": 16,
-      "status": "pending",
+      "status": "completed",
       "title": "Proyecto colaborativo entre departamentos",
       "description": "Colaborar en un proyecto que involucre diferentes áreas de la tienda, reforzando la idea de diversificación.",
       "content": "Contenido",
@@ -236,7 +236,7 @@
     },
     {
       "id": 17,
-      "status": "pending",
+      "status": "completed",
       "title": "Formación en herramientas digitales",
       "description": "Los empleados reciben capacitación en el uso de herramientas tecnológicas que apoyan la transformación digital.",
       "content": "Curso de SAP.",
@@ -246,7 +246,7 @@
     },
     {
       "id": 18,
-      "status": "pending",
+      "status": "completed",
       "title": "Proyecto de innovación tecnológica",
       "description": "Participación en un proyecto que busque integrar nuevas tecnologías en el proceso de atención al cliente o ventas.",
       "content": "Por definir.",
@@ -256,7 +256,7 @@
     },
     {
       "id": 19,
-      "status": "pending",
+      "status": "completed",
       "title": "Hackathon interno",
       "description": "Un evento donde se proponen y desarrollan ideas innovadoras para mejorar los procesos dentro de la empresa.",
       "content": "Hackathon",
@@ -377,11 +377,81 @@
     {
       "id": 31,
       "status": "pending",
-      "title": "Taller de liderazgo en ventas:  (semana",
+      "title": "Taller de liderazgo en ventas",
       "description": "Un taller enfocado en las habilidades de liderazgo, desde la atención al cliente hasta la gestión de equipos.",
       "content": "Por definir.",
       "level": 8,
       "points": 4000,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 32,
+      "status": "pending",
+      "title": "Formación avanzada en e-commerce",
+      "description": "Recibe una capacitación intensiva en las últimas tendencias de comercio electrónico.",
+      "content": "Por definir.",
+      "level": 9,
+      "points": 5000,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 33,
+      "status": "pending",
+      "title": "Participación en proyectos de transformación digital",
+      "description": "Participa en un proyecto real de innovación, contribuyendo a mejorar la experiencia de cliente digital.",
+      "content": "Por definir.",
+      "level": 9,
+      "points": 6500,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 34,
+      "status": "pending",
+      "title": "Hackathon de innovación en experiencia de cliente",
+      "description": "Crear y proponer mejoras para la experiencia de compra online o en tienda.",
+      "content": "Por definir.",
+      "level": 9,
+      "points": 7500,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 35,
+      "status": "pending",
+      "title": "Acceso a eventos exclusivos",
+      "description": "Participación en eventos corporativos de alto nivel, donde se reconoce a los empleados como parte del legado de la empresa.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 1500,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 36,
+      "status": "pending",
+      "title": "Mentoría de empleados de alto rendimiento",
+      "description": "Los empleados de este nivel actúan como mentores de otros colaboradores, transmitiendo el conocimiento y la cultura de la empresa.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 5000,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 37,
+      "status": "pending",
+      "title": "Almuerzo con la dirección",
+      "description": "Una experiencia exclusiva donde los empleados de nivel Leyenda son reconocidos por su crecimiento.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 1500,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 38,
+      "status": "pending",
+      "title": "Recomendación de candidatos",
+      "description": "Recomienda un candidato y si supera el periodo de prueba gana puntos.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 8500,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     }
   ]
