@@ -1,28 +1,28 @@
 {
   "levelInfo": [
     {
-      "name": "Sastrería El Corte Inglés",
+      "name": "Fundación (1940)",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1935-compra-de-la-sasteria-el-corte-ingles.png",
       "unlockTime": 0,
-      "description": "1935 .Ramón Areces compra una sastrería fundada en 1890 que lleva por nombre El Corte Inglés."
+      "description": "1940. Texto descriptivo de la fundación de ECI."
     },
     {
-      "name": "Compra edificios Preciados",
+      "name": "Expansión comercial (1950s)",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1935-apertura-sastreria.png",
       "unlockTime": 0,
-      "description": "1939. Se adquiere una finca en la calle de Preciados 3, Madrid. Da comienzo una nueva fase al destinarse a la venta las plantas baja, primera y parte de la segunda."
+      "description": "Texto descriptivo"
     },
     {
-      "name": "Grandes Almacenes",
+      "name": "Consolidación como lider del mercado (1960s)",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
       "unlockTime": 0,
-      "description": "1945-1946. Se realiza la primera reforma integral del edificio de Preciados, al mismo tiempo que se pone en marcha una estructura de venta por departamentos, propia de un gran almacén."
+      "description": "Texto descriptivo."
     },
     {
-      "name": "Expansión",
+      "name": "Diversificación de servicios (1970s)",
       "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
       "unlockTime": 0,
-      "description": "1962. El Corte Inglés comienza su expansión en la década de los sesenta e inaugura su segundo centro, Plaza Cataluña en Barcelona. Al mismo tiempo abre centros en Sevilla y Bilbao."
+      "description": "Texto descriptivo."
     },
     {
       "name": "1966. Nace la tarjeta de compra de El Corte Inglés",
@@ -95,7 +95,7 @@
     {
       "id": 1,
       "status": "completed",
-      "title": "Lectura y firma de contrato (v2)",
+      "title": "Formación inicial Online",
       "description": "Lectura y entrega del contrato, mod 145 y planificación.",
       "content": "Bienvenido a tu primer día. Aquí encontrarás información importante sobre tu contrato y los primeros pasos en la empresa.",
       "level": 1,
