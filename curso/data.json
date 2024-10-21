@@ -2,95 +2,65 @@
   "levelInfo": [
     {
       "name": "Fundación (1940)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1935-compra-de-la-sasteria-el-corte-ingles.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1940-constitucion-el-corte-ingles.png",
       "unlockTime": 0,
       "description": "Nacimiento de El Corte Inglés como una pequeña sastrería en Madrid."
     },
     {
       "name": "Expansión comercial (1950s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1935-apertura-sastreria.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
       "unlockTime": 2,
       "description": "El Corte Inglés comienza a expandirse y diversificarse, convirtiéndose en una tienda por departamentos en los años 50."
     },
     {
       "name": "Consolidación como lider del mercado (1960s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
       "unlockTime": 4,
       "description": "En la década de 1960, El Corte Inglés se consolidó como una de las principales tiendas por departamentos en España."
     },
     {
       "name": "Diversificación de servicios (1970s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
       "unlockTime": 7,
       "description": "El Corte Inglés comienza a diversificar sus servicios con la creación de empresas subsidiarias como Viajes El Corte Inglés y Seguros."
     },
     {
       "name": "Transformación Digital (1990s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-tarjeta-el-corte-ingles.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1988-constitucion-informatica-el-corte-ingles.png",
       "unlockTime": 9,
       "description": "A partir de los años 90, El Corte Inglés invierte en tecnología y se adapta a la era digital."
     },
     {
       "name": "Apertura Internacional (2000s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
       "unlockTime": 12,
       "description": "El Corte Inglés explora la expansión internacional y la apertura a mercados exteriores, estableciendo su marca fuera de España."
     },
     {
       "name": "Innovación y Sostenibilidad (2010s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/1972.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2010-gourmet-experience.png",
       "unlockTime": 15,
       "description": "La empresa se enfoca en la innovación, la sostenibilidad y el comercio ético, lanzando campañas para mejorar su huella ambiental."
     },
     {
       "name": "Referente del Comercio Español (2015)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1979-creacion-hipercor.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2015-servicio-clickexpress.png",
       "unlockTime": 18,
       "description": "El Corte Inglés se reafirma como un referente en el comercio español, siendo un pilar de la economía y la cultura del país."
     },
     {
       "name": "Liderazgo en Innovación Digital (2020)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1982-consititucion-correduria-seguros.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
       "unlockTime": 19,
       "description": "Con la pandemia, El Corte Inglés acelera su transformación digital, convirtiéndose en líder en e-commerce y servicios online."
     },
     {
       "name": "Leyenda de El Corte Inglés",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/historia-1995-el-corte-ingles-adquiere-activos-de-la-sociedad-galerias-preciados.png",
+      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2021-2022.png",
       "unlockTime": 22,
       "description": "Este nivel representa a aquellos empleados que se han convertido en una parte fundamental de la historia y el legado de la empresa."
-    },
-    {
-      "name": "Portugal",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
-      "unlockTime": 14,
-      "description": "2001. Se inaugura en Lisboa (Portugal) el primer gran almacén de El Corte Inglés en el extranjero."
-    },
-    {
-      "name": "Sfera",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2002-sfera.png",
-      "unlockTime": 16,
-      "description": "2002. Se pone en marcha Sfera, una cadena de tiendas especializadas en moda y complementos que ofrece una gran oferta para mujer, hombre y niños."
-    },
-    {
-      "name": "Bricor",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2006-bricor.png",
-      "unlockTime": 18,
-      "description": "2006. Se inaugura la primera tienda de Bricor, cadena especializada en bricolaje y decoración del Grupo."
-    },
-    {
-      "name": "Click&Express",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2015-servicio-clickexpress.png",
-      "unlockTime": 20,
-      "description": "2015. Se lanza el servicio Click&Express que permite realizar la compra online y recibir el pedido en el domicilio en menos de dos horas o en la franja horaria que elija el destinatario."
-    },
-    {
-      "name": "Sicor y nueva APP",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
-      "unlockTime": 24,
-      "description": "2020. Lanzamos la nueva app y la tarifa plana, El Corte Inglés Plus."
     }
-  ],
+],
   "milestones": [
     {
       "id": 1,
@@ -157,8 +127,7 @@
       "content": "Aquí el contenido",
       "level": 2,
       "points": 300,
-      "url": "https://www.elcorteingles.es/formacion-ventas/",
-      "imageUrl":"https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/28/el-grupo-abre-un-establecimiento-de-el-corte-ingles-e-hipercor-en-la-ciudad-de-e-mini-1180x535.jpg"
+      "url": "https://www.elcorteingles.es/formacion-ventas/"
     },
     {
       "id": 7,
@@ -168,7 +137,8 @@
       "content": "Aquí el contenido",
       "level": 2,
       "points": 350,
-      "url": "https://www.elcorteingles.es/catalogo-productos/"
+      "url": "https://www.elcorteingles.es/catalogo-productos/",
+      "imageUrl":"https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/28/el-grupo-abre-un-establecimiento-de-el-corte-ingles-e-hipercor-en-la-ciudad-de-e-mini-1180x535.jpg"
     },
     {
       "id": 8,
