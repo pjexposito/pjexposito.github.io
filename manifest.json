@@ -38,5 +38,10 @@
       "density": "1",
       "purpose": "maskable"
     }	
+  ],
+  "url_handlers": [
+    {
+      "url_scheme": "fppapp"
+    }
   ]
 }
