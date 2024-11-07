@@ -2,61 +2,71 @@
   "levelInfo": [
     {
       "name": "Fundación (1940)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1940-constitucion-el-corte-ingles.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1940-constitucion-el-corte-ingles.png",
+      "imageUrl":"multimedia/in1.jpeg",
       "unlockTime": 0,
       "description": "Nacimiento de El Corte Inglés como una pequeña sastrería en Madrid."
     },
     {
       "name": "Expansión comercial (1950s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
+      "imageUrl":"multimedia/in2.jpeg",
       "unlockTime": 2,
       "description": "El Corte Inglés comienza a expandirse y diversificarse, convirtiéndose en una tienda por departamentos en los años 50."
     },
     {
       "name": "Consolidación como lider del mercado (1960s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
+      "imageUrl":"multimedia/in3.jpeg",
       "unlockTime": 4,
       "description": "En la década de 1960, El Corte Inglés se consolidó como una de las principales tiendas por departamentos en España."
     },
     {
       "name": "Diversificación de servicios (1970s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
+      "imageUrl":"multimedia/in4.jpeg",
       "unlockTime": 7,
       "description": "El Corte Inglés comienza a diversificar sus servicios con la creación de empresas subsidiarias como Viajes El Corte Inglés y Seguros."
     },
     {
       "name": "Transformación Digital (1990s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1988-constitucion-informatica-el-corte-ingles.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1988-constitucion-informatica-el-corte-ingles.png",
+      "imageUrl":"multimedia/in5.jpeg",
       "unlockTime": 9,
       "description": "A partir de los años 90, El Corte Inglés invierte en tecnología y se adapta a la era digital."
     },
     {
       "name": "Apertura Internacional (2000s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
+      "imageUrl":"multimedia/in6.jpeg",
       "unlockTime": 12,
       "description": "El Corte Inglés explora la expansión internacional y la apertura a mercados exteriores, estableciendo su marca fuera de España."
     },
     {
       "name": "Innovación y Sostenibilidad (2010s)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2010-gourmet-experience.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2010-gourmet-experience.png",
+      "imageUrl":"multimedia/in7.jpeg",
       "unlockTime": 15,
       "description": "La empresa se enfoca en la innovación, la sostenibilidad y el comercio ético, lanzando campañas para mejorar su huella ambiental."
     },
     {
       "name": "Referente del Comercio Español (2015)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2015-servicio-clickexpress.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2015-servicio-clickexpress.png",
+      "imageUrl":"multimedia/in8.jpeg",
       "unlockTime": 18,
       "description": "El Corte Inglés se reafirma como un referente en el comercio español, siendo un pilar de la economía y la cultura del país."
     },
     {
       "name": "Liderazgo en Innovación Digital (2020)",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
+      "imageUrl":"multimedia/in9.jpeg",
       "unlockTime": 19,
       "description": "Con la pandemia, El Corte Inglés acelera su transformación digital, convirtiéndose en líder en e-commerce y servicios online."
     },
     {
       "name": "Leyenda de El Corte Inglés",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2021-2022.png",
+      "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2021-2022.png",
+      "imageUrl":"multimedia/in10.jpeg",
       "unlockTime": 22,
       "description": "Este nivel representa a aquellos empleados que se han convertido en una parte fundamental de la historia y el legado de la empresa."
     }
@@ -65,56 +75,89 @@
     {
       "id": 1,
       "status": "completed",
-      "title": "Visita guiada virtual a la historia de El Corte Inglés",
-      "description": "Una experiencia que muestra cómo comenzó la empresa como sastrería en Madrid.",
-      "content": "Contenido de la experiencia virtual.",
+      "title": "Video de bienvenida",
+      "description": "Bienvenido a ECI.",
+      "content": "Video bienvenida.",
       "level": 1,
-      "points": 200,
-      "url": "https://www.elcorteingles.es/",
-      "type": "web",
-      "webURL": "editor.html",
-      "imageUrl": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/06/el-corte-ingles-triangulo.png"
+      "points": 20,
+      "url": "",
+      "type": "video",
+      "videoUrl": "multimedia/E0R456YHB.mp4"
     },
     {
       "id": 2,
       "status": "completed",
-      "title": "Bienvenida",
-      "description": "Evento de bienvenida con tus compañeros, con un enfoque en la misión y los valores fundacionales.",
+      "title": "Video de la historia de ECI",
+      "description": "Video que te mostrará la evolución de la empresa desde sus orígenes a la actualidad.",
       "content": "Contenido",
       "level": 1,
-      "points": 300,
+      "points": 20,
       "url": "https://www.elcorteingles.es/informacioncorporativa/"
     },
     {
       "id": 3,
       "status": "completed",
-      "title": "Mentoría de Bienvenida",
-      "description": "Un empleado con más antigüedad actúa como mentor, ayudando en la adaptación.",
-      "content": "Contenido.",
+      "title": "Formación en PRL",
+      "description": "Prevención de riesgos laborales. Seguridad y Salud en venta en Centro Comercial.",
+      "content": "ID: PPRNP0187_AUL@ECI.",
       "level": 1,
-      "points": 400,
-      "url": "https://www.elcorteingles.es/informacioncorporativa/"
+      "points": 20,
+      "url": "https://www.elcorteingles.es/recursos-humanos/desarrollo-profesional/",
+      "type": "web",
+      "webURL": "https://pjexposito.github.io/curso/index.html"
+    },
+        {
+      "id": 3,
+      "status": "completed",
+      "title": "Formación",
+      "description": "Personal de venta en Centros Comerciales.",
+      "content": "ID: 42067_AUL@ECI.",
+      "level": 1,
+      "points": 20,
+      "url": "https://www.elcorteingles.es/recursos-humanos/desarrollo-profesional/",
+      "type": "web",
+      "webURL": "https://pjexposito.github.io/curso/index.html"
     },
     {
       "id": 4,
       "status": "completed",
-      "title": "Programas de Bienestar",
-      "description": "Involucra actividades deportivas, mindfulness, acceso a terapias, asesoramiento nutricional, y apoyo emocional. ",
-      "content": "El objetivo es la promoción del bienestar físico y emocional durante el periodo de adaptación.",
+      "title": "Formación",
+      "description": "Código ético ",
+      "content": "DTL**0020.",
       "level": 1,
-      "points": 500,
-      "url": "https://www.elcorteingles.es/recursos-humanos/",
-      "type": "video",
-      "videoUrl": "https://www.w3schools.com/html/mov_bbb.mp4"
+      "points": 20,
+      "url": "https://www.elcorteingles.es/recursos-humanos/desarrollo-profesional/",
+      "type": "web",
+      "webURL": "https://pjexposito.github.io/curso/index.html"
     },
     {
       "id": 5,
       "status": "completed",
-      "title": "Participación en un taller de ventas",
-      "description": "Los nuevos empleados aprenden las técnicas de ventas que fueron clave en la expansión comercial de El Corte Inglés.",
+      "title": "Presentación de la jefatura directa y del equipo.",
+      "description": "Conoce con quién vas a trabajar",
       "content": "Aquí el contenido",
-      "level": 2,
-      "points": 500,
+      "level": 1,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/formacion-ventas/"
+    },
+    {
+      "id": 5,
+      "status": "completed",
+      "title": "Visita guiada por el centro a cargo del ECI Mentor.",
+      "description": "Conoce dónde vas a trabajar",
+      "content": "Aquí el contenido",
+      "level": 1,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/formacion-ventas/"
+    },
+    {
+      "id": 5,
+      "status": "completed",
+      "title": "Encuesta de satisfacción.",
+      "description": "¿Cómo te sientes?",
+      "content": "Aquí el contenido",
+      "level": 1,
+      "points": 50,
       "url": "https://www.elcorteingles.es/recursos-humanos/desarrollo-profesional/",
       "type": "web",
       "webURL": "https://pjexposito.github.io/curso/index.html"
