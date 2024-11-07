@@ -1,0 +1,920 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Desarrollo Profesional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --color-completed: #4CAF50;
+            --color-in-progress: #FF9800;
+            --color-pending: #9C27B0;
+            --primary-bg: #f4f4f4;
+            --primary-text: #333;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: var(--primary-text);
+            background-color: var(--primary-bg);
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .timeline {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+        }
+        .level {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .level-completed { 
+            background-color: #e8f5e9; 
+            border: 2px solid var(--color-completed);
+        }
+        .level-in-progress { 
+            background-color: #fff3e0; 
+            border: 2px solid var(--color-in-progress);
+        }
+        .level-pending { 
+            background-color: #f3e5f5; 
+            border: 2px solid var(--color-pending);
+            opacity: 0.7;
+        }
+        .level-title {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            display: flex;
+            align-items: center;
+        }
+        .level-image {
+            width: 100px;
+            height: 100px;
+            margin-right: 20px;
+            object-fit: cover;
+            border-radius: 10%;
+            overflow: hidden;
+        }
+        .level-status {
+            margin-left: auto;
+            font-size: 0.8em;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-weight: normal;
+        }
+        .status-completed {
+            background-color: var(--color-completed);
+            color: white;
+        }
+        .status-in-progress {
+            background-color: var(--color-in-progress);
+            color: white;
+        }
+        .status-pending {
+            background-color: var(--color-pending);
+            color: white;
+        }
+        .milestone {
+            border-left: 2px solid #3498db;
+            padding-left: 20px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .milestone:last-child {
+            border-left: none;
+        }
+        .milestone::before {
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: -7px;
+            top: 0;
+        }
+        .milestone-header {
+            display: flex;
+            align-items: center;
+        }
+
+        .clickable {
+            cursor: pointer;
+        }
+        .non-clickable {
+            cursor: default;
+        }
+        .milestone-icon {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+        .milestone-title {
+            font-weight: bold;
+            margin: 0;
+        }
+        .milestone-description {
+            margin: 5px 0;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        .level-separator {
+            border-top: 2px dashed #bdc3c7;
+            margin: 20px 0;
+        }
+        .points-display {
+            display: none;
+        	z-index: 1000;
+
+            text-align: center;
+            position: fixed;
+            top: 10px;
+            right: 20px;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 5px;
+            border-radius: 20px;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        .points-display .level {
+            margin-bottom: 2px;
+            border-bottom: 1px solid rgba(255,255,255,0.3);
+            padding-bottom: 2px;
+            padding-top: 2px;
+            
+
+        }
+        .goal {
+            background-color: #f1c40f;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .goal h2 {
+            color: #2c3e50;
+            margin: 0;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            transition: opacity 0.3s ease;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .close:hover,
+        .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        .modal-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .modal-button:hover {
+            background-color: #2980b9;
+        }
+        .intro-section {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px var(--shadow-color);
+            line-height: 1.6;
+        }
+        .intro-section h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .level-locked {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+        .blurred-content, .level-locked .milestone {
+            filter: blur(1px);
+        }
+
+        .blurred-content {
+            user-select: none;
+        }
+        .level-locked .level-status {
+            background-color: #95a5a6;
+        }
+        .level-description {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+        .milestone-image {
+            display: block;         /* Hace que la imagen se comporte como un bloque */
+            max-width: 60%;
+            height: auto;
+            border-radius: 10px;
+            margin: 10px auto;      /* Centra la imagen horizontalmente */
+
+        }
+        
+        /* Estilos del popup */
+        .popup {
+            position: fixed;
+            top: 15%;
+            left: -300px; /* Fuera de la vista */
+            transform: translateY(-50%);
+            width: 300px;
+            background: #3498db;
+            color: white;
+            border: 1px solid #ccc;
+            border-radius: 5px 5px 5px 5px;
+
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: left 0.3s ease; /* Transición suave */
+            padding: 20px;
+            z-index: 1000;
+            cursor: pointer; /* Cambiar cursor para indicar que es clickeable */
+        }
+
+        .popup.visible {
+            left: 20px; /* Se desliza a la vista */
+        }
+
+        .close {
+            cursor: pointer;
+            color: black;
+            float: right;
+            font-size: 20px;
+        }
+
+        /* Fondo oscuro para el popup */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* Oculto por defecto */
+            z-index: 999;
+        }
+
+        .overlay.visible {
+            display: block; /* Se muestra cuando es visible */
+        }
+
+        /* Estilos del checkbox */
+        .checkbox-container {
+            margin-top: 20px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        /* Nuevo estilo para los puntos del hito */
+        .milestone-points {
+            font-size: 0.8em;
+            color: #3498db;
+            margin-left: 5px;
+        }
+
+        /* Estilo para el selector de fecha */
+        #startDate {
+            margin-top: 10px;
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        
+        /* Barra de navegación fija */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #3498db;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 5px 0;
+            z-index: 5000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            padding: 7px 20px;
+            transition: background 0.3s;
+        }
+        .navbar button:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Contenedor de logros */
+        .achievements-modal, .user-modal {
+            display: none;
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            background-color: #fff;
+            width: 80%;
+            max-width: 400px;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1001;
+        }
+        .achievements-modal .close-achievements,
+        .user-modal .close-user {
+            float: right;
+            cursor: pointer;
+            font-size: 1.5em;
+            color: #aaa;
+        }
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+        }
+        .achievement-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .achievement-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .achievement-item:hover .achievement-description {
+            opacity: 1;
+        }
+        .achievement-description {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            text-align: center;
+            padding: 10px;
+            font-size: 0.9em;
+        }
+        
+        /* Logros en niveles no completados */
+        .achievement-item.incomplete img {
+            filter: grayscale(100%);
+            opacity: 0.7;
+        }
+
+        .achievement-item.complete img {
+            filter: none;
+            opacity: 1;
+        }
+
+        /* Modal de Usuario */
+        .user-modal-content {
+            font-size: 1.1em;
+            color: #2c3e50;
+            line-height: 1.5;
+        }
+        
+.video-container {
+    width: 100%;  /* Ajusta al 100% del contenedor */
+    height: 500px; /* Ajusta la altura que necesites */
+    overflow: hidden; /* Para evitar que el video se desborde */
+}
+
+.video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  /* Ajusta el video para que encaje dentro del div sin distorsión */
+    object-position: center; /* Centra el video dentro del contenedor */
+}
+
+.lista-recompensas {
+    list-style-type: none; /* Quita el bullet original */
+    padding-left: 20px; /* Espacio desde el borde izquierdo del contenedor */
+}
+
+.lista-recompensas li {
+    position: relative; /* Permite posicionar el ::before en relación al li */
+    margin-bottom: 5px; /* Espacio entre elementos de la lista */
+    padding-left: 30px; /* Añade espacio entre el bullet personalizado y el texto */
+}
+
+.lista-recompensas li::before {
+    content: "\1F3C6"; /* Carácter Unicode del trofeo 🏆 */
+    position: absolute; /* Posiciona el trofeo en relación al li */
+    left: 0; /* Alinea el trofeo a la izquierda del li */
+    color: #333; /* Color del trofeo */
+    font-size: 1.2em; /* Ajusta el tamaño del trofeo */
+}
+</style>
+</head>
+<body>
+    <!-- Barra de navegación fija -->
+    <div class="navbar">
+        <button onclick="showSection('desarrollo')">Mi Desarrollo Profesional</button>
+        <button onclick="showSection('cursos')">Mis Cursos</button>
+        <button onclick="toggleAchievementsModal()">Mis Logros</button>
+        <button onclick="toggleRecompensasModal()">Recompensas</button>
+        <button onclick="toggleUserModal()">Mis datos</button>
+
+    </div>
+    
+    <!-- Contenedor de logros -->
+    <div id="achievementsModal" class="achievements-modal">
+        <span class="close-achievements" onclick="toggleAchievementsModal()">&times;</span>
+        <h2>Mis Logros</h2>
+        <div class="achievements-grid">
+            <!-- Ejemplo de logros con imágenes -->
+            <div class="achievement-item complete">
+                <img src="multimedia/in1.jpeg" alt="Logro 1">
+                <div class="achievement-description">Logro 1 - Descripción</div>
+            </div>
+            <div class="achievement-item complete">
+                <img src="multimedia/in2.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <div class="achievement-item complete">
+                <img src="multimedia/in3.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <div class="achievement-item complete">
+                <img src="multimedia/in4.jpeg" alt="Logro 1">
+                <div class="achievement-description">Logro 1 - Descripción</div>
+            </div>
+            <div class="achievement-item complete">
+                <img src="multimedia/in5.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <div class="achievement-item incomplete">
+                <img src="multimedia/in6.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <div class="achievement-item incomplete">
+                <img src="multimedia/in7.jpeg" alt="Logro 1">
+                <div class="achievement-description">Logro 1 - Descripción</div>
+            </div>
+            <div class="achievement-item incomplete">
+                <img src="multimedia/in8.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <div class="achievement-item incomplete">
+                <img src="multimedia/in9.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <div class="achievement-item incomplete">
+                <img src="multimedia/in10.jpeg" alt="Logro 2">
+                <div class="achievement-description">Logro 2 - Descripción</div>
+            </div>
+            <!-- Repite hasta tener 10 logros -->
+        </div>
+    </div>
+    
+    <!-- Contenedor de recompensas -->
+    <div id="recompensasModal" class="achievements-modal">
+        <span class="close-achievements" onclick="toggleRecompensasModal()">&times;</span>
+        <h2>Recompensas ganadas</h2>
+        <div>
+        <ul class="lista-recompensas">
+            <li>28-05-2024: Tarjeta regalo 10€</li>
+            <li>15-09-2024: Formación Experto en Regalos</li>
+            <li>7-10-2024: Entrevista en Nexo</li>
+        </ul>
+        </div>
+    </div>
+
+    
+        <!-- Contenedor de Usuario -->
+    <div id="userModal" class="user-modal">
+        <span class="close-user" onclick="toggleUserModal()">&times;</span>
+        <h2>Información del Usuario</h2>
+        <div class="user-modal-content">
+            <p id="userCurrentLevel"></p>
+            <p id="userPoints"></p>
+            <p id="userStartDate"></p>
+        </div>
+    </div>
+    
+    <!-- Menú de depuración ocultable con solapa -->
+    <div class="popup" id="popup" onclick="togglePopup()">
+        <span class="close" onclick="closePopup(event)">&times;</span>
+        <p id="popupContent"></p>
+
+        <div class="checkbox-container">
+            <label>
+                <input type="checkbox" id="toggleBlur" onclick="toggleBlur(event)">Eliminar desenfoque
+            </label>
+            <div>
+                <label for="startDate">Fecha de inicio:</label>
+                <input type="date" id="startDate">
+            </div>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay" onclick="closePopup()"></div>
+    <div class="container" style="margin-top: 60px;">
+        <h1>Desarrollo Profesional</h1>
+        
+        <div class="intro-section">
+            <h2>Bienvenido a "Mi Desarrollo Profesional"</h2>
+            <p>Desde que, en 1935 Ramón Areces Rodríguez compró una pequeña sastrería en la calle
+            Preciados, hemos crecido y llegado hasta lo que somos hoy "El Corte Inglés".</p>
+            <p>A través de esta aplicación, hemos creado una línea de tiempo donde podrás conocer nuestra historia, cultura y los hitos que hemos alcanzado.</p>
+            <p>En cada etapa, podrás explorar nuestras oportunidades de desarrollo profesional y capacitación y cómo puedes ser parte de nuestra historia. ¡Tu historia comienza aquí!</p>
+        </div>
+
+        <div class="points-display">
+            <div class="level" id="currentLevel">Nivel: 1</div>
+            <div class="level" id ="pointsDisplay">Puntos: 0</div>
+            <div class="level" id="currentDate">Nivel: 1</div>
+
+        </div>
+        <div class="timeline" id="timeline"></div>
+        <div class="goal">
+            <h2>Meta: 24 meses</h2>
+            <p>¡Felicidades por completar tu desarrollo profesional!</p>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="modal-content">
+
+            <span class="close" onclick="toggleContentModal()">&times;</span>
+            <div id="modalContent"></div>
+        </div>
+    </div>
+
+    <script>
+    let levelInfo = [];
+    let milestones = [];
+    let totalPoints = 0;
+    let currentLevel = 5;
+
+    async function loadData() {
+        try {
+            const response = await fetch('data.json');
+            const data = await response.json();
+            levelInfo = data.levelInfo;
+            milestones = data.milestones;
+            
+            // Inicializar el selector de fecha
+            const startDateInput = document.getElementById('startDate');
+            const threeMonthsAgo = new Date();
+            threeMonthsAgo.setMonth(threeMonthsAgo.getMonth() - 15);
+            startDateInput.valueAsDate = threeMonthsAgo;
+
+            startDateInput.addEventListener('change', renderTimeline);
+            
+            renderTimeline();
+        } catch (error) {
+            console.error('Error loading data:', error);
+        }
+    }
+
+
+        // Muestra u oculta el modal de logros
+        function toggleAchievementsModal() {
+            const modal = document.getElementById('achievementsModal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+        // Muestra u oculta el modal de logros
+        function toggleRecompensasModal() {
+            const modal = document.getElementById('recompensasModal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Oculta el modal de contenido
+        function toggleContentModal() {
+            const modal = document.getElementById('modal');
+            modal.style.display = modal.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Muestra u oculta el modal de usuario
+        function toggleUserModal() {
+            const userModal = document.getElementById('userModal');
+            const currentLevel = document.getElementById('currentLevel').textContent;
+            const pointsDisplay = document.getElementById('pointsDisplay').textContent;
+            const currentDateDisplay = document.getElementById('currentDate').textContent;
+
+            // Actualizar contenido de usuario con los datos actuales
+            document.getElementById('userCurrentLevel').textContent = currentLevel;
+            document.getElementById('userPoints').textContent = pointsDisplay;
+            document.getElementById('userStartDate').textContent = currentDateDisplay;
+
+            userModal.style.display = userModal.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Función para mostrar la sección seleccionada
+        function showSection(section) {
+            alert('Mostrando la sección: ' + section);
+        }
+
+        // Cerrar el modal al hacer clic fuera de él
+        window.onclick = function(event) {
+            const achievementsModal = document.getElementById('achievementsModal');
+            const userModal = document.getElementById('userModal');
+            if (event.target === achievementsModal) {
+                achievementsModal.style.display = 'none';
+            }
+            if (event.target === userModal) {
+                userModal.style.display = 'none';
+            }
+        }
+
+
+    function getMilestonesByLevel(level) {
+        return milestones.filter(m => m.level === level);
+    }
+
+    function getLevelStatus(level) {
+        const levelMilestones = getMilestonesByLevel(level);
+        const allCompleted = level < currentLevel || levelMilestones.every(m => m.status === 'completed');
+        const allPending = level > currentLevel || levelMilestones.every(m => m.status === 'pending');
+        
+        return allCompleted ? 'completed' : allPending ? 'pending' : 'in-progress';
+    }
+
+    function getStatusIcon(status) {
+        switch (status) {
+            case 'completed': return '✓';
+            case 'pending': return '?';
+            default: return '▶';
+        }
+    }
+
+    function getStatusColor(status) {
+        switch (status) {
+            case 'completed': return '#2ecc71';
+            case 'pending': return '#95a5a6';
+            default: return '#f39c12';
+        }
+    }
+
+    function createMilestoneElement(milestone, levelStatus) {
+        const milestoneElement = document.createElement('div');
+        milestoneElement.className = 'milestone';
+        const isClickable = (milestone.status === 'completed' || levelStatus === 'in-progress') && !milestoneElement.closest('.level-locked');
+        milestoneElement.innerHTML = `
+            <div  class="milestone-header ${isClickable ? 'clickable' : 'non-clickable'}">
+                <div class="milestone-icon" style="background-color: ${getStatusColor(milestone.status)}">
+                    ${getStatusIcon(milestone.status)}
+                </div>
+                <div>
+                    <h3 class="milestone-title">${milestone.title} <span class="milestone-points">(${milestone.points} puntos)</span></h3>
+                    <p class="milestone-description">${milestone.description}</p>
+                </div>
+            </div>
+            ${milestone.imageUrl ? `<img src="${milestone.imageUrl}" alt="${milestone.title}" class="milestone-image">` : ''}
+        `;
+
+        if (isClickable) {
+            milestoneElement.querySelector('.milestone-header').addEventListener('click', () => {
+                openModal(milestone);
+            });
+        }
+
+        if (levelStatus === 'pending' || milestoneElement.closest('.level-locked')) {
+            milestoneElement.querySelector('.milestone-title').classList.add('blurred-content');
+            milestoneElement.querySelector('.milestone-description').classList.add('blurred-content');
+            if (milestone.imageUrl) {
+                milestoneElement.querySelector('.milestone-image').classList.add('blurred-content');
+            }
+        }
+
+        return milestoneElement;
+    }
+
+    function renderTimeline() {
+        const timelineElement = document.getElementById('timeline');
+        timelineElement.innerHTML = '';
+        let currentLevelInTimeline = 0;
+        let levelElement;
+
+        const currentDate = new Date();
+        const startDate = new Date(document.getElementById('startDate').value);
+
+        milestones.forEach(milestone => {
+            if (milestone.level !== currentLevelInTimeline) {
+                if (currentLevelInTimeline !== 0) {
+                    timelineElement.appendChild(document.createElement('div')).className = 'level-separator';
+                }
+                currentLevelInTimeline = milestone.level;
+                levelElement = document.createElement('div');
+                const levelData = levelInfo[currentLevelInTimeline - 1];
+                const levelStatus = getLevelStatus(currentLevelInTimeline);
+                const unlockDate = new Date(startDate.getTime() + levelData.unlockTime * 30 * 24 * 60 * 60 * 1000);
+                const isLocked = currentDate < unlockDate;
+
+                levelElement.className = `level level-${levelStatus} ${isLocked ? 'level-locked' : ''}`;
+                levelElement.innerHTML = `
+                    <div class="level-title">
+                        <div class="level-image">
+                            <img src="${levelData.imageUrl}" alt="${levelData.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                        </div>
+                        ${levelData.name}
+                        <span class="level-status status-${levelStatus}">
+                            ${isLocked ? `Disponible en ${formatDate(unlockDate)}` : 
+                              levelStatus === 'completed' ? 'Completado' : 
+                              levelStatus === 'in-progress' ? 'En curso' : 'Pendiente'}
+                        </span>
+                    </div>
+                    <p class="level-description">${levelData.description}</p>
+                `;
+                timelineElement.appendChild(levelElement);
+            }
+
+            const milestoneElement = createMilestoneElement(milestone, getLevelStatus(currentLevelInTimeline));
+            milestoneElement.id = `milestone-${milestone.id}`;
+            
+            levelElement.appendChild(milestoneElement);
+
+            if (milestone.status === 'completed') {
+                totalPoints += milestone.points;
+            }
+        });
+
+        totalPoints = milestones.reduce((sum, milestone) => {
+            return milestone.status === 'completed' ? sum + milestone.points : sum;
+        }, 0);
+
+        updatePointsDisplay();
+        scrollToFirstInProgressLevel();
+    }
+
+    function formatDate(date) {
+        const options = { year: 'numeric', month: 'long' };
+        return date.toLocaleDateString('es-ES', options);
+    }
+
+    function updatePointsDisplay() {
+    	const currentDate = new Date();
+        const startDate = new Date(document.getElementById('startDate').value);
+        const dia = String(startDate.getDate()).padStart(2, '0'); // Asegura que tenga 2 dígitos
+        const mes = String(startDate.getMonth() + 1).padStart(2, '0'); // Los meses son 0 indexados, por eso sumamos 1
+        const anio = startDate.getFullYear();
+
+        // Unir los valores en el formato deseado
+        const fechaFormateada = `${dia}/${mes}/${anio}`;
+        const pointsDisplay = document.getElementById('pointsDisplay');
+        const currentLevelDisplay = document.getElementById('currentLevel');
+        const currentDateDisplay = document.getElementById('currentDate');
+
+        currentLevelDisplay.textContent = `Nivel actual: ${currentLevel}`;
+        pointsDisplay.textContent = `Puntos totales: ${totalPoints}`;
+        currentDateDisplay.textContent = `Fecha inicio: ${fechaFormateada}`;
+
+        
+    }
+
+    function scrollToFirstInProgressLevel() {
+        const firstInProgressLevel = document.querySelector('.level-in-progress');
+        if (firstInProgressLevel) {
+            setTimeout(() => {
+                firstInProgressLevel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 500);
+        }
+    }
+
+    function openModal(milestone) {
+        const modal = document.getElementById('modal');
+        const modalContent = document.getElementById('modalContent');
+        const contentTypes = {
+            'video': `
+                <h2>${milestone.title}</h2>
+                <div class="video-container">
+                <video class="video" controls>
+                    <source src="${milestone.videoUrl}" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+                </div>`,
+            'web': `
+                <h2>${milestone.title}</h2>
+                <iframe src="${milestone.webURL}" width="100%" height="400" frameborder="0"></iframe>`,
+            'default': `
+                <h2>${milestone.title}</h2>
+                <p>${milestone.content}</p>
+                ${milestone.imageUrl ? `<img src="${milestone.imageUrl}" alt="${milestone.title}" class="milestone-image">` : ''}
+                <a href="${milestone.url}" target="_blank" class="modal-button">Más información</a>`
+        };
+
+        modalContent.innerHTML = contentTypes[milestone.type] || contentTypes['default'];
+        modal.style.display = 'block';
+    }
+
+    const modal = document.getElementById('modal');
+    const span = document.getElementsByClassName('close')[0];
+
+    span.onclick = function() {
+        modal.style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = 'none';
+        }
+    }
+    
+    function togglePopup() {
+        const popup = document.getElementById('popup');
+        const overlay = document.getElementById('overlay');
+        if (popup.classList.contains('visible')) {
+            closePopup();
+        } else {
+            popup.classList.add('visible');
+            overlay.classList.add('visible');
+        }
+    }
+
+    function closePopup(event) {
+        // Evita que el evento se propague al hacer clic en la "X"
+        if (event) event.stopPropagation();
+        document.getElementById('popup').classList.remove('visible');
+        document.getElementById('overlay').classList.remove('visible');
+    }
+
+    // Función para activar o desactivar el blur
+    function toggleBlur() {
+        event.stopPropagation(); // Evita que el popup se cierre al hacer clic en el checkbox
+
+        const elements = document.querySelectorAll('.blurred-content, .level-locked .milestone');
+        elements.forEach(element => {
+            if (element.style.filter === 'none') {
+                element.style.filter = 'blur(1px)';
+            } else {
+                element.style.filter = 'none';
+            }
+        });
+    }
+
+    document.addEventListener('DOMContentLoaded', loadData);
+    </script>
+</body>
+</html>
