@@ -560,6 +560,14 @@
     color: #333; /* Color del trofeo */
     font-size: 1.2em; /* Ajusta el tamaño del trofeo */
 }
+
+.qrcode {
+            margin-top: 20px; /* Separación de 20px */
+            display: flex;
+            justify-content: center; /* Centra el QR horizontalmente */
+            align-items: center;
+}
+
 </style>
 </head>
 <body>
@@ -571,9 +579,9 @@
             <button onclick="showSection('cursos')">Mis Cursos</button>
             <button onclick="toggleAchievementsModal()">Mis Logros</button>
             <button onclick="toggleRecompensasModal()">Recompensas</button>
-            <button onclick="toggleConfigModal()">Configuración</button>
-
             <button onclick="toggleUserModal()">Mis datos</button>
+            <button onclick="toggleConfigModal()">&#9881;</button>
+
         </div>
     </div>
     <!-- Menú desplegable para móviles -->
@@ -582,9 +590,10 @@
         <button onclick="menuItemSelected('cursos')">Mis Cursos</button>
         <button onclick="menuItemSelected('logros')">Mis Logros</button>
         <button onclick="menuItemSelected('recompensas')">Recompensas</button>
-        <button onclick="menuItemSelected('config')">Configuración</button>
 
         <button onclick="menuItemSelected('usuario')">Mis datos</button>
+        <button onclick="menuItemSelected('config')">&#9881;</button>
+
     </div>
 
     
@@ -674,6 +683,10 @@
                 <label for="startDate">Fecha de inicio:</label>
                 <input type="date" id="startDate">
             </div>
+            <div id="qrcode" class="qrcode">
+            
+            </div>
+            
         </div>
     </div>
 
@@ -710,6 +723,9 @@
         </div>
     </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+
     <script>
     let levelInfo = [];
     let milestones = [];
@@ -738,6 +754,16 @@
     }
 
 
+    // Obtiene la URL actual
+    const currentUrl = window.location.href;
+
+    // Genera el código QR de la URL actual
+    new QRCode(document.getElementById("qrcode"), {
+        text: currentUrl,
+        width: 150,  // Ancho del QR
+        height: 150  // Alto del QR
+    });
+
         function toggleMobileMenu() {
             const mobileMenu = document.getElementById('navbarMenuMobile');
             mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
@@ -759,7 +785,11 @@
                     break;
                 case 'recompensas':
                     toggleRecompensasModal();
-                    break;                    
+                    break; 
+                case 'config':
+                    toggleConfigModal();
+                    break;                     
+                                       
                 case 'usuario':
                     toggleUserModal();
                     break;
@@ -834,6 +864,7 @@
         const levelMilestones = getMilestonesByLevel(level);
         const allCompleted = level < currentLevel || levelMilestones.every(m => m.status === 'completed');
         const allPending = level > currentLevel || levelMilestones.every(m => m.status === 'pending');
+        
         
         return allCompleted ? 'completed' : allPending ? 'pending' : 'in-progress';
     }

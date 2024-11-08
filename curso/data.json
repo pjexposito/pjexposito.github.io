@@ -107,7 +107,7 @@
       "webURL": "https://pjexposito.github.io/curso/index.html"
     },
         {
-      "id": 3,
+      "id": 4,
       "status": "completed",
       "title": "Personal de venta en Centros Comerciales.",
       "description": "Formación.",
@@ -119,7 +119,7 @@
       "webURL": "https://pjexposito.github.io/curso/index.html"
     },
     {
-      "id": 4,
+      "id": 5,
       "status": "completed",
       "title": "Código ético.",
       "description": "Formación.",
@@ -131,7 +131,7 @@
       "webURL": "https://pjexposito.github.io/curso/index.html"
     },
     {
-      "id": 5,
+      "id": 6,
       "status": "completed",
       "title": "Presentación de la jefatura directa y del equipo.",
       "description": "Conoce con quién vas a trabajar",
@@ -141,7 +141,7 @@
       "url": "https://www.elcorteingles.es/formacion-ventas/"
     },
     {
-      "id": 5,
+      "id": 7,
       "status": "completed",
       "title": "Visita guiada por el centro a cargo del ECI Mentor.",
       "description": "Conoce dónde vas a trabajar",
@@ -151,7 +151,7 @@
       "url": "https://www.elcorteingles.es/formacion-ventas/"
     },
     {
-      "id": 5,
+      "id": 8,
       "status": "completed",
       "title": "Encuesta de satisfacción.",
       "description": "¿Cómo te sientes?",
@@ -163,7 +163,7 @@
       "webURL": "https://pjexposito.github.io/curso/index.html"
     },
     {
-      "id": 6,
+      "id": 9,
       "status": "completed",
       "title": "Catálogo extendido: El Corte Inglés en tus manos.",
       "description": "Formación.",
@@ -173,7 +173,7 @@
       "url": "https://www.elcorteingles.es/formacion-ventas/"
     },
     {
-      "id": 7,
+      "id": 10,
       "status": "completed",
       "title": "Avanzando en igualdad.",
       "description": "Formación.",
@@ -183,7 +183,7 @@
       "url": "https://www.elcorteingles.es/catalogo-productos/"
     },
     {
-      "id": 8,
+      "id": 11,
       "status": "completed",
       "title": "App ECI. Protocolo comercial.",
       "description": "Formación.",
@@ -193,7 +193,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/evaluacion-desempeno/"
     },
     {
-      "id": 9,
+      "id": 12,
       "status": "completed",
       "title": "Role-playing en el departamento",
       "description": "Trabaja junto con un ECI-Mentor en varias situaciones de venta que encontrarás en tu día a día.",
@@ -203,7 +203,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 10,
+      "id": 13,
       "status": "completed",
       "title": "Feedback de empleado",
       "description": "Cuéntanos tus experiencias con las primeras interacciones con clientes",
@@ -214,7 +214,7 @@
       "imageUrl":"https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/28/el-grupo-abre-un-establecimiento-de-el-corte-ingles-e-hipercor-en-la-ciudad-de-e-mini-1180x535.jpg"
     },
     {
-      "id": 11,
+      "id": 14,
       "status": "completed",
       "title": "Prevención de delitos penales. Módulo inicial.",
       "description": "Formación.",
@@ -224,7 +224,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 12,
+      "id": 15,
       "status": "completed",
       "title": "Textiles I: Materias y procesos.",
       "description": "Formación.",
@@ -234,7 +234,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 12,
+      "id": 16,
       "status": "completed",
       "title": "Mi gestión personal.",
       "description": "Formación.",
@@ -244,7 +244,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 12,
+      "id": 17,
       "status": "completed",
       "title": "Asistencia a charlas temáticas internas del Departamento de Servicios",
       "description": "Explicación.",
@@ -254,7 +254,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 12,
+      "id": 18,
       "status": "completed",
       "title": "Entrevista con el jefe de personal",
       "description": "Descripción.",
@@ -264,7 +264,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 12,
+      "id": 19,
       "status": "completed",
       "title": "Encuentas de satisfacción",
       "description": "Queremos conocer lo que piensas",
@@ -274,7 +274,7 @@
       "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
     },
     {
-      "id": 13,
+      "id": 20,
       "status": "completed",
       "title": "Superación del periodo de prueba",
       "description": "Evaluación de conocimientos y habilidades adquiridas en los primeros tres meses.",
@@ -284,253 +284,303 @@
       "url": "https://www.elcorteingles.es/app-evaluacion/"
     },
     {
-      "id": 14,
+      "id": 21,
       "status": "completed",
-      "title": "Rotación entre departamentos",
-      "description": "Rota temporalmente entre diferentes secciones de la tienda para entender las áreas de diversificación (viajes, seguros, etc.).",
-      "content": "Contenido.",
+      "title": "Adaptación de prendas I",
+      "description": "Formación.",
+      "content": "44088_AUL@ECI.",
       "level": 4,
-      "points": 500,
+      "points": 20,
       "url": "https://www.elcorteingles.es/demo-habilidades/"
     },
     {
-      "id": 15,
-      "status": "completed",
-      "title": "Simulación de gestión de clientes de servicios: ",
-      "description": "Experimenta cómo gestionar servicios, no solo productos, como parte del crecimiento de la empresa.",
-      "content": "Integración, claridad de funciones, ambiente laboral, oportunidades de mejora",
-      "level": 4,
-      "points": 500,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
-      "id": 16,
-      "status": "completed",
-      "title": "Proyecto colaborativo entre departamentos",
-      "description": "Colaborar en un proyecto que involucre diferentes áreas de la tienda, reforzando la idea de diversificación.",
-      "content": "Contenido",
-      "level": 4,
-      "points": 500,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
-      "id": 17,
-      "status": "completed",
-      "title": "Formación en herramientas digitales",
-      "description": "Los empleados reciben capacitación en el uso de herramientas tecnológicas que apoyan la transformación digital.",
-      "content": "Curso de SAP.",
-      "level": 5,
-      "points": 1000,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
-      "id": 18,
-      "status": "completed",
-      "title": "Proyecto de innovación tecnológica",
-      "description": "Participación en un proyecto que busque integrar nuevas tecnologías en el proceso de atención al cliente o ventas.",
-      "content": "Por definir.",
-      "level": 5,
-      "points": 1000,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
-      "id": 19,
-      "status": "completed",
-      "title": "Hackathon interno",
-      "description": "Un evento donde se proponen y desarrollan ideas innovadoras para mejorar los procesos dentro de la empresa.",
-      "content": "Hackathon",
-      "level": 5,
-      "points": 1000,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
-      "id": 20,
-      "status": "pending",
-      "title": "Seminarios de comercio internacional",
-      "description": "Aprende sobre las estrategias de expansión internacional de El Corte Inglés y las diferencias culturales en ventas.",
-      "content": "Por determinar.",
-      "level": 6,
-      "points": 1500,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
-      "id": 21,
-      "status": "pending",
-      "title": "Talleres sobre gestión de clientes internacionales",
-      "description": "Simulación de cómo adaptarse a clientes de diferentes culturas o nacionalidades.",
-      "content": "Por definir.",
-      "level": 6,
-      "points": 1000,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
-    },
-    {
       "id": 22,
-      "status": "pending",
-      "title": "Primer aniversario en la empresa (12 meses)",
-      "description": "Este hito reconoce la permanencia del empleado durante un año completo.",
-      "content": "Felicidades.",
-      "level": 6,
-      "points": 1500,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
+      "status": "completed",
+      "title": "Adaptación de prendas I Presencial",
+      "description": "Formación presencial.",
+      "content": "39034_AUL@ECI.",
+      "level": 4,
+      "points": 20,
+      "url": "https://www.elcorteingles.es/demo-habilidades/"
     },
     {
       "id": 23,
-      "status": "pending",
-      "title": "Participación en actividades de voluntariado como “Banco de Alimentos” o “Regala un juguete”.",
-      "description": "Esto promueve la responsabilidad social y el compromiso con la comunidad.",
-      "content": "Por definir.",
-      "level": 6,
-      "points": 1500,
+      "status": "completed",
+      "title": "Team Building: Desayuno con el personal y jefatura del departamento antes de la apertura.",
+      "description": "Descripción.",
+      "content": "Contenido",
+      "level": 4,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 24,
-      "status": "pending",
-      "title": "Taller sobre prácticas sostenibles",
-      "description": "Aprende sobre las iniciativas de sostenibilidad de El Corte Inglés y cómo puedes integrarlas en tu día a día.",
-      "content": "Por definir.",
-      "level": 7,
-      "points": 1500,
+      "status": "completed",
+      "title": "Participación en promociones comerciales de otros departamentos",
+      "description": "Secretos de Belleza, Semana del Deporte...",
+      "content": "Contenido",
+      "level": 4,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 25,
-      "status": "pending",
-      "title": "Participación en un comité de sostenibilidad",
-      "description": "Los empleados aportan ideas y soluciones a los desafíos de sostenibilidad dentro de la empresa.",
-      "content": "Sostenible.",
-      "level": 7,
-      "points": 1500,
+      "status": "completed",
+      "title": "Las caras de la sostenibilidad",
+      "description": "Formación",
+      "content": "Contenido.",
+      "level": 5,
+      "points": 20,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 26,
-      "status": "pending",
-      "title": "Visitas a proveedores éticos",
-      "description": "Una experiencia que muestra cómo se gestionan los proveedores éticos y responsables, alineados con las políticas de sostenibilidad de la empresa.",
+      "status": "in-progress",
+      "title": "Moda I: Elementos estéticos",
+      "description": "Formación.",
       "content": "Por definir.",
-      "level": 7,
-      "points": 1000,
+      "level": 5,
+      "points": 20,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 27,
-      "status": "pending",
-      "title": "Participación en Campañas comerciales clave como “Vuelta al Cole” y “Reserva de Juguetes”.",
-      "description": "Se valora la polivalencia y el desarrollo de nuevas habilidades",
-      "content": "Polivalencia.",
-      "level": 7,
-      "points": 3000,
+      "status": "in-progress",
+      "title": "Participación en Programas de Voluntariado.",
+      "description": "Colabora.",
+      "content": "Por definir",
+      "level": 5,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 28,
-      "status": "pending",
-      "title": "Participación del empleado en las Charlas dirigidas a Centros de Formación externos",
-      "description": "Dichas charlas son promovidas por el Departamento de Comunicación, Sostenibilidad y Relaciones Institucionales e impartidas por el Departamento de RRHH. Participa voluntariamente en la charla exponiendo tu experiencia laboral durante los dos primeros años desde tu incorporación en la empresa.",
-      "content": "Por definir.",
-      "level": 7,
-      "points": 2000,
+      "status": "in-progress",
+      "title": "Acceso a Programas de Bienestar.",
+      "description": "Insertar descripción.",
+      "content": "Por definir",
+      "level": 5,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 29,
       "status": "pending",
-      "title": "Jornadas de embajadores de marca",
-      "description": "Participa en un programa donde te conviertes en embajador de la marca en eventos y ferias comerciales.",
-      "content": "Por definir.",
-      "level": 8,
-      "points": 2000,
+      "title": "Textiles II. Tejidos y acabados",
+      "description": "Formación presencial en Herrera Oria. 16 horas.",
+      "content": "Por determinar.",
+      "level": 6,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 30,
       "status": "pending",
-      "title": "Entrevistas con clientes clave",
-      "description": "Interactúa con clientes históricos y claves para aprender sobre la evolución de la relación con la marca.",
+      "title": "Prevención de delitos penales. Módulo I: Consumidores y productos.",
+      "description": "Formación.",
       "content": "Por definir.",
-      "level": 8,
-      "points": 3500,
+      "level": 6,
+      "points": 20,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 31,
       "status": "pending",
-      "title": "Taller de liderazgo en ventas",
-      "description": "Un taller enfocado en las habilidades de liderazgo, desde la atención al cliente hasta la gestión de equipos.",
-      "content": "Por definir.",
-      "level": 8,
-      "points": 4000,
+      "title": "Primer aniversario en la empresa (12 meses)",
+      "description": "Este hito reconoce la permanencia del empleado durante un año completo.",
+      "content": "Felicidades.",
+      "level": 6,
+      "points": 100,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 32,
       "status": "pending",
-      "title": "Formación avanzada en e-commerce",
-      "description": "Recibe una capacitación intensiva en las últimas tendencias de comercio electrónico.",
+      "title": "Participación en promociones comerciales de otros departamentos.",
+      "description": "Promociones",
       "content": "Por definir.",
-      "level": 9,
-      "points": 5000,
+      "level": 6,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 33,
       "status": "pending",
-      "title": "Participación en proyectos de transformación digital",
-      "description": "Participa en un proyecto real de innovación, contribuyendo a mejorar la experiencia de cliente digital.",
+      "title": "Encuenta de Satisfacción.",
+      "description": "Dinos lo que piensas.",
       "content": "Por definir.",
-      "level": 9,
-      "points": 6500,
+      "level": 6,
+      "points": 15,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 34,
       "status": "pending",
-      "title": "Hackathon de innovación en experiencia de cliente",
-      "description": "Crear y proponer mejoras para la experiencia de compra online o en tienda.",
+      "title": "Hombre. Adaptación de prendas II.",
+      "description": "Formación presencial: 16 horas.",
       "content": "Por definir.",
-      "level": 9,
-      "points": 7500,
+      "level": 7,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 35,
       "status": "pending",
-      "title": "Acceso a eventos exclusivos",
-      "description": "Participación en eventos corporativos de alto nivel, donde se reconoce a los empleados como parte del legado de la empresa.",
-      "content": "Por definir.",
-      "level": 10,
-      "points": 1500,
+      "title": "Cuida tu salud. La reanimación cardiopulmonar y el desfibrilador.",
+      "description": "Formación.",
+      "content": "25036_AUL@ECI.",
+      "level": 7,
+      "points": 20,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 36,
       "status": "pending",
-      "title": "Mentoría de empleados de alto rendimiento",
-      "description": "Los empleados de este nivel actúan como mentores de otros colaboradores, transmitiendo el conocimiento y la cultura de la empresa.",
+      "title": "Taller de prácticas sostenibles.",
+      "description": "Por definir.",
       "content": "Por definir.",
-      "level": 10,
-      "points": 5000,
+      "level": 7,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 37,
       "status": "pending",
-      "title": "Almuerzo con la dirección",
-      "description": "Una experiencia exclusiva donde los empleados de nivel Leyenda son reconocidos por su crecimiento.",
+      "title": "Participación en charlas dirigidas a las nuevas incorporaciones de campañas de venta especial.",
+      "description": "Por definir.",
       "content": "Por definir.",
-      "level": 10,
-      "points": 1500,
+      "level": 7,
+      "points": 50,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     },
     {
       "id": 38,
       "status": "pending",
-      "title": "Recomendación de candidatos",
-      "description": "Recomienda un candidato y si supera el periodo de prueba gana puntos.",
+      "title": "Técnicas de venta 2.0",
+      "description": "Formación presencial. 20 horas.",
+      "content": "Por definir.",
+      "level": 8,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 39,
+      "status": "pending",
+      "title": "Cross-Trainig: pasar un día en el departamento omnicanal.",
+      "description": "Omnicanal.",
+      "content": "Por definir.",
+      "level": 8,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 40,
+      "status": "pending",
+      "title": "Jornadas de embajadores de marca.",
+      "description": "Por definir.",
+      "content": "Por definir.",
+      "level": 8,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 41,
+      "status": "pending",
+      "title": "Participación en grupos de trabajo sobre sostenibilidad.",
+      "description": "Por definir.",
+      "content": "Por definir.",
+      "level": 8,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 42,
+      "status": "pending",
+      "title": "Prevención de delitos penales. Módulo 2.",
+      "description": "Formación. Propiedad empresarial e intimidad personal.",
+      "content": "11066_AUL@ECI.",
+      "level": 9,
+      "points": 20,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 43,
+      "status": "pending",
+      "title": "Hombre. Moda II. Asesoría y protocolo.",
+      "description": "Formación presencial. 24 horas.",
+      "content": "Por definir.",
+      "level": 9,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 44,
+      "status": "pending",
+      "title": "Participación en Campañas comerciales clave.",
+      "description": "Crear y proponer mejoras para la experiencia de compra online o en tienda.",
+      "content": "Por definir.",
+      "level": 9,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 45,
+      "status": "pending",
+      "title": "Recomendación de candidatos.",
+      "description": "Añadir descripción.",
+      "content": "Por definir.",
+      "level": 9,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 46,
+      "status": "pending",
+      "title": "Prevención de delitos penales. Módulos 3 y 4.",
+      "description": "Formación. Corrupción, delitos monetarios, económicos y empresariales.",
+      "content": "35018_AUL@ECI.",
+      "level": 10,
+      "points": 20,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 47,
+      "status": "pending",
+      "title": "Desempeño del rol de ECI-mentor.",
+      "description": "Ahora tu eres el ECI-mentor.",
       "content": "Por definir.",
       "level": 10,
-      "points": 8500,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 48,
+      "status": "pending",
+      "title": "Particpación en charlas dirigidas a Centros de Formación Externos.",
+      "description": "Por definir.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 50,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 49,
+      "status": "pending",
+      "title": "Almuerzo con la Dirección.",
+      "description": "Por definir.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 100,
+      "url": "https://www.elcorteingles.es/evaluacion-final/"
+    },
+    {
+      "id": 50,
+      "status": "pending",
+      "title": "Encuesta de Satisfacción.",
+      "description": "Explícanos tu experiencia.",
+      "content": "Por definir.",
+      "level": 10,
+      "points": 15,
       "url": "https://www.elcorteingles.es/evaluacion-final/"
     }
   ]
