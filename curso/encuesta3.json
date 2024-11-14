@@ -1,0 +1,31 @@
+[
+    {
+        "tipo": "valoracion",
+        "texto": "¿Sientes que has tenido oportunidades para desarrollar tus habilidades y crecer profesionalmente durante el último año?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿El proceso de onboarding te ha proporcionado una base sólida para realizar tu trabajo con éxito?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te consideras completamente integrado/a en la cultura de la empresa?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Has asumido nuevas responsabilidades o proyectos desde tu incorporación?"
+    },
+    {
+        "tipo": "texto_libre",
+        "texto": "¿Qué recursos adicionales o apoyo crees que necesitarias para seguir creciendo en tu rol?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Cómo valorarias la relación con tu supervisor y tu equipo de trabajo?"
+    },
+    {
+        "tipo": "texto_libre",
+        "texto": "¿Te sientes motivado/a para continuar en la empresa a largo plazo? ¿Por qué?"
+    }
+
+]

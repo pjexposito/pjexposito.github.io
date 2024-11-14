@@ -158,9 +158,9 @@
       "content": "Aquí el contenido",
       "level": 1,
       "points": 50,
-      "url": "https://www.elcorteingles.es/recursos-humanos/desarrollo-profesional/",
+      "url": "",
       "type": "web",
-      "webURL": "https://pjexposito.github.io/curso/index.html"
+      "webURL": "encuesta.html?datos=encuesta1.json"
     },
     {
       "id": 9,
@@ -190,7 +190,8 @@
       "content":"72028_AUL@ECI",
       "level": 2,
       "points": 20,
-      "url": "https://www.elcorteingles.es/recursos-humanos/evaluacion-desempeno/"
+      "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/",
+      "imageUrl":"https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/28/el-grupo-abre-un-establecimiento-de-el-corte-ingles-e-hipercor-en-la-ciudad-de-e-mini-1180x535.jpg"
     },
     {
       "id": 12,
@@ -210,8 +211,9 @@
       "content": "Video o texto explicativo.",
       "level": 2,
       "points": 50,
-      "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/",
-      "imageUrl":"https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2017/07/28/el-grupo-abre-un-establecimiento-de-el-corte-ingles-e-hipercor-en-la-ciudad-de-e-mini-1180x535.jpg"
+      "url": "",
+      "type": "web",
+      "webURL": "encuesta.html?datos=encuesta2.json"
     },
     {
       "id": 14,
@@ -271,7 +273,9 @@
       "content": "Contenido",
       "level": 3,
       "points": 15,
-      "url": "https://www.elcorteingles.es/recursos-humanos/carrera-profesional/"
+      "url": "",
+      "type": "web",
+      "webURL": "encuesta.html?datos=encuesta3.json"
     },
     {
       "id": 20,
@@ -411,7 +415,9 @@
       "content": "Por definir.",
       "level": 6,
       "points": 15,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
+      "url": "",
+      "type": "web",
+      "webURL": "encuesta.html?datos=encuesta4.json"
     },
     {
       "id": 34,
@@ -581,7 +587,9 @@
       "content": "Por definir.",
       "level": 10,
       "points": 15,
-      "url": "https://www.elcorteingles.es/evaluacion-final/"
+      "url": "",
+      "type": "web",
+      "webURL": "encuesta.html?datos=encuesta5.json"
     }
   ]
 }

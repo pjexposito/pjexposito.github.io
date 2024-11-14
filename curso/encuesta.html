@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Preguntas</title>
+    <style>
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin: 0;
+}
+
+h1 {
+    font-size: 1.8em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pregunta {
+    margin-bottom: 20px;
+}
+
+.pregunta label {
+    display: block;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Contenedor de opciones de radio alineadas en fila */
+.opciones-radio {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Leyendas "Bajo" y "Alto" */
+.leyenda {
+    font-weight: bold;
+    color: #888;
+    margin: 0 10px;
+}
+
+/* Ocultar los radio buttons originales */
+.opciones-radio input[type="radio"] {
+    display: none;
+}
+
+/* Estilo personalizado para los botones de selección */
+.opciones-radio label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px; /* Tamaño del botón */
+    height: 40px; /* Tamaño del botón */
+    background-color: #e0e0e0; /* Color de fondo del botón */
+    color: #333;
+    font-weight: bold;
+    border: 2px solid transparent;
+    border-radius: 8px; /* Bordes cuadrados */
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+    font-size: 1.1em;
+}
+
+/* Estilo cuando el botón está seleccionado */
+.opciones-radio input[type="radio"]:checked + label {
+    background-color: #4a90e2; /* Color de fondo cuando está seleccionado */
+    color: #fff; /* Color del texto cuando está seleccionado */
+    border-color: #357ab7; /* Borde cuando está seleccionado */
+}
+
+/* Efecto hover */
+.opciones-radio label:hover {
+    background-color: #d0d0d0;
+}
+
+/* Estilo para el resto de elementos del formulario */
+select, textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+select:focus, textarea:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #357ab7;
+}
+
+#mensajeConfirmacion {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #eaf8e1;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+    border-radius: 4px;
+    text-align: center;
+}
+    </style>
+    
+</head>
+<body>
+    <form id="formulario">
+        <!-- El formulario se generará aquí dinámicamente -->
+        <button type="submit">Enviar Respuestas</button>
+    </form>
+    
+    <!-- Contenedor para el mensaje de confirmación -->
+    <div id="mensajeConfirmacion" style="display: none;">
+        ¡Formulario enviado correctamente!
+    </div>
+
+    <script>
+        function obtenerParametro(nombre) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(nombre);
+        }
+
+        async function cargarFormulario() {
+            const archivoJSON = obtenerParametro('datos');
+            if (archivoJSON) {
+                try {
+                    const respuesta = await fetch(archivoJSON);
+                    const preguntas = await respuesta.json();
+                    
+                    const formulario = document.getElementById('formulario');
+                    
+                    preguntas.forEach((pregunta, indice) => {
+                        const contenedorPregunta = document.createElement('div');
+                        contenedorPregunta.className = 'pregunta';
+                        
+                        const labelPregunta = document.createElement('label');
+                        labelPregunta.textContent = pregunta.texto;
+                        contenedorPregunta.appendChild(labelPregunta);
+                        
+                        if (pregunta.tipo === 'verdadero_falso') {
+                            const inputElemento = document.createElement('select');
+                            inputElemento.name = `pregunta_${indice}`;
+                            
+                            const opcionVerdadero = document.createElement('option');
+                            opcionVerdadero.value = 'verdadero';
+                            opcionVerdadero.textContent = 'Verdadero';
+                            
+                            const opcionFalso = document.createElement('option');
+                            opcionFalso.value = 'falso';
+                            opcionFalso.textContent = 'Falso';
+                            
+                            inputElemento.appendChild(opcionVerdadero);
+                            inputElemento.appendChild(opcionFalso);
+                            contenedorPregunta.appendChild(inputElemento);
+                        
+                        } else if (pregunta.tipo === 'valoracion') {
+                            // Crear contenedor para la leyenda y opciones de radio
+                            const contenedorRadio = document.createElement('div');
+                            contenedorRadio.className = 'opciones-radio';
+
+                            // Agregar la leyenda "Bajo" antes de los botones de radio
+                            const leyendaBajo = document.createElement('span');
+                            leyendaBajo.className = 'leyenda';
+                            leyendaBajo.textContent = 'Bajo';
+                            contenedorRadio.appendChild(leyendaBajo);
+
+                            // Crear los botones de radio del 1 al 5
+                            for (let i = 1; i <= 5; i++) {
+                                const inputRadio = document.createElement('input');
+                                inputRadio.type = 'radio';
+                                inputRadio.name = `pregunta_${indice}`;
+                                inputRadio.value = i;
+                                inputRadio.id = `pregunta_${indice}_${i}`;
+
+                                const labelRadio = document.createElement('label');
+                                labelRadio.textContent = i;
+                                labelRadio.htmlFor = `pregunta_${indice}_${i}`;
+
+                                contenedorRadio.appendChild(inputRadio);
+                                contenedorRadio.appendChild(labelRadio);
+                            }
+
+                            // Agregar la leyenda "Alto" después de los botones de radio
+                            const leyendaAlto = document.createElement('span');
+                            leyendaAlto.className = 'leyenda';
+                            leyendaAlto.textContent = 'Alto';
+                            contenedorRadio.appendChild(leyendaAlto);
+
+                            contenedorPregunta.appendChild(contenedorRadio);
+                        
+                        } else if (pregunta.tipo === 'texto_libre') {
+                            const inputElemento = document.createElement('textarea');
+                            inputElemento.name = `pregunta_${indice}`;
+                            inputElemento.rows = 3;
+                            inputElemento.cols = 30;
+                            contenedorPregunta.appendChild(inputElemento);
+                        }
+
+                        formulario.insertBefore(contenedorPregunta, formulario.querySelector('button'));
+                    });
+                    
+                } catch (error) {
+                    console.error('Error al cargar el JSON:', error);
+                }
+            } else {
+                console.error('No se especificó un archivo JSON en el parámetro "datos"');
+            }
+        }
+
+        function enviarFormulario(event) {
+            event.preventDefault();
+            document.getElementById('mensajeConfirmacion').style.display = 'block';
+            document.getElementById('formulario').style.display = 'none';
+
+        }
+
+        window.onload = () => {
+            cargarFormulario();
+            document.getElementById('formulario').addEventListener('submit', enviarFormulario);
+        };
+    </script>
+        </body>
+</html>
