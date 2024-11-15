@@ -89,7 +89,9 @@ h1 {
 
 .level-image {
   width: 100px;
-  height: 100px;
+  height: auto; /* Ajusta el alto automáticamente */
+  aspect-ratio: 1 / 1; /* Mantén una relación de aspecto cuadrada */
+
   margin-right: 20px;
   object-fit: cover;
   border-radius: 10%;
@@ -430,6 +432,7 @@ h1 {
   z-index: 1001;
 }
 
+
 .achievements-modal .close-achievements,
 .user-modal .close-user,
 .config-modal .close-config {
@@ -455,8 +458,9 @@ h1 {
 
 .achievement-item img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto; /* Ajusta el alto automáticamente */
+  aspect-ratio: 1 / 1; /* Mantén una relación de aspecto cuadrada */
+  object-fit: cover; /* Asegúrate de que la imagen se vea bien dentro del contenedor */
 }
 
 .achievement-item:hover .achievement-description {
@@ -477,7 +481,7 @@ h1 {
   opacity: 0;
   transition: opacity 0.3s;
   text-align: center;
-  padding: 10px;
+  padding: 0px;
   font-size: 0.9em;
 }
 
@@ -587,44 +591,44 @@ h1 {
         <div class="achievements-grid">
             <!-- Ejemplo de logros con imágenes -->
             <div class="achievement-item complete">
-                <img src="multimedia/in1.jpeg" alt="Logro 1">
-                <div class="achievement-description">Logro 1 - Descripción</div>
+                <img src="multimedia/in1.png" alt="Logro 1">
+                <div class="achievement-description">Ok</div>
             </div>
             <div class="achievement-item complete">
-                <img src="multimedia/in2.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in2.png" alt="Logro 2">
+                <div class="achievement-description">Ok</div>
             </div>
             <div class="achievement-item complete">
-                <img src="multimedia/in3.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in3.png" alt="Logro 2">
+                <div class="achievement-description">Ok</div>
             </div>
             <div class="achievement-item complete">
-                <img src="multimedia/in4.jpeg" alt="Logro 1">
-                <div class="achievement-description">Logro 1 - Descripción</div>
+                <img src="multimedia/in4.png" alt="Logro 1">
+                <div class="achievement-description">Ok</div>
             </div>
             <div class="achievement-item complete">
-                <img src="multimedia/in5.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in5.png" alt="Logro 2">
+                <div class="achievement-description">Ok</div>
             </div>
             <div class="achievement-item incomplete">
-                <img src="multimedia/in6.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in6.png" alt="Logro 2">
+                <div class="achievement-description">Pendiente</div>
             </div>
             <div class="achievement-item incomplete">
-                <img src="multimedia/in7.jpeg" alt="Logro 1">
-                <div class="achievement-description">Logro 1 - Descripción</div>
+                <img src="multimedia/in7.png" alt="Logro 1">
+                <div class="achievement-description">Pendiente</div>
             </div>
             <div class="achievement-item incomplete">
-                <img src="multimedia/in8.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in8.png" alt="Logro 2">
+                <div class="achievement-description">Pendiente</div>
             </div>
             <div class="achievement-item incomplete">
-                <img src="multimedia/in9.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in9.png" alt="Logro 2">
+                <div class="achievement-description">Pendiente</div>
             </div>
             <div class="achievement-item incomplete">
-                <img src="multimedia/in10.jpeg" alt="Logro 2">
-                <div class="achievement-description">Logro 2 - Descripción</div>
+                <img src="multimedia/in10.png" alt="Logro 2">
+                <div class="achievement-description">Pendiente</div>
             </div>
             <!-- Repite hasta tener 10 logros -->
         </div>

@@ -3,70 +3,70 @@
     {
       "name": "Fundación (1940)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1940-constitucion-el-corte-ingles.png",
-      "imageUrl":"multimedia/in1.jpeg",
+      "imageUrl":"multimedia/in1.png",
       "unlockTime": 0,
       "description": "Nacimiento de El Corte Inglés como una pequeña sastrería en Madrid."
     },
     {
       "name": "Expansión comercial (1950s)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1955-reforma-calle-preciados.png",
-      "imageUrl":"multimedia/in2.jpeg",
+      "imageUrl":"multimedia/in2.png",
       "unlockTime": 2,
       "description": "El Corte Inglés comienza a expandirse y diversificarse, convirtiéndose en una tienda por departamentos en los años 50."
     },
     {
       "name": "Consolidación como lider del mercado (1960s)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1962-expansion-barcelona.png",
-      "imageUrl":"multimedia/in3.jpeg",
+      "imageUrl":"multimedia/in3.png",
       "unlockTime": 4,
       "description": "En la década de 1960, El Corte Inglés se consolidó como una de las principales tiendas por departamentos en España."
     },
     {
       "name": "Diversificación de servicios (1970s)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1969-viajes-el-corte-ingles.png",
-      "imageUrl":"multimedia/in4.jpeg",
+      "imageUrl":"multimedia/in4.png",
       "unlockTime": 7,
       "description": "El Corte Inglés comienza a diversificar sus servicios con la creación de empresas subsidiarias como Viajes El Corte Inglés y Seguros."
     },
     {
       "name": "Transformación Digital (1990s)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/15/historia-1988-constitucion-informatica-el-corte-ingles.png",
-      "imageUrl":"multimedia/in5.jpeg",
+      "imageUrl":"multimedia/in5.png",
       "unlockTime": 9,
       "description": "A partir de los años 90, El Corte Inglés invierte en tecnología y se adapta a la era digital."
     },
     {
       "name": "Apertura Internacional (2000s)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2001-primer-gran-almacen-de-el-corte-ingles-en-el-extranjero.png",
-      "imageUrl":"multimedia/in6.jpeg",
+      "imageUrl":"multimedia/in6.png",
       "unlockTime": 12,
       "description": "El Corte Inglés explora la expansión internacional y la apertura a mercados exteriores, estableciendo su marca fuera de España."
     },
     {
       "name": "Innovación y Sostenibilidad (2010s)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2010-gourmet-experience.png",
-      "imageUrl":"multimedia/in7.jpeg",
+      "imageUrl":"multimedia/in7.png",
       "unlockTime": 15,
       "description": "La empresa se enfoca en la innovación, la sostenibilidad y el comercio ético, lanzando campañas para mejorar su huella ambiental."
     },
     {
       "name": "Referente del Comercio Español (2015)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2015-servicio-clickexpress.png",
-      "imageUrl":"multimedia/in8.jpeg",
+      "imageUrl":"multimedia/in8.png",
       "unlockTime": 18,
       "description": "El Corte Inglés se reafirma como un referente en el comercio español, siendo un pilar de la economía y la cultura del país."
     },
     {
       "name": "Liderazgo en Innovación Digital (2020)",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2020-nueva-app-el-corte-ingles-plus.png",
-      "imageUrl":"multimedia/in9.jpeg",
+      "imageUrl":"multimedia/in9.png",
       "unlockTime": 19,
       "description": "Con la pandemia, El Corte Inglés acelera su transformación digital, convirtiéndose en líder en e-commerce y servicios online."
     },
     {
       "name": "Leyenda de El Corte Inglés",
       "imageUrl1": "https://www.elcorteingles.es/recursos/informacioncorporativa/img/portal/2023/06/20/2021-2022.png",
-      "imageUrl":"multimedia/in10.jpeg",
+      "imageUrl":"multimedia/in10.png",
       "unlockTime": 22,
       "description": "Este nivel representa a aquellos empleados que se han convertido en una parte fundamental de la historia y el legado de la empresa."
     }
