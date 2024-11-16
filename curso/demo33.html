@@ -85,6 +85,8 @@ h1 {
   color: var(--color-secondary);
   display: flex;
   align-items: center;
+  line-height: 1.2; /* Reduce el espacio entre líneas */
+
 }
 
 .level-image {
@@ -552,6 +554,24 @@ h1 {
     min-height: 20px;
     max-width: 20px;
     max-height: 20px;
+  }
+  
+  .level-image {
+     width: 60px; /* Tamaño fijo más pequeño en móviles */
+     height: 60px;
+  }
+  .level-title {
+    font-size: 1.1em; /* Tamaño más reducido para móviles */
+    line-height: 1.1; /* Reduce aún más el espacio entre líneas */
+  }
+  .milestone-title {
+    font-size: 1.1em; /* Tamaño más reducido para móviles */
+    line-height: 1.2; /* Reduce aún más el espacio entre líneas */
+  }
+  .intro-section{
+    font-size: 1em; /* Tamaño más reducido para móviles */
+    line-height: 1.3; /* Reduce aún más el espacio entre líneas */
+
   }
 }
 </style>
