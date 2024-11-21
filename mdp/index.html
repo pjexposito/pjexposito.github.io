@@ -423,7 +423,7 @@ h1 {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
-.achievements-modal, .user-modal, .config-modal {
+.achievements-modal, .user-modal, .config-modal, .cursos-modal {
   display: none;
   position: fixed;
   top: 20%;
@@ -438,10 +438,15 @@ h1 {
   z-index: 1001;
 }
 
+.cursos-modal {
+  max-width: 600px;
+
+}
 
 .achievements-modal .close-achievements,
 .user-modal .close-user,
-.config-modal .close-config {
+.config-modal .close-config,
+.cursos-modal .close-cursos {
   float: right;
   cursor: pointer;
   font-size: 1.5em;
@@ -587,7 +592,7 @@ h1 {
         <div class="navbar-toggle" onclick="toggleMobileMenu()">&#9776;</div>
         <div class="navbar-menu">
             <button onclick="showSection('desarrollo')">Mi Desarrollo Profesional</button>
-            <button onclick="showSection('cursos')">Mis Cursos</button>
+            <button onclick="toggleModal('cursosModal')">Píldoras formativas</button>
             <button onclick="toggleModal('achievementsModal')">Mis Logros</button>
             <button onclick="toggleModal('recompensasModal')">Recompensas</button>
             <button onclick="toggleUserModal()">Mis datos</button>
@@ -598,7 +603,7 @@ h1 {
     <!-- Menú desplegable para móviles -->
     <div id="navbarMenuMobile" class="navbar-menu-mobile">
         <button onclick="menuItemSelected('desarrollo')">Mi Desarrollo Profesional</button>
-        <button onclick="menuItemSelected('cursos')">Mis Cursos</button>
+        <button onclick="menuItemSelected('cursos')">Píldoras formativas</button>
         <button onclick="menuItemSelected('logros')">Mis Logros</button>
         <button onclick="menuItemSelected('recompensas')">Recompensas</button>
 
@@ -664,9 +669,6 @@ h1 {
         <h2>Recompensas ganadas</h2>
         <div>
         <ul class="lista-recompensas">
-        
-
-
             <li>28-05-2024: Tarjeta regalo 60€</li>
             <li>15-09-2024: Acceso libre a cursos de otras áreas</li>
             <li>7-10-2024: Obsequio de recuerdo FASE I</li>
@@ -674,6 +676,23 @@ h1 {
         </div>
     </div>
 
+
+    <!-- Contenedor de cursos -->
+    <div id="cursosModal" class="cursos-modal">
+        <span class="close-cursos" onclick="toggleModal('cursosModal')">&times;</span>
+        <h2>Píldoras formativas</h2>
+        <div>
+        <ul class="lista-pildoras">
+            <li>Anticipo de Navidad (5 minutos)</li>
+            <li>Uso del parking por parte de los empleados (3 minutos)</li>
+            <li>Aprende a saludar a los clientes (5 minutos)</li>
+            <li>Pequeños trucos para cuidar tu espalda (5 minutos)</li>
+            <li>Empaquetado rápido y eficiente (10 minutos)</li>
+
+
+        </ul>
+        </div>
+    </div>
     
         <!-- Contenedor de Usuario -->
     <div id="userModal" class="user-modal">
@@ -710,10 +729,11 @@ h1 {
         
         <div class="intro-section">
             <h2>Bienvenido a "Mi Desarrollo Profesional"</h2>
-            <p>Desde que, en 1935 Ramón Areces Rodríguez compró una pequeña sastrería en la calle
-            Preciados, hemos crecido y llegado hasta lo que somos hoy "El Corte Inglés".</p>
-            <p>A través de esta aplicación, se ha creado una línea de tiempo donde podrás conocer nuestra historia, cultura y los hitos que hemos alcanzado.</p>
-            <p>En cada etapa, podrás explorar nuestras oportunidades de desarrollo profesional y capacitación y cómo puedes ser parte de nuestra historia. ¡Tu historia comienza aquí!</p>
+            <p>El Corte Inglés toma su nombre de una pequeña sastrería fundada en 1890 y situada entre las calles Preciados, Carmen y Rompelanzas, de Madrid. En 1935, Ramón Areces Rodríguez, avalado por su tío César Rodríguez, compra la sastrería, comenzando así su aventura empresarial.</p>
+            <p>Más de 80 años de historia que queremos compartir contigo a través de la APP "Mi desarrollo Profesional".</p>
+            <p>Un interesante viaje por la historia de El Corte Inglés comienza aquí.</p>
+            <p><b>¡Bienvenido!</b></p>
+
         </div>
 
         <div class="points-display">
@@ -975,7 +995,7 @@ function menuItemSelected(section) {
   switch (section) {
     case 'desarrollo':
     case 'cursos':
-      showSection(section);
+      toggleModal('cursosModal');
       break;
     case 'logros':
       toggleModal('achievementsModal');
@@ -986,6 +1006,7 @@ function menuItemSelected(section) {
     case 'config':
       toggleModal('configModal');
       break;
+      
     case 'usuario':
       toggleUserModal();
       break;
