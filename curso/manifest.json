@@ -1,7 +1,7 @@
 {
   "name": "Mi Desarrollo Profesional",
-  "short_name": "Profesional",
-  "start_url": "/",
+  "short_name": "Mi Desarrollo Profesional",
+  "start_url": "/curso/",
   "display": "standalone",
   "background_color": "#f4f4f4",
   "theme_color": "#3498db",
