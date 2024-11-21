@@ -1,0 +1,35 @@
+[
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te has sentido bienvenido/a y apoyado/a por tu mentor durante este primer mes?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te sientes más cómodo/a y seguro/a en el desempeño de tus funciones que en los primeros meses?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Consideras que has tenido suficientes oportunidades de formación y desarrollo hasta el momento?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te sientes apoyado/a por tu supervisor y equipo en el dia a dia?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Qué desafios has encontrado en tu adaptación a la empresa durante estos seis meses?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿El proceso de onboarding ha sido útil para ayudarte a integrarte y sentirte parte de la cultura organizacional?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Consideras que tu trabajo actual está alineado con lo que esperabas durante el proceso de contratación?"
+    },
+    {
+        "tipo": "texto_libre",
+        "texto": "¿Qué cambios sugerirías para mejorar la experiencia de onboarding a partir de esta etapa?"
+    }
+
+]

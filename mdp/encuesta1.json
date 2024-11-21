@@ -1,0 +1,35 @@
+[
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te has sentido bienvenido/a y apoyado/a por tu mentor durante este primer mes?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Consideras que las tareas que te han asignado están claras?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿La formación inicial que recibiste ha sido suficiente para realizar tu trabajo con confianza?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Has tenido acceso a las herramientas necesarias para desempeñar tus funciones?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te has sentido cómodo/a solicitando ayuda o aclaraciones cuando ha sido necesario?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Cómo valorarias tu integración en el equipo y la cultura de la empresa hasta el momento?"
+    },
+    {
+        "tipo": "texto_libre",
+        "texto": "¿Qué aspectos del onboarding mejorarias para futuros empleados?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿En que grado recomendarías la empresa para trabajar a tus familiares/conocidos?"
+    }
+
+]

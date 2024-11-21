@@ -1,0 +1,31 @@
+[
+    {
+        "tipo": "valoracion",
+        "texto": "¿Consideras que el proceso de onboarding ha sido efectivo en prepararte para tu rol y responsabilidades?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te sientes plenamente integrado/a en la cultura de la empresa y sus valores?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Has tenido suficientes oportunidades para progresar protesionalmente en estos dos años?"
+    },
+    {
+        "tipo": "texto_libre",
+        "texto": "¿Qué aspectos del proceso de onboarding te han sido más útiles y cuáles consideras que podrían mejorarse?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Te sientes listo/a para asumir mayores responsabilidades dentro de la empresa?"
+    },
+    {
+        "tipo": "valoracion",
+        "texto": "¿Percibes que la empresa te ha brindado los recursos y el apoyo necesario para tu desarrollo profesional?"
+    },
+    {
+        "tipo": "texto_libre",
+        "texto": "¿Recomendarías esta empresa como un buen lugar para trabajar a otros profesionales? ¿Por qué?"
+    }
+
+]
