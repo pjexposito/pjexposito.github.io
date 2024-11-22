@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Píldoras formativas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 20px;
+        }
+
+        details {
+            margin-bottom: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        summary {
+            cursor: pointer;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        summary:hover {
+            text-decoration: underline;
+        }
+
+        .category-items {
+            margin-left: 20px;
+            padding-top: 10px;
+        }
+        /* Estilo base para los enlaces */
+		a {
+		    text-decoration: none; /* Sin subrayado por defecto */
+		    color: #3498db; /* Color del texto */
+		    position: relative; /* Necesario para el pseudo-elemento */
+		    font-weight: bold;
+		    transition: color 0.3s ease; /* Cambio de color suave */
+		}
+		
+		/* Subrayado animado */
+		a::after {
+		    content: ''; /* Pseudo-elemento vacío */
+		    position: absolute;
+		    left: 50%; /* Comienza en el centro */
+		    bottom: 0;
+		    transform: translateX(-50%) scaleX(0); /* Contraído al centro */
+		    transform-origin: center; /* Punto de inicio de la animación */
+		    width: 100%; /* Ancho total del enlace */
+		    height: 2px; /* Grosor de la línea */
+		    background-color: #3498db; /* Color del subrayado */
+		    transition: transform 0.3s ease; /* Suavidad de la animación */
+		}
+		
+		/* Efecto hover */
+		a:hover {
+		    color: #2c3e50; /* Cambia el color del texto */
+		}
+		
+		a:hover::after {
+		    transform: translateX(-50%) scaleX(1); /* Expande de centro a lados */
+    </style>
+</head>
+<body>
+
+    <h1>Píldoras formativas</h1>
+
+    <details>
+        <summary>💶 Ventas</summary>
+        <div class="category-items">
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Anticipo de Navidad</a> (5 min)</p>
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Nuevo sistema de abonos</a> (5 min)</p>
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Nueva versión TPV</a> (10 min)</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>👔 Producto</summary>
+        <div class="category-items">
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Tejidos para invierno</a> (10 min)</p>
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Etiquetas de lavado</a> (5 min)</p>
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Nuevas tendencias para hombre</a> (5 min)</p>
+        </div>
+    </details>
+
+    <details>
+        <summary>🧑‍💼 Técnicas</summary>
+        <div class="category-items">
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">La importancia del saludo</a> (5 min)</p>
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">¿Cómo recomendar la APP?</a> (5 min)</p>
+            <p><a href="https://pjexposito.github.io/curso/cursillo.html">Potencia la venta adicional</a> (10 min)</p>
+        </div>
+    </details>
+
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="checkAllCoursesStatus()">
+    <div id="mainContainer" class="main-container">
+        <div id="Principal" class="container">
+            <div class="category" onclick="showSubcategories('div-bienvenido')">
+                <img src="cat1.png" alt="Bienvenido a ECI" class="category-img">
+                <span>Bienvenido a ECI</span>
+            </div>
+            <div class="category" onclick="showSubcategories('div-vender')">
+                <img src="cat2.png" alt="Aprende a vender" class="category-img">
+                <span>Aprende a vender</span>
+            </div>
+            <div class="category" onclick="showSubcategories('div-vender')">
+                <img src="cat3.png" alt="Usando MPOS" class="category-img">
+                <span>Usando MPOS</span>
+            </div>			
+            <div class="category" onclick="showSubcategories('div-vender')">
+                <img src="cat4.png" alt="Herramientas" class="category-img">
+                <span>Tus herramientas de trabajo</span>
+            </div>
+        </div>
+        <div id="div-bienvenido" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory" onclick="showExplanation('principios')">
+                <img src="vacio.png" alt="Curso1" class="check-img" id="status-img-Curso1">
+			
+				<span>Nuestros principios</span>
+			</div>
+            <div class="subcategory" onclick="showExplanation('trato')">
+                <img src="vacio.png" alt="Curso2" class="check-img" id="status-img-Curso2">
+				
+				<span>El trato con el cliente</span>
+			
+			</div>
+            <div class="subcategory" onclick="showExplanation('ayudar')">
+                <img src="vacio.png" alt="Curso3" class="check-img" id="status-img-Curso3">
+				
+				<span>Información extra</span>
+			</div>
+        </div>
+        <div id="explica_principios" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
+            <div class="explanation-content contenedor">
+                <h2>Nuestros principios</h2>
+
+				<p>En nuestra empresa, dedicada a la venta de productos de alta calidad, el cliente ocupa el centro de nuestra filosofía empresarial. Creemos firmemente que la satisfacción del cliente no solo es un objetivo, sino un principio fundamental que guía cada una de nuestras acciones y decisiones. Desde el momento en que un cliente entra en contacto con nosotros, ya sea en nuestra tienda física o a través de nuestros canales digitales, nos comprometemos a ofrecerle una experiencia excepcional y personalizada. Escuchamos atentamente sus necesidades y nos esforzamos por superar sus expectativas en cada interacción.</p>
+
+<p>Para asegurar que cada cliente se sienta valorado y respetado, promovemos un ambiente de trabajo donde nuestros empleados son tratados con dignidad y reconocimiento. Creemos que un equipo feliz y motivado es clave para proporcionar un servicio al cliente excepcional. Por ello, invertimos en el desarrollo profesional de nuestros empleados, fomentando un espíritu de colaboración y un sentido de pertenencia hacia nuestros valores empresariales. Este enfoque no solo fortalece nuestro compromiso con la excelencia, sino que también contribuye a crear relaciones duraderas y significativas con nuestros clientes.</p>
+
+<p>En cada transacción y en cada interacción, nos esforzamos por mantener los más altos estándares éticos y profesionales. Nuestra integridad y transparencia son pilares fundamentales en nuestras relaciones comerciales. Valoramos la confianza que nuestros clientes depositan en nosotros y trabajamos incansablemente para merecerla día a día. Como empresa comprometida con la excelencia en el servicio y la satisfacción del cliente, nos sentimos honrados de ser su elección y estamos dedicados a superar sus expectativas en cada paso del camino.</p>
+            <div class="end-marker" data-course="Curso1"></div>
+
+            </div>
+        </div>
+        <div id="explica_trato" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
+            <div class="explanation-content contenedor">
+                <h2>El trato con el cliente</h2>
+                <p>En nuestra empresa, la premisa fundamental es el trato excepcional que ofrecemos a nuestros clientes. Desde el primer contacto hasta la postventa, nos dedicamos a comprender y satisfacer sus necesidades de manera efectiva y cordial. </p>
+	                <p><img src="vendedor.jpeg" class="imagen-centrada"></p>
+					
+					
+					<p>Valoramos cada interacción como una oportunidad para fortalecer la confianza y construir relaciones duraderas, asegurando que cada cliente se sienta valorado y escuchado. Nuestro compromiso con la excelencia en el servicio es evidente en cada aspecto de nuestra operación, y nos esforzamos continuamente por superar las expectativas y proporcionar experiencias memorables que inspiren lealtad y satisfacción.</p>
+            <div class="end-marker" data-course="Curso2"></div>
+            
+			</div>
+        </div>
+        <div id="explica_ayudar" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-bienvenido')">Volver</button>
+            <div class="explanation-content contenedor">
+                <h2>Aprendiendo a ayudar</h2>
+				
+				<p>
+					
+				Lisboa, la capital de Portugal, es una ciudad llena de historia y encanto. Ubicada en la desembocadura del río Tajo, Lisboa es conocida por sus colinas, tranvías antiguos y vibrante vida cultural. Sus calles adoquinadas y barrios pintorescos como Alfama y Bairro Alto, ofrecen una mezcla única de tradición y modernidad. Además, su clima templado y su proximidad al océano Atlántico la convierten en un destino turístico muy atractivo.
+</p>
+				<p>Por otro lado, en el continente australiano habita el canguro, un animal icónico conocido por su capacidad de saltar grandes distancias gracias a sus poderosas patas traseras. Los canguros son marsupiales y tienen una bolsa en su abdomen donde llevan a sus crías. También es interesante recordar que los triángulos, figuras geométricas fundamentales, tienen tres lados. Esta característica básica hace que los triángulos sean objeto de estudio en matemáticas y geometría, con aplicaciones que van desde la arquitectura hasta la ingeniería.	
+				</p>
+				
+                <p>
+				    <form id="quizForm" onsubmit="return checkAnswers_palabras()">
+				      <div class="form-group">
+				        <label for="q1">Pregunta 1: ¿Cuál es la capital de Portugal?</label>
+				        <input type="text" id="q1" name="q1" required>
+				      </div>
+				      <div class="form-group">
+				        <label for="q2">Pregunta 2: ¿Qué animal australiano es famoso saltar?</label>
+				        <input type="text" id="q2" name="q2" required>
+				      </div>
+				      <div class="form-group">
+				        <label for="q3">Pregunta 3: ¿Cuántos lados tiene un triángulo?</label>
+				        <input type="text" id="q3" name="q3" required>
+				      </div>
+				      <div class="form-group">
+				        <input type="submit" value="Enviar respuestas">
+				      </div>
+				    </form>
+					
+					
+                </p>
+            </div>
+        </div>
+        <div id="div-vender" class="container subcategory-container">
+            <button class="back-button" onclick="showMain()">Volver</button>
+            <div class="subcategory" onclick="showExplanation('complementaria')">La venta complementaria</div>
+            <div class="subcategory" onclick="showExplanation('pago')">Opciones de pago</div>
+            <div class="subcategory" onclick="showExplanation('cerrar')">Como cerrar una venta</div>
+        </div>
+        <div id="explica_complementaria" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
+            <div class="explanation-content">
+                <h2>Venta complementaria</h2>
+                <p>
+				    <form id="quizForm" onsubmit="return checkAnswers_check()">
+				      <div class="form-group-radio">
+				        <label>¿En qué momento es mejor ofrecer venta complementaria?</label><br><br>
+				        <input type="radio" id="q1a" name="q1" value="a" required>
+				        <label for="q1a">a) Nunca, no es necesario.</label><br>
+				        <input type="radio" id="q1b" name="q1" value="b">
+				        <label for="q1b">b) Al final de la venta, tras el cobro.</label><br>
+				        <input type="radio" id="q1c" name="q1" value="c">
+				        <label for="q1c">c) Durante la entrevista de venta.</label><br>
+				        <input type="radio" id="q1d" name="q1" value="d">
+				        <label for="q1d">d) Se llama al cliente al día siguiente.</label>
+				      </div>
+				      <div class="form-group-radio">
+				        <input type="submit" value="Enviar respuesta">
+				      </div>
+				    </form>
+                	
+					
+                </p>
+            </div>
+        </div>
+        <div id="explica_pago" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
+            <div class="explanation-content">
+                <h2>Opciones de pago</h2>
+                <p>Explicar financiaciones.</p>
+            </div>
+        </div>
+        <div id="explica_cerrar" class="container explanation-container">
+            <button class="back-button" onclick="showSubcategories('div-vender')">Volver</button>
+            <div class="explanation-content">
+                <h2>Como cerrar una venta</h2>
+                <p>Aquí puedes escribir el contenido explicativo para Como cerrar una venta.</p>
+            </div>
+        </div>
+    </div>
+    <button class="reiniciar-button" onclick="resetAllCoursesStatus()">Reiniciar</button>
+	
+    <div id="info-box" class="hidden">Cuadro informativo</div>
+	
+    <script src="script.js"></script>
+</body>
+</html>
