@@ -63,6 +63,27 @@
 		
 		a:hover::after {
 		    transform: translateX(-50%) scaleX(1); /* Expande de centro a lados */
+		   }
+
+		.course-item {
+		    display: flex; /* Coloca el texto y la imagen en un diseño flexible */
+		    align-items: center; /* Alinea verticalmente los elementos */
+		    gap: 15px; /* Espacio entre el texto y la imagen */
+		    margin-bottom: 15px; /* Espaciado entre los ítems */
+		    background-color: #fff; /* Fondo blanco para destacar */
+		    border: 1px solid #ddd; /* Borde suave */
+		    border-radius: 5px; /* Bordes redondeados */
+		    padding: 10px; /* Espaciado interno */
+		    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para destacar */
+		}
+		
+		.course-banner {
+		    width: 100px; /* Ancho fijo para banners */
+		    height: auto; /* Mantén la proporción de la imagen */
+		    border-radius: 5px; /* Bordes redondeados */
+		    flex-shrink: 0; /* Evita que la imagen se reduzca */
+		}
+	
     </style>
 </head>
 <body>
@@ -72,27 +93,56 @@
     <details>
         <summary>💶 Ventas</summary>
         <div class="category-items">
-            <p><a href="pildoras/anticipo.html">Anticipo de Navidad</a> (5 min)</p>
+            <div class="course-item">
+                <img src="pildoras/img/anticipo.jpeg" alt="Anticipo de Navidad" class="course-banner">
+            	<p><a href="democurso/anticipo.html">Anticipo de Navidad</a> (5 min)</p>
+            </div>
+             <div class="course-item">
+                <img src="pildoras/img/abonos.jpeg" alt="Nuevo sistema de abonos" class="course-banner">
             <p><a href="democurso/index.html">Nuevo sistema de abonos</a> (5 min)</p>
-            <p><a href="democurso/index.html">Nueva versión TPV</a> (10 min)</p>
+            </div>
+            <div class="course-item">
+                <img src="pildoras/img/tpv.jpeg" alt="Nueva versión TPV" class="course-banner">
+            	<p><a href="democurso/index.html">Nueva versión TPV</a> (10 min)</p>
+            </div>
         </div>
     </details>
 
     <details>
         <summary>👔 Producto</summary>
         <div class="category-items">
-            <p><a href="pildoras/lavado.html">Etiquetas de lavado</a> (5 min)</p>
-            <p><a href="democurso/index.html">Tejidos para invierno</a> (10 min)</p>
-            <p><a href="democurso/index.html">Nuevas tendencias para hombre</a> (5 min)</p>
+             <div class="course-item">
+                <img src="pildoras/img/etiqueta.jpeg" alt="Etiquetas de lavado" class="course-banner">
+                <p><a href="pildoras/lavado.html">Etiquetas de lavado</a> (5 min)</p>
+            </div>
+            <div class="course-item">
+                <img src="pildoras/img/tejidos.jpeg" alt="Tejidos para invierno" class="course-banner">
+                <p><a href="democurso/index.html">Tejidos para invierno</a> (10 min)</p>
+            </div>
+            <div class="course-item">
+                <img src="pildoras/img/moda.jpeg" alt="Nuevas tendencias para hombre" class="course-banner">
+                <p><a href="democurso/index.html">Nuevas tendencias para hombre</a> (5 min)</p>
+            </div>
         </div>
     </details>
 
     <details>
         <summary>🧑‍💼 Técnicas</summary>
         <div class="category-items">
-            <p><a href="pildoras/saludo.html">La importancia del saludo</a> (5 min)</p>
-            <p><a href="democurso/index.html">¿Cómo recomendar la APP?</a> (5 min)</p>
-            <p><a href="democurso/index.html">Potencia la venta adicional</a> (10 min)</p>
+            <div class="course-item">
+                <img src="pildoras/img/saludo.jpeg" alt="La importancia del saludo en una entrevista de venta" class="course-banner">
+            	<p><a href="pildoras/saludo.html">La importancia del saludo en una entrevista de venta.</a> (5 min)</p>
+            </div>
+
+            <div class="course-item">
+                <img src="pildoras/img/app.jpeg" alt="¿Cómo recomendar la APP?" class="course-banner">
+            	<p><a href="democurso/index.html">¿Cómo recomendar la APP?</a> (5 min)</p>
+            </div>
+
+            <div class="course-item">
+                <img src="pildoras/img/adicional.jpeg" alt="Potencia la venta adicional" class="course-banner">
+            	<p><a href="democurso/index.html">Potencia la venta adicional</a> (10 min)</p>
+            </div>
         </div>
     </details>
 
