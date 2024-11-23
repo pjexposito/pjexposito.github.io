@@ -202,16 +202,13 @@ h1 {
   display: none;
   position: fixed;
   z-index: 1000;
-  left: 50%;
-  top: 50%;
-  width: 90%;
-  height: 90%;
-  transform: translate(-50%, -50%);
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
   overflow: auto;
   background-color: rgba(0,0,0,0.4);
   transition: opacity 0.3s ease;
-  box-sizing: border-box;
-  border-radius: 10px; /* Opcional: esquinas redondeadas */
 }
 
 .modal-content {
@@ -594,7 +591,6 @@ h1 {
     <div class="navbar">
         <div class="navbar-toggle" onclick="toggleMobileMenu()">&#9776;</div>
         <div class="navbar-menu">
-            <button onclick="showSection('desarrollo')">Mi Desarrollo Profesional</button>
             <button onclick="toggleModal('cursosModal')">Píldoras formativas</button>
             <button onclick="toggleModal('achievementsModal')">Mis Logros</button>
             <button onclick="toggleModal('recompensasModal')">Recompensas</button>
@@ -605,7 +601,6 @@ h1 {
     </div>
     <!-- Menú desplegable para móviles -->
     <div id="navbarMenuMobile" class="navbar-menu-mobile">
-        <button onclick="menuItemSelected('desarrollo')">Mi Desarrollo Profesional</button>
         <button onclick="menuItemSelected('cursos')">Píldoras formativas</button>
         <button onclick="menuItemSelected('logros')">Mis Logros</button>
         <button onclick="menuItemSelected('recompensas')">Recompensas</button>
