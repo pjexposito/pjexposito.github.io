@@ -171,7 +171,7 @@ function openModal(milestone) {
     'video': `
       <h2>${milestone.title}</h2>
       <div class="video-container">
-        <video class="video" controls>
+        <video class="video" id="video" controls>
           <source src="${milestone.videoUrl}" type="video/mp4">
           Tu navegador no soporta el elemento de video.
         </video>
@@ -193,10 +193,14 @@ function openModal(milestone) {
 // Event listeners
 document.addEventListener('DOMContentLoaded', loadData);
 
-document.querySelector('.close').addEventListener('click', () => elements.modal.style.display = 'none');
+document.querySelector('.close').addEventListener('click', () => {
+    document.getElementById('video')?.pause();  // función compacta que busca el Elemento video y si existe, lo pausa.  
+    elements.modal.style.display = 'none'
+});
 
 window.addEventListener('click', (event) => {
   if (event.target === elements.modal) {
+    document.getElementById('video')?.pause();
     elements.modal.style.display = 'none';
   }
 });
