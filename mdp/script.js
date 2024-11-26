@@ -1,4 +1,4 @@
-// State management
+// Estado
 const state = {
   levelInfo: [],
   milestones: [],
@@ -6,7 +6,7 @@ const state = {
   currentLevel: 5
 };
 
-// DOM elements
+// Elementos DOM 
 const elements = {
   timeline: document.getElementById('timeline'),
   startDate: document.getElementById('startDate'),
@@ -19,12 +19,12 @@ const elements = {
   overlay: document.getElementById('overlay')
 };
 
-// Utility functions
+// Utilidades
 const formatDate = (date) => date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long' });
 const getStatusIcon = (status) => ({ completed: '✓', pending: '?', 'in-progress': '▶' }[status] || '');
 const getStatusColor = (status) => ({ completed: '#2ecc71', pending: '#95a5a6', 'in-progress': '#f39c12' }[status] || '');
 
-// Data loading
+// Aquí cargo los datos
 async function loadData() {
   try {
     const response = await fetch('data.json');
@@ -32,30 +32,23 @@ async function loadData() {
     state.levelInfo = data.levelInfo;
     state.milestones = data.milestones;
     
-    initializeDatePicker();
+    initializeDatePicker(); //Se inicia el seleccionador de fecha. Actualmente sin uso real.
     renderTimeline();
-    generateQRCode();
   } catch (error) {
-    console.error('Error loading data:', error);
+    console.error('Error cargando datos:', error);
   }
 }
 
 function initializeDatePicker() {
   const fechaInicioTrabajo = new Date();
-  fechaInicioTrabajo.setMonth(fechaInicioTrabajo.getMonth() - 15);
+  fechaInicioTrabajo.setMonth(fechaInicioTrabajo.getMonth() - 15); //El trabajador empezó hace 15 meses.
   elements.startDate.valueAsDate = fechaInicioTrabajo;
   elements.startDate.addEventListener('change', renderTimeline);
 }
 
-function generateQRCode() {
-  new QRCode(document.getElementById("qrcode"), {
-    text: window.location.href,
-    width: 150,
-    height: 150
-  });
-}
 
-// Timeline rendering
+
+// Se pinta la linea de tiempo
 function renderTimeline() {
   elements.timeline.innerHTML = '';
   let currentLevelInTimeline = 0;
@@ -74,7 +67,8 @@ function renderTimeline() {
   });
 
   updatePointsDisplay();
-  //scrollToFirstInProgressLevel();
+  //Desactivo esto porque quiero que se muestre la línea desde el principio.
+  //scrollToFirstInProgressLevel(); 
 }
 
 function renderLevel(level, startDate, currentDate) {
@@ -141,7 +135,7 @@ function createMilestoneElement(milestone, levelStatus) {
   return milestoneElement;
 }
 
-// Helper functions
+// Funciones de apoyo
 function getLevelStatus(level) {
   const levelMilestones = state.milestones.filter(m => m.level === level);
   const allCompleted = level < state.currentLevel || levelMilestones.every(m => m.status === 'completed');
@@ -158,6 +152,7 @@ function updatePointsDisplay() {
   elements.currentDate.textContent = `Fecha inicio: ${formattedDate}`;
 }
 
+// Esta función hace saltar el scroll hasta el primer elemento en progreso.
 function scrollToFirstInProgressLevel() {
   const firstInProgressLevel = document.querySelector('.level-in-progress');
   if (firstInProgressLevel) {
@@ -165,7 +160,7 @@ function scrollToFirstInProgressLevel() {
   }
 }
 
-// Modal functions
+// Funciones para el manejo del modal
 function openModal(milestone) {
   const contentTypes = {
     'video': `
@@ -205,7 +200,7 @@ window.addEventListener('click', (event) => {
   }
 });
 
-// Popup functions
+// Funciones para el Popup
 function togglePopup() {
   elements.popup.classList.toggle('visible');
   elements.overlay.classList.toggle('visible');
@@ -217,6 +212,7 @@ function closePopup(event) {
   elements.overlay.classList.remove('visible');
 }
 
+//Permite activar o desactivar el desenfoque de los milestones pendientes. 
 function toggleBlur(event) {
   event.stopPropagation();
   document.querySelectorAll('.blurred-content, .level-locked .milestone').forEach(element => {
@@ -224,7 +220,7 @@ function toggleBlur(event) {
   });
 }
 
-// Mobile menu functions
+// Funciones para el menú en modo movilidad
 function toggleMobileMenu() {
   const mobileMenu = document.getElementById('navbarMenuMobile');
   mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
@@ -253,9 +249,7 @@ function menuItemSelected(section) {
   }
 }
 
-function showSection(section) {
-  alert('Mostrando la sección: ' + section);
-}
+
 
 function toggleModal(modalId) {
   const iframe = document.getElementById('iframecurso');
