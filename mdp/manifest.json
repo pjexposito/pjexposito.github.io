@@ -4,7 +4,7 @@
   "start_url": "/mdp/",
   "display": "standalone",
   "background_color": "#f4f4f4",
-  "theme_color": "#3498db",
+  "theme_color": "#007C52",
   "icons": [
     {
       "src": "multimedia/icon-192x192.png",
