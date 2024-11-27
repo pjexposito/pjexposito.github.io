@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #3498db;
+  --color-primary: #007C52;
   --color-secondary: #2c3e50;
   --color-completed: #4CAF50;
   --color-in-progress: #FF9800;
@@ -48,7 +48,7 @@ h1 {
 }
 
 .header-container img {
-    height: 50px;
+    height: 70px;
     border-radius: 10%; /* Bordes redondeados, opcional */
     object-fit: cover; /* Asegura que las imágenes mantengan proporción */
 }
