@@ -1,5 +1,5 @@
 :root {
-  --color-primary: #007C52;
+  --color-primary: #3498db;
   --color-secondary: #2c3e50;
   --color-completed: #4CAF50;
   --color-in-progress: #FF9800;
@@ -36,6 +36,26 @@ h1, h2 {
 
 h1 {
   text-align: center;
+}
+
+
+.header-container {
+    display: flex; /* Usa flexbox para organizar los elementos */
+    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: center; /* Asegura que el contenido esté centrado horizontalmente */
+    gap: 15px; /* Espacio entre las imágenes y el título */
+    margin: 20px 0; /* Espaciado superior e inferior */
+}
+
+.header-container img {
+    height: 50px;
+    border-radius: 10%; /* Bordes redondeados, opcional */
+    object-fit: cover; /* Asegura que las imágenes mantengan proporción */
+}
+
+.header-container h1 {
+    font-size: 1.8rem;
+    margin: 0; /* Elimina el margen por defecto */
 }
 
 .timeline, .intro-section {
