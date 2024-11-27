@@ -569,6 +569,13 @@ h1 {
 }
 
 @media (max-width: 768px) {
+
+  .header-container img {
+    height: 40px;
+    border-radius: 10%; /* Bordes redondeados, opcional */
+    object-fit: cover; /* Asegura que las imágenes mantengan proporción */
+  }
+
   .navbar-menu {
     display: none;
   }
