@@ -41,7 +41,7 @@ async function loadData() {
 
 function initializeDatePicker() {
   const fechaInicioTrabajo = new Date();
-  fechaInicioTrabajo.setMonth(fechaInicioTrabajo.getMonth() - 15); //El trabajador empezó hace 15 meses.
+  fechaInicioTrabajo.setMonth(fechaInicioTrabajo.getMonth() - 10); //El trabajador empezó hace 15 meses.
   elements.startDate.valueAsDate = fechaInicioTrabajo;
   elements.startDate.addEventListener('change', renderTimeline);
 }
