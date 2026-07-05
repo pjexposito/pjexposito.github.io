@@ -7,7 +7,7 @@ const CACHE_NAME = `fpp-${CACHE_VERSION}`;
 // Como el HTML es autocontenido (CSS y JS inline), solo hace falta
 // cachear el propio HTML, el manifest y los iconos.
 const APP_SHELL = [
-  './index.html',
+  './fpp.html',
   './manifest.json',
   './iconos/icon-180.png',
   './iconos/icon-192.png',
@@ -71,7 +71,7 @@ self.addEventListener('fetch', (event) => {
       // Sin red y sin caché: si es una navegación, devolvemos el HTML
       // principal como último recurso para que al menos abra la app.
       if (event.request.mode === 'navigate') {
-        const fallback = await cache.match('./index.html');
+        const fallback = await cache.match('./fpp.html');
         if (fallback) return fallback;
       }
       throw error;
