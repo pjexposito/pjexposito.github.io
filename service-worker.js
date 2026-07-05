@@ -1,77 +1,80 @@
+// Sube este número cada vez que cambies el HTML/CSS/JS/iconos,
+// para forzar que el Service Worker actualice la caché.
+const CACHE_VERSION = 'v1';
+const CACHE_NAME = `fpp-${CACHE_VERSION}`;
 
-/*
-Copyright 2015, 2019 Google Inc. All Rights Reserved.
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
- http://www.apache.org/licenses/LICENSE-2.0
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
-*/
-
-// Incrementing OFFLINE_VERSION will kick off the install event and force
-// previously cached resources to be updated from the network.
-const OFFLINE_VERSION = 1;
-const CACHE_NAME = 'offline';
-// Customize this with a different URL if needed.
-const OFFLINE_URL = 'fpp-mini.html';
+// Todo lo que necesita la app para arrancar y funcionar sin conexión.
+// Como el HTML es autocontenido (CSS y JS inline), solo hace falta
+// cachear el propio HTML, el manifest y los iconos.
+const APP_SHELL = [
+  './index.html',
+  './manifest.json',
+  './iconos/icon-180.png',
+  './iconos/icon-192.png',
+  './iconos/icon-512.png',
+  './iconos/icon-512-maskable.png',
+  './iconos/ios-512.png'
+	
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
-    // Setting {cache: 'reload'} in the new request will ensure that the response
-    // isn't fulfilled from the HTTP cache; i.e., it will be from the network.
-    await cache.add(new Request(OFFLINE_URL, {cache: 'reload'}));
+    // {cache: 'reload'} para asegurar que se descarga fresco de la red
+    // y no de la caché HTTP del navegador.
+    await Promise.all(
+      APP_SHELL.map((url) => cache.add(new Request(url, { cache: 'reload' })))
+    );
   })());
+  // Activa el nuevo SW sin esperar a que se cierren pestañas antiguas.
+  self.skipWaiting();
 });
 
 self.addEventListener('activate', (event) => {
   event.waitUntil((async () => {
-    // Enable navigation preload if it's supported.
-    // See https://developers.google.com/web/updates/2017/02/navigation-preload
+    // Borra cachés de versiones anteriores.
+    const keys = await caches.keys();
+    await Promise.all(
+      keys.filter((key) => key !== CACHE_NAME).map((key) => caches.delete(key))
+    );
     if ('navigationPreload' in self.registration) {
       await self.registration.navigationPreload.enable();
     }
+    await self.clients.claim();
   })());
-
-  // Tell the active service worker to take control of the page immediately.
-  self.clients.claim();
 });
 
 self.addEventListener('fetch', (event) => {
-  // We only want to call event.respondWith() if this is a navigation request
-  // for an HTML page.
-  if (event.request.mode === 'navigate') {
-    event.respondWith((async () => {
-      try {
-        // First, try to use the navigation preload response if it's supported.
-        const preloadResponse = await event.preloadResponse;
-        if (preloadResponse) {
-          return preloadResponse;
-        }
+  if (event.request.method !== 'GET') return;
 
-        const networkResponse = await fetch(event.request);
-        return networkResponse;
-      } catch (error) {
-        // catch is only triggered if an exception is thrown, which is likely
-        // due to a network error.
-        // If fetch() returns a valid HTTP response with a response code in
-        // the 4xx or 5xx range, the catch() will NOT be called.
-        console.log('Fetch failed; returning offline page instead.', error);
+  event.respondWith((async () => {
+    const cache = await caches.open(CACHE_NAME);
+    const cached = await cache.match(event.request);
 
-        const cache = await caches.open(CACHE_NAME);
-        const cachedResponse = await cache.match(OFFLINE_URL);
-        return cachedResponse;
+    // Cache first: si está guardado, se sirve al instante.
+    // Esto es lo que permite abrir la app aunque no haya datos.
+    if (cached) {
+      return cached;
+    }
+
+    try {
+      const preloadResponse = event.preloadResponse
+        ? await event.preloadResponse
+        : null;
+      const networkResponse = preloadResponse || (await fetch(event.request));
+
+      if (networkResponse && networkResponse.ok) {
+        cache.put(event.request, networkResponse.clone());
       }
-    })());
-  }
-
-  // If our if() condition is false, then this fetch handler won't intercept the
-  // request. If there are any other fetch handlers registered, they will get a
-  // chance to call event.respondWith(). If no fetch handlers call
-  // event.respondWith(), the request will be handled by the browser as if there
-  // were no service worker involvement.
+      return networkResponse;
+    } catch (error) {
+      // Sin red y sin caché: si es una navegación, devolvemos el HTML
+      // principal como último recurso para que al menos abra la app.
+      if (event.request.mode === 'navigate') {
+        const fallback = await cache.match('./index.html');
+        if (fallback) return fallback;
+      }
+      throw error;
+    }
+  })());
 });
