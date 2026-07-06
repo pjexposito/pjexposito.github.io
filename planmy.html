@@ -303,7 +303,7 @@
 		texto_resultado += linea1[0] +'</b> cuotas de <b>'+redondea(linea1[1])+ '€</b><br>';
 		texto_resultado += 'Y una última cuota de <b>'+redondea(linea1[2])+' €</b><br>';
 		texto_resultado += 'Incluye <b>'+redondea(linea1[3])+ ' €</b> de intereses.';
-		if (modelo.includes('iPhone') && fv2!=0) {
+		if (modelo.includes('iPhone') && fv2!=0 && !modelo.includes('17')) {
 			texto_resultado += '<br><hr><b>'+linea2[0] +'</b> cuotas de <b>'+redondea(linea2[1])+ '€</b><br>';
 			texto_resultado += 'Y una última cuota de <b>'+redondea(linea2[2])+' €</b><br>';
 			texto_resultado += 'Incluye <b>'+redondea(linea2[3])+ ' €</b> de intereses';				
