@@ -563,6 +563,7 @@
 	
     if (buffer<0) buffer = 0;
     /*Lo quito por ahora. if (meses<3) meses = 3;*/
+	if (meses>36) meses = 36;
 	document.getElementById('tabla_precio').value = buffer;
 	document.getElementById('tabla_meses').value  = meses;
     txtInteres = meses == 3 ? "Gastos: " : "Intereses: ";
