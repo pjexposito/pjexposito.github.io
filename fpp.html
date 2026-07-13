@@ -546,6 +546,10 @@
   
   
   function pintaPantalla() {  
+	let txtInteres;
+    if (buffer<0) buffer = 0;
+  	if (meses>36) meses = 36;	
+    txtInteres = meses == 3 ? "Gastos: " : "Intereses: ";
 	
 	/* Elementos del modo calculadora */  
 	  
@@ -553,7 +557,8 @@
 	document.getElementById('cuotaVal').innerHTML  = cuota + '&nbsp;€/m';
     [cuota, intereses] = calculaCuota(buffer, meses);  
 	document.getElementById('cuotaVal').innerHTML = formatearNumero(cuota) + '&nbsp;€/m';
-	document.getElementById('interesesVal').innerHTML = "Intereses: " + formatearNumero(intereses) + '&nbsp;€';
+	
+	document.getElementById('interesesVal').innerHTML = txtInteres + formatearNumero(intereses) + '&nbsp;€';
 	document.getElementById('mesesSlider').value = meses;
 	document.getElementById('mesesVal').innerHTML = meses + " meses";
 	
@@ -561,12 +566,9 @@
 	
 	/* Elementos del modo tabla */
 	
-    if (buffer<0) buffer = 0;
-    /*Lo quito por ahora. if (meses<3) meses = 3;*/
-	if (meses>36) meses = 36;
+
 	document.getElementById('tabla_precio').value = buffer;
 	document.getElementById('tabla_meses').value  = meses;
-    txtInteres = meses == 3 ? "Gastos: " : "Intereses: ";
     [cuota, intereses] = calculaCuota(buffer, meses);  
 	document.getElementById('tabla_cuota').innerHTML = "Cuota: "+formatearNumero(cuota) + '&nbsp;€/m';
 	document.getElementById('tabla_intereses').innerHTML  = txtInteres+formatearNumero(intereses) + '&nbsp;€';
