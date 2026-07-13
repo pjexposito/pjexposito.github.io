@@ -1,6 +1,6 @@
 // Sube este número cada vez que cambies el HTML/CSS/JS/iconos,
 // para forzar que el Service Worker actualice la caché.
-const CACHE_VERSION = 'v1.2';
+const CACHE_VERSION = 'v1.3';
 const CACHE_NAME = `fpp-${CACHE_VERSION}`;
 
 // Todo lo que necesita la app para arrancar y funcionar sin conexión.
