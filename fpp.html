@@ -716,8 +716,20 @@
   if ('serviceWorker' in navigator) {
     window.addEventListener('load', () => {
       navigator.serviceWorker.register('service-worker.js')
-        .then((reg) => console.log('Service Worker registrado:', reg.scope))
+        .then((reg) => {
+          console.log('Service Worker registrado:', reg.scope);
+          // Comprueba si hay una versión nueva cada vez que se abre la app.
+          reg.update();
+        })
         .catch((err) => console.error('Error registrando Service Worker:', err));
+
+      // Cuando el nuevo SW toma el control, recarga para servir la versión nueva.
+      let refrescando = false;
+      navigator.serviceWorker.addEventListener('controllerchange', () => {
+        if (refrescando) return;
+        refrescando = true;
+        window.location.reload();
+      });
     });
   }
 </script>
