@@ -1,6 +1,6 @@
 // Sube este número cada vez que cambies el HTML/CSS/JS/iconos,
 // para forzar que el Service Worker actualice la caché.
-const CACHE_VERSION = '2607212042';
+const CACHE_VERSION = '1310261149';
 const CACHE_NAME = `fpp-${CACHE_VERSION}`;
 
 // Todo lo que necesita la app para arrancar y funcionar sin conexión.
@@ -47,6 +47,7 @@ self.addEventListener('activate', (event) => {
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
 
+	
   event.respondWith((async () => {
     const cache = await caches.open(CACHE_NAME);
     const cached = await cache.match(event.request);
